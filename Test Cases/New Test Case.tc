@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Toyota_TC_01</name>
+   <name>New Test Case</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>3b7e0255-28d7-4dcb-a5e9-646162c1d8d5</testCaseGuid>
+   <testCaseGuid>f98a6ac3-9c0a-49be-a4da-ee7482ceedc9</testCaseGuid>
 </TestCaseEntity>
