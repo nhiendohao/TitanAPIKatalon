@@ -38,11 +38,11 @@ token = tokenObject.access_token
 
 // SECOND STEP
 // load test request object which will use token above in Authorization
-RequestObject GetServiceOperations = findTestObject('GetServiceOperations_JSON')
+RequestObject mainrequest = findTestObject('GetServiceOperations_JSON')
 
 // if getUserInfoTestObject HTTP headers have no Authorization item
-GetServiceOperations.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Bearer " + token))
+mainrequest.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Bearer " + token))
 
 
-response =  WS.sendRequest(GetServiceOperations)
+response =  WS.sendRequest(mainrequest)
 WS.verifyResponseStatusCode(response, 200)
