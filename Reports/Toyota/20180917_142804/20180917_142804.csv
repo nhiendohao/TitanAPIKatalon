@@ -1,5 +1,0 @@
-Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
-Toyota,,,2018-09-17 14:28:07,2018-09-17 14:28:08,1.116s,FAILED
-,,,,,,
-Test Cases/Toyota_TC_02,,,2018-09-17 14:28:07,2018-09-17 14:28:08,0.730s,FAILED
-acceptAlert,,,2018-09-17 14:28:07,2018-09-17 14:28:08,0.455s,FAILED
