@@ -25,7 +25,7 @@ import internal.GlobalVariable as GlobalVariable
 
 // FIRST STEP
 // load test request object which will do the login step and retrieve the token for later usages
-RequestObject getTokenTestObject = findTestObject('Toyota_Logon')
+RequestObject getTokenTestObject = findTestObject('Toyota/Toyota_Logon')
 
 ResponseObject responseTokenObject = WS.sendRequest(getTokenTestObject)
 
@@ -38,7 +38,7 @@ token = tokenObject.access_token
 
 // SECOND STEP
 // load test request object which will use token above in Authorization
-RequestObject mainrequest = findTestObject('GetServiceOperations_JSON')
+RequestObject mainrequest = findTestObject('Toyota/GetServiceOperations_JSON')
 
 // if getUserInfoTestObject HTTP headers have no Authorization item
 mainrequest.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Bearer " + token))
