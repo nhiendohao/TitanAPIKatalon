@@ -2,11 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
 import java.lang.reflect.Array
-
 import org.eclipse.persistence.internal.oxm.record.json.JSONParser.array_return
-
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -64,9 +61,32 @@ ResponseObject response = WS.sendRequest(mainrequest)
 
 //Verify Response Status = 200 OK
 WS.verifyResponseStatusCode(response, 200)
+WS.verifyElementPropertyValue(response, "[0].Date", GlobalVariable.Glb_ServiceDate + "T00:00:00")
 
-def res_Obj = new groovy.json.JsonSlurper().parseText(response.getResponseText())
-Array 
-println res_Obj.Times.length
 //Verify response Times array
-WS.verifyElementPropertyValue(response, "[0].Times[0]", "08:00")
+//Create Data Times Array
+//Create real time variable
+def realtime_ws = new Date()
+//Declare Time Workshop Open and Time WS Close
+int Start = GlobalVariable.Glb_WorkshopStart as Integer
+int End = GlobalVariable.Glb_WorkshopEnd as Integer
+//Declare Interval for Timeslots
+int Interval = GlobalVariable.Glb_Interval as Integer
+//Set realtime as Time Workshop Open
+realtime_ws.set(hourOfDay: Start, minute:00)
+println realtime_ws.format("HH:mm")
+//Set Time WS Close, this time is early 15 minutes
+def time_close_ws = new Date()
+time_close_ws.set(hourOfDay: End-1, minute: 45)
+
+//Create Array for Times
+def times = new String[40]
+def count = 0
+while(realtime_ws.before(time_close_ws)){
+	times[count]=realtime_ws.format("HH:mm") as String
+	count=count +1
+	use(groovy.time.TimeCategory) {
+	realtime_ws = realtime_ws + Interval.minute }
+}
+//Loop Verification
+for(def j  = 0;j<count;j++) WS.verifyElementPropertyValue(response, "[j].Times[j]", times[j])

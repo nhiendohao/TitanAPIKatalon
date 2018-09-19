@@ -42,17 +42,18 @@ realtime_ws.set(hourOfDay: Start, minute:00)
 println realtime_ws.format("HH:mm")
 //Set Time WS Close, this time is early 15 minutes
 def time_close_ws = new Date()
-time_close_ws.set(hourOfDay: End-1, minute: 45)
+time_close_ws.set(hourOfDay: End, minute: 00)
 
 //Create Array for Times
 def times = new String[40]
 def count = 0
 while(realtime_ws.before(time_close_ws)){
-use(groovy.time.TimeCategory) {
+	times[count]=realtime_ws.format("HH:mm") as String
+	count=count +1
+	use(groovy.time.TimeCategory) {
 	realtime_ws = realtime_ws + Interval.minute }
-times[count]=realtime_ws.format("HH:mm") as String
-count=count +1}
+}
 //println date.format("HH:mm")
-//for(def i = 0;i<count;i++) println times[i]
+for(def i = 0;i<count;i++) println times[i]
 println count
 

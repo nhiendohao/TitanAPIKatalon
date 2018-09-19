@@ -21,7 +21,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'16'</initValue>
+      <initValue>'17'</initValue>
       <name>Glb_WorkshopEnd</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
