@@ -1,5 +1,0 @@
-Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
-Toyota,,,2018-09-17 14:19:18,2018-09-17 14:19:19,0.698s,ERROR
-,,,,,,
-Test Cases/Toyota_TC_02,,,2018-09-17 14:19:18,2018-09-17 14:19:19,0.308s,ERROR
-"Statement - response = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(com.kms.katalon.core.testobject.ObjectRepository.findTestObject(GetServiceOperations_JSON, [gb_token:internal.GlobalVariable.null]))",,,2018-09-17 14:19:19,2018-09-17 14:19:19,0.006s,PASSED
