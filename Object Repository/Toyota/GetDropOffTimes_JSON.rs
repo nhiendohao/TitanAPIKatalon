@@ -45,6 +45,13 @@
       <masked>false</masked>
       <name>nhien</name>
    </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f5b9b3de-1a7b-4680-b5f4-7eada9a7cc5c</id>
+      <masked>false</masked>
+      <name>nhien2</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
