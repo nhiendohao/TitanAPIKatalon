@@ -67,6 +67,6 @@ WS.verifyResponseStatusCode(response, 200)
 
 def res_Obj = new groovy.json.JsonSlurper().parseText(response.getResponseText())
 Array 
-println res_Obj.Times.length()
-//Verify response array
+println res_Obj.Times.length
+//Verify response Times array
 WS.verifyElementPropertyValue(response, "[0].Times[0]", "08:00")

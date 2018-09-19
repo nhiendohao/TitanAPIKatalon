@@ -2,6 +2,9 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import java.lang.reflect.Array
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -27,20 +30,29 @@ println current
 
 println today.format("YYYY-MM-dd")
 
-//set time for variable
-def date = new Date()
+//Create real time variable
+def realtime_ws = new Date()
+//Declare Time Workshop Open and Time WS Close
 int Start = GlobalVariable.Glb_WorkshopStart as Integer
 int End = GlobalVariable.Glb_WorkshopEnd as Integer
+//Declare Interval for Timeslots
+int Interval = GlobalVariable.Glb_Interval as Integer
+//Set realtime as Time Workshop Open
+realtime_ws.set(hourOfDay: Start, minute:00)
+println realtime_ws.format("HH:mm")
+//Set Time WS Close, this time is early 15 minutes
+def time_close_ws = new Date()
+time_close_ws.set(hourOfDay: End-1, minute: 45)
 
-date.set(hourOfDay: Start, minute:00)
-println date.format("HH:mm")
-def time_validate = new Date()
-time_validate.set(hourOfDay: End-1, minute:45)
-
-//Create dataset for times
-
-while(date.before(time_validate)){
+//Create Array for Times
+def times = new String[40]
+def count = 0
+while(realtime_ws.before(time_close_ws)){
 use(groovy.time.TimeCategory) {
-	date = date + 15.minute }
+	realtime_ws = realtime_ws + Interval.minute }
+times[count]=realtime_ws.format("HH:mm") as String
+count=count +1}
+//println date.format("HH:mm")
+//for(def i = 0;i<count;i++) println times[i]
+println count
 
-println date.format("HH:mm")}

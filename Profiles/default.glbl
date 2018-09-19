@@ -24,4 +24,9 @@
       <initValue>'16'</initValue>
       <name>Glb_WorkshopEnd</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'15'</initValue>
+      <name>Glb_Interval</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
