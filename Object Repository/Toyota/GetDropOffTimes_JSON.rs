@@ -39,7 +39,7 @@
       <name>Vinhle</name>
    </variables>
    <variables>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'112211'</defaultValue>
       <description></description>
       <id>d197b0d2-2c08-4be7-91b7-162238123ea6</id>
       <masked>false</masked>
