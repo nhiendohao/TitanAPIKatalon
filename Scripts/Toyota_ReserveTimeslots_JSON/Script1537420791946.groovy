@@ -46,6 +46,6 @@ WS.verifyElementPropertyValue(res_ReserveTimeslot, 'Action', 'HOLD')
 def res_Text = new groovy.json.JsonSlurper().parseText(res_ReserveTimeslot.getResponseText())
 //get the retrieved token
 GlobalVariable.Glb_Reserve_Token = res_Text.XReserveToken
-if(GlobalVariable.Glb_Reserve_Token == "") WS.verifyNotEqual(res_ReserveTimeslot, null)
+if(GlobalVariable.Glb_Reserve_Token == "") println "Error"
 else println GlobalVariable.Glb_Reserve_Token
 

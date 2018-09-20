@@ -6,7 +6,7 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>''</initValue>
+      <initValue>'56'</initValue>
       <name>Glb_Reserve_Token</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -61,12 +61,22 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'13:45'</initValue>
+      <initValue>'15:00'</initValue>
       <name>Glb_DropOffTime</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'17:00'</initValue>
       <name>Glb_PickUpTime</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'JTDKB3FU703535140'</initValue>
+      <name>Glb_VIN</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'REG12121240'</initValue>
+      <name>Glb_REGNumber</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
