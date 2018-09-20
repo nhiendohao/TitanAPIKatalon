@@ -6,31 +6,45 @@
    <comment></comment>
    <testCaseGuid>0f77dd24-5879-433c-bf64-4ed6e1e81121</testCaseGuid>
    <variable>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'15'</defaultValue>
       <description></description>
       <id>d45f24d2-cd39-4d32-adfa-141cc3b8666f</id>
       <masked>false</masked>
       <name>Setup_Interval</name>
    </variable>
    <variable>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'8'</defaultValue>
       <description></description>
       <id>e2571972-45cb-4465-9d32-7fd0207a1887</id>
       <masked>false</masked>
       <name>Setup_WorkshopStart</name>
    </variable>
    <variable>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'17'</defaultValue>
       <description></description>
       <id>92b95cb1-e8c2-4924-8ceb-ea013c4af26f</id>
       <masked>false</masked>
       <name>Setup_WorkshopEnd</name>
    </variable>
    <variable>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'1'</defaultValue>
       <description></description>
       <id>fc2f80e8-5582-4a58-a31d-c409035678fd</id>
       <masked>false</masked>
       <name>Setup_Duration</name>
+   </variable>
+   <variable>
+      <defaultValue>'764A'</defaultValue>
+      <description></description>
+      <id>d3fe9055-6b01-49f5-88e0-653291e32763</id>
+      <masked>false</masked>
+      <name>Setup_Dealer_Code</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>7b0294c9-29d3-4435-85cd-cb88d2c1fe3d</id>
+      <masked>false</masked>
+      <name>Setup_Location_Code</name>
    </variable>
 </TestCaseEntity>

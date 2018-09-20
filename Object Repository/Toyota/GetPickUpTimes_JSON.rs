@@ -25,7 +25,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/765A/locations/1/pickUps?duration=${Duration_Time}&amp;date=${Service_Date}&amp;dropOff=${Drop_Off_Time}&amp;serviceBayType=${ServiceBay_Time}</restUrl>
+   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/${Dealer_Code}/locations/${Location_Code}/pickUps?duration=${Duration_Time}&amp;date=${Service_Date}&amp;dropOff=${Drop_Off_Time}&amp;serviceBayType=${ServiceBay_Time}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -58,6 +58,20 @@
       <id>6a958b05-ca92-427f-ab5b-254c83c2706b</id>
       <masked>false</masked>
       <name>Duration_Time</name>
+   </variables>
+   <variables>
+      <defaultValue>'765A'</defaultValue>
+      <description></description>
+      <id>fd968552-a12d-4ec4-af2b-ff06590eec6a</id>
+      <masked>false</masked>
+      <name>Dealer_Code</name>
+   </variables>
+   <variables>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>97021cbc-1942-46ef-935e-a5d2840a078d</id>
+      <masked>false</masked>
+      <name>Location_Code</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

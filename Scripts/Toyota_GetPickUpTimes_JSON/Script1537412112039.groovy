@@ -28,7 +28,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 
 // load test request object which will use token above in Authorization
 RequestObject GetPickupTime = findTestObject('Toyota/GetPickUpTimes_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Drop_Off_Time') : Drop_Off_Time
-            , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type, ('Duration_Time') : GlobalVariable.Glb_Duration_Time])
+            , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type, ('Duration_Time') : GlobalVariable.Glb_Duration_Time,('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
 GetPickupTime.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Basic " + GlobalVariable.Glb_Authorization_Token))
 
 ResponseObject res_GetPickupTime = WS.sendRequest(GetPickupTime)
@@ -42,10 +42,9 @@ WS.verifyElementPropertyValue(res_GetPickupTime, '[0].Date', GlobalVariable.Glb_
 //Create Data Times Array
 //Create real time variable
 def realtime_ws = new Date()
-
+//
 //Declare Time Workshop Open and Time WS Close
 int Start = ((GlobalVariable.Glb_WorkshopStart) as Integer)
-
 int End = ((GlobalVariable.Glb_WorkshopEnd) as Integer)
 
 //Declare Interval for Timeslots and Duration for Service
@@ -68,9 +67,7 @@ def count = 0
 
 while (realtime_ws.before(time_close_ws)) {
     (times[count]) = ((realtime_ws.format('HH:mm')) as String)
-
     count = (count + 1)
-
     use(groovy.time.TimeCategory, { 
             realtime_ws = (realtime_ws + Interval.minute)
         })
@@ -78,6 +75,6 @@ while (realtime_ws.before(time_close_ws)) {
 
 //Loop Verification
 for (def j = 0; j < count; j++) {
-    WS.verifyElementPropertyValue(response, ('[0].Times[' + j) + ']', times[j])
+    WS.verifyElementPropertyValue(res_GetPickupTime, ('[0].Times[' + j) + ']', times[j])
 }
 

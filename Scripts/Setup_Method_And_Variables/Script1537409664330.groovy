@@ -20,6 +20,8 @@ import internal.GlobalVariable as GlobalVariable
 GlobalVariable.Glb_Interval = Setup_Interval
 GlobalVariable.Glb_WorkshopStart = Setup_WorkshopStart
 GlobalVariable.Glb_WorkshopEnd = Setup_WorkshopEnd
+GlobalVariable.Glb_Dealer_Code = Setup_Dealer_Code
+GlobalVariable.Glb_Location_Code = Setup_Location_Code
 
 //Set up Service Time
 def today = new Date()
