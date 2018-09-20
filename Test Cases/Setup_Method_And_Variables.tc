@@ -33,4 +33,18 @@
       <masked>false</masked>
       <name>Setup_Duration</name>
    </variable>
+   <variable>
+      <defaultValue>'764A'</defaultValue>
+      <description></description>
+      <id>d3fe9055-6b01-49f5-88e0-653291e32763</id>
+      <masked>false</masked>
+      <name>Setup_Dealer_Code</name>
+   </variable>
+   <variable>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>7b0294c9-29d3-4435-85cd-cb88d2c1fe3d</id>
+      <masked>false</masked>
+      <name>Setup_Location_Code</name>
+   </variable>
 </TestCaseEntity>

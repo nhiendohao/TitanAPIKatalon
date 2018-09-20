@@ -4,7 +4,7 @@
    <name>Toyota</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-09-20T11:31:16</lastRun>
+   <lastRun>2018-09-20T13:39:06</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -39,6 +39,18 @@
          <type>DEFAULT</type>
          <value></value>
          <variableId>fc2f80e8-5582-4a58-a31d-c409035678fd</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>d3fe9055-6b01-49f5-88e0-653291e32763</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>7b0294c9-29d3-4435-85cd-cb88d2c1fe3d</variableId>
       </variableLink>
    </testCaseLink>
    <testCaseLink>

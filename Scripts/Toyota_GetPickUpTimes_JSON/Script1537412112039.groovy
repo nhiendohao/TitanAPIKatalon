@@ -28,7 +28,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 
 // load test request object which will use token above in Authorization
 RequestObject GetPickupTime = findTestObject('Toyota/GetPickUpTimes_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Drop_Off_Time') : Drop_Off_Time
-            , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type, ('Duration_Time') : GlobalVariable.Glb_Duration_Time])
+            , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type, ('Duration_Time') : GlobalVariable.Glb_Duration_Time,('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
 GetPickupTime.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Basic " + GlobalVariable.Glb_Authorization_Token))
 
 ResponseObject res_GetPickupTime = WS.sendRequest(GetPickupTime)

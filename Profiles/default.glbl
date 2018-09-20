@@ -44,4 +44,29 @@
       <initValue>'c3lzYWQ6a3I0N1h0MzUh'</initValue>
       <name>Glb_Authorization_Token</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'765A'</initValue>
+      <name>Glb_Dealer_Code</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'1'</initValue>
+      <name>Glb_Location_Code</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_Booking_ID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'13:45'</initValue>
+      <name>Glb_DropOffTime</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'17:00'</initValue>
+      <name>Glb_PickUpTime</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

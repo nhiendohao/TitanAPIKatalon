@@ -32,7 +32,7 @@ End_Date = GlobalVariable.Glb_ServiceDate
 
 // load test request object which will use token above in Authorization
 RequestObject mainrequest = findTestObject('Toyota/GetDropOffTimes_JSON', [('Start_Date') : Start_Date, ('End_Date') : End_Date
-        , ('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type,('Duration_Time') : GlobalVariable.Glb_Duration_Time])
+        , ('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type,('Duration_Time') : GlobalVariable.Glb_Duration_Time,('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
 mainrequest.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Basic " + GlobalVariable.Glb_Authorization_Token))
 ResponseObject response = WS.sendRequest(mainrequest)
 
