@@ -28,7 +28,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 
 //
 RequestObject GetServiceOperation = findTestObject('Toyota/GetServiceOperations_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('VIN') : GlobalVariable.Glb_VIN
-            , ('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type])
+            , ('Service_Type') : ])
 
 GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
     GlobalVariable.Glb_Authorization_Token))

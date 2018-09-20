@@ -25,7 +25,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/${Dealer_Code}/locations/${Location_Code}/serviceOperations?vehicle=${VIN}&amp;serviceType=${ServiceBay_Type}</restUrl>
+   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/${Dealer_Code}/locations/${Location_Code}/serviceOperations?vehicle=${VIN}&amp;serviceType=${Service_Type}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -46,18 +46,18 @@
       <name>Location_Code</name>
    </variables>
    <variables>
-      <defaultValue>'JTDKB3FU703535140'</defaultValue>
+      <defaultValue>'VNVNVNVNVNVNVNVNV'</defaultValue>
       <description></description>
       <id>0916d6d5-2e81-43ab-aff2-d7d35dadfa16</id>
       <masked>false</masked>
       <name>VIN</name>
    </variables>
    <variables>
-      <defaultValue>'PERIODIC'</defaultValue>
+      <defaultValue>'OSB_SERVICE_TYPE_LOGBOOK'</defaultValue>
       <description></description>
       <id>9ae280eb-2cfa-4550-8b00-557b377c0517</id>
       <masked>false</masked>
-      <name>ServiceBay_Type</name>
+      <name>Service_Type</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
