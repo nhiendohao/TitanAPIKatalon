@@ -7,11 +7,11 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
-      <name>Glb_Token</name>
+      <name>Glb_Reserve_Token</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>''</initValue>
+      <initValue>'2018-09-20'</initValue>
       <name>Glb_ServiceDate</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -28,5 +28,20 @@
       <description></description>
       <initValue>'15'</initValue>
       <name>Glb_Interval</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'PERIODIC'</initValue>
+      <name>Glb_ServiceBay_Type</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'1'</initValue>
+      <name>Glb_Duration_Time</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'c3lzYWQ6a3I0N1h0MzUh'</initValue>
+      <name>Glb_Authorization_Token</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

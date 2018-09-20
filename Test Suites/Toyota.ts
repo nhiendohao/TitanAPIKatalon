@@ -4,7 +4,7 @@
    <name>Toyota</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-09-19T13:46:01</lastRun>
+   <lastRun>2018-09-20T11:01:24</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -12,33 +12,45 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>980cb084-1f5c-4b65-9896-07df0294a147</testSuiteGuid>
    <testCaseLink>
-      <guid>1383de23-b212-467a-a41f-156bc0fa8e2f</guid>
+      <guid>fa7f052e-4d16-4609-9d7d-6d0578a72c8c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Toyota_GetDropOffTimes_JSON</testCaseId>
+      <testCaseId>Test Cases/Setup_Method_And_Variables</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
          <value></value>
-         <variableId>98b2d172-ce16-45c7-a76c-a91fdd9d8b46</variableId>
+         <variableId>d45f24d2-cd39-4d32-adfa-141cc3b8666f</variableId>
       </variableLink>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
          <value></value>
-         <variableId>f61dbbc2-8d93-40ef-b22c-7d88bca1c819</variableId>
+         <variableId>e2571972-45cb-4465-9d32-7fd0207a1887</variableId>
       </variableLink>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
          <value></value>
-         <variableId>ed347226-1e3e-487a-b472-5f5c37903915</variableId>
+         <variableId>92b95cb1-e8c2-4924-8ceb-ea013c4af26f</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>fc2f80e8-5582-4a58-a31d-c409035678fd</variableId>
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>9631be46-52e2-418f-b90a-a2a6ea89eaa7</guid>
+      <guid>325316ed-93d4-49f0-98b9-e2b87b67a58b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Toyota_GetServiceOperation</testCaseId>
+      <testCaseId>Test Cases/Toyota_GetPickUpTimes_JSON</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>596b13c0-d988-43d1-b934-eaab4e6346fe</variableId>
+      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

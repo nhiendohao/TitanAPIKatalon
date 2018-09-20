@@ -21,16 +21,44 @@
       <matchCondition>equals</matchCondition>
       <name>Authorization</name>
       <type>Main</type>
-      <value></value>
+      <value>Basic c3lzYWQ6a3I0N1h0MzUh</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/765A/locations/1/pickUps?duration=1&amp;date=2018-09-17&amp;dropOff=08%3A00&amp;serviceBayType=PERIODIC</restUrl>
+   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/765A/locations/1/pickUps?duration=${Duration_Time}&amp;date=${Service_Date}&amp;dropOff=${Drop_Off_Time}&amp;serviceBayType=${ServiceBay_Time}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
+   <variables>
+      <defaultValue>'2018-09-20'</defaultValue>
+      <description></description>
+      <id>11312aef-1a38-4e1f-b1de-5ba8f233a73b</id>
+      <masked>false</masked>
+      <name>Service_Date</name>
+   </variables>
+   <variables>
+      <defaultValue>'08:00'</defaultValue>
+      <description></description>
+      <id>4ede1f38-d83a-4651-b3a7-3604641d374f</id>
+      <masked>false</masked>
+      <name>Drop_Off_Time</name>
+   </variables>
+   <variables>
+      <defaultValue>'PERIODIC'</defaultValue>
+      <description></description>
+      <id>190ddb9f-5145-4ff2-88db-d29ba48d6003</id>
+      <masked>false</masked>
+      <name>ServiceBay_Time</name>
+   </variables>
+   <variables>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>6a958b05-ca92-427f-ab5b-254c83c2706b</id>
+      <masked>false</masked>
+      <name>Duration_Time</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
