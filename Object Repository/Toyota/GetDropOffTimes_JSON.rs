@@ -21,7 +21,7 @@
       <matchCondition>equals</matchCondition>
       <name>Authorization</name>
       <type>Main</type>
-      <value>Bearer heZOUNHZi0m7huMppeiL09xxUsah1Lnu_52FgpjGz5CB_FNOm5t7I5ZL1fmn6Y5zBIZWKR2TW11pYas3CbpKrHUyj4J3nnACC1zv-Brxh0nifZ5lUVfmYUnH12oOOLcAhbnsfFzx_m_knEFlENxSaljAlksQyYxZPVXa4yK58AaqEc-pjKrRnEE-jWDPHni96LYC173hhnpw8m6oGzaR-gBsoXodv-T6SVAFUU-2YMCAB8NMHu06_Va_Y_wV5bAFSuhy1xE6YGAPp2teUdPVRDKxFsuhVxCnAo_Ln_YS36MNblnDhcj-cnBmGXwMEIQBXtCGN2GcPuNtG77SWL3VCA</value>
+      <value>Basic c3lzYWQ6a3I0N1h0MzUh</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
@@ -32,14 +32,14 @@
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>'2018-09-19'</defaultValue>
+      <defaultValue>'2018-09-20'</defaultValue>
       <description></description>
       <id>e27e2852-5da6-4488-9ff7-27f334ac0311</id>
       <masked>false</masked>
       <name>Start_Date</name>
    </variables>
    <variables>
-      <defaultValue>'2018-09-19'</defaultValue>
+      <defaultValue>'2018-09-20'</defaultValue>
       <description></description>
       <id>c39d794a-0736-4d6a-8c4e-8cea279699e1</id>
       <masked>false</masked>
