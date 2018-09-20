@@ -21,7 +21,7 @@
       <matchCondition>equals</matchCondition>
       <name>Authorization</name>
       <type>Main</type>
-      <value>aa</value>
+      <value>Basic c3lzYWQ6a3I0N1h0MzUh</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
