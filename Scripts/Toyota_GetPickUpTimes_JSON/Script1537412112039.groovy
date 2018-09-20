@@ -45,7 +45,6 @@ def realtime_ws = new Date()
 //
 //Declare Time Workshop Open and Time WS Close
 int Start = ((GlobalVariable.Glb_WorkshopStart) as Integer)
-
 int End = ((GlobalVariable.Glb_WorkshopEnd) as Integer)
 
 //Declare Interval for Timeslots and Duration for Service
@@ -68,9 +67,7 @@ def count = 0
 
 while (realtime_ws.before(time_close_ws)) {
     (times[count]) = ((realtime_ws.format('HH:mm')) as String)
-
     count = (count + 1)
-
     use(groovy.time.TimeCategory, { 
             realtime_ws = (realtime_ws + Interval.minute)
         })
@@ -78,6 +75,6 @@ while (realtime_ws.before(time_close_ws)) {
 
 //Loop Verification
 for (def j = 0; j < count; j++) {
-    WS.verifyElementPropertyValue(response, ('[0].Times[' + j) + ']', times[j])
+    WS.verifyElementPropertyValue(res_GetPickupTime, ('[0].Times[' + j) + ']', times[j])
 }
 
