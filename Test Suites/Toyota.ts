@@ -4,7 +4,11 @@
    <name>Toyota</name>
    <tag></tag>
    <isRerun>false</isRerun>
+<<<<<<< HEAD
    <lastRun>2018-09-20T11:01:24</lastRun>
+=======
+   <lastRun>2018-09-19T15:46:13</lastRun>
+>>>>>>> branch 'master' of https://github.com/nhiendohao/TitanAPIKatalon
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
