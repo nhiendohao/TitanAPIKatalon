@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Toyota_GetPickUpTimes_JSON</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>aed7d501-0973-4e3e-a965-8c27a86d94b6</testCaseGuid>
+   <variable>
+      <defaultValue>'08:00'</defaultValue>
+      <description></description>
+      <id>596b13c0-d988-43d1-b934-eaab4e6346fe</id>
+      <masked>false</masked>
+      <name>Drop_Off_Time</name>
+   </variable>
+</TestCaseEntity>

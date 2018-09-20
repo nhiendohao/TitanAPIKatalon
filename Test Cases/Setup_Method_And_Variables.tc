@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Setup_Method_And_Variables</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0f77dd24-5879-433c-bf64-4ed6e1e81121</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d45f24d2-cd39-4d32-adfa-141cc3b8666f</id>
+      <masked>false</masked>
+      <name>Setup_Interval</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>e2571972-45cb-4465-9d32-7fd0207a1887</id>
+      <masked>false</masked>
+      <name>Setup_WorkshopStart</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>92b95cb1-e8c2-4924-8ceb-ea013c4af26f</id>
+      <masked>false</masked>
+      <name>Setup_WorkshopEnd</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>fc2f80e8-5582-4a58-a31d-c409035678fd</id>
+      <masked>false</masked>
+      <name>Setup_Duration</name>
+   </variable>
+</TestCaseEntity>

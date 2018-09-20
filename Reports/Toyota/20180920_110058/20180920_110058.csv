@@ -1,0 +1,20 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Toyota,,,2018-09-20 11:00:59,2018-09-20 11:01:00,0.867s,FAILED
+,,,,,,
+Test Cases/Setup_Method_And_Variables,,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.307s,PASSED
+Statement - Glb_Interval = Setup_Interval,,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.007s,PASSED
+Statement - Glb_WorkshopStart = Setup_WorkshopStart,,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.001s,PASSED
+Statement - Glb_WorkshopEnd = Setup_WorkshopEnd,,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.001s,PASSED
+Statement - today = new java.util.Date(),,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.004s,PASSED
+"Statement - current = today.format(""YYYY-MM-dd"")",,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.002s,PASSED
+Statement - Glb_ServiceDate = current,,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.001s,PASSED
+,,,,,,
+Test Cases/Toyota_GetServiceOperation,,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.284s,FAILED
+Statement - getTokenTestObject = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/Toyota_Logon),,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.031s,PASSED
+Statement - responseTokenObject = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(getTokenTestObject),,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.071s,PASSED
+Statement - tokenObject = new groovy.json.JsonSlurper().parseText(responseTokenObject.getResponseText()),,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.012s,PASSED
+Statement - token = access_token,,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.005s,PASSED
+Statement - mainrequest = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetServiceOperations_JSON),,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.003s,PASSED
+"Statement - mainrequest.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Bearer  + token)))",,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.013s,PASSED
+Statement - response = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(mainrequest),,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.016s,PASSED
+verifyResponseStatusCode,,,2018-09-20 11:01:00,2018-09-20 11:01:00,0.008s,FAILED
