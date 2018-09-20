@@ -27,23 +27,28 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //
-RequestObject MakeServiceBooking = findTestObject('Toyota/MakeServiceBooking_JSON', [('VIN') : GlobalVariable.Glb_VIN, ('REGNumber') : GlobalVariable.Glb_REGNumber
-            , ('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, ('Reserve_Token') : GlobalVariable.Glb_Reserve_Token
-            , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type,('Dealer_Code') : GlobalVariable.Glb_Dealer_Code
-            , ('Location_Code') : GlobalVariable.Glb_Location_Code])
+RequestObject SearchForBooking = findTestObject('Toyota/SearchForBooking_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('Service_Date') : GlobalVariable.Glb_ServiceDate
+            , ('REGNumber') : GlobalVariable.Glb_REGNumber])
 
-MakeServiceBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
+SearchForBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
+    GlobalVariable.Glb_Authorization_Token))
 
-ResponseObject res_MakeServiceBooking = WS.sendRequest(MakeServiceBooking)
+ResponseObject res_SearchForBooking = WS.sendRequest(SearchForBooking)
 
 //Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(res_MakeServiceBooking, 200)
+WS.verifyResponseStatusCode(res_SearchForBooking, 200)
 
-//Get Reserve Token
-//Transfer response to Text
-def res_Text = new groovy.json.JsonSlurper().parseText(res_MakeServiceBooking.getResponseText())
-//get the retrieved token
-GlobalVariable.Glb_Booking_ID = res_Text.BookingID
-if(GlobalVariable.Glb_Reserve_Token == "") println "Error"
-else println GlobalVariable.Glb_Booking_ID
+//Verify Booking ID
+WS.verifyElementPropertyValue(res_SearchForBooking, '[0].BookingID', GlobalVariable.Glb_Booking_ID)
 
+//Verify REG Number
+WS.verifyElementPropertyValue(res_SearchForBooking, '[0].RegistrationNumber', GlobalVariable.Glb_REGNumber)
+
+//Verify Booking Date
+WS.verifyElementPropertyValue(res_SearchForBooking, '[0].BookingDate', GlobalVariable.Glb_ServiceDate + "T00:00:00")
+
+//Verify Drop off Time
+WS.verifyElementPropertyValue(res_SearchForBooking, '[0].DropOffTime', GlobalVariable.Glb_DropOffTime)
+
+//Verify Pick Up Time
+WS.verifyElementPropertyValue(res_SearchForBooking, '[0].PickUpTime', GlobalVariable.Glb_PickUpTime)
