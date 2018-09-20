@@ -21,36 +21,36 @@
       <matchCondition>equals</matchCondition>
       <name>Authorization</name>
       <type>Main</type>
-      <value></value>
+      <value>Basic c3lzYWQ6a3I0N1h0MzUh</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/765A/locations/1/dropOffs?duration=1.5&amp;start=2018-09-18&amp;end=2018-09-18&amp;serviceBayType=PERIODIC</restUrl>
+   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/765A/locations/1/dropOffs?duration=1&amp;start=${Start_Date}&amp;end=${End_Date}&amp;serviceBayType=${ServiceBay_Type}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'2018-09-20'</defaultValue>
       <description></description>
       <id>e27e2852-5da6-4488-9ff7-27f334ac0311</id>
       <masked>false</masked>
-      <name>Vinhle</name>
+      <name>Start_Date</name>
    </variables>
    <variables>
-      <defaultValue>'112211'</defaultValue>
+      <defaultValue>'2018-09-20'</defaultValue>
       <description></description>
-      <id>d197b0d2-2c08-4be7-91b7-162238123ea6</id>
+      <id>c39d794a-0736-4d6a-8c4e-8cea279699e1</id>
       <masked>false</masked>
-      <name>nhien</name>
+      <name>End_Date</name>
    </variables>
    <variables>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'PERIODIC'</defaultValue>
       <description></description>
-      <id>f5b9b3de-1a7b-4680-b5f4-7eada9a7cc5c</id>
+      <id>a9517ef3-5517-439d-9c6e-9c7cfc572882</id>
       <masked>false</masked>
-      <name>nhien2</name>
+      <name>ServiceBay_Type</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
