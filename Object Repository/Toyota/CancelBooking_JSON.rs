@@ -43,11 +43,25 @@
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'765A'</defaultValue>
       <description></description>
       <id>12929531-fa8a-43df-a803-2d77cff1d1b2</id>
       <masked>false</masked>
-      <name>variable</name>
+      <name>Dealer_Code</name>
+   </variables>
+   <variables>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>ada05ef6-f703-45cf-a880-163f821fcaad</id>
+      <masked>false</masked>
+      <name>Location_Code</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>e88107c7-2862-431f-a4c1-48a87125dade</id>
+      <masked>false</masked>
+      <name>BookingID</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
