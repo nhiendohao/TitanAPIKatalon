@@ -27,23 +27,15 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //
-RequestObject MakeServiceBooking = findTestObject('Toyota/MakeServiceBooking_JSON', [('VIN') : GlobalVariable.Glb_VIN, ('REGNumber') : GlobalVariable.Glb_REGNumber
-            , ('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, ('Reserve_Token') : GlobalVariable.Glb_Reserve_Token
-            , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type,('Dealer_Code') : GlobalVariable.Glb_Dealer_Code
-            , ('Location_Code') : GlobalVariable.Glb_Location_Code])
+RequestObject ChangeBooking = findTestObject('Toyota/ChangeBooking_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('BookingID') : GlobalVariable.Glb_Booking_ID
+            , ('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Drop_Off_Time_Change') : '09:00', ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type])
 
-MakeServiceBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
-
-ResponseObject res_MakeServiceBooking = WS.sendRequest(MakeServiceBooking)
-
+ChangeBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
+    GlobalVariable.Glb_Authorization_Token))
+ResponseObject res_ChangeBooking = WS.sendRequest(ChangeBooking)
 //Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(res_MakeServiceBooking, 200)
+WS.verifyResponseStatusCode(res_ChangeBooking, 200)
 
-//Get Reserve Token
-//Transfer response to Text
-def res_Text = new groovy.json.JsonSlurper().parseText(res_MakeServiceBooking.getResponseText())
-//get the retrieved token
-GlobalVariable.Glb_Booking_ID = res_Text.BookingID
-if(GlobalVariable.Glb_Reserve_Token == "") println "Error"
-else println GlobalVariable.Glb_Booking_ID
+//Verify Booking ID
+WS.verifyElementPropertyValue(res_ChangeBooking, 'BookingID', GlobalVariable.Glb_Booking_ID)
 

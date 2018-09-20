@@ -56,12 +56,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>''</initValue>
+      <initValue>'136872'</initValue>
       <name>Glb_Booking_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'15:00'</initValue>
+      <initValue>'08:00'</initValue>
       <name>Glb_DropOffTime</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
