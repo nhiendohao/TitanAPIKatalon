@@ -27,17 +27,13 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //
-RequestObject GetServiceOperation = findTestObject('Toyota/GetServiceOperations_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('VIN') : GlobalVariable.Glb_VIN
-            , ('Service_Type') : Service_Type])
+RequestObject CancelBooking = findTestObject('Toyota/CancelBooking_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('BookingID') : GlobalVariable.Glb_Booking_ID])
 
-GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
+CancelBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
     GlobalVariable.Glb_Authorization_Token))
 
-ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
+ResponseObject res_CancelBooking = WS.sendRequest(CancelBooking)
 
 //Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(res_GetServiceOperation, 200)
-
-//Verify Booking ID
-//WS.verifyElementPropertyValue(res_GetServiceOperation, 'BookingID', GlobalVariable.Glb_Booking_ID)
+WS.verifyResponseStatusCode(res_CancelBooking, 200)
 
