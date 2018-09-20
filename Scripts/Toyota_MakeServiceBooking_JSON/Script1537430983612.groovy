@@ -27,31 +27,22 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //
-RequestObject GetTransportOption = findTestObject('Toyota/GetTransportOptions_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Dealer_Code') : GlobalVariable.Glb_Dealer_Code
-            , ('Location_Code') : GlobalVariable.Glb_Location_Code])
+RequestObject MakeServiceBooking = findTestObject('Toyota/MakeServiceBooking_JSON', [('VIN') : GlobalVariable.Glb_VIN, ('REGNumber') : GlobalVariable.Glb_REGNumber
+            , ('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, ('Reserve_Token') : GlobalVariable.Glb_Reserve_Token
+            , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type])
 
-GetTransportOption.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
+MakeServiceBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
 
-ResponseObject res_GetTransportOption = WS.sendRequest(GetTransportOption)
+ResponseObject res_MakeServiceBooking = WS.sendRequest(MakeServiceBooking)
 
 //Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(res_GetTransportOption, 200)
+WS.verifyResponseStatusCode(res_MakeServiceBooking, 200)
 
-//Verify ServiceBay Type
-WS.verifyElementPropertyValue(res_GetTransportOption, '[0].OptionType', 'OSB_TRANSPORT_OPTION_CAR')
-
-//Verify Action
-WS.verifyElementPropertyValue(res_GetTransportOption, '[0].OptionAvailabilityFlag', 'false')
-
-//Verify Action
-WS.verifyElementPropertyValue(res_GetTransportOption, '[0].OptionURL', 'null')
-
-//Verify Action
-WS.verifyElementPropertyValue(res_GetTransportOption, '[0].OptionURLLabel', 'null')
-
-//Verify Action
-WS.verifyElementPropertyValue(res_GetTransportOption, '[0].OptionPrice', '0.0')
-
-//Verify Action
-WS.verifyElementPropertyValue(res_GetTransportOption, '[0].POAFlag', 'false')
+//Get Reserve Token
+//Transfer response to Text
+def res_Text = new groovy.json.JsonSlurper().parseText(res_MakeServiceBooking.getResponseText())
+//get the retrieved token
+GlobalVariable.Glb_Booking_ID = res_Text.BookingID
+if(GlobalVariable.Glb_Reserve_Token == "") println "Error"
+else println GlobalVariable.Glb_Booking_ID
 
