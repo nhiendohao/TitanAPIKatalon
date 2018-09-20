@@ -42,7 +42,7 @@ WS.verifyElementPropertyValue(res_GetPickupTime, '[0].Date', GlobalVariable.Glb_
 //Create Data Times Array
 //Create real time variable
 def realtime_ws = new Date()
-
+//
 //Declare Time Workshop Open and Time WS Close
 int Start = ((GlobalVariable.Glb_WorkshopStart) as Integer)
 
