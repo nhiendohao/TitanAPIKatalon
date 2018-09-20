@@ -1,0 +1,22 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Toyota,,,2018-09-19 15:46:22,2018-09-19 15:46:41,19.203s,FAILED
+,,,,,,
+Test Cases/Toyota_GetDropOffTimes_JSON,,,2018-09-19 15:46:22,2018-09-19 15:46:32,10.016s,FAILED
+Statement - getTokenTestObject = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/Toyota_Logon),,,2018-09-19 15:46:22,2018-09-19 15:46:22,0.054s,PASSED
+Statement - responseTokenObject = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(getTokenTestObject),,,2018-09-19 15:46:22,2018-09-19 15:46:31,8.616s,PASSED
+Statement - tokenObject = new groovy.json.JsonSlurper().parseText(responseTokenObject.getResponseText()),,,2018-09-19 15:46:31,2018-09-19 15:46:31,0.021s,PASSED
+Statement - token = access_token,,,2018-09-19 15:46:31,2018-09-19 15:46:31,0.006s,PASSED
+Statement - mainrequest = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetDropOffTimes_JSON),,,2018-09-19 15:46:31,2018-09-19 15:46:31,0.009s,PASSED
+"Statement - mainrequest.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Bearer  + token)))",,,2018-09-19 15:46:31,2018-09-19 15:46:31,0.017s,PASSED
+Statement - response = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(mainrequest),,,2018-09-19 15:46:31,2018-09-19 15:46:32,0.926s,PASSED
+verifyResponseStatusCode,,,2018-09-19 15:46:32,2018-09-19 15:46:32,0.017s,FAILED
+,,,,,,
+Test Cases/Toyota_GetServiceOperation,,,2018-09-19 15:46:32,2018-09-19 15:46:41,8.584s,PASSED
+Statement - getTokenTestObject = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/Toyota_Logon),,,2018-09-19 15:46:32,2018-09-19 15:46:32,0.009s,PASSED
+Statement - responseTokenObject = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(getTokenTestObject),,,2018-09-19 15:46:32,2018-09-19 15:46:32,0.047s,PASSED
+Statement - tokenObject = new groovy.json.JsonSlurper().parseText(responseTokenObject.getResponseText()),,,2018-09-19 15:46:32,2018-09-19 15:46:32,0.001s,PASSED
+Statement - token = access_token,,,2018-09-19 15:46:32,2018-09-19 15:46:32,0.001s,PASSED
+Statement - mainrequest = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetServiceOperations_JSON),,,2018-09-19 15:46:32,2018-09-19 15:46:32,0.009s,PASSED
+"Statement - mainrequest.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Bearer  + token)))",,,2018-09-19 15:46:32,2018-09-19 15:46:32,0.001s,PASSED
+Statement - response = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(mainrequest),,,2018-09-19 15:46:32,2018-09-19 15:46:41,8.282s,PASSED
+verifyResponseStatusCode,,,2018-09-19 15:46:41,2018-09-19 15:46:41,0.001s,PASSED
