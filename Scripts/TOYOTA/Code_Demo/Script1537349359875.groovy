@@ -59,7 +59,7 @@ def time_close_ws = new Date()
 time_close_ws.set()
 
 //Create Array for Times
-def times = new String[]
+def times = new String[40]
 
 def count = 0
 
@@ -82,4 +82,6 @@ println(count)
 
 WS.sendRequest(findTestObject('Toyota/GetDropOffTimes_JSON', [('Start_Date') : '2018-09-20', ('End_Date') : '2018-09-20'
             , ('ServiceBay_Type') : 'PERIODIC', ('Duration_Time') : '1', ('Dealer_Code') : '765A', ('Location_Code') : '1']))
+
+WS.callTestCase(findTestCase('TOYOTA/Toyota_GetServiceOperation_JSON'), [('Service_Type') : 'OSB_SERVICE_TYPE_LOGBOOK'])
 
