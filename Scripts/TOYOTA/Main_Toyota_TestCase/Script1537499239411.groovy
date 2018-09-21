@@ -13,8 +13,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variables'), [('Setup_Interval') : '15', ('Setup_WorkshopStart') : '8'
-        , ('Setup_WorkshopEnd') : '17', ('Setup_Duration') : '1', ('Setup_Dealer_Code') : '764A', ('Setup_Location_Code') : '1'], 
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variables'), [('Setup_Interval') : Interval, ('Setup_WorkshopStart') : WorkshopStart
+        , ('Setup_WorkshopEnd') : WorkshopEnd, ('Setup_Duration') : Duration, ('Setup_Dealer_Code') : Dealer_Code, ('Setup_Location_Code') : Location_Code], 
     FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON'), [('Service_Type') : 'OSB_SERVICE_TYPE_LOGBOOK'], 

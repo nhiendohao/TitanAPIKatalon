@@ -4,7 +4,7 @@
    <name>Toyota_Demo</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-09-21T09:04:17</lastRun>
+   <lastRun>2018-09-21T10:27:05</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -12,135 +12,66 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>9592394b-e0a8-4449-a6da-8b972f428a22</testSuiteGuid>
    <testCaseLink>
-      <guid>60032b07-f0a5-477a-a617-4af4116258f1</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
-      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables</testCaseId>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>d45f24d2-cd39-4d32-adfa-141cc3b8666f</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>e2571972-45cb-4465-9d32-7fd0207a1887</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>92b95cb1-e8c2-4924-8ceb-ea013c4af26f</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>fc2f80e8-5582-4a58-a31d-c409035678fd</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>d3fe9055-6b01-49f5-88e0-653291e32763</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>7b0294c9-29d3-4435-85cd-cb88d2c1fe3d</variableId>
-      </variableLink>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>9f1f59ab-1c9f-4171-be4b-995672c24ea9</guid>
+      <guid>78439250-851e-49ee-abc9-a9e17dcad8ab</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Main_Toyota_TestCase</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>634d7a23-531f-4392-a269-2a89db4f52bc</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Toyota/Toyota_Data1</testDataId>
+      </testDataLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>0b83e41d-a585-4286-9b78-3a3e591a4742</variableId>
-      </variableLink>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>e2dc1bb7-cf2e-4e1a-b9ef-04ed46741ed6</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON</testCaseId>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>98b2d172-ce16-45c7-a76c-a91fdd9d8b46</variableId>
+         <testDataLinkId>634d7a23-531f-4392-a269-2a89db4f52bc</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Interval</value>
+         <variableId>5825ec4b-7630-4a87-a33a-afb78c3a33a9</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>f61dbbc2-8d93-40ef-b22c-7d88bca1c819</variableId>
+         <testDataLinkId>634d7a23-531f-4392-a269-2a89db4f52bc</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>WSStart</value>
+         <variableId>a86ae9fa-09b9-4884-8d3d-41f9a495b458</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>ed347226-1e3e-487a-b472-5f5c37903915</variableId>
+         <testDataLinkId>634d7a23-531f-4392-a269-2a89db4f52bc</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>WSEnd</value>
+         <variableId>ee2c0ed8-a486-44ce-9ca5-1039d35baacd</variableId>
       </variableLink>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>d9b16752-3196-4bd2-a586-b15301ddf7a2</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON</testCaseId>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>596b13c0-d988-43d1-b934-eaab4e6346fe</variableId>
+         <testDataLinkId>634d7a23-531f-4392-a269-2a89db4f52bc</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Duration</value>
+         <variableId>2a8bca4c-6959-47c7-ad13-090375677493</variableId>
       </variableLink>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>bc8fba05-62dd-4756-b956-1c78995ff533</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_ReserveTimeslots_JSON</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>425c2a91-1fc2-476d-a97e-481a3edc5737</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetTransportOption_JSON</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>306c7ad0-0e16-4b07-bc3d-f72a84948ca0</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>fdf900e5-c8bf-41e3-b5db-216b42495081</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>4f62e8ca-3444-4267-8a28-6137ab6ce047</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>7be1e256-4126-410b-b4e8-8f90d1c68174</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>1bafd6c4-5e74-4b55-b1ca-17dc8910dd53</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON</testCaseId>
+      <variableLink>
+         <testDataLinkId>634d7a23-531f-4392-a269-2a89db4f52bc</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Dealer Code</value>
+         <variableId>4f777ab5-5f28-4268-ba75-ca6c9c2273a8</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>634d7a23-531f-4392-a269-2a89db4f52bc</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Location Code</value>
+         <variableId>742c7e1d-1ab7-4ac5-bae8-fd77bb2712d7</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>634d7a23-531f-4392-a269-2a89db4f52bc</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Service_Type</value>
+         <variableId>bb33274f-74b3-4725-97b7-62b872f08c56</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>634d7a23-531f-4392-a269-2a89db4f52bc</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Drop_Off_Time</value>
+         <variableId>3fa6bcf1-4573-4882-9f29-68b66085eadb</variableId>
+      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

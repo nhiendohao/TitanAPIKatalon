@@ -79,15 +79,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON</testCaseId>
-      <testDataLink>
-         <combinationType>ONE</combinationType>
-         <id>044d26e1-bf7c-4189-b1d1-35fd750643cf</id>
-         <iterationEntity>
-            <iterationType>ALL</iterationType>
-            <value></value>
-         </iterationEntity>
-         <testDataId>Data Files/Toyota/Toyota_Data2</testDataId>
-      </testDataLink>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
@@ -101,9 +92,9 @@
          <variableId>f61dbbc2-8d93-40ef-b22c-7d88bca1c819</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>044d26e1-bf7c-4189-b1d1-35fd750643cf</testDataLinkId>
-         <type>DATA_COLUMN</type>
-         <value>ServiceBay_Type</value>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
          <variableId>ed347226-1e3e-487a-b472-5f5c37903915</variableId>
       </variableLink>
    </testCaseLink>
