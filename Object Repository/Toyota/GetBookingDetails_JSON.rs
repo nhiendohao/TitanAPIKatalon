@@ -21,22 +21,36 @@
       <matchCondition>equals</matchCondition>
       <name>Authorization</name>
       <type>Main</type>
-      <value></value>
+      <value>Basic c3lzYWQ6a3I0N1h0MzUh</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/765A/locations/1/services/136853</restUrl>
+   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/${Dealer_Code}/locations/${Location_Code}/services/${BookingID}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'765A'</defaultValue>
       <description></description>
       <id>dd055fc1-e3db-4da0-b42c-630b8a6709f4</id>
       <masked>false</masked>
-      <name>variable</name>
+      <name>Dealer_Code</name>
+   </variables>
+   <variables>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>0d8e8b15-7def-4e70-9465-3d15aee0a217</id>
+      <masked>false</masked>
+      <name>Location_Code</name>
+   </variables>
+   <variables>
+      <defaultValue>'136872'</defaultValue>
+      <description></description>
+      <id>fbead84a-789f-431e-94eb-3be9544decbd</id>
+      <masked>false</masked>
+      <name>BookingID</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

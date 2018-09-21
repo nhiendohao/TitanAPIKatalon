@@ -1,0 +1,123 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Toyota,,,2018-09-20 23:24:06,2018-09-20 23:24:21,14.906s,PASSED
+,,,,,,
+Test Cases/Toyota_GetServiceOperation_JSON,,,2018-09-20 23:24:06,2018-09-20 23:24:14,7.268s,PASSED
+"Statement - GetServiceOperation = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetServiceOperations_JSON, [Dealer_Code:internal.GlobalVariable.Glb_Dealer_Code, Location_Code:internal.GlobalVariable.Glb_Location_Code, VIN:internal.GlobalVariable.Glb_VIN, ... ])",,,2018-09-20 23:24:07,2018-09-20 23:24:07,0.017s,PASSED
+"Statement - GetServiceOperation.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-20 23:24:07,2018-09-20 23:24:07,0.010s,PASSED
+Statement - res_GetServiceOperation = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(GetServiceOperation),,,2018-09-20 23:24:07,2018-09-20 23:24:14,6.937s,PASSED
+verifyResponseStatusCode,,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.006s,PASSED
+,,,,,,
+Test Cases/Toyota_GetDropOffTimes_JSON,,,2018-09-20 23:24:14,2018-09-20 23:24:15,1.100s,PASSED
+Statement - Start_Date = Glb_ServiceDate,,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.001s,PASSED
+Statement - End_Date = Glb_ServiceDate,,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.001s,PASSED
+"Statement - mainrequest = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetDropOffTimes_JSON, [Start_Date:Start_Date, End_Date:End_Date, ServiceBay_Type:internal.GlobalVariable.Glb_ServiceBay_Type, Duration_Time:internal.GlobalVariable.Glb_Duration_Time, ... ])",,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.004s,PASSED
+"Statement - mainrequest.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.002s,PASSED
+Statement - response = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(mainrequest),,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.460s,PASSED
+verifyResponseStatusCode,,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.001s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.024s,PASSED
+Statement - realtime_ws = new java.util.Date(),,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.003s,PASSED
+Statement - Start = Glb_WorkshopStart,,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.001s,PASSED
+Statement - End = Glb_WorkshopEnd,,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.000s,PASSED
+Statement - Interval = Glb_Interval,,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.001s,PASSED
+Statement - Duration = Glb_Duration_Time,,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.000s,PASSED
+"Statement - realtime_ws.set([""hourOfDay"":Start, ""minute"":0])",,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.002s,PASSED
+"Statement - println(realtime_ws.format(""HH:mm""))",,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.003s,PASSED
+Statement - time_close_ws = new java.util.Date(),,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.000s,PASSED
+"Statement - time_close_ws.set([""hourOfDay"":End - Duration, ""minute"":0])",,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.000s,PASSED
+Statement - times = [],,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.001s,PASSED
+Statement - count = 0,,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.000s,PASSED
+Statement - While (realtime_ws.before(time_close_ws)),,,2018-09-20 23:24:14,2018-09-20 23:24:14,0.111s,PASSED
+"Statement - For ([j = 0, j < count, (j++)])",,,2018-09-20 23:24:14,2018-09-20 23:24:15,0.275s,PASSED
+,,,,,,
+Test Cases/Toyota_GetPickUpTimes_JSON,,,2018-09-20 23:24:15,2018-09-20 23:24:16,0.810s,PASSED
+"Statement - GetPickupTime = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetPickUpTimes_JSON, [Service_Date:internal.GlobalVariable.Glb_ServiceDate, Drop_Off_Time:Drop_Off_Time, ServiceBay_Time:internal.GlobalVariable.Glb_ServiceBay_Type, ... ])",,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.003s,PASSED
+"Statement - GetPickupTime.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.000s,PASSED
+Statement - res_GetPickupTime = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(GetPickupTime),,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.402s,PASSED
+verifyResponseStatusCode,,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.000s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.007s,PASSED
+Statement - realtime_ws = new java.util.Date(),,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.000s,PASSED
+Statement - Start = Glb_WorkshopStart,,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.000s,PASSED
+Statement - End = Glb_WorkshopEnd,,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.000s,PASSED
+Statement - Interval = Glb_Interval,,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.001s,PASSED
+Statement - Duration = Glb_Duration_Time,,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.000s,PASSED
+"Statement - realtime_ws.set([""hourOfDay"":Start + Duration, ""minute"":0])",,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.000s,PASSED
+"Statement - println(realtime_ws.format(""HH:mm""))",,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.000s,PASSED
+Statement - time_close_ws = new java.util.Date(),,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.001s,PASSED
+"Statement - time_close_ws.set([""hourOfDay"":End, ""minute"":0])",,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.000s,PASSED
+Statement - times = [],,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.000s,PASSED
+Statement - count = 0,,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.000s,PASSED
+Statement - While (realtime_ws.before(time_close_ws)),,,2018-09-20 23:24:15,2018-09-20 23:24:15,0.027s,PASSED
+"Statement - For ([j = 0, j < count, (j++)])",,,2018-09-20 23:24:15,2018-09-20 23:24:16,0.230s,PASSED
+,,,,,,
+Test Cases/Toyota_ReserveTimeslots_JSON,,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.713s,PASSED
+"Statement - ReserveTimeslot = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/ReserveTimeslots_JSON, [Service_Date:internal.GlobalVariable.Glb_ServiceDate, Duration:internal.GlobalVariable.Glb_Duration_Time, Drop_Off_Time:internal.GlobalVariable.Glb_DropOffTime, ... ])",,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.008s,PASSED
+"Statement - ReserveTimeslot.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.000s,PASSED
+Statement - res_ReserveTimeslot = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(ReserveTimeslot),,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.575s,PASSED
+verifyResponseStatusCode,,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.000s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.011s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.010s,PASSED
+Statement - res_Text = new groovy.json.JsonSlurper().parseText(res_ReserveTimeslot.getResponseText()),,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.004s,PASSED
+Statement - Glb_Reserve_Token = XReserveToken,,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.001s,PASSED
+"Statement - If (Glb_Reserve_Token == """")",,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.000s,PASSED
+Statement - Else,,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.000s,PASSED
+,,,,,,
+Test Cases/Toyota_GetTransportOption_JSON,,,2018-09-20 23:24:16,2018-09-20 23:24:17,0.269s,PASSED
+"Statement - GetTransportOption = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetTransportOptions_JSON, [Service_Date:internal.GlobalVariable.Glb_ServiceDate, Dealer_Code:internal.GlobalVariable.Glb_Dealer_Code, Location_Code:internal.GlobalVariable.Glb_Location_Code])",,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.003s,PASSED
+"Statement - GetTransportOption.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.001s,PASSED
+Statement - res_GetTransportOption = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(GetTransportOption),,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.100s,PASSED
+verifyResponseStatusCode,,,2018-09-20 23:24:16,2018-09-20 23:24:16,0.000s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:16,2018-09-20 23:24:17,0.010s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:17,2018-09-20 23:24:17,0.009s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:17,2018-09-20 23:24:17,0.009s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:17,2018-09-20 23:24:17,0.008s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:17,2018-09-20 23:24:17,0.012s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:17,2018-09-20 23:24:17,0.008s,PASSED
+,,,,,,
+Test Cases/Toyota_MakeServiceBooking_JSON,,,2018-09-20 23:24:17,2018-09-20 23:24:19,2.156s,PASSED
+"Statement - MakeServiceBooking = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/MakeServiceBooking_JSON, [VIN:internal.GlobalVariable.Glb_VIN, REGNumber:internal.GlobalVariable.Glb_REGNumber, Service_Date:internal.GlobalVariable.Glb_ServiceDate, ... ])",,,2018-09-20 23:24:17,2018-09-20 23:24:17,0.003s,PASSED
+"Statement - MakeServiceBooking.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-20 23:24:17,2018-09-20 23:24:17,0.000s,PASSED
+Statement - res_MakeServiceBooking = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(MakeServiceBooking),,,2018-09-20 23:24:17,2018-09-20 23:24:19,2.045s,PASSED
+verifyResponseStatusCode,,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.000s,PASSED
+Statement - res_Text = new groovy.json.JsonSlurper().parseText(res_MakeServiceBooking.getResponseText()),,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.001s,PASSED
+Statement - Glb_Booking_ID = BookingID,,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.000s,PASSED
+"Statement - If (Glb_Reserve_Token == """")",,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.000s,PASSED
+Statement - Else,,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.000s,PASSED
+,,,,,,
+Test Cases/Toyota_SearchForBooking_JSON,,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.248s,PASSED
+"Statement - SearchForBooking = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/SearchForBooking_JSON, [Dealer_Code:internal.GlobalVariable.Glb_Dealer_Code, Location_Code:internal.GlobalVariable.Glb_Location_Code, Service_Date:internal.GlobalVariable.Glb_ServiceDate, ... ])",,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.002s,PASSED
+"Statement - SearchForBooking.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.000s,PASSED
+Statement - res_SearchForBooking = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(SearchForBooking),,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.131s,PASSED
+verifyResponseStatusCode,,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.001s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.006s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.006s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.007s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.007s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.006s,PASSED
+,,,,,,
+Test Cases/Toyota_GetBookingDetail_JSON,,,2018-09-20 23:24:19,2018-09-20 23:24:20,0.718s,PASSED
+"Statement - GetBookingDetail = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetBookingDetails_JSON, [Dealer_Code:internal.GlobalVariable.Glb_Dealer_Code, Location_Code:internal.GlobalVariable.Glb_Location_Code, BookingID:internal.GlobalVariable.Glb_Booking_ID])",,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.003s,PASSED
+"Statement - GetBookingDetail.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-20 23:24:19,2018-09-20 23:24:19,0.000s,PASSED
+Statement - res_GetBookingDetail = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(GetBookingDetail),,,2018-09-20 23:24:19,2018-09-20 23:24:20,0.556s,PASSED
+verifyResponseStatusCode,,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.001s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.007s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.009s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.009s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.008s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.009s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.009s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.009s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.009s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.009s,PASSED
+,,,,,,
+Test Cases/Toyota_ChangeBooking_JSON,,,2018-09-20 23:24:20,2018-09-20 23:24:21,1.106s,PASSED
+"Statement - ChangeBooking = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/ChangeBooking_JSON, [Dealer_Code:internal.GlobalVariable.Glb_Dealer_Code, Location_Code:internal.GlobalVariable.Glb_Location_Code, BookingID:internal.GlobalVariable.Glb_Booking_ID, ... ])",,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.004s,PASSED
+"Statement - ChangeBooking.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-20 23:24:20,2018-09-20 23:24:20,0.000s,PASSED
+Statement - res_ChangeBooking = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(ChangeBooking),,,2018-09-20 23:24:20,2018-09-20 23:24:21,1.006s,PASSED
+verifyResponseStatusCode,,,2018-09-20 23:24:21,2018-09-20 23:24:21,0.000s,PASSED
+verifyElementPropertyValue,,,2018-09-20 23:24:21,2018-09-20 23:24:21,0.007s,PASSED
+,,,,,,
+Test Cases/Toyota_CancelBooking_JSON,,,2018-09-20 23:24:21,2018-09-20 23:24:21,0.221s,PASSED
+"Statement - CancelBooking = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/CancelBooking_JSON, [Dealer_Code:internal.GlobalVariable.Glb_Dealer_Code, Location_Code:internal.GlobalVariable.Glb_Location_Code, BookingID:internal.GlobalVariable.Glb_Booking_ID])",,,2018-09-20 23:24:21,2018-09-20 23:24:21,0.003s,PASSED
+"Statement - CancelBooking.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-20 23:24:21,2018-09-20 23:24:21,0.000s,PASSED
+Statement - res_CancelBooking = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(CancelBooking),,,2018-09-20 23:24:21,2018-09-20 23:24:21,0.133s,PASSED
+verifyResponseStatusCode,,,2018-09-20 23:24:21,2018-09-20 23:24:21,0.001s,PASSED

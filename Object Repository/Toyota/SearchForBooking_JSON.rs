@@ -8,7 +8,7 @@
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n\t \&quot;SearchStartDate\&quot;: \&quot;2018-08-01\&quot;,\n\t \&quot;SearchEndDate\&quot;: \&quot;2018-09-30\&quot;,\n\t \&quot;RegistrationNumber\&quot;: \&quot;REG12121220\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n\t \&quot;SearchStartDate\&quot;: \&quot;${Service_Date}\&quot;,\n\t \&quot;SearchEndDate\&quot;: \&quot;${Service_Date}\&quot;,\n\t \&quot;RegistrationNumber\&quot;: \&quot;${REGNumber}\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -32,16 +32,44 @@
       <matchCondition>equals</matchCondition>
       <name>Authorization</name>
       <type>Main</type>
-      <value></value>
+      <value>Basic c3lzYWQ6a3I0N1h0MzUh</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/765A/locations/1/services/search</restUrl>
+   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/${Dealer_Code}/locations/${Location_Code}/services/search</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
+   <variables>
+      <defaultValue>'765A'</defaultValue>
+      <description></description>
+      <id>9ab55bad-64a5-491f-9152-7e5b013888d6</id>
+      <masked>false</masked>
+      <name>Dealer_Code</name>
+   </variables>
+   <variables>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>4212a1f6-bdd1-47a6-a0ae-fb775ce1e1d7</id>
+      <masked>false</masked>
+      <name>Location_Code</name>
+   </variables>
+   <variables>
+      <defaultValue>'2018-09-21'</defaultValue>
+      <description></description>
+      <id>049fe140-0c94-491a-a872-e0d18dfadd53</id>
+      <masked>false</masked>
+      <name>Service_Date</name>
+   </variables>
+   <variables>
+      <defaultValue>'REG12121240'</defaultValue>
+      <description></description>
+      <id>fb7ea01d-e663-429c-ae7e-af1afd342ebf</id>
+      <masked>false</masked>
+      <name>REGNumber</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject

@@ -57,7 +57,7 @@
       <name>Duration</name>
    </variables>
    <variables>
-      <defaultValue>'08:00'</defaultValue>
+      <defaultValue>'14:00'</defaultValue>
       <description></description>
       <id>17b59cb1-1613-48eb-af8b-b2c22051cf3c</id>
       <masked>false</masked>

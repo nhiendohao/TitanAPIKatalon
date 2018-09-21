@@ -27,25 +27,23 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //
-RequestObject ReserveTimeslot = findTestObject('Toyota/ReserveTimeslots_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Duration') : GlobalVariable.Glb_Duration_Time, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime
-            , ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, ('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type, ('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
+RequestObject MakeServiceBooking = findTestObject('Toyota/MakeServiceBooking_JSON', [('VIN') : GlobalVariable.Glb_VIN, ('REGNumber') : GlobalVariable.Glb_REGNumber
+            , ('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, ('Reserve_Token') : GlobalVariable.Glb_Reserve_Token
+            , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type,('Dealer_Code') : GlobalVariable.Glb_Dealer_Code
+            , ('Location_Code') : GlobalVariable.Glb_Location_Code])
 
-ReserveTimeslot.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
+MakeServiceBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
 
-ResponseObject res_ReserveTimeslot = WS.sendRequest(ReserveTimeslot)
+ResponseObject res_MakeServiceBooking = WS.sendRequest(MakeServiceBooking)
 
 //Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(res_ReserveTimeslot, 200)
-//Verify ServiceBay Type
-WS.verifyElementPropertyValue(res_ReserveTimeslot, 'ServiceBayType', GlobalVariable.Glb_ServiceBay_Type)
-//Verify Action
-WS.verifyElementPropertyValue(res_ReserveTimeslot, 'Action', 'HOLD')
+WS.verifyResponseStatusCode(res_MakeServiceBooking, 200)
 
 //Get Reserve Token
 //Transfer response to Text
-def res_Text = new groovy.json.JsonSlurper().parseText(res_ReserveTimeslot.getResponseText())
+def res_Text = new groovy.json.JsonSlurper().parseText(res_MakeServiceBooking.getResponseText())
 //get the retrieved token
-GlobalVariable.Glb_Reserve_Token = res_Text.XReserveToken
+GlobalVariable.Glb_Booking_ID = res_Text.BookingID
 if(GlobalVariable.Glb_Reserve_Token == "") println "Error"
-else println GlobalVariable.Glb_Reserve_Token
+else println GlobalVariable.Glb_Booking_ID
 

@@ -27,25 +27,17 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //
-RequestObject ReserveTimeslot = findTestObject('Toyota/ReserveTimeslots_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Duration') : GlobalVariable.Glb_Duration_Time, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime
-            , ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, ('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type, ('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
+RequestObject GetServiceOperation = findTestObject('Toyota/GetServiceOperations_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('VIN') : GlobalVariable.Glb_VIN
+            , ('Service_Type') : Service_Type])
 
-ReserveTimeslot.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
+GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
+    GlobalVariable.Glb_Authorization_Token))
 
-ResponseObject res_ReserveTimeslot = WS.sendRequest(ReserveTimeslot)
+ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 
 //Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(res_ReserveTimeslot, 200)
-//Verify ServiceBay Type
-WS.verifyElementPropertyValue(res_ReserveTimeslot, 'ServiceBayType', GlobalVariable.Glb_ServiceBay_Type)
-//Verify Action
-WS.verifyElementPropertyValue(res_ReserveTimeslot, 'Action', 'HOLD')
+WS.verifyResponseStatusCode(res_GetServiceOperation, 200)
 
-//Get Reserve Token
-//Transfer response to Text
-def res_Text = new groovy.json.JsonSlurper().parseText(res_ReserveTimeslot.getResponseText())
-//get the retrieved token
-GlobalVariable.Glb_Reserve_Token = res_Text.XReserveToken
-if(GlobalVariable.Glb_Reserve_Token == "") println "Error"
-else println GlobalVariable.Glb_Reserve_Token
+//Verify Booking ID
+//WS.verifyElementPropertyValue(res_GetServiceOperation, 'BookingID', GlobalVariable.Glb_Booking_ID)
 

@@ -27,25 +27,31 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //
-RequestObject ReserveTimeslot = findTestObject('Toyota/ReserveTimeslots_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Duration') : GlobalVariable.Glb_Duration_Time, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime
-            , ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, ('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type, ('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
+RequestObject GetBookingDetail = findTestObject('Toyota/GetBookingDetails_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('BookingID') : GlobalVariable.Glb_Booking_ID])
+GetBookingDetail.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', 
+    ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
 
-ReserveTimeslot.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
-
-ResponseObject res_ReserveTimeslot = WS.sendRequest(ReserveTimeslot)
+ResponseObject res_GetBookingDetail = WS.sendRequest(GetBookingDetail)
 
 //Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(res_ReserveTimeslot, 200)
-//Verify ServiceBay Type
-WS.verifyElementPropertyValue(res_ReserveTimeslot, 'ServiceBayType', GlobalVariable.Glb_ServiceBay_Type)
-//Verify Action
-WS.verifyElementPropertyValue(res_ReserveTimeslot, 'Action', 'HOLD')
+WS.verifyResponseStatusCode(res_GetBookingDetail, 200)
 
-//Get Reserve Token
-//Transfer response to Text
-def res_Text = new groovy.json.JsonSlurper().parseText(res_ReserveTimeslot.getResponseText())
-//get the retrieved token
-GlobalVariable.Glb_Reserve_Token = res_Text.XReserveToken
-if(GlobalVariable.Glb_Reserve_Token == "") println "Error"
-else println GlobalVariable.Glb_Reserve_Token
+//Verify Booking ID
+WS.verifyElementPropertyValue(res_GetBookingDetail, 'BookingID', GlobalVariable.Glb_Booking_ID)
+
+//Verify Vehicle Information
+WS.verifyElementPropertyValue(res_GetBookingDetail, 'Vehicle.VIN', GlobalVariable.Glb_VIN)
+WS.verifyElementPropertyValue(res_GetBookingDetail, 'Vehicle.RegistrationNumber', GlobalVariable.Glb_REGNumber)
+WS.verifyElementPropertyValue(res_GetBookingDetail, 'RegistrationState', 'null')
+WS.verifyElementPropertyValue(res_GetBookingDetail, 'Vehicle.CustomerOdometerReading', '20500')
+
+//Verify Repair Order Information
+WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.TotalPriceQuoted', '110.0000')
+WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.TotalDuration', '1.00')
+
+//Verify Drop off Time
+WS.verifyElementPropertyValue(res_GetBookingDetail, 'Appointment.BookingDate', GlobalVariable.Glb_ServiceDate + 'T00:00:00')
+
+//Verify Pick Up Time
+WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ToyotaContactID', '43054')
 

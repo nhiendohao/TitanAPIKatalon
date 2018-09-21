@@ -27,25 +27,13 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //
-RequestObject ReserveTimeslot = findTestObject('Toyota/ReserveTimeslots_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Duration') : GlobalVariable.Glb_Duration_Time, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime
-            , ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, ('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type, ('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
+RequestObject CancelBooking = findTestObject('Toyota/CancelBooking_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('BookingID') : GlobalVariable.Glb_Booking_ID])
 
-ReserveTimeslot.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
+CancelBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
+    GlobalVariable.Glb_Authorization_Token))
 
-ResponseObject res_ReserveTimeslot = WS.sendRequest(ReserveTimeslot)
+ResponseObject res_CancelBooking = WS.sendRequest(CancelBooking)
 
 //Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(res_ReserveTimeslot, 200)
-//Verify ServiceBay Type
-WS.verifyElementPropertyValue(res_ReserveTimeslot, 'ServiceBayType', GlobalVariable.Glb_ServiceBay_Type)
-//Verify Action
-WS.verifyElementPropertyValue(res_ReserveTimeslot, 'Action', 'HOLD')
-
-//Get Reserve Token
-//Transfer response to Text
-def res_Text = new groovy.json.JsonSlurper().parseText(res_ReserveTimeslot.getResponseText())
-//get the retrieved token
-GlobalVariable.Glb_Reserve_Token = res_Text.XReserveToken
-if(GlobalVariable.Glb_Reserve_Token == "") println "Error"
-else println GlobalVariable.Glb_Reserve_Token
+WS.verifyResponseStatusCode(res_CancelBooking, 200)
 
