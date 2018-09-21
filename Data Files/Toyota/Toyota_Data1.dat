@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFileEntity>
    <description></description>
-   <name>Toyota_Data</name>
+   <name>Toyota_Data1</name>
    <tag></tag>
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
-   <dataFileGUID>6ee2caa3-0887-4857-a0c9-7ae2aed09d37</dataFileGUID>
-   <dataSourceUrl>C:\Users\vinh.le\Desktop\datademo.xlsx</dataSourceUrl>
+   <dataFileGUID>de3e3431-0521-4d39-a78f-bccefb2d557d</dataFileGUID>
+   <dataSourceUrl>C:\Users\vinh.le\Desktop\datademo new.xlsx</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>false</isInternalPath>
    <query></query>

@@ -1,0 +1,84 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Toyota,,,2018-09-21 09:40:17,2018-09-21 09:40:27,9.894s,PASSED
+,,,,,,
+Test Cases/Setup_Method_And_Variables,,,2018-09-21 09:40:17,2018-09-21 09:40:17,0.226s,PASSED
+Statement - Glb_Interval = Setup_Interval,,,2018-09-21 09:40:17,2018-09-21 09:40:17,0.005s,PASSED
+Statement - Glb_WorkshopStart = Setup_WorkshopStart,,,2018-09-21 09:40:17,2018-09-21 09:40:17,0.000s,PASSED
+Statement - Glb_WorkshopEnd = Setup_WorkshopEnd,,,2018-09-21 09:40:17,2018-09-21 09:40:17,0.001s,PASSED
+Statement - Glb_Dealer_Code = Setup_Dealer_Code,,,2018-09-21 09:40:17,2018-09-21 09:40:17,0.000s,PASSED
+Statement - Glb_Location_Code = Setup_Location_Code,,,2018-09-21 09:40:17,2018-09-21 09:40:17,0.001s,PASSED
+Statement - today = new java.util.Date(),,,2018-09-21 09:40:17,2018-09-21 09:40:17,0.003s,PASSED
+"Statement - current = today.format(""YYYY-MM-dd"")",,,2018-09-21 09:40:17,2018-09-21 09:40:17,0.002s,PASSED
+Statement - Glb_ServiceDate = current,,,2018-09-21 09:40:17,2018-09-21 09:40:17,0.001s,PASSED
+,,,,,,
+Test Cases/Toyota_GetServiceOperation_JSON,,,2018-09-21 09:40:17,2018-09-21 09:40:24,7.062s,PASSED
+"Statement - GetServiceOperation = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetServiceOperations_JSON, [Dealer_Code:internal.GlobalVariable.Glb_Dealer_Code, Location_Code:internal.GlobalVariable.Glb_Location_Code, VIN:internal.GlobalVariable.Glb_VIN, ... ])",,,2018-09-21 09:40:18,2018-09-21 09:40:18,0.011s,PASSED
+"Statement - GetServiceOperation.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-21 09:40:18,2018-09-21 09:40:18,0.009s,PASSED
+Statement - res_GetServiceOperation = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(GetServiceOperation),,,2018-09-21 09:40:18,2018-09-21 09:40:24,6.840s,PASSED
+verifyResponseStatusCode,,,2018-09-21 09:40:24,2018-09-21 09:40:24,0.007s,PASSED
+,,,,,,
+Test Cases/Toyota_GetDropOffTimes_JSON,,,2018-09-21 09:40:24,2018-09-21 09:40:25,1.003s,PASSED
+Statement - Start_Date = Glb_ServiceDate,,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.001s,PASSED
+Statement - End_Date = Glb_ServiceDate,,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.001s,PASSED
+"Statement - mainrequest = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetDropOffTimes_JSON, [Start_Date:Start_Date, End_Date:End_Date, ServiceBay_Type:internal.GlobalVariable.Glb_ServiceBay_Type, Duration_Time:internal.GlobalVariable.Glb_Duration_Time, ... ])",,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.004s,PASSED
+"Statement - mainrequest.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.001s,PASSED
+Statement - response = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(mainrequest),,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.382s,PASSED
+verifyResponseStatusCode,,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.000s,PASSED
+verifyElementPropertyValue,,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.024s,PASSED
+Statement - realtime_ws = new java.util.Date(),,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.000s,PASSED
+Statement - Start = Glb_WorkshopStart,,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.001s,PASSED
+Statement - End = Glb_WorkshopEnd,,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.000s,PASSED
+Statement - Interval = Glb_Interval,,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.001s,PASSED
+Statement - Duration = Glb_Duration_Time,,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.000s,PASSED
+"Statement - realtime_ws.set([""hourOfDay"":Start, ""minute"":0])",,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.001s,PASSED
+"Statement - println(realtime_ws.format(""HH:mm""))",,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.002s,PASSED
+Statement - time_close_ws = new java.util.Date(),,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.000s,PASSED
+"Statement - time_close_ws.set([""hourOfDay"":End - Duration, ""minute"":0])",,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.001s,PASSED
+Statement - times = [],,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.000s,PASSED
+Statement - count = 0,,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.000s,PASSED
+Statement - While (realtime_ws.before(time_close_ws)),,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.101s,PASSED
+"Statement - For ([j = 0, j < count, (j++)])",,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.305s,PASSED
+,,,,,,
+Test Cases/Toyota_GetDropOffTimes_JSON,,,2018-09-21 09:40:25,2018-09-21 09:40:26,0.673s,PASSED
+Statement - Start_Date = Glb_ServiceDate,,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.001s,PASSED
+Statement - End_Date = Glb_ServiceDate,,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.000s,PASSED
+"Statement - mainrequest = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetDropOffTimes_JSON, [Start_Date:Start_Date, End_Date:End_Date, ServiceBay_Type:internal.GlobalVariable.Glb_ServiceBay_Type, Duration_Time:internal.GlobalVariable.Glb_Duration_Time, ... ])",,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.003s,PASSED
+"Statement - mainrequest.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-21 09:40:25,2018-09-21 09:40:25,0.001s,PASSED
+Statement - response = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(mainrequest),,,2018-09-21 09:40:25,2018-09-21 09:40:26,0.386s,PASSED
+verifyResponseStatusCode,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+verifyElementPropertyValue,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.008s,PASSED
+Statement - realtime_ws = new java.util.Date(),,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - Start = Glb_WorkshopStart,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - End = Glb_WorkshopEnd,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - Interval = Glb_Interval,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - Duration = Glb_Duration_Time,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+"Statement - realtime_ws.set([""hourOfDay"":Start, ""minute"":0])",,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+"Statement - println(realtime_ws.format(""HH:mm""))",,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - time_close_ws = new java.util.Date(),,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+"Statement - time_close_ws.set([""hourOfDay"":End - Duration, ""minute"":0])",,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - times = [],,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - count = 0,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - While (realtime_ws.before(time_close_ws)),,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.022s,PASSED
+"Statement - For ([j = 0, j < count, (j++)])",,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.229s,PASSED
+,,,,,,
+Test Cases/Toyota_GetDropOffTimes_JSON,,,2018-09-21 09:40:26,2018-09-21 09:40:27,0.691s,PASSED
+Statement - Start_Date = Glb_ServiceDate,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.001s,PASSED
+Statement - End_Date = Glb_ServiceDate,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+"Statement - mainrequest = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetDropOffTimes_JSON, [Start_Date:Start_Date, End_Date:End_Date, ServiceBay_Type:internal.GlobalVariable.Glb_ServiceBay_Type, Duration_Time:internal.GlobalVariable.Glb_Duration_Time, ... ])",,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.003s,PASSED
+"Statement - mainrequest.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token)))",,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.001s,PASSED
+Statement - response = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(mainrequest),,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.384s,PASSED
+verifyResponseStatusCode,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+verifyElementPropertyValue,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.009s,PASSED
+Statement - realtime_ws = new java.util.Date(),,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - Start = Glb_WorkshopStart,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - End = Glb_WorkshopEnd,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - Interval = Glb_Interval,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - Duration = Glb_Duration_Time,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+"Statement - realtime_ws.set([""hourOfDay"":Start, ""minute"":0])",,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.001s,PASSED
+"Statement - println(realtime_ws.format(""HH:mm""))",,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - time_close_ws = new java.util.Date(),,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+"Statement - time_close_ws.set([""hourOfDay"":End - Duration, ""minute"":0])",,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - times = [],,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - count = 0,,,2018-09-21 09:40:26,2018-09-21 09:40:26,0.000s,PASSED
+Statement - While (realtime_ws.before(time_close_ws)),,,2018-09-21 09:40:26,2018-09-21 09:40:27,0.024s,PASSED
+"Statement - For ([j = 0, j < count, (j++)])",,,2018-09-21 09:40:27,2018-09-21 09:40:27,0.253s,PASSED
