@@ -12,45 +12,15 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>66c5312a-8b69-48c4-bb8e-40543670b6ee</testSuiteGuid>
    <testCaseLink>
-      <guid>3ec44f68-210c-4314-b146-176d9f2e0108</guid>
+      <guid>2540d21c-99e6-4728-9e4a-d42c1b5c7b51</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
-      <testCaseId>Test Cases/Setup_Method_And_Variables</testCaseId>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_GetServiceOperation_JSON</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
          <value></value>
-         <variableId>d45f24d2-cd39-4d32-adfa-141cc3b8666f</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>e2571972-45cb-4465-9d32-7fd0207a1887</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>92b95cb1-e8c2-4924-8ceb-ea013c4af26f</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>fc2f80e8-5582-4a58-a31d-c409035678fd</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>d3fe9055-6b01-49f5-88e0-653291e32763</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>7b0294c9-29d3-4435-85cd-cb88d2c1fe3d</variableId>
+         <variableId>0b83e41d-a585-4286-9b78-3a3e591a4742</variableId>
       </variableLink>
    </testCaseLink>
    <testCaseLink>
@@ -88,5 +58,41 @@
          <value></value>
          <variableId>596b13c0-d988-43d1-b934-eaab4e6346fe</variableId>
       </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>bf759827-8a06-4079-87d9-14d2da89f060</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_ReserveTimeslots_JSON</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>73346f5b-83f7-4042-95ba-4d1e3c93814e</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_GetTransportOption_JSON</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c94d7a6d-983b-4caf-8e7c-1914e0f77218</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_MakeServiceBooking_JSON</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>872ad992-d142-4ae3-9d9b-ce0f13f24443</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_SearchForBooking_JSON</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b690f951-dbe3-4846-b6f0-22b53bb4985b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_GetBookingDetail_JSON</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>4a92605b-744d-41bc-b64b-996b772dc31c</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_ChangeBooking_JSON</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
