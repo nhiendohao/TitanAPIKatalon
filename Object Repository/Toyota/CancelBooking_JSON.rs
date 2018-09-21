@@ -32,7 +32,7 @@
       <matchCondition>equals</matchCondition>
       <name>Authorization</name>
       <type>Main</type>
-      <value></value>
+      <value>Basic c3lzYWQ6a3I0N1h0MzUh</value>
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>DELETE</restRequestMethod>
@@ -57,7 +57,7 @@
       <name>Location_Code</name>
    </variables>
    <variables>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'136872'</defaultValue>
       <description></description>
       <id>e88107c7-2862-431f-a4c1-48a87125dade</id>
       <masked>false</masked>
