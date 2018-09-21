@@ -83,5 +83,5 @@ println(count)
 WS.sendRequest(findTestObject('Toyota/GetDropOffTimes_JSON', [('Start_Date') : '2018-09-20', ('End_Date') : '2018-09-20'
             , ('ServiceBay_Type') : 'PERIODIC', ('Duration_Time') : '1', ('Dealer_Code') : '765A', ('Location_Code') : '1']))
 
-WS.callTestCase(findTestCase('TOYOTA/Toyota_GetServiceOperation_JSON'), [('Service_Type') : 'OSB_SERVICE_TYPE_LOGBOOK'])
+WS.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON'), [('Service_Type') : 'OSB_SERVICE_TYPE_LOGBOOK'])
 

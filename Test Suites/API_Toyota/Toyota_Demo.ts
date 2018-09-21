@@ -15,7 +15,7 @@
       <guid>60032b07-f0a5-477a-a617-4af4116258f1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/TOYOTA/Setup_Method_And_Variables</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
@@ -57,7 +57,7 @@
       <guid>9f1f59ab-1c9f-4171-be4b-995672c24ea9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_GetServiceOperation_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
@@ -69,7 +69,7 @@
       <guid>e2dc1bb7-cf2e-4e1a-b9ef-04ed46741ed6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_GetDropOffTimes_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
@@ -93,7 +93,7 @@
       <guid>d9b16752-3196-4bd2-a586-b15301ddf7a2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_GetPickUpTimes_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
@@ -105,42 +105,42 @@
       <guid>bc8fba05-62dd-4756-b956-1c78995ff533</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_ReserveTimeslots_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_ReserveTimeslots_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>425c2a91-1fc2-476d-a97e-481a3edc5737</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_GetTransportOption_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetTransportOption_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>306c7ad0-0e16-4b07-bc3d-f72a84948ca0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_MakeServiceBooking_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>fdf900e5-c8bf-41e3-b5db-216b42495081</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_SearchForBooking_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>4f62e8ca-3444-4267-8a28-6137ab6ce047</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_GetBookingDetail_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>7be1e256-4126-410b-b4e8-8f90d1c68174</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_ChangeBooking_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>1bafd6c4-5e74-4b55-b1ca-17dc8910dd53</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_CancelBooking_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

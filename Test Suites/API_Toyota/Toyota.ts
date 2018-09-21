@@ -15,7 +15,7 @@
       <guid>12cd4680-f5e8-4835-be44-1b89f7bb4a56</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Setup_Method_And_Variables</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>69c0129c-33ad-467f-a250-5900ac8bd7bb</id>
@@ -66,7 +66,7 @@
       <guid>163e2777-0435-4e91-ab97-f558d952b2b2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_GetServiceOperation_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
@@ -78,7 +78,7 @@
       <guid>55610bad-9517-4856-a523-ee369c35107a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_GetDropOffTimes_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>044d26e1-bf7c-4189-b1d1-35fd750643cf</id>
@@ -111,7 +111,7 @@
       <guid>8f77f2be-e295-4e84-a72f-767174fde525</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_GetPickUpTimes_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
@@ -123,42 +123,42 @@
       <guid>91305078-0ad2-443e-9fe9-93dca4d9d21c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_ReserveTimeslots_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_ReserveTimeslots_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>8e6c4e7b-0897-4ece-a2f9-9e2230ee9df0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_GetTransportOption_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetTransportOption_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>4b01f846-6d01-4e7e-8e78-9fc5d5566559</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_MakeServiceBooking_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>f1a8cdaf-93c8-40e2-a8e4-dadd74102ee1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_SearchForBooking_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>8e4df586-ab4e-4ca8-b0ac-5fca3d88f200</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_GetBookingDetail_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>b1386bb8-32e9-43d1-a05b-f8cc3ce92369</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_ChangeBooking_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>723ec618-2642-4fdb-a9d0-63eb0342bb5d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/TOYOTA/Toyota_CancelBooking_JSON</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
