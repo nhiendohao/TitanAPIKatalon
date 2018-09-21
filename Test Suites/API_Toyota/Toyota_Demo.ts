@@ -4,7 +4,7 @@
    <name>Toyota_Demo</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-09-21T10:27:05</lastRun>
+   <lastRun>2018-09-21T13:23:21</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -72,6 +72,18 @@
          <type>DATA_COLUMN</type>
          <value>Drop_Off_Time</value>
          <variableId>3fa6bcf1-4573-4882-9f29-68b66085eadb</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>634d7a23-531f-4392-a269-2a89db4f52bc</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>VIN</value>
+         <variableId>bbd0d0dd-081d-476f-9485-6b5d60b59fa4</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>634d7a23-531f-4392-a269-2a89db4f52bc</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>REGNumber</value>
+         <variableId>5a99ba96-4aa9-4153-bd8f-8ba99247c0b2</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

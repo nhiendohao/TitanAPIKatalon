@@ -61,6 +61,18 @@
          <value>Location Code</value>
          <variableId>7b0294c9-29d3-4435-85cd-cb88d2c1fe3d</variableId>
       </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>ac73cf05-4281-4de5-80ae-dbc39a14c36f</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>d6d80fda-ae51-4714-be95-5975dc616ba2</variableId>
+      </variableLink>
    </testCaseLink>
    <testCaseLink>
       <guid>163e2777-0435-4e91-ab97-f558d952b2b2</guid>

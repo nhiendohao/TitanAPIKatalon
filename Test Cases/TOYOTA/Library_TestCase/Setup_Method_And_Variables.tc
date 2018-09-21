@@ -47,4 +47,18 @@
       <masked>false</masked>
       <name>Setup_Location_Code</name>
    </variable>
+   <variable>
+      <defaultValue>'VNVNVNVNVNVNVNVNV'</defaultValue>
+      <description></description>
+      <id>ac73cf05-4281-4de5-80ae-dbc39a14c36f</id>
+      <masked>false</masked>
+      <name>Setup_VIN</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d6d80fda-ae51-4714-be95-5975dc616ba2</id>
+      <masked>false</masked>
+      <name>Setup_REGNumber</name>
+   </variable>
 </TestCaseEntity>
