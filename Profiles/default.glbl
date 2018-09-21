@@ -71,12 +71,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'JTDKB3FU703535140'</initValue>
+      <initValue>'VNVNVNVNVNVNVNVNV'</initValue>
       <name>Glb_VIN</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'REG12121240'</initValue>
+      <initValue>'REG_TITAN_API'</initValue>
       <name>Glb_REGNumber</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
