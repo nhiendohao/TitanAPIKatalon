@@ -24,13 +24,19 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variab
 	('Setup_REGNumber') : REGNumber], 
     FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON'), [('Service_Type') : 'OSB_SERVICE_TYPE_LOGBOOK'], 
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON'), [
+	('Service_Type') : 'OSB_SERVICE_TYPE_LOGBOOK'], 
     FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON'), [('Start_Date') : '', ('End_Date') : ''
-        , ('Service_Type') : 'PERIODIC'], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON'), [
+	('Start_Date') : '', 
+	('End_Date') : '', 
+	('Service_Type') : 'PERIODIC'], 
+	FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON'), [('Drop_Off_Time') : '08:00'], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON'), [
+	('Drop_Off_Time') : '08:00'], 
+	FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ReserveTimeslots_JSON'), [:], FailureHandling.STOP_ON_FAILURE)
 
