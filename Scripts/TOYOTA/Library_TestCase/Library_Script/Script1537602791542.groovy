@@ -2,7 +2,6 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import java.lang.reflect.Array as Array
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -16,22 +15,24 @@ import internal.GlobalVariable as GlobalVariable
 import groovy.sql.Sql
 import java.sql.Driver
 
-// Creating a connection to the database
-	  
+	// SQL
+	// Create Driver for connection
 	  def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
-	  
+	// Create Object Properties  
 	  def props = new Properties()
+	// Setup user and password through Object Properties
 	  props.setProperty("user", "TitanDBA")
 	  props.setProperty("password", "T1t@nDB4F0rBRIS-DEV-QADB")
-	  
+	//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
 	  def conn = driver.connect("jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_owen_1_23", props)
 	  def sql = new Sql(conn)
-	  
-	  
-	  sql.eachRow("select top 10 * from VEHICLE") {row ->   
-		  print row[0] + " "
+	//Executive query for database
+	//Read data row by row by expression eachRow  
+	  sql.eachRow("select top 10 * from VEHICLE") {row ->
+		  def VEH = row[0]
 		  def VIN = row.VIN
-		  println VIN
+		  print VIN
+		  println VEH
 	  }
 	  sql.close()
 	  conn.close()

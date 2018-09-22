@@ -22,6 +22,7 @@ import com.kms.katalon.core.testobject.TestObjectProperty as TestObjectProperty
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+import com.sun.jna.StringArray
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -38,6 +39,30 @@ ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 //Verify Response Status = 200 OK
 WS.verifyResponseStatusCode(res_GetServiceOperation, 200)
 
+//Transfer response to Text
+def res_Text = new groovy.json.JsonSlurper().parseText(res_GetServiceOperation.getResponseText())
+
+//Get the retrieved operation code
+//Declare Array to store data
+def Op_Code = new String[50][4]
+Op_Code[0][0] = res_Text[0].Name
+println  Op_Code[0][0]
+int count =0
+for(int i = 0;i<50;i++) {
+	if( res_Text[i] == null) break
+	else {
+		Op_Code[i][0] = res_Text[i].Name
+		Op_Code[i][1] = res_Text[i].DMSOperationalCode
+		Op_Code[i][2] = res_Text[i].Duration
+		Op_Code[i][3] = res_Text[i].DealerPrice		
+		count +=1	
+	}
+}
+println Op_Code[0][0]
+println count
+println Op_Code[38][0]
+println res_Text[0].Name
+println Op_Code[39][0]
 //Verify Booking ID
 //WS.verifyElementPropertyValue(res_GetServiceOperation, 'BookingID', GlobalVariable.Glb_Booking_ID)
 
