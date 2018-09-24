@@ -61,7 +61,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'08:00'</initValue>
+      <initValue>'08:15'</initValue>
       <name>Glb_DropOffTime</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

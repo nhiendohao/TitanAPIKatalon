@@ -13,7 +13,7 @@
       <name>Start_Date</name>
    </variable>
    <variable>
-      <defaultValue>'2018-09-30'</defaultValue>
+      <defaultValue>'2018-09-24'</defaultValue>
       <description></description>
       <id>1af4cbfb-b53e-46b9-832d-38b4acc0c9fb</id>
       <masked>false</masked>
@@ -25,5 +25,12 @@
       <id>411b6812-b06a-4c37-a7b4-dba338bc47c1</id>
       <masked>false</masked>
       <name>Service_Type</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>29c19f19-7ae3-499e-a82e-1b2269405b03</id>
+      <masked>false</masked>
+      <name>Reserve_Timeslot</name>
    </variable>
 </TestCaseEntity>

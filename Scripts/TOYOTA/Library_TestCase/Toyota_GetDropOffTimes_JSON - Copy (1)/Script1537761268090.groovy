@@ -51,7 +51,7 @@ use(groovy.time.TimeCategory) {
 	}
 
 //Check each Date
-for (def i=0;i< duration_days;i++){
+for (def i=0;i< duration_days+1;i++){
 	if(!(Start_Date_Str.format("E")=="Sat" || Start_Date_Str.format("E")=="Sun" )){
 //Verify for each date
 WS.verifyElementPropertyValue(response, "["+i+"].Date", Start_Date + "T00:00:00")
@@ -80,6 +80,12 @@ while(realtime_ws.before(time_close_ws)){
 	count=count +1
 	use(groovy.time.TimeCategory){
 	realtime_ws = realtime_ws + Interval.minute }
+}
+
+//Handle for unavailable timeslot
+if(!Reserve_Timeslot == ""){
+	times = times - Reserve_Timeslot
+	count = count - 1
 }
 //Loop Verification
 for(def j  = 0;j<count;j++) WS.verifyElementPropertyValue(response, "[0].Times["+j+"]", times[j])
