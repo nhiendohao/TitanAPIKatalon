@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Toyota_GetDropOffTimes_JSON - Copy (1)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>47cd9b63-73c1-4cdc-bd94-8f344177d5a8</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5231b2b4-1621-435f-b1f6-4cab90e112b9</id>
+      <masked>false</masked>
+      <name>Start_Date</name>
+   </variable>
+   <variable>
+      <defaultValue>'2018-09-27'</defaultValue>
+      <description></description>
+      <id>1af4cbfb-b53e-46b9-832d-38b4acc0c9fb</id>
+      <masked>false</masked>
+      <name>End_Date</name>
+   </variable>
+   <variable>
+      <defaultValue>'PERIODIC'</defaultValue>
+      <description></description>
+      <id>411b6812-b06a-4c37-a7b4-dba338bc47c1</id>
+      <masked>false</masked>
+      <name>Service_Type</name>
+   </variable>
+</TestCaseEntity>

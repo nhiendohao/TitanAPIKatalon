@@ -16,22 +16,4 @@ import internal.GlobalVariable as GlobalVariable
 import groovy.sql.Sql
 import java.sql.Driver
 
-// Creating a connection to the database
-	  
-	  def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
-	  
-	  def props = new Properties()
-	  props.setProperty("user", "TitanDBA")
-	  props.setProperty("password", "T1t@nDB4F0rBRIS-DEV-QADB")
-	  
-	  def conn = driver.connect("jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_owen_1_23", props)
-	  def sql = new Sql(conn)
-	  
-	  
-	  sql.eachRow("select top 10 * from VEHICLE") {row ->   
-		  print row[0] + " "
-		  def VIN = row.VIN
-		  println VIN
-	  }
-	  sql.close()
-	  conn.close()
+println new Date().format(E)

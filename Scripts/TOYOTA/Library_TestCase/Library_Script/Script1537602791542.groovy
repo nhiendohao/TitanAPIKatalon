@@ -36,3 +36,20 @@ import java.sql.Driver
 	  }
 	  sql.close()
 	  conn.close()
+
+	  //--------------------------------------------------------------------------------------------------------
+	  // Convert String to Date and calculate Duration
+	  String Strdate= "2018-09-24"
+	  def date = Date.parse("yyyy-MM-dd", Strdate)
+	  
+	  String Strdate1= "2018-09-28"
+	  def date1 = Date.parse("yyyy-MM-dd", Strdate1)
+	  
+	  use(groovy.time.TimeCategory) {
+		  def duration = date1 - date
+		  println duration
+		  println  "Days: ${duration.days}, Hours: ${duration.hours}, etc."
+	  }
+	  //--------------------------------------------------------------------------------------------------------
+	  
+	  
