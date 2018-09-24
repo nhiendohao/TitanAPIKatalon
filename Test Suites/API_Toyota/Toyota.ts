@@ -12,9 +12,16 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>b31895b7-572e-460a-9446-c0f5a9baff36</testSuiteGuid>
    <testCaseLink>
+<<<<<<< HEAD
+      <guid>2540d21c-99e6-4728-9e4a-d42c1b5c7b51</guid>
+=======
       <guid>12cd4680-f5e8-4835-be44-1b89f7bb4a56</guid>
+>>>>>>> branch 'master' of https://github.com/nhiendohao/TitanAPIKatalon
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
+<<<<<<< HEAD
+      <testCaseId>Test Cases/Toyota_GetServiceOperation_JSON</testCaseId>
+=======
       <testCaseId>Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -25,7 +32,14 @@
          </iterationEntity>
          <testDataId>Data Files/Toyota/Toyota_Data1</testDataId>
       </testDataLink>
+>>>>>>> branch 'master' of https://github.com/nhiendohao/TitanAPIKatalon
       <variableLink>
+<<<<<<< HEAD
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>0b83e41d-a585-4286-9b78-3a3e591a4742</variableId>
+=======
          <testDataLinkId>69c0129c-33ad-467f-a250-5900ac8bd7bb</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>Interval</value>
@@ -60,6 +74,19 @@
          <type>DATA_COLUMN</type>
          <value>Location Code</value>
          <variableId>7b0294c9-29d3-4435-85cd-cb88d2c1fe3d</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>ac73cf05-4281-4de5-80ae-dbc39a14c36f</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>d6d80fda-ae51-4714-be95-5975dc616ba2</variableId>
+>>>>>>> branch 'master' of https://github.com/nhiendohao/TitanAPIKatalon
       </variableLink>
    </testCaseLink>
    <testCaseLink>
@@ -111,6 +138,42 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
+<<<<<<< HEAD
+      <guid>bf759827-8a06-4079-87d9-14d2da89f060</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_ReserveTimeslots_JSON</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>73346f5b-83f7-4042-95ba-4d1e3c93814e</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_GetTransportOption_JSON</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c94d7a6d-983b-4caf-8e7c-1914e0f77218</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_MakeServiceBooking_JSON</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>872ad992-d142-4ae3-9d9b-ce0f13f24443</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_SearchForBooking_JSON</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b690f951-dbe3-4846-b6f0-22b53bb4985b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_GetBookingDetail_JSON</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>4a92605b-744d-41bc-b64b-996b772dc31c</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Toyota_ChangeBooking_JSON</testCaseId>
+=======
       <guid>91305078-0ad2-443e-9fe9-93dca4d9d21c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
@@ -151,5 +214,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
       <testCaseId>Test Cases/TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON</testCaseId>
+>>>>>>> branch 'master' of https://github.com/nhiendohao/TitanAPIKatalon
    </testCaseLink>
 </TestSuiteEntity>

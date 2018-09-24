@@ -22,47 +22,30 @@ import com.kms.katalon.core.testobject.TestObjectProperty as TestObjectProperty
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
-import com.sun.jna.StringArray
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //
-RequestObject GetServiceOperation = findTestObject('Toyota/GetServiceOperations_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('VIN') : GlobalVariable.Glb_VIN
-            , ('Service_Type') : Service_Type])
+RequestObject ReserveTimeslot = findTestObject('Toyota/ReserveTimeslots_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Duration') : GlobalVariable.Glb_Duration_Time, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime
+            , ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, ('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type, ('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
 
-GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
-    GlobalVariable.Glb_Authorization_Token))
+ReserveTimeslot.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
 
-ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
+ResponseObject res_ReserveTimeslot = WS.sendRequest(ReserveTimeslot)
 
 //Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(res_GetServiceOperation, 200)
+WS.verifyResponseStatusCode(res_ReserveTimeslot, 200)
+//Verify ServiceBay Type
+WS.verifyElementPropertyValue(res_ReserveTimeslot, 'ServiceBayType', GlobalVariable.Glb_ServiceBay_Type)
+//Verify Action
+WS.verifyElementPropertyValue(res_ReserveTimeslot, 'Action', 'HOLD')
 
+//Get Reserve Token
 //Transfer response to Text
-def res_Text = new groovy.json.JsonSlurper().parseText(res_GetServiceOperation.getResponseText())
-
-//Get the retrieved operation code
-//Declare Array to store data
-def Op_Code = new String[50][4]
-Op_Code[0][0] = res_Text[0].Name
-println  Op_Code[0][0]
-int count =0
-for(int i = 0;i<50;i++) {
-	if( res_Text[i] == null) break
-	else {
-		Op_Code[i][0] = res_Text[i].Name
-		Op_Code[i][1] = res_Text[i].DMSOperationalCode
-		Op_Code[i][2] = res_Text[i].Duration
-		Op_Code[i][3] = res_Text[i].DealerPrice		
-		count +=1	
-	}
-}
-println Op_Code[0][0]
-println count
-println Op_Code[38][0]
-println res_Text[0].Name
-println Op_Code[39][0]
-//Verify Booking ID
-//WS.verifyElementPropertyValue(res_GetServiceOperation, 'BookingID', GlobalVariable.Glb_Booking_ID)
+def res_Text = new groovy.json.JsonSlurper().parseText(res_ReserveTimeslot.getResponseText())
+//get the retrieved token
+GlobalVariable.Glb_Reserve_Token = res_Text.XReserveToken
+if(GlobalVariable.Glb_Reserve_Token == "") println "Error"
+else println GlobalVariable.Glb_Reserve_Token
 

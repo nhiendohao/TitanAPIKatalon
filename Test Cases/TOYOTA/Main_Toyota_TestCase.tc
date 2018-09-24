@@ -61,4 +61,18 @@
       <masked>false</masked>
       <name>Drop_Off_Time</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bbd0d0dd-081d-476f-9485-6b5d60b59fa4</id>
+      <masked>false</masked>
+      <name>VIN</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5a99ba96-4aa9-4153-bd8f-8ba99247c0b2</id>
+      <masked>false</masked>
+      <name>REGNumber</name>
+   </variable>
 </TestCaseEntity>
