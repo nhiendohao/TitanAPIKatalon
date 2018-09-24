@@ -27,7 +27,7 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //V0. Check timeslot for 1 day
-//V1. Check timeslot for more days from TODAY
+//V1. Check timeslot for more days from TODAY. Check for Saturday and Sunday
 //Get the current Date
 Start_Date = GlobalVariable.Glb_ServiceDate
 def Start_Date_Str = Date.parse("yyyy-MM-dd", Start_Date) as Date
@@ -42,14 +42,18 @@ ResponseObject response = WS.sendRequest(mainrequest)
 //Verify Response Status = 200 OK
 WS.verifyResponseStatusCode(response, 200)
 
-
+//Get duration days
 int duration_days
 use(groovy.time.TimeCategory) {
 	def duration = End_Date_Str - Start_Date_Str
 	duration_days = duration.days as Integer
 	println duration_days
 	}
+
+//Check each Date
 for (def i=0;i< duration_days;i++){
+	if(!(Start_Date_Str.format("E")=="Sat" || Start_Date_Str.format("E")=="Sun" )){
+//Verify for each date
 WS.verifyElementPropertyValue(response, "["+i+"].Date", Start_Date + "T00:00:00")
 //Verify response Times array
 //Create Data Times Array
@@ -80,8 +84,10 @@ while(realtime_ws.before(time_close_ws)){
 //Loop Verification
 for(def j  = 0;j<count;j++) WS.verifyElementPropertyValue(response, "[0].Times["+j+"]", times[j])
 
+//Set to nextday
 use(groovy.time.TimeCategory) {
 	Start_Date_Str = Start_Date_Str + 1.day}
 	Start_Date = Start_Date_Str.format("yyyy-MM-dd") as String
+	}
 }
 

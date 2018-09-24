@@ -16,4 +16,22 @@ import internal.GlobalVariable as GlobalVariable
 import groovy.sql.Sql
 import java.sql.Driver
 
-println new Date().format(E)
+
+
+
+	def birds = ["Parrot", "Cockatiel", "Pigeon"] as String[]
+		
+	def birdsWithoutParrot = birds - "Parrot"
+		
+	println birds // [Parrot, Cockatiel, Pigeon]
+		
+	println birdsWithoutParrot // [Cockatiel, Pigeon]
+def times = new String[40]
+times[0] = "0"
+times[1] = "1"
+times[2] = "2"
+times[3] = "3"
+times[4] = "4"
+println times
+times = times - "3"
+println times
