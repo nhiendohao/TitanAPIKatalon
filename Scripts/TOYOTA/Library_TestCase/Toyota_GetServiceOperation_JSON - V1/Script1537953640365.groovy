@@ -26,14 +26,20 @@ import com.sun.jna.StringArray
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import static com.xlson.groovycsv.CsvParser.parseCsv
+@Grab('com.xlson.groovycsv:groovycsv:1.3')
 
-//
+//V0. Verify Status code and get Json data
+//V1. Get data from CSV file
+//Verify data
+
+//Declare request
 RequestObject GetServiceOperation = findTestObject('Toyota/GetServiceOperations_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('VIN') : GlobalVariable.Glb_VIN
             , ('Service_Type') : Service_Type])
-
+//Declare header
 GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
     GlobalVariable.Glb_Authorization_Token))
-
+//Send request
 ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 
 //Verify Response Status = 200 OK
@@ -58,11 +64,23 @@ for(int i = 0;i<50;i++) {
 		count +=1	
 	}
 }
-println Op_Code[0][0]
 println count
-println Op_Code[38][0]
-println res_Text[0].Name
-println Op_Code[39][0]
-//Verify Booking ID
-//WS.verifyElementPropertyValue(res_GetServiceOperation, 'BookingID', GlobalVariable.Glb_Booking_ID)
 
+//Get data from CSV file
+CSVReader = new File('Data Files/Toyota/test.csv')
+def csv_content = CSVReader.getText('utf-8')
+ //Convert CSV to text
+def CSVData = parseCsv(csv_content, separator: ',', readFirstLine: false)
+ //Get for each column
+for (line in CSVData) {
+	 lineName = line.Name
+}
+for (line in CSVData) {
+	lineDMSOperationalCode = line.DMSOperationalCode
+}
+for (line in CSVData) {
+	lineDuration = line.Duration
+}
+for (line in CSVData) {
+	lineDealerPrice = line.DealerPrice
+}

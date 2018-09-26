@@ -63,7 +63,6 @@ import java.sql.Driver
 	  def csv_content = fh.getText('utf-8')
 	   
 	  def data_iterator = parseCsv(csv_content, separator: ',', readFirstLine: false)
-	  // println data_iterator.getClass()  // class com.xlson.groovycsv.CsvIterator
 	   
 	  for (line in data_iterator) {
 		  println line.Name

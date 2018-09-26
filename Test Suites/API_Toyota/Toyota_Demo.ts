@@ -91,5 +91,65 @@
          <value></value>
          <variableId>e1467350-733f-4e75-899a-147cb2dddbec</variableId>
       </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>09569bdd-6e7e-474b-8d08-702f2c0a2de1</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>b7d5cf1e-3d66-4e05-805e-3fd1a45d0583</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>2cc569d2-fa22-4e66-8134-56043f52d9cf</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>8c40bf83-ebb5-40ee-873e-e05635e92684</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>b01e1fe7-3180-423b-94a9-f3a85f61adff</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>8a3b1926-1cb9-48d0-b925-41655b48afd5</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>94e5e0b6-30ac-4c71-ad45-d50c272f8ac1</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>f4458569-9360-49ef-9b9d-e1cf86123335</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>52e21d38-a402-472f-8101-c58e8f67b243</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>3822090f-5c42-48c6-a6ec-bdcf9cbab4cb</variableId>
+      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>
