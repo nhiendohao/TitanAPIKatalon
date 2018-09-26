@@ -40,7 +40,7 @@ ResponseObject res_GetPickupTime = WS.sendRequest(GetPickupTime)
 //Convert String to Date
 def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
-def DropOff_Time = Date.parse("HH:mm", GlobalVariable.Glb_DropOffTime_) as Date
+def DropOffTime = Date.parse("HH:mm", GlobalVariable.Glb_DropOffTime) as Date
 //Convert String to Integer
 int Duration = GlobalVariable.Glb_Duration_Time as Integer
 //Declare Time Workshop Open and Time WS Close
@@ -52,7 +52,7 @@ def End_WS_Hr = Date.parse("HH:mm", End_WS_Str) as Date
 //Calculate Time avalable for service
 int duration_hours
 use(groovy.time.TimeCategory) {
-	def duration = End_WS_Hr - DropOff_Time
+	def duration = End_WS_Hr - DropOffTime
 	duration_hours = duration.hours as Integer
 	println duration_hours
 	}
