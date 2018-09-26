@@ -15,25 +15,10 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import groovy.sql.Sql
 import java.sql.Driver
-import static com.xlson.groovycsv.CsvParser.parseCsv
-@Grab('com.xlson.groovycsv:groovycsv:1.3')
- 
-fh = new File('Data Files/Toyota/test.csv')
-def csv_content = fh.getText('utf-8')
- 
-def data_iterator = parseCsv(csv_content, separator: ',', readFirstLine: false)
-// println data_iterator.getClass()  // class com.xlson.groovycsv.CsvIterator
- 
-for (line in data_iterator) {
-	println line.Name
+def sum = { x,y ->
+	return x+y
+	
 }
 
-	def birds = ["Parrot", "Cockatiel", "Pigeon"] as String[]
-		
-	def birdsWithoutParrot = birds - "Parrot"
-		
-	println birds // [Parrot, Cockatiel, Pigeon]
-		
-	println birdsWithoutParrot // [Cockatiel, Pigeon]
 
-assert (4-1)==3
+println sum(5,6)

@@ -61,4 +61,11 @@
       <masked>false</masked>
       <name>Setup_REGNumber</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>24352370-1d5f-4531-9745-933c038137b2</id>
+      <masked>false</masked>
+      <name>Setup_ServiceDate</name>
+   </variable>
 </TestCaseEntity>

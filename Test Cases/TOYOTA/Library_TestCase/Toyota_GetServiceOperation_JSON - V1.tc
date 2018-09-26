@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Toyota_GetServiceOperation_JSON - Copy</name>
+   <name>Toyota_GetServiceOperation_JSON - V1</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>f8b2a657-1bcd-4834-99e3-1a9ee701d1f6</testCaseGuid>

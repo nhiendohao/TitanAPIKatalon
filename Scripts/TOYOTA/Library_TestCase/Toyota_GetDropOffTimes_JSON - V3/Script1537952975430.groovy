@@ -3,6 +3,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import java.lang.reflect.Array
+
+
 import org.eclipse.persistence.internal.oxm.record.json.JSONParser.array_return
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
@@ -30,18 +32,40 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 //V1. Check timeslot for more days from TODAY. Check for Saturday and Sunday
 //Get the current Date
 //V2. Check the number of drop off list == expected timeslot.
-Start_Date = GlobalVariable.Glb_ServiceDate
+//V3. Check Status code response when Start Date is after End Date
+//Check Status code response when ServiceBay Type is wrong
+//Validate Duration
+
+//If Start_Date is not declare, default value = Glb_ServiceDate
+if(Start_Date as String =="") Start_Date = GlobalVariable.Glb_ServiceDate
+//Parse String data to Date type Data
+def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 def Start_Date_Str = Date.parse("yyyy-MM-dd", Start_Date) as Date
 def End_Date_Str = Date.parse("yyyy-MM-dd", End_Date) as Date
-
-// load test request object which will use token above in Authorization
-RequestObject mainrequest = findTestObject('Toyota/GetDropOffTimes_JSON', [('Start_Date') : Start_Date, ('End_Date') : End_Date
+//Declare Time Workshop Open and Time WS Close
+int Start = GlobalVariable.Glb_WorkshopStart as Integer
+int End = GlobalVariable.Glb_WorkshopEnd as Integer
+//Declare Interval for Timeslots and Duration for Service
+int Interval = GlobalVariable.Glb_Interval as Integer
+int Duration = GlobalVariable.Glb_Duration_Time as Integer
+// Declare request with parameter
+RequestObject GetServiceOperation = findTestObject('Toyota/GetDropOffTimes_JSON', [('Start_Date') : Start_Date, ('End_Date') : End_Date
 		, ('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type,('Duration_Time') : GlobalVariable.Glb_Duration_Time,('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
-mainrequest.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Basic " + GlobalVariable.Glb_Authorization_Token))
-ResponseObject response = WS.sendRequest(mainrequest)
+//Set Authorization in Header
+GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Basic " + GlobalVariable.Glb_Authorization_Token))
+//Send request
+ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 
-//Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(response, 200)
+//Verify Response Status for
+//Nagative parameters
+ if(Start_Date_Str.after(End_Date_Str)||Start_Date_Str.before(current)) WS.verifyResponseStatusCode(res_GetServiceOperation, 404)
+ else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
+	 GlobalVariable.Glb_ServiceBay_Type == "EXPRESS"||
+	 GlobalVariable.Glb_ServiceBay_Type == "REPAIR"||
+	 GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC")||Duration <= 0||Duration >= 10) WS.verifyResponseStatusCode(res_GetServiceOperation, 400)
+	 //Positive Parameter
+	 else {
+	 WS.verifyResponseStatusCode(res_GetServiceOperation, 200)
 
 //Get duration days
 int duration_days
@@ -55,17 +79,11 @@ use(groovy.time.TimeCategory) {
 for (def i=0;i< duration_days+1;i++){
 	if(!(Start_Date_Str.format("E")=="Sat" || Start_Date_Str.format("E")=="Sun" )){
 //Verify for each date
-WS.verifyElementPropertyValue(response, "["+i+"].Date", Start_Date + "T00:00:00")
+WS.verifyElementPropertyValue(res_GetServiceOperation, "["+i+"].Date", Start_Date + "T00:00:00")
 //Verify response Times array
 //Create Data Times Array
 //Create real time variable
 def realtime_ws = new Date()
-//Declare Time Workshop Open and Time WS Close
-int Start = GlobalVariable.Glb_WorkshopStart as Integer
-int End = GlobalVariable.Glb_WorkshopEnd as Integer
-//Declare Interval for Timeslots and Duration for Service
-int Interval = GlobalVariable.Glb_Interval as Integer
-int Duration = GlobalVariable.Glb_Duration_Time as Integer
 //Set realtime as Time Workshop Open
 realtime_ws.set(hourOfDay: Start, minute:00)
 println realtime_ws.format("HH:mm")
@@ -91,19 +109,19 @@ if(!(Reserve_Timeslot == "")){
 println times
 
 //Convert JSON data into Array string
-def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
+def res_Text = new groovy.json.JsonSlurper().parseText(res_GetServiceOperation.getResponseText())
 def timeslotJSON
 res_Text.Times.each{ timeslotJSON = it}
 
 //Verify number of element between JSON response and slot of WS
-assert timeslotJSON.size == count
+//assert timeslotJSON.size == count
 //Loop Verification
-//for(def j  = 0;j<count;j++) WS.verifyElementPropertyValue(response, "["+i+"].Times["+j+"]", times[j])
+for(def j  = 0;j<count;j++) WS.verifyElementPropertyValue(res_GetServiceOperation, "["+i+"].Times["+j+"]", times[j])
 
 //Set to nextday
 use(groovy.time.TimeCategory) {
 	Start_Date_Str = Start_Date_Str + 1.day}
 	Start_Date = Start_Date_Str.format("yyyy-MM-dd") as String
 	}
+  }
 }
-

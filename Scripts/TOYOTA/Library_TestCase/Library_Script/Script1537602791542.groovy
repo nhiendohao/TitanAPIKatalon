@@ -54,4 +54,18 @@ import java.sql.Driver
 	  //Convert Json --> Array
 	  def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
 	  res_Text.Times.each{ times = it}
+	  //--------------------------------------------------------------------------------------------------------
+	  //Reading CSV
+	  import static com.xlson.groovycsv.CsvParser.parseCsv
+	  @Grab('com.xlson.groovycsv:groovycsv:1.3')
+	   
+	  fh = new File('Data Files/Toyota/test.csv')
+	  def csv_content = fh.getText('utf-8')
+	   
+	  def data_iterator = parseCsv(csv_content, separator: ',', readFirstLine: false)
+	  // println data_iterator.getClass()  // class com.xlson.groovycsv.CsvIterator
+	   
+	  for (line in data_iterator) {
+		  println line.Name
+	  }
 	  

@@ -26,7 +26,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
-//
+//V0. Check response and get token
+//V1. Check reserve timeslot will be unavailable
 RequestObject ReserveTimeslot = findTestObject('Toyota/ReserveTimeslots_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate
         , ('Duration') : GlobalVariable.Glb_Duration_Time, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime
         , ('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type, ('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
@@ -57,7 +58,7 @@ if (GlobalVariable.Glb_Reserve_Token == '') {
     println(GlobalVariable.Glb_Reserve_Token)
 }
 
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - Copy (1)'), [
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3'), [
 	('Start_Date') : GlobalVariable.Glb_ServiceDate, 
 	('End_Date') : GlobalVariable.Glb_ServiceDate, 
 	('Service_Type') : GlobalVariable.Glb_ServiceBay_Type,

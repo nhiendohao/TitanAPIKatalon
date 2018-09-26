@@ -36,7 +36,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'2'</initValue>
+      <initValue>'10'</initValue>
       <name>Glb_Duration_Time</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -78,5 +78,10 @@
       <description></description>
       <initValue>'REG_TITAN_API'</initValue>
       <name>Glb_REGNumber</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_Current_Date</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

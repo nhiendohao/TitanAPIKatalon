@@ -24,8 +24,10 @@ GlobalVariable.Glb_Dealer_Code = Setup_Dealer_Code
 GlobalVariable.Glb_Location_Code = Setup_Location_Code
 GlobalVariable.Glb_VIN = Setup_VIN
 GlobalVariable.Glb_REGNumber = Setup_REGNumber
+GlobalVariable.Glb_ServiceDate = Setup_ServiceDate
 
 //Set up Service Time
 def today = new Date()
 def current = today.format("YYYY-MM-dd")
-GlobalVariable.Glb_ServiceDate = current
+GlobalVariable.Glb_Current_Date = current
+if(!(GlobalVariable.Glb_ServiceDate as String =="")) GlobalVariable.Glb_ServiceDate = current
