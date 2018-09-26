@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Toyota_GetServiceOperation_JSON - Copy</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f8b2a657-1bcd-4834-99e3-1a9ee701d1f6</testCaseGuid>
+   <variable>
+      <defaultValue>'OSB_SERVICE_TYPE_LOGBOOK'</defaultValue>
+      <description></description>
+      <id>b6a04e17-83d5-4d53-a14e-3da140a05b84</id>
+      <masked>false</masked>
+      <name>Service_Type</name>
+   </variable>
+</TestCaseEntity>

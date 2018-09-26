@@ -29,6 +29,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 //V0. Check timeslot for 1 day
 //V1. Check timeslot for more days from TODAY. Check for Saturday and Sunday
 //Get the current Date
+//V2. Check the number of drop off list == expected timeslot.
 Start_Date = GlobalVariable.Glb_ServiceDate
 def Start_Date_Str = Date.parse("yyyy-MM-dd", Start_Date) as Date
 def End_Date_Str = Date.parse("yyyy-MM-dd", End_Date) as Date
@@ -88,8 +89,15 @@ if(!(Reserve_Timeslot == "")){
 	count = count - 1
 }
 println times
+def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
+def timeslotJSON
+res_Text.Times.each{ timeslotJSON = it}
+println  timeslotJSON[0]
+println  timeslotJSON.size
+
+//Verify number of element between JSON response and 
 //Loop Verification
-for(def j  = 0;j<count;j++) WS.verifyElementPropertyValue(response, "["+i+"].Times["+j+"]", times[j])
+//for(def j  = 0;j<count;j++) WS.verifyElementPropertyValue(response, "["+i+"].Times["+j+"]", times[j])
 
 //Set to nextday
 use(groovy.time.TimeCategory) {

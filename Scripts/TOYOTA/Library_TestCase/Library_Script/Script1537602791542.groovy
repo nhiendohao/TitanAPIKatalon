@@ -51,5 +51,7 @@ import java.sql.Driver
 		  println  "Days: ${duration.days}, Hours: ${duration.hours}, etc."
 	  }
 	  //--------------------------------------------------------------------------------------------------------
-	  
+	  //Convert Json --> Array
+	  def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
+	  res_Text.Times.each{ times = it}
 	  

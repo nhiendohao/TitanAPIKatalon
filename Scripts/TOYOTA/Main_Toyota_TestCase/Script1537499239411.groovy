@@ -27,7 +27,7 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variab
 
 //2. Get Operation Code for customer
 WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON'), [
-	('Service_Type') : 'File DataSet'], //Set the Type of Service. Ex: OSB_SERVICE_TYPE_LOGBOOK
+	('Service_Type') : Service_Type], //Set the Type of Service. Ex: OSB_SERVICE_TYPE_LOGBOOK
     FailureHandling.STOP_ON_FAILURE)
 
 //3. Get Drop Off Timeslot for Customer
@@ -37,7 +37,7 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetServiceOperat
 WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON'), [
 	('Start_Date') : 'Auto Data', 
 	('End_Date') : 'Auto Data', 
-	('Service_Type') : 'File DataSet'], 
+	('ServiceBay_Type') : ServiceBay_Type], 
 	FailureHandling.STOP_ON_FAILURE)
 
 //4. Get PickUp Timeslot for Customer
@@ -46,7 +46,7 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_
 //One pick up time can be chosen by many customer
 
 WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON'), [
-	('Drop_Off_Time') : 'File DataSet'], 
+	('Drop_Off_Time') : Drop_Off_Time], 
 	FailureHandling.STOP_ON_FAILURE)
 
 //5. Make a reservation for Drop off timeslot of service.

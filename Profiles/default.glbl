@@ -11,7 +11,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'2018-09-24'</initValue>
+      <initValue>'2018-09-26'</initValue>
       <name>Glb_ServiceDate</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -36,7 +36,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'1'</initValue>
+      <initValue>'2'</initValue>
       <name>Glb_Duration_Time</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -56,7 +56,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'136872'</initValue>
+      <initValue>'136889'</initValue>
       <name>Glb_Booking_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

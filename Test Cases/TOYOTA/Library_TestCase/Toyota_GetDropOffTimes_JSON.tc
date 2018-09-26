@@ -24,6 +24,6 @@
       <description></description>
       <id>ed347226-1e3e-487a-b472-5f5c37903915</id>
       <masked>false</masked>
-      <name>Service_Type</name>
+      <name>ServiceBay_Type</name>
    </variable>
 </TestCaseEntity>

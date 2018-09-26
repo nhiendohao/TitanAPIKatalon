@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Toyota_Demo" time="10" tests="1" failures="0" errors="0">
+   <testsuite name="Toyota_Demo" tests="1" failures="0" errors="0" time="10" timestamp="2018-09-26 09:19:52" hostname="vinh.le - TITAN-V-2001.titandms.local" id="Test Suites/API_Toyota/Toyota_Demo">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="C:\\Users\\vinh.le\\git\\TitanAPIKatalon_new\\Reports\\API_Toyota\\Toyota_Demo\\20180926_091951"/>
+         <property name="logFiles" value="C:\\Users\\vinh.le\\git\\TitanAPIKatalon_new\\Reports\\API_Toyota\\Toyota_Demo\\20180926_091951\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="vinh.le - TITAN-V-2001.titandms.local"/>
+         <property name="hostAddress" value="192.168.3.19"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.7.1.1"/>
+      </properties>
+      <testcase name="Test Cases/TOYOTA/Main_Toyota_TestCase" classname="Test Cases/TOYOTA/Main_Toyota_TestCase" status="PASSED">
+         <system-out><![CDATA[2018-09-26 09:19:52 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Main_Toyota_TestCase: Test Cases/TOYOTA/Main_Toyota_TestCase
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables' successfully
+
+2018-09-26 09:19:53 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables: Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - Glb_Interval = Setup_Interval: null
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - Glb_WorkshopStart = Setup_WorkshopStart: null
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - Glb_WorkshopEnd = Setup_WorkshopEnd: null
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - Glb_Dealer_Code = Setup_Dealer_Code: null
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - Glb_Location_Code = Setup_Location_Code: null
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - Glb_VIN = Setup_VIN: null
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - Glb_REGNumber = Setup_REGNumber: null
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - today = new java.util.Date(): null
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - current = today.format("YYYY-MM-dd"): null
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - Glb_ServiceDate = current: null
+
+2018-09-26 09:19:53 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables' successfully
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON' successfully
+
+2018-09-26 09:19:53 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON: Test Cases/TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - GetServiceOperation = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetServiceOperations_JSON, [Dealer_Code:internal.GlobalVariable.Glb_Dealer_Code, Location_Code:internal.GlobalVariable.Glb_Location_Code, VIN:internal.GlobalVariable.Glb_VIN, ... ]): Finding Test Object with id 'Object Repository/Toyota/GetServiceOperations_JSON'
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - GetServiceOperation.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token))): null
+
+2018-09-26 09:19:53 - [TEST_STEP][PASSED] - Statement - res_GetServiceOperation = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(GetServiceOperation): Send request successfully
+
+2018-09-26 09:19:57 - [MESSAGE][PASSED] - Send request successfully
+
+2018-09-26 09:19:57 - [TEST_STEP][PASSED] - verifyResponseStatusCode: Verify response status code successfully
+
+2018-09-26 09:19:57 - [MESSAGE][PASSED] - Verify response status code successfully
+
+2018-09-26 09:19:57 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON' successfully
+
+2018-09-26 09:19:57 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON' successfully
+
+2018-09-26 09:19:57 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON: Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - Start_Date = Glb_ServiceDate: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - End_Date = Glb_ServiceDate: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - mainrequest = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetDropOffTimes_JSON, [Start_Date:Start_Date, End_Date:End_Date, ServiceBay_Type:internal.GlobalVariable.Glb_ServiceBay_Type, Duration_Time:internal.GlobalVariable.Glb_Duration_Time, ... ]): Finding Test Object with id 'Object Repository/Toyota/GetDropOffTimes_JSON'
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - mainrequest.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token))): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - response = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(mainrequest): Send request successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Send request successfully
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - verifyResponseStatusCode: Verify response status code successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify response status code successfully
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - realtime_ws = new java.util.Date(): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - Start = Glb_WorkshopStart: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - End = Glb_WorkshopEnd: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - Interval = Glb_Interval: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - Duration = Glb_Duration_Time: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - realtime_ws.set(["hourOfDay":Start, "minute":0]): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - println(realtime_ws.format("HH:mm")): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - time_close_ws = new java.util.Date(): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - time_close_ws.set(["hourOfDay":End - Duration, "minute":0]): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times = []: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = 0: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - While (realtime_ws.before(time_close_ws)): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:58 - [TEST_STEP][PASSED] - Statement - For ([j = 0, j < count, (j++)]): Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:58 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON' successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON' successfully
+
+2018-09-26 09:19:59 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON: Test Cases/TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - GetPickupTime = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetPickUpTimes_JSON, [Service_Date:internal.GlobalVariable.Glb_ServiceDate, Drop_Off_Time:Drop_Off_Time, ServiceBay_Time:internal.GlobalVariable.Glb_ServiceBay_Type, ... ]): Finding Test Object with id 'Object Repository/Toyota/GetPickUpTimes_JSON'
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - GetPickupTime.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token))): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - res_GetPickupTime = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(GetPickupTime): Send request successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Send request successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyResponseStatusCode: Verify response status code successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify response status code successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - realtime_ws = new java.util.Date(): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - Start = Glb_WorkshopStart: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - End = Glb_WorkshopEnd: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - Interval = Glb_Interval: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - Duration = Glb_Duration_Time: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - realtime_ws.set(["hourOfDay":Start + Duration, "minute":0]): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - println(realtime_ws.format("HH:mm")): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - time_close_ws = new java.util.Date(): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - time_close_ws.set(["hourOfDay":End, "minute":0]): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times = []: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = 0: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - While (realtime_ws.before(time_close_ws)): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - times[count] = realtime_ws.format("HH:mm"): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - count = count + 1: null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - use(groovy.time.TimeCategory, { -> ... }): null
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - Statement - For ([j = 0, j < count, (j++)]): Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:19:59 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:19:59 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:00 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:00 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:00 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:00 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:00 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:00 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON' successfully
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_ReserveTimeslots_JSON' successfully
+
+2018-09-26 09:20:00 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Library_TestCase/Toyota_ReserveTimeslots_JSON: Test Cases/TOYOTA/Library_TestCase/Toyota_ReserveTimeslots_JSON
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - Statement - ReserveTimeslot = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/ReserveTimeslots_JSON, [Service_Date:internal.GlobalVariable.Glb_ServiceDate, Duration:internal.GlobalVariable.Glb_Duration_Time, Drop_Off_Time:internal.GlobalVariable.Glb_DropOffTime, ... ]): Finding Test Object with id 'Object Repository/Toyota/ReserveTimeslots_JSON'
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - Statement - ReserveTimeslot.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token))): null
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - Statement - res_ReserveTimeslot = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(ReserveTimeslot): Send request successfully
+
+2018-09-26 09:20:00 - [MESSAGE][PASSED] - Send request successfully
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - verifyResponseStatusCode: Verify response status code successfully
+
+2018-09-26 09:20:00 - [MESSAGE][PASSED] - Verify response status code successfully
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:00 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:00 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - Statement - res_Text = new groovy.json.JsonSlurper().parseText(res_ReserveTimeslot.getResponseText()): null
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - Statement - Glb_Reserve_Token = XReserveToken: null
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - Statement - If (Glb_Reserve_Token == ""): null
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - Statement - Else: null
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - Statement - println(Glb_Reserve_Token): null
+
+2018-09-26 09:20:00 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_ReserveTimeslots_JSON' successfully
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetTransportOption_JSON' successfully
+
+2018-09-26 09:20:00 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Library_TestCase/Toyota_GetTransportOption_JSON: Test Cases/TOYOTA/Library_TestCase/Toyota_GetTransportOption_JSON
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - Statement - GetTransportOption = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetTransportOptions_JSON, [Service_Date:internal.GlobalVariable.Glb_ServiceDate, Dealer_Code:internal.GlobalVariable.Glb_Dealer_Code, Location_Code:internal.GlobalVariable.Glb_Location_Code]): Finding Test Object with id 'Object Repository/Toyota/GetTransportOptions_JSON'
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - Statement - GetTransportOption.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token))): null
+
+2018-09-26 09:20:00 - [TEST_STEP][PASSED] - Statement - res_GetTransportOption = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(GetTransportOption): Send request successfully
+
+2018-09-26 09:20:01 - [MESSAGE][PASSED] - Send request successfully
+
+2018-09-26 09:20:01 - [TEST_STEP][PASSED] - verifyResponseStatusCode: Verify response status code successfully
+
+2018-09-26 09:20:01 - [MESSAGE][PASSED] - Verify response status code successfully
+
+2018-09-26 09:20:01 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:01 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:01 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:01 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:01 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:01 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:01 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:01 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:01 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:01 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:01 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:01 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:01 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetTransportOption_JSON' successfully
+
+2018-09-26 09:20:01 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON' successfully
+
+2018-09-26 09:20:01 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON: Test Cases/TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON
+
+2018-09-26 09:20:01 - [TEST_STEP][PASSED] - Statement - MakeServiceBooking = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/MakeServiceBooking_JSON, [VIN:internal.GlobalVariable.Glb_VIN, REGNumber:internal.GlobalVariable.Glb_REGNumber, Service_Date:internal.GlobalVariable.Glb_ServiceDate, ... ]): Finding Test Object with id 'Object Repository/Toyota/MakeServiceBooking_JSON'
+
+2018-09-26 09:20:01 - [TEST_STEP][PASSED] - Statement - MakeServiceBooking.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token))): null
+
+2018-09-26 09:20:01 - [TEST_STEP][PASSED] - Statement - res_MakeServiceBooking = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(MakeServiceBooking): Send request successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Send request successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyResponseStatusCode: Verify response status code successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify response status code successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - Statement - res_Text = new groovy.json.JsonSlurper().parseText(res_MakeServiceBooking.getResponseText()): null
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - Statement - Glb_Booking_ID = BookingID: null
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - Statement - If (Glb_Reserve_Token == ""): null
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - Statement - Else: null
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - Statement - println(Glb_Booking_ID): null
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON' successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON' successfully
+
+2018-09-26 09:20:02 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON: Test Cases/TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - Statement - SearchForBooking = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/SearchForBooking_JSON, [Dealer_Code:internal.GlobalVariable.Glb_Dealer_Code, Location_Code:internal.GlobalVariable.Glb_Location_Code, Service_Date:internal.GlobalVariable.Glb_ServiceDate, ... ]): Finding Test Object with id 'Object Repository/Toyota/SearchForBooking_JSON'
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - Statement - SearchForBooking.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token))): null
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - Statement - res_SearchForBooking = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(SearchForBooking): Send request successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Send request successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyResponseStatusCode: Verify response status code successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify response status code successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON' successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON' successfully
+
+2018-09-26 09:20:02 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON: Test Cases/TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - Statement - GetBookingDetail = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetBookingDetails_JSON, [Dealer_Code:internal.GlobalVariable.Glb_Dealer_Code, Location_Code:internal.GlobalVariable.Glb_Location_Code, BookingID:internal.GlobalVariable.Glb_Booking_ID]): Finding Test Object with id 'Object Repository/Toyota/GetBookingDetails_JSON'
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - Statement - GetBookingDetail.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token))): null
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - Statement - res_GetBookingDetail = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(GetBookingDetail): Send request successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Send request successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyResponseStatusCode: Verify response status code successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify response status code successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [TEST_STEP][PASSED] - verifyElementPropertyValue: Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Verify element property value successfully
+
+2018-09-26 09:20:02 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON' successfully]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-09-26 09:19:52 - [TEST_SUITE][PASSED] - Toyota_Demo: Test Cases/TOYOTA/Main_Toyota_TestCase]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

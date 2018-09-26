@@ -26,6 +26,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
+//V0. Get pick up timeslot and check all slot for any date input, not validate
 // load test request object which will use token above in Authorization
 RequestObject GetPickupTime = findTestObject('Toyota/GetPickUpTimes_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Drop_Off_Time') : Drop_Off_Time
             , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type, ('Duration_Time') : GlobalVariable.Glb_Duration_Time,('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])

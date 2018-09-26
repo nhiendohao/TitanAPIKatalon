@@ -30,8 +30,8 @@ def times = new String[40]
 times[0] = "0"
 times[1] = "1"
 times[2] = "2"
-times[3] = "3"
+times[3] = "08:15"
 times[4] = "4"
 println times
-times = times - "3"
+times = times - GlobalVariable.Glb_DropOffTime
 println times

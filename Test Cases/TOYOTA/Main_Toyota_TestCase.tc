@@ -75,4 +75,11 @@
       <masked>false</masked>
       <name>REGNumber</name>
    </variable>
+   <variable>
+      <defaultValue>'PERIODIC'</defaultValue>
+      <description></description>
+      <id>e1467350-733f-4e75-899a-147cb2dddbec</id>
+      <masked>false</masked>
+      <name>ServiceBay_Type</name>
+   </variable>
 </TestCaseEntity>
