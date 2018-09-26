@@ -27,6 +27,7 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //V0. Get pick up timeslot and check all slot for any date input, not validate
+//V1. Check the number element between JSON and timeslot of WS
 // load test request object which will use token above in Authorization
 RequestObject GetPickupTime = findTestObject('Toyota/GetPickUpTimes_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Drop_Off_Time') : Drop_Off_Time
             , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type, ('Duration_Time') : GlobalVariable.Glb_Duration_Time,('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
@@ -74,6 +75,14 @@ while (realtime_ws.before(time_close_ws)) {
         })
 }
 
+//Convert JSON data into Array string
+def res_Text = new groovy.json.JsonSlurper().parseText(res_GetPickupTime.getResponseText())
+def timeslotJSON
+res_Text.Times.each{ timeslotJSON = it}
+
+//Verify number of element between JSON response and slot of WS
+assert timeslotJSON.size == count
+println count
 //Loop Verification
 for (def j = 0; j < count; j++) {
     WS.verifyElementPropertyValue(res_GetPickupTime, ('[0].Times[' + j) + ']', times[j])

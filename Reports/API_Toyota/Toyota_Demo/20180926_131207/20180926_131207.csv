@@ -1,0 +1,6 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Toyota_Demo,,,2018-09-26 13:12:08,2018-09-26 13:12:24,16.291s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase,,,2018-09-26 13:12:08,2018-09-26 13:12:24,15.970s,FAILED
+callTestCase,,,2018-09-26 13:12:08,2018-09-26 13:12:08,0.260s,PASSED
+callTestCase,,,2018-09-26 13:12:08,2018-09-26 13:12:24,15.403s,FAILED

@@ -89,13 +89,14 @@ if(!(Reserve_Timeslot == "")){
 	count = count - 1
 }
 println times
+
+//Convert JSON data into Array string
 def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
 def timeslotJSON
 res_Text.Times.each{ timeslotJSON = it}
-println  timeslotJSON[0]
-println  timeslotJSON.size
 
-//Verify number of element between JSON response and 
+//Verify number of element between JSON response and slot of WS
+assert timeslotJSON.size == count
 //Loop Verification
 //for(def j  = 0;j<count;j++) WS.verifyElementPropertyValue(response, "["+i+"].Times["+j+"]", times[j])
 

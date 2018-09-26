@@ -15,9 +15,18 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import groovy.sql.Sql
 import java.sql.Driver
-
-
-
+import static com.xlson.groovycsv.CsvParser.parseCsv
+@Grab('com.xlson.groovycsv:groovycsv:1.3')
+ 
+fh = new File('Data Files/Toyota/test.csv')
+def csv_content = fh.getText('utf-8')
+ 
+def data_iterator = parseCsv(csv_content, separator: ',', readFirstLine: false)
+// println data_iterator.getClass()  // class com.xlson.groovycsv.CsvIterator
+ 
+for (line in data_iterator) {
+	println line.Name
+}
 
 	def birds = ["Parrot", "Cockatiel", "Pigeon"] as String[]
 		
@@ -26,12 +35,5 @@ import java.sql.Driver
 	println birds // [Parrot, Cockatiel, Pigeon]
 		
 	println birdsWithoutParrot // [Cockatiel, Pigeon]
-def times = new String[40]
-times[0] = "0"
-times[1] = "1"
-times[2] = "2"
-times[3] = "08:15"
-times[4] = "4"
-println times
-times = times - GlobalVariable.Glb_DropOffTime
-println times
+
+assert (4-1)==3
