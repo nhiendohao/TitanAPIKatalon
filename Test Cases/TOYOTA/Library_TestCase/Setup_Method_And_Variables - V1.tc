@@ -55,7 +55,7 @@
       <name>Setup_VIN</name>
    </variable>
    <variable>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'REG_TITAN_API'</defaultValue>
       <description></description>
       <id>288ffd91-4d40-408f-9848-115046e84076</id>
       <masked>false</masked>
@@ -67,5 +67,47 @@
       <id>82077425-4d26-4910-9d9b-fccfd860f477</id>
       <masked>false</masked>
       <name>Setup_ServiceDate</name>
+   </variable>
+   <variable>
+      <defaultValue>'08:00'</defaultValue>
+      <description></description>
+      <id>37ac374d-09e1-43e7-9230-749f904f86cb</id>
+      <masked>false</masked>
+      <name>Setup_DropOffTime</name>
+   </variable>
+   <variable>
+      <defaultValue>'17:00'</defaultValue>
+      <description></description>
+      <id>bd98a4b3-80cc-489a-b949-34d64304f110</id>
+      <masked>false</masked>
+      <name>Setup_PickUpTime</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>4550e2ab-c147-4f87-b115-d7ea1406958c</id>
+      <masked>false</masked>
+      <name>Setup_TotalPrice</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c2ebe5a3-3843-4a9c-936f-849c8b66eb51</id>
+      <masked>false</masked>
+      <name>Setup_TotalDuration</name>
+   </variable>
+   <variable>
+      <defaultValue>'TITAN'</defaultValue>
+      <description></description>
+      <id>52195119-48a7-4a9c-a9b9-402f5147ec69</id>
+      <masked>false</masked>
+      <name>Setup_FirstName</name>
+   </variable>
+   <variable>
+      <defaultValue>'DMS'</defaultValue>
+      <description></description>
+      <id>e8d66a4d-a89a-4902-9dae-b859e68e204d</id>
+      <masked>false</masked>
+      <name>Setup_LastName</name>
    </variable>
 </TestCaseEntity>
