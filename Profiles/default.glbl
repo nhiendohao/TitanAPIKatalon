@@ -11,7 +11,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'2018-09-26'</initValue>
+      <initValue>'2018-09-27'</initValue>
       <name>Glb_ServiceDate</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -36,7 +36,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'10'</initValue>
+      <initValue>'1'</initValue>
       <name>Glb_Duration_Time</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

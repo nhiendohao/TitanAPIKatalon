@@ -29,5 +29,4 @@ GlobalVariable.Glb_ServiceDate = Setup_ServiceDate
 //Set up Service Time
 def today = new Date()
 def current = today.format("YYYY-MM-dd")
-GlobalVariable.Glb_Current_Date = current
-if(!(GlobalVariable.Glb_ServiceDate as String =="")) GlobalVariable.Glb_ServiceDate = current
+GlobalVariable.Glb_ServiceDate = current

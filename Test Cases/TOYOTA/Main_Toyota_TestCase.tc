@@ -125,28 +125,28 @@
       <name>var_Status_MakeBooking</name>
    </variable>
    <variable>
-      <defaultValue>'true'</defaultValue>
+      <defaultValue>'false'</defaultValue>
       <description></description>
       <id>94e5e0b6-30ac-4c71-ad45-d50c272f8ac1</id>
       <masked>false</masked>
       <name>var_Status_SearchBooking</name>
    </variable>
    <variable>
-      <defaultValue>'true'</defaultValue>
+      <defaultValue>'false'</defaultValue>
       <description></description>
       <id>f4458569-9360-49ef-9b9d-e1cf86123335</id>
       <masked>false</masked>
       <name>var_Status_GetBookingDetail</name>
    </variable>
    <variable>
-      <defaultValue>'true'</defaultValue>
+      <defaultValue>'false'</defaultValue>
       <description></description>
       <id>52e21d38-a402-472f-8101-c58e8f67b243</id>
       <masked>false</masked>
       <name>var_Status_ChangeBooking</name>
    </variable>
    <variable>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'false'</defaultValue>
       <description></description>
       <id>3822090f-5c42-48c6-a6ec-bdcf9cbab4cb</id>
       <masked>false</masked>
