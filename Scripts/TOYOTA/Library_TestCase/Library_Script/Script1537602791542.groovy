@@ -8,6 +8,7 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.ResponseObject
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -78,5 +79,22 @@ import java.sql.Driver
 	  }
 	  
 	  //--------------------------------------------------------------------------------------------------------------------------
-	  //
+	  //Create random number
+	  Random random = new Random()
+	  def number_random = random.nextInt(9999)
+	  println number_random
+	  
+	  
+	  //--------------------------------------------------------------------------------------------------------------------------
+	  //Method assert reponse and message contain
+	  import static org.assertj.core.api.Assertions.*
+	  
+	  def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
+		  //Verify Response Status = 200 OK
+		  WS.verifyResponseStatusCode(response, StatusCode)
+		  
+		  //Transfer response to Text
+		  def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
+		  if(!(ExpectedMessage==""))assertThat(response.getResponseText()).contains(ExpectedMessage)
+	  }
 	  
