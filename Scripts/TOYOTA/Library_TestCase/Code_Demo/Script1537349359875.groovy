@@ -14,19 +14,23 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-def sum = { x,y ->
-	return x+y
-	
+
+def SetDate = {Date current_time ,int number_month, int number_day ->
+	use(groovy.time.TimeCategory) {
+	  def Expected_Date = current_time + number_day.day + number_month.month
+	  Expected_Date.format("YYYY-MM-dd")
+   }
 }
 
-println sum(5,6)
+def today = new Date()
+def current_date = today.format("YYYY-MM-dd")
+GlobalVariable.Glb_Current_Date = current_date
 
+//Set up value Past/Current/Future for Service Date
 
-def RandomNumber = {int number ->
-	Random random = new Random()
-	def number_random = random.nextInt(number)
-	println number_random
-	return number_random
-}
-
-println "1901" + RandomNumber(9999)
+	GlobalVariable.Glb_ServiceDate = current_date
+println GlobalVariable.Glb_ServiceDate
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,-1)
+println GlobalVariable.Glb_ServiceDate
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,1)
+println GlobalVariable.Glb_ServiceDate

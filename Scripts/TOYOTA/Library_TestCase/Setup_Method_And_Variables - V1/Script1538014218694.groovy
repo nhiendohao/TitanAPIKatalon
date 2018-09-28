@@ -31,9 +31,9 @@ if(!(Setup_TotalDuration == "")) GlobalVariable.Glb_TotalDuration = Setup_TotalD
 
 //METHOD
 //Create Date Past/Future with specific Date from current Date
-def SetDate = {Date current_time ,int number ->
+def SetDate = {Date current_time ,int number_month, int number_day ->
 	use(groovy.time.TimeCategory) {
-	  def Expected_Date = current_time + number.day
+	  def Expected_Date = current_time + number_day.day + number_month.month
 	  Expected_Date.format("YYYY-MM-dd")
    }
 }
@@ -55,25 +55,25 @@ GlobalVariable.Glb_Current_Date = current_date
 if(GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="cr") 
 	GlobalVariable.Glb_ServiceDate = current_date
 else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="p") 
-	GlobalVariable.Glb_ServiceDate = SetDate(current_date,-1)
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,-1)
 else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_ServiceDate = SetDate(current_date,1)
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,1)
 
 //Set up value Past/Current/Future for Service Date
 if(GlobalVariable.Glb_StartDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_StartDate = current_date
 else if (GlobalVariable.Glb_StartDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_StartDate = SetDate(current_date,-1)
+	GlobalVariable.Glb_StartDate = SetDate(today,0,-1)
 else if (GlobalVariable.Glb_StartDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_StartDate = SetDate(current_date,1)
+	GlobalVariable.Glb_StartDate = SetDate(today,0,1)
 
 //Set up value Past/Current/Future for Service Date
 if(GlobalVariable.Glb_EndDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_EndDate = current_date
 else if (GlobalVariable.Glb_EndDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_EndDate = SetDate(current_date,-1)
+	GlobalVariable.Glb_EndDate = SetDate(today,0,-1)
 else if (GlobalVariable.Glb_EndDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_EndDate = SetDate(current_date,1)
+	GlobalVariable.Glb_EndDate = SetDate(today,0,1)
 	
 //Set up ContactId
 	GlobalVariable.Glb_ContactId = "1901" + RandomNumber(999999)
