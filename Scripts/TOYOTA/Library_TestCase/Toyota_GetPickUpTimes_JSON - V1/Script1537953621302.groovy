@@ -76,17 +76,18 @@ use(groovy.time.TimeCategory) {
 	}
 //Validate Negative parameters 
 if (!(GlobalVariable.Glb_Dealer_Code == "765A")) 
+	VerifyResponse(res_GetPickupTime, duration_hours, End_WS_Str)
 else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	GlobalVariable.Glb_ServiceBay_Type == "EXPRESS"||
 	GlobalVariable.Glb_ServiceBay_Type == "REPAIR"||
 	GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC"))
-	VerifyResponse(res_GetPickupTime,400,"Service Bay Type Unknown")
+	{VerifyResponse(res_GetPickupTime,400,"Service Bay Type Unknown")
     Duration <= 0
 	Duration >= 10
-	DropOff_Time.before(Start_WS_Hr)
-	DropOff_Time.after(End_WS_Hr)
+	DropOffTime.before(Start_WS_Hr)
+	DropOffTime.after(End_WS_Hr)
 	(Service_Date.before(current)) VerifyResponse(res_GetPickupTime,404,"Service Bay Type Unknown")
-	duration_hours < Duration) WS.verifyResponseStatusCode(res_GetPickupTime, 400)
+	duration_hours < Duration }
 	else {
 //Verify Response Status = 200 OK
 WS.verifyResponseStatusCode(res_GetPickupTime, 200)

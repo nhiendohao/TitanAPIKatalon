@@ -35,6 +35,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 //V3. Check Status code response when Start Date is after End Date
 //Check Status code response when ServiceBay Type is wrong
 //Validate Duration
+//V4. Validate response = "" when Service Date = Saturday and Sunday (not yet done)
 
 //METHOD
 //Verify response
@@ -71,7 +72,7 @@ GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty("Author
 //Send request
 ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 
-//Verify Response Status for
+//Verify Response Status
 //Clasify case
 //StartDate  after EndDate
 if(Start_Date_Str.after(End_Date_Str)) 
