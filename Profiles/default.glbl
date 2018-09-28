@@ -51,7 +51,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'1'</initValue>
+      <initValue>'2'</initValue>
       <name>Glb_Location_Code</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -71,7 +71,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'VNVNVNVNVNVNVNVN'</initValue>
+      <initValue>'VNVNVNVNVNVNVNVNV'</initValue>
       <name>Glb_VIN</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

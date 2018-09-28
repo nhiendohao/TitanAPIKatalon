@@ -3,7 +3,7 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import java.lang.reflect.Array
-
+import static org.assertj.core.api.Assertions.*
 
 import org.eclipse.persistence.internal.oxm.record.json.JSONParser.array_return
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
@@ -36,6 +36,18 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 //Check Status code response when ServiceBay Type is wrong
 //Validate Duration
 
+//METHOD
+//Verify response
+def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
+	//Verify Response Status = 200 OK
+	WS.verifyResponseStatusCode(response, StatusCode)
+	
+	//Transfer response to Text
+	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
+	if(!(ExpectedMessage==""))assertThat(response.getResponseText()).contains(ExpectedMessage)
+}
+
+//CODE
 //If Start_Date is not declare, default value = Glb_ServiceDate
 if(Start_Date as String =="") Start_Date = GlobalVariable.Glb_ServiceDate
 //Parse String data to Date type Data
@@ -58,11 +70,19 @@ ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 
 //Verify Response Status for
 //Nagative parameters
- if(Start_Date_Str.after(End_Date_Str)||Start_Date_Str.before(current)) WS.verifyResponseStatusCode(res_GetServiceOperation, 404)
- else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
+if(Start_Date_Str.after(End_Date_Str)) 
+ 	VerifyResponse(res_GetServiceOperation,404,"cannot be greater than end date")
+else if(Start_Date_Str.before(current))
+	VerifyResponse(res_GetServiceOperation,404,"is partially outside days when DMS will take bookings")
+else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	 GlobalVariable.Glb_ServiceBay_Type == "EXPRESS"||
 	 GlobalVariable.Glb_ServiceBay_Type == "REPAIR"||
-	 GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC")||Duration <= 0||Duration >= 10) WS.verifyResponseStatusCode(res_GetServiceOperation, 400)
+	 GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC")) 
+ 	VerifyResponse(res_GetServiceOperation,400,"Service Bay Type Unknown")
+else if(Duration <= 0)
+ 	VerifyResponse(res_GetServiceOperation,400,"The duration must be greater than 0")
+else if(Duration >= 10)
+	 VerifyResponse(res_GetServiceOperation,400,"Duration 10 cannot be completed in a single day")
 	 //Positive Parameter
 	 else {
 	 WS.verifyResponseStatusCode(res_GetServiceOperation, 200)
@@ -114,7 +134,7 @@ def timeslotJSON
 res_Text.Times.each{ timeslotJSON = it}
 
 //Verify number of element between JSON response and slot of WS
-//assert timeslotJSON.size == count
+assert timeslotJSON.size == count
 //Loop Verification
 for(def j  = 0;j<count;j++) WS.verifyElementPropertyValue(res_GetServiceOperation, "["+i+"].Times["+j+"]", times[j])
 

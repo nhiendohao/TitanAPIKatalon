@@ -33,6 +33,7 @@ import static org.assertj.core.api.Assertions.*
 //V0. Verify Status code and get Json data
 //V1. Get data from CSV file
 //Verify data
+//V2. Verify the quantity OpCode
 //====================================================================================================
 
 //METHOD
@@ -61,34 +62,29 @@ GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty('Author
 ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 
 //Classify case
+//Invalid Dealer Code
 if(!(GlobalVariable.Glb_Dealer_Code == "765A")) 
 	VerifyResponse(res_GetServiceOperation,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+//Invalid VIN
 else if(GlobalVariable.Glb_VIN.toString().toLowerCase() == "invalid")
 	VerifyResponse(res_GetServiceOperation,404,"The VIN mapping to many vehicles")
+//Closed Workshop
+else if(GlobalVariable.Glb_Location_Code == "2"||
+		GlobalVariable.Glb_Location_Code == "3"||
+		GlobalVariable.Glb_Location_Code == "5")
+	VerifyResponse(res_GetServiceOperation,400,"The Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+//Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
-		GlobalVariable.Glb_Location_Code == "4"||
-		GlobalVariable.Glb_Location_Code == "360")
-	VerifyResponse(res_GetServiceOperation,400,"The Workshop"+ GlobalVariable.Glb_Location_Code +"is close")
+	GlobalVariable.Glb_Location_Code == "4"||
+	GlobalVariable.Glb_Location_Code == "360"))
+VerifyResponse(res_GetServiceOperation,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+//Valid All
+else { VerifyResponse(res_GetServiceOperation,200,"")
+
 //Transfer response to Text
 def res_Text = new groovy.json.JsonSlurper().parseText(res_GetServiceOperation.getResponseText())
-
-//Get the retrieved operation code
-//Declare Array to store data JSON
-/*def Op_Code = new String[50][4]
-Op_Code[0][0] = res_Text[0].Name
-println  Op_Code[0][0]
-int count_JSON =0
-for(int i = 0;i<50;i++) {
-	if( res_Text[i] == null) break
-	else {
-		Op_Code[i][0] = res_Text[i].Name
-		Op_Code[i][1] = res_Text[i].DMSOperationalCode
-		Op_Code[i][2] = res_Text[i].Duration
-		Op_Code[i][3] = res_Text[i].DealerPrice		
-		count_JSON +=1	
-	}
-}
-println count_JSON*/
+def OpCodeJSON
+res_Text.each{ OpCodeJSON = it}
 
 //Get data from CSV file
 int count_CSV = 0
@@ -103,4 +99,8 @@ for (line in CSVData) {
 	 assert res_Text[count_CSV].Duration == line.Duration
 	 assert res_Text[count_CSV].DealerPrice == line.DealerPrice
 	 count_CSV += 1
+  }
+
+//Verify number of element between JSON response and slot of WS
+assert OpCodeJSON.size == count_CSV
 }

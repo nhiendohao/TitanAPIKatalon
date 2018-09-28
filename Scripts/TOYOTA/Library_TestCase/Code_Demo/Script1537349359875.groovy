@@ -27,25 +27,3 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import static org.assertj.core.api.Assertions.*
-
-def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
-	//Verify Response Status = 200 OK
-	WS.verifyResponseStatusCode(response, StatusCode)
-	
-	//Transfer response to Text
-	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
-	if(!(ExpectedMessage==""))assertThat(response.getResponseText()).contains(ExpectedMessage)
-}
-
-//Declare request
-RequestObject GetServiceOperation = findTestObject('Toyota/GetServiceOperations_JSON', [
-	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code,
-	('Location_Code') : GlobalVariable.Glb_Location_Code,
-	('VIN') : GlobalVariable.Glb_VIN,
-	('Service_Type') : 'OSB_SERVICE_TYPE_LOGBOOK'])
-//Declare header
-GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' +
-	GlobalVariable.Glb_Authorization_Token))
-//Send request
-ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
-VerifyResponse(res_GetServiceOperation,200,"")
