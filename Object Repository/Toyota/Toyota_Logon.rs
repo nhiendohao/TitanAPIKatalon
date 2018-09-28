@@ -59,6 +59,8 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
+
+assertThat(response.getResponseText()).contains('Katalon Test Project')
 </verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

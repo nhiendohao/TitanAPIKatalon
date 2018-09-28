@@ -59,7 +59,7 @@ else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="p")
 else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="f")
 	GlobalVariable.Glb_ServiceDate = SetDate(today,0,1)
 
-//Set up value Past/Current/Future for Service Date
+//Set up value Past/Current/Future for Start Date
 if(GlobalVariable.Glb_StartDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_StartDate = current_date
 else if (GlobalVariable.Glb_StartDate.toString().toLowerCase() =="p")
@@ -67,7 +67,7 @@ else if (GlobalVariable.Glb_StartDate.toString().toLowerCase() =="p")
 else if (GlobalVariable.Glb_StartDate.toString().toLowerCase() =="f")
 	GlobalVariable.Glb_StartDate = SetDate(today,0,1)
 
-//Set up value Past/Current/Future for Service Date
+//Set up value Past/Current/Future for End Date
 if(GlobalVariable.Glb_EndDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_EndDate = current_date
 else if (GlobalVariable.Glb_EndDate.toString().toLowerCase() =="p")

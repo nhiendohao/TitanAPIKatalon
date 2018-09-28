@@ -71,7 +71,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'VNVNVNVNVNVNVNVNV'</initValue>
+      <initValue>'VNVNVNVNVNVNVNVN'</initValue>
       <name>Glb_VIN</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
