@@ -6,20 +6,6 @@
    <comment></comment>
    <testCaseGuid>d0829adf-b2b1-4776-a2ef-4028b0081315</testCaseGuid>
    <variable>
-      <defaultValue>'2018-09-26'</defaultValue>
-      <description></description>
-      <id>de2235e4-7d7d-443d-9c10-e7206b99d2f4</id>
-      <masked>false</masked>
-      <name>Start_Date</name>
-   </variable>
-   <variable>
-      <defaultValue>'2018-09-26'</defaultValue>
-      <description></description>
-      <id>fa23d8dc-67c7-40c1-bada-22591c0de8ec</id>
-      <masked>false</masked>
-      <name>End_Date</name>
-   </variable>
-   <variable>
       <defaultValue>'PERIODIC'</defaultValue>
       <description></description>
       <id>17f82ef1-f07e-4c4b-9257-d0c915bd4c7d</id>

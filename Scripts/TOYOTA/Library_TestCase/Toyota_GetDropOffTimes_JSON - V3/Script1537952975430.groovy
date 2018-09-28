@@ -48,11 +48,9 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 }
 
 //CODE
-//If Start_Date is not declare, default value = Glb_ServiceDate
-if(Start_Date as String =="") Start_Date = GlobalVariable.Glb_ServiceDate
 //Parse String data to Date type Data
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
-def Start_Date_Str = Date.parse("yyyy-MM-dd", Start_Date) as Date
+def Start_Date_Str = Date.parse("yyyy-MM-dd", GlobalVariable.) as Date
 def End_Date_Str = Date.parse("yyyy-MM-dd", End_Date) as Date
 //Declare Time Workshop Open and Time WS Close
 int Start = GlobalVariable.Glb_WorkshopStart as Integer
@@ -85,7 +83,7 @@ else if(Duration >= 10)
 	 VerifyResponse(res_GetServiceOperation,400,"Duration 10 cannot be completed in a single day")
 	 //Positive Parameter
 	 else {
-	 WS.verifyResponseStatusCode(res_GetServiceOperation, 200)
+	 WS.verifyResponseStatusCode(res_GetServiceOperation, 200,"")
 
 //Get duration days
 int duration_days

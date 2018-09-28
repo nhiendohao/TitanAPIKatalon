@@ -110,4 +110,32 @@
       <masked>false</masked>
       <name>Setup_LastName</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>3f2e620d-045b-40d8-a54c-4ddab5af2fcd</id>
+      <masked>false</masked>
+      <name>Setup_StartDropDate</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c80797cd-f914-4fc4-9d50-d3a1dd893fa0</id>
+      <masked>false</masked>
+      <name>Setup_EndDropDate</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>98c02f1a-05d0-4e57-87cc-dc9cf1829734</id>
+      <masked>false</masked>
+      <name>Setup_StartSearchDate</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ce5f6714-e253-4013-a767-23b47c36f264</id>
+      <masked>false</masked>
+      <name>Setup_EndSearchDate</name>
+   </variable>
 </TestCaseEntity>

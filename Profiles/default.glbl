@@ -119,4 +119,14 @@
       <initValue>'1'</initValue>
       <name>Glb_TotalDuration</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_StartSearchDate</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_EndSearchDate</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

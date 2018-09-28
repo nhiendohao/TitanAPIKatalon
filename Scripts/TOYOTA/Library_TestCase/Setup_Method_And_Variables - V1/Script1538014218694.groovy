@@ -28,6 +28,10 @@ if(!(Setup_FirstName == "")) GlobalVariable.Glb_FirstName = Setup_FirstName
 if(!(Setup_LastName == "")) GlobalVariable.Glb_LastName = Setup_LastName
 if(!(Setup_TotalPrice == "")) GlobalVariable.Glb_TotalPrice = Setup_TotalPrice
 if(!(Setup_TotalDuration == "")) GlobalVariable.Glb_TotalDuration = Setup_TotalDuration
+if(!(Setup_StartDropDate == "")) GlobalVariable.Glb_StartDate = Setup_StartDropDate
+if(!(Setup_EndDropDate == "")) GlobalVariable.Glb_EndDate = Setup_EndDropDate
+if(!(Setup_StartSearchDate == "")) GlobalVariable.Glb_StartSearchDate = Setup_StartSearchDate
+if(!(Setup_EndSearchDate == "")) GlobalVariable.Glb_EndSearchDate = Setup_EndSearchDate
 
 //METHOD
 //Create Date Past/Future with specific Date from current Date
@@ -74,6 +78,22 @@ else if (GlobalVariable.Glb_EndDate.toString().toLowerCase() =="p")
 	GlobalVariable.Glb_EndDate = SetDate(today,0,-1)
 else if (GlobalVariable.Glb_EndDate.toString().toLowerCase() =="f")
 	GlobalVariable.Glb_EndDate = SetDate(today,0,1)
+	
+//Set up value Past/Current/Future for Start Date
+if(GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="cr")
+	GlobalVariable.Glb_StartSearchDate = current_date
+else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="p")
+	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,-1)
+else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="f")
+	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,1)
+
+//Set up value Past/Current/Future for End Date
+if(GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="cr")
+	GlobalVariable.Glb_EndSearchDate = current_date
+else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="p")
+	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,-1)
+else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
+	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,1)
 	
 //Set up ContactId
 	GlobalVariable.Glb_ContactId = "1901" + RandomNumber(999999)
