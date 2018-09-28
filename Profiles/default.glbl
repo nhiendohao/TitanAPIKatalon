@@ -61,7 +61,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'08:15'</initValue>
+      <initValue>'08:00'</initValue>
       <name>Glb_DropOffTime</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -83,5 +83,40 @@
       <description></description>
       <initValue>''</initValue>
       <name>Glb_Current_Date</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_ContactId</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'TITAN'</initValue>
+      <name>Glb_FirstName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'DMS'</initValue>
+      <name>Glb_LastName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_StartDate</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_EndDate</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'110'</initValue>
+      <name>Glb_TotalPrice</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'1'</initValue>
+      <name>Glb_TotalDuration</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
