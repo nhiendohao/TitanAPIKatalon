@@ -78,5 +78,8 @@ import java.sql.Driver
 	  }
 	  
 	  //--------------------------------------------------------------------------------------------------------------------------
-	  //
+	  //Create random number
+	  Random random = new Random()
+	  def number_random = random.nextInt(9999)
+	  println number_random
 	  

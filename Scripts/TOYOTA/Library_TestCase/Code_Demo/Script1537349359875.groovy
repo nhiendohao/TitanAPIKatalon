@@ -22,6 +22,11 @@ def sum = { x,y ->
 println sum(5,6)
 
 
-Random random = new Random()
-def number_random = random.nextInt(9999)
-println number_random
+def RandomNumber = {int number ->
+	Random random = new Random()
+	def number_random = random.nextInt(number)
+	println number_random
+	return number_random
+}
+
+println "1901" + RandomNumber(9999)

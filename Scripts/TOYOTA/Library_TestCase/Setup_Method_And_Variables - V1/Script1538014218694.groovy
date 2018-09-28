@@ -24,7 +24,10 @@ if(!(Setup_Dealer_Code == "")) GlobalVariable.Glb_Dealer_Code = Setup_Dealer_Cod
 if(!(Setup_Location_Code == "")) GlobalVariable.Glb_Location_Code = Setup_Location_Code
 if(!(Setup_VIN == "")) GlobalVariable.Glb_VIN = Setup_VIN
 if(!(Setup_REGNumber == "")) GlobalVariable.Glb_REGNumber = Setup_REGNumber
-if(!(Setup_ServiceDate == "")) GlobalVariable.Glb_ServiceDate = Setup_ServiceDate
+if(!(Setup_FirstName == "")) GlobalVariable.Glb_FirstName = Setup_FirstName
+if(!(Setup_LastName == "")) GlobalVariable.Glb_LastName = Setup_LastName
+if(!(Setup_TotalPrice == "")) GlobalVariable.Glb_TotalPrice = Setup_TotalPrice
+if(!(Setup_TotalDuration == "")) GlobalVariable.Glb_TotalDuration = Setup_TotalDuration
 
 //METHOD
 //Create Date Past/Future with specific Date from current Date
@@ -34,7 +37,15 @@ def SetDate = {Date current_time ,int number ->
 	  Expected_Date.format("YYYY-MM-dd")
    }
 }
+//Create random number
+def RandomNumber = {int number ->
+	Random random = new Random()
+	def number_random = random.nextInt(number)
+	println number_random
+	return number_random
+}
 
+//CODE EXECUTIVE
 //Create Current Date
 def today = new Date()
 def current_date = today.format("YYYY-MM-dd")
@@ -63,3 +74,6 @@ else if (GlobalVariable.Glb_EndDate.toString().toLowerCase() =="p")
 	GlobalVariable.Glb_EndDate = SetDate(current_date,-1)
 else if (GlobalVariable.Glb_EndDate.toString().toLowerCase() =="f")
 	GlobalVariable.Glb_EndDate = SetDate(current_date,1)
+	
+//Set up ContactId
+	GlobalVariable.Glb_ContactId = "1901" + RandomNumber(999999)
