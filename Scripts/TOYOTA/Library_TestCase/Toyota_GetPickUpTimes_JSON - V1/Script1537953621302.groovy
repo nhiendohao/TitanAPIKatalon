@@ -25,14 +25,32 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import static org.assertj.core.api.Assertions.*
 
 //V0. Get pick up timeslot and check all slot for any date input, not validate
 //V1. Check the number element between JSON and timeslot of WS
 //Valiate Service Date, Duration, Drop Off Time and ServiceBay Type
 
+//METHOD
+//Verify response
+def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
+	//Verify Response Status = 200 OK
+	WS.verifyResponseStatusCode(response, StatusCode)
+	
+	//Transfer response to Text
+	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
+	if(!(ExpectedMessage==""))assertThat(response.getResponseText()).contains(ExpectedMessage)
+}
+
+//CODE
 // Declare request
-RequestObject GetPickupTime = findTestObject('Toyota/GetPickUpTimes_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime
-            , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type, ('Duration_Time') : GlobalVariable.Glb_Duration_Time,('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
+RequestObject GetPickupTime = findTestObject('Toyota/GetPickUpTimes_JSON', [
+	('Service_Date') : GlobalVariable.Glb_ServiceDate, 
+	('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, 
+	('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type, 
+	('Duration_Time') : GlobalVariable.Glb_Duration_Time,
+	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
+	('Location_Code') : GlobalVariable.Glb_Location_Code])
 //Declare Header for request
 GetPickupTime.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Basic " + GlobalVariable.Glb_Authorization_Token))
 //Send request
@@ -57,15 +75,17 @@ use(groovy.time.TimeCategory) {
 	println duration_hours
 	}
 //Validate Negative parameters 
-if(Service_Date.before(current)) WS.verifyResponseStatusCode(res_GetPickupTime, 404)
+if (!(GlobalVariable.Glb_Dealer_Code == "765A")) 
 else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	GlobalVariable.Glb_ServiceBay_Type == "EXPRESS"||
 	GlobalVariable.Glb_ServiceBay_Type == "REPAIR"||
-	GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC")||
-    Duration <= 0||
-	Duration >= 10||
-	DropOff_Time.before(Start_WS_Hr)||
-	DropOff_Time.after(End_WS_Hr)||
+	GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC"))
+	VerifyResponse(res_GetPickupTime,400,"Service Bay Type Unknown")
+    Duration <= 0
+	Duration >= 10
+	DropOff_Time.before(Start_WS_Hr)
+	DropOff_Time.after(End_WS_Hr)
+	(Service_Date.before(current)) VerifyResponse(res_GetPickupTime,404,"Service Bay Type Unknown")
 	duration_hours < Duration) WS.verifyResponseStatusCode(res_GetPickupTime, 400)
 	else {
 //Verify Response Status = 200 OK

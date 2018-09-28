@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Toyota_GetDropOffTimes_JSON - Beta</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>18679800-aa92-4ef7-aefd-78fcfb868e44</testCaseGuid>
+   <variable>
+      <defaultValue>'PERIODIC'</defaultValue>
+      <description></description>
+      <id>77422e24-65f4-483d-9f04-2ae13ec5e6e0</id>
+      <masked>false</masked>
+      <name>Service_Type</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>9ad30c48-c02b-471d-b7de-f342373010f5</id>
+      <masked>false</masked>
+      <name>Reserve_Timeslot</name>
+   </variable>
+</TestCaseEntity>
