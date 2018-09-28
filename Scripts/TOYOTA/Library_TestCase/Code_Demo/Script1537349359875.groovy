@@ -13,13 +13,15 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import groovy.sql.Sql
-import java.sql.Driver
+
 def sum = { x,y ->
 	return x+y
 	
 }
 
-
 println sum(5,6)
-assert !(1==3)
+
+
+Random random = new Random()
+def number_random = random.nextInt(9999)
+println number_random

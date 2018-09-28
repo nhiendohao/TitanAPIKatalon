@@ -68,3 +68,15 @@ import java.sql.Driver
 		  println line.Name
 	  }
 	  
+	  //--------------------------------------------------------------------------------------------------------------------------
+	  //Method create Date from current Date
+	  def nextDay = {Date current_time ,int number ->
+		  use(groovy.time.TimeCategory) {
+			def Expected_Date = current_time + number.day
+			Expected_Date.format("yyyy-MM-dd")
+		 }
+	  }
+	  
+	  //--------------------------------------------------------------------------------------------------------------------------
+	  //
+	  
