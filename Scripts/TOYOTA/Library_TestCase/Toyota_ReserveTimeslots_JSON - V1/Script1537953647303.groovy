@@ -28,9 +28,14 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 
 //V0. Check response and get token
 //V1. Check reserve timeslot will be unavailable
-RequestObject ReserveTimeslot = findTestObject('Toyota/ReserveTimeslots_JSON', [('Service_Date') : GlobalVariable.Glb_ServiceDate
-        , ('Duration') : GlobalVariable.Glb_Duration_Time, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime
-        , ('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type, ('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code])
+RequestObject ReserveTimeslot = findTestObject('Toyota/ReserveTimeslots_JSON', [
+	('Service_Date') : GlobalVariable.Glb_ServiceDate        , 
+	('Duration') : GlobalVariable.Glb_Duration_Time, 
+	('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, 
+	('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime        , 
+	('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type, 
+	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
+	('Location_Code') : GlobalVariable.Glb_Location_Code])
 
 ReserveTimeslot.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
 
