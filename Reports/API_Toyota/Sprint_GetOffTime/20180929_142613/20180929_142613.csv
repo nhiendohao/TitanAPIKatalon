@@ -1,0 +1,7 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Sprint_GetOffTime,,,2018-09-29 14:26:14,2018-09-29 14:26:17,3.094s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - SprintGetDropTime,,,2018-09-29 14:26:15,2018-09-29 14:26:17,2.781s,FAILED
+callTestCase,,,2018-09-29 14:26:15,2018-09-29 14:26:16,1.654s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-09-29 14:26:16,2018-09-29 14:26:16,0.001s,PASSED
+"Statement - If (var_Status_GetOffTime == ""true"")",,,2018-09-29 14:26:16,2018-09-29 14:26:17,0.913s,FAILED

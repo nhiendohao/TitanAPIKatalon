@@ -4,137 +4,137 @@
    <name>Setup_Method_And_Variables - Beta</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>c6c3fd9a-173e-4a67-8b10-6460858423c2</testCaseGuid>
+   <testCaseGuid>c962249f-2e17-4fe1-bd5f-d97237da411b</testCaseGuid>
    <variable>
       <defaultValue>'15'</defaultValue>
       <description></description>
-      <id>c35a8c89-f47e-478a-ba2a-4ef8bbcdc4bb</id>
+      <id>0a5a80b1-3b84-4960-8b82-d2d1fa70b13c</id>
       <masked>false</masked>
       <name>Setup_Interval</name>
    </variable>
    <variable>
       <defaultValue>'8'</defaultValue>
       <description></description>
-      <id>f95c62d8-fab5-49ab-b2e9-ba74ebbae5a2</id>
+      <id>f3e0b410-0240-472b-88ce-1cb8d8129dd9</id>
       <masked>false</masked>
       <name>Setup_WorkshopStart</name>
    </variable>
    <variable>
       <defaultValue>'17'</defaultValue>
       <description></description>
-      <id>b09c94b1-c099-4393-bb5f-1a8df575f3e9</id>
+      <id>2c5ebb86-f688-478a-b750-7e66e62b414e</id>
       <masked>false</masked>
       <name>Setup_WorkshopEnd</name>
    </variable>
    <variable>
       <defaultValue>'1'</defaultValue>
       <description></description>
-      <id>8eb3e439-9e59-4631-b82a-317824d63459</id>
+      <id>9c7cde24-4035-43cb-a78b-2da095709cf6</id>
       <masked>false</masked>
       <name>Setup_Duration</name>
    </variable>
    <variable>
       <defaultValue>'764A'</defaultValue>
       <description></description>
-      <id>66f4f535-a02d-484b-aca1-9807291f7191</id>
+      <id>e9caf4df-a04c-4fb6-93be-50c4fc4746b4</id>
       <masked>false</masked>
       <name>Setup_Dealer_Code</name>
    </variable>
    <variable>
       <defaultValue>'1'</defaultValue>
       <description></description>
-      <id>d2152e7b-022c-45d2-bf2e-c85136c80254</id>
+      <id>b07db615-0f69-403b-a5d6-21616eb7f6f2</id>
       <masked>false</masked>
       <name>Setup_Location_Code</name>
    </variable>
    <variable>
       <defaultValue>'VNVNVNVNVNVNVNVNV'</defaultValue>
       <description></description>
-      <id>d3d819b3-bd88-4d0a-93bd-46cde38fbb0c</id>
+      <id>2316c03d-da5a-4a69-ac78-d9299e319f2d</id>
       <masked>false</masked>
       <name>Setup_VIN</name>
    </variable>
    <variable>
       <defaultValue>'REG_TITAN_API'</defaultValue>
       <description></description>
-      <id>05da3a5c-d9cd-4756-be35-6febc50e7be6</id>
+      <id>43b49423-1df1-409e-a5c0-cd2d640b9594</id>
       <masked>false</masked>
       <name>Setup_REGNumber</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>b63359c7-ac1d-45d3-ae8b-c767c7dfe80e</id>
+      <id>179fcd94-719b-48a4-8182-a6f97284106e</id>
       <masked>false</masked>
       <name>Setup_ServiceDate</name>
    </variable>
    <variable>
       <defaultValue>'08:00'</defaultValue>
       <description></description>
-      <id>67ef6941-36ae-42f4-9b74-a30ff40682f9</id>
+      <id>dbf72a86-fb68-48dd-b4b8-868ad937b787</id>
       <masked>false</masked>
       <name>Setup_DropOffTime</name>
    </variable>
    <variable>
       <defaultValue>'17:00'</defaultValue>
       <description></description>
-      <id>b79b8a26-ffb9-4bea-9f84-8e748232c02d</id>
+      <id>e883d85e-c2bd-45b3-bde2-b15acaaaf425</id>
       <masked>false</masked>
       <name>Setup_PickUpTime</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>01c8c1bf-63b5-4c72-bbf7-c9c31aa785e4</id>
+      <id>293d78fe-42cf-46d0-9675-7341664c9776</id>
       <masked>false</masked>
       <name>Setup_TotalPrice</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>cc3cb15a-3aee-42bd-b20d-f0bf0264f7f1</id>
+      <id>087499b6-fb18-4cd3-b848-c787e63eeb9a</id>
       <masked>false</masked>
       <name>Setup_TotalDuration</name>
    </variable>
    <variable>
       <defaultValue>'TITAN'</defaultValue>
       <description></description>
-      <id>123a18ee-9e99-400e-bf36-fd9995924aae</id>
+      <id>e112e0c6-82cc-4841-9167-3e7385525ff2</id>
       <masked>false</masked>
       <name>Setup_FirstName</name>
    </variable>
    <variable>
       <defaultValue>'DMS'</defaultValue>
       <description></description>
-      <id>5e835ebd-e1c9-4a6f-876c-fbaaf1791548</id>
+      <id>e5ed3e3f-45da-4e3f-a2b1-d8b3448ffd79</id>
       <masked>false</masked>
       <name>Setup_LastName</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>ea0dee07-a438-4e8a-a14c-1dccab145b5b</id>
+      <id>d4186318-f3a2-4c28-8411-a29dc70e5d07</id>
       <masked>false</masked>
       <name>Setup_StartDropDate</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>5e3394cb-0c95-48f3-be50-3dae2b03bbc3</id>
+      <id>90d1e4c4-b88f-4c7c-81f7-fb52f0f84fc7</id>
       <masked>false</masked>
       <name>Setup_EndDropDate</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>3a5c661a-db81-4b3b-88b4-e348a3a06537</id>
+      <id>b005b34f-4216-49c9-89c7-4412cfa005e0</id>
       <masked>false</masked>
       <name>Setup_StartSearchDate</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>47d53b71-0691-4d8a-bfb3-e749e101e66d</id>
+      <id>24296565-eb30-48b5-9711-2f05e7d804f6</id>
       <masked>false</masked>
       <name>Setup_EndSearchDate</name>
    </variable>

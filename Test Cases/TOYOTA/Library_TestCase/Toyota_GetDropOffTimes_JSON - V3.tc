@@ -6,13 +6,6 @@
    <comment></comment>
    <testCaseGuid>d0829adf-b2b1-4776-a2ef-4028b0081315</testCaseGuid>
    <variable>
-      <defaultValue>'PERIODIC'</defaultValue>
-      <description></description>
-      <id>17f82ef1-f07e-4c4b-9257-d0c915bd4c7d</id>
-      <masked>false</masked>
-      <name>Service_Type</name>
-   </variable>
-   <variable>
       <defaultValue>''</defaultValue>
       <description></description>
       <id>385fbbcc-7ef9-41e8-aa47-442ccb5673f8</id>

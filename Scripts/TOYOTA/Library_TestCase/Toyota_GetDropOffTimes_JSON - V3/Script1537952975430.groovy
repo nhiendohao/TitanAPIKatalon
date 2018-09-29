@@ -94,7 +94,7 @@ else if(Duration >= 10)
 	 VerifyResponse(res_GetServiceOperation,400,"Duration 10 cannot be completed in a single day")
 //All valid
 	 else {
-	 WS.verifyResponseStatusCode(res_GetServiceOperation, 200,"")
+	 VerifyResponse(res_GetServiceOperation,200,"")
 
 //Get duration days
 int duration_days
