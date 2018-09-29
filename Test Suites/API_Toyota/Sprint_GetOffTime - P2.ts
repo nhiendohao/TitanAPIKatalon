@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Sprint_GetOffTime</name>
+   <name>Sprint_GetOffTime - P2</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <lastRun>2018-09-29T18:55:17</lastRun>
@@ -10,7 +10,7 @@
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>a237f17c-c51a-48cf-b39b-5b2d1eb5fe16</testSuiteGuid>
+   <testSuiteGuid>d385d54f-db13-4b0e-947d-ceba28ec2795</testSuiteGuid>
    <testCaseLink>
       <guid>d9a0388b-193b-4768-a036-b9d2de3e928a</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -21,7 +21,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>35-40</value>
+            <value>41-46</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_getofftime</testDataId>
       </testDataLink>

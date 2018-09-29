@@ -104,7 +104,7 @@ else if(Start_Date_Str.before(current))
 	VerifyResponse(res_GetServiceOperation,404,"is partially outside days when DMS will take bookings")
 //Duration >= 10
 else if(Duration >= 10)
-	 VerifyResponse(res_GetServiceOperation,400,"Duration" +Duration+ "cannot be completed in a single day")
+	 VerifyResponse(res_GetServiceOperation,400,"Duration " +Duration+ " cannot be completed in a single day")
 //All valid
 else {
 	 VerifyResponse(res_GetServiceOperation,200,"")
