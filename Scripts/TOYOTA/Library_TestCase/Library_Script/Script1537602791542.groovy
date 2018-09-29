@@ -39,7 +39,7 @@ import java.sql.Driver
 	  conn.close()
 
 	  //--------------------------------------------------------------------------------------------------------
-	  // Convert String to Date and calculate Duration
+	  // Convert Object to Date and calculate Duration
 	  String Strdate= "2018-09-24"
 	  def date = Date.parse("yyyy-MM-dd", Strdate)
 	  
@@ -97,4 +97,17 @@ import java.sql.Driver
 		  def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
 		  if(!(ExpectedMessage==""))assertThat(response.getResponseText()).contains(ExpectedMessage)
 	  }
+	  //--------------------------------------------------------------------------------------------------------------------------
+	  //Convert String to Date and Date to String
+	  import java.text.ParseException
+	  import java.text.SimpleDateFormat
+	  import java.util.Date
+	  String Start_WS_Str = "0" + GlobalVariable.Glb_WorkshopStart + ":00"
+	  //Set format
+	  SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+	  //Convert String to Date
+		  Date date = formatter.parse(Start_WS_Str);
+		  System.out.println(date);
+		  //Print Date after converting to String
+		  System.out.println(formatter.format(date));
 	  
