@@ -33,6 +33,11 @@ if(!(Setup_EndDropDate == "")) GlobalVariable.Glb_EndDate = Setup_EndDropDate
 if(!(Setup_StartSearchDate == "")) GlobalVariable.Glb_StartSearchDate = Setup_StartSearchDate
 if(!(Setup_EndSearchDate == "")) GlobalVariable.Glb_EndSearchDate = Setup_EndSearchDate
 if(!(Setup_Duration == "")) GlobalVariable.Glb_Duration_Time = Setup_Duration
+if(!(Setup_ServiceDate == "")) GlobalVariable.Glb_ServiceDate = Setup_ServiceDate
+if(!(Setup_StartDropDate == "")) GlobalVariable.Glb_StartDate = Setup_StartDropDate
+if(!(Setup_EndDropDate == "")) GlobalVariable.Glb_EndDate = Setup_EndDropDate
+if(!(Setup_StartSearchDate == "")) GlobalVariable.Glb_StartSearchDate = Setup_StartSearchDate
+if(!(Setup_EndSearchDate == "")) GlobalVariable.Glb_EndSearchDate = Setup_EndSearchDate
 
 //METHOD
 //Create Date Past/Future with specific Date from current Date
