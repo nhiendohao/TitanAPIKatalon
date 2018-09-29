@@ -77,6 +77,9 @@ ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 //StartDate  after EndDate
 if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
 	VerifyResponse(res_GetServiceOperation,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+//Start Date after End Date
+else if(Start_Date_Str.after(End_Date_Str))
+	 VerifyResponse(res_GetServiceOperation,404,"cannot be greater than end date")
 //Duration <=0
 else if(Duration <= 0)
 	 VerifyResponse(res_GetServiceOperation,400,"The duration must be greater than 0")
@@ -96,9 +99,6 @@ else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	 GlobalVariable.Glb_Location_Code == "4"||
 	 GlobalVariable.Glb_Location_Code == "360"))
 	 VerifyResponse(res_GetServiceOperation,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
-//Start Date after End Date
-else if(Start_Date_Str.after(End_Date_Str)) 
- 	VerifyResponse(res_GetServiceOperation,404,"cannot be greater than end date")
 //StartDate before Current
 else if(Start_Date_Str.before(current))
 	VerifyResponse(res_GetServiceOperation,404,"is partially outside days when DMS will take bookings")
