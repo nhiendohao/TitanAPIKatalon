@@ -84,7 +84,7 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetBookingDetail
 
 //10. Change booking detail
 if(var_Status_ChangeBooking.toString().toLowerCase() == "true"){
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //11. Cancel Booking

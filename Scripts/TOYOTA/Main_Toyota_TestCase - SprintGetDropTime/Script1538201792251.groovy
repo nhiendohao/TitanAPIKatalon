@@ -34,7 +34,8 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variab
 	('Setup_StartDropDate') : var_StartDropDate, 
 	('Setup_EndDropDate') : var_EndDropDate, 
 	('Setup_StartSearchDate') : var_StartSearchDate        , 
-	('Setup_EndSearchDate') : var_EndSearchDate
+	('Setup_EndSearchDate') : var_EndSearchDate,
+	('Setup_BookingId') : var_BookingId
 	], FailureHandling.STOP_ON_FAILURE)
 
 //2. Get Operation Code for customer
@@ -92,7 +93,7 @@ if (var_Status_GetBookingDetail == 'true') {
 
 //10. Change booking detail
 if (var_Status_ChangeBooking == 'true') {
-    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON'), [:], FailureHandling.STOP_ON_FAILURE)
+    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //11. Cancel Booking

@@ -106,7 +106,7 @@ else if(Start_Date_Str.before(current))
 else if(Duration >= 10)
 	 VerifyResponse(res_GetServiceOperation,400,"Duration" +Duration+ "cannot be completed in a single day")
 //All valid
-	 else {
+else {
 	 VerifyResponse(res_GetServiceOperation,200,"")
 
 //Get duration days

@@ -138,4 +138,11 @@
       <masked>false</masked>
       <name>Setup_EndSearchDate</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>efd66bb0-c684-48d7-b40e-66f0d2c422fd</id>
+      <masked>false</masked>
+      <name>Setup_BookingId</name>
+   </variable>
 </TestCaseEntity>

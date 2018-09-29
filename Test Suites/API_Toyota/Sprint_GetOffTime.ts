@@ -4,7 +4,7 @@
    <name>Sprint_GetOffTime</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-09-29T15:32:36</lastRun>
+   <lastRun>2018-09-29T16:32:52</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -20,8 +20,8 @@
          <combinationType>ONE</combinationType>
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
-            <iterationType>SPECIFIC</iterationType>
-            <value>34</value>
+            <iterationType>RANGE</iterationType>
+            <value>35-100</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_getofftime</testDataId>
       </testDataLink>
@@ -152,58 +152,106 @@
          <variableId>3ae6b0cb-f1ed-46da-8b0e-9fd32c2d348c</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Service_Date</value>
          <variableId>ac67a6ff-aaac-4791-ba3c-691df2003d84</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Start_Drop_Date</value>
          <variableId>241589bb-7a65-450b-869d-33d565f474c4</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>End_Drop_Date</value>
          <variableId>0d8ecfdf-d6b4-47e5-bc36-e206ea598cb1</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Start_Search</value>
          <variableId>c3188df0-f6ef-461e-ae54-05cf86ba866b</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>End_Search</value>
          <variableId>8e12aa90-a2b3-4af3-8a50-0305310c8ba2</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Total_Price</value>
          <variableId>76230947-1fef-421b-a202-ce73532c5128</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Total_Duration</value>
          <variableId>45d21535-79c5-4b9c-b764-28b62bad973e</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>FirstName</value>
          <variableId>efbfea62-d830-424b-9e7c-27b81a959065</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>LastName</value>
          <variableId>c5bb2a27-57aa-422e-9054-7511f6f35883</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>VIN_Change</value>
+         <variableId>a2aedf0b-bcb3-42a7-907c-7183c8810c06</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>REGNumber_Change</value>
+         <variableId>d073f73d-76eb-4b83-8851-a63d9117c326</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Price_Change</value>
+         <variableId>cf14650d-17cd-4484-9fe5-1fcf54dbd8bd</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Duration_Change</value>
+         <variableId>181058f0-39eb-4f40-aa92-796a9e664601</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>DropOff_Change</value>
+         <variableId>b9d5e307-472d-4ba0-849b-0035db0143a6</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Pickup_Change</value>
+         <variableId>8933c547-e65e-4959-888a-8010bb47f2ba</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Date_Change</value>
+         <variableId>9ae692de-40b6-44b8-93c7-508e16166de6</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>67955f79-938c-48f4-bbe7-124c499db36f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Booking ID</value>
+         <variableId>8b20f35d-d622-45ba-a051-5f468688a5e4</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>
