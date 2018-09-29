@@ -75,23 +75,36 @@ ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 //Verify Response Status
 //Clasify case
 //StartDate  after EndDate
-if(Start_Date_Str.after(End_Date_Str)) 
- 	VerifyResponse(res_GetServiceOperation,404,"cannot be greater than end date")
-//StartDate before Current
-else if(Start_Date_Str.before(current))
-	VerifyResponse(res_GetServiceOperation,404,"is partially outside days when DMS will take bookings")
+if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
+	VerifyResponse(res_GetServiceOperation,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+//Duration <=0
+else if(Duration <= 0)
+	 VerifyResponse(res_GetServiceOperation,400,"The duration must be greater than 0")
 //Invalid Servicebay
 else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	 GlobalVariable.Glb_ServiceBay_Type == "EXPRESS"||
 	 GlobalVariable.Glb_ServiceBay_Type == "REPAIR"||
-	 GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC")) 
- 	VerifyResponse(res_GetServiceOperation,400,"Service Bay Type Unknown")
-//Duration <=0
-else if(Duration <= 0)
- 	VerifyResponse(res_GetServiceOperation,400,"The duration must be greater than 0")
+	 GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC"))
+	 VerifyResponse(res_GetServiceOperation,400,"Service Bay Type Unknown")
+ //Closed Workshop
+ else if(GlobalVariable.Glb_Location_Code == "2"||
+	GlobalVariable.Glb_Location_Code == "3"||
+	GlobalVariable.Glb_Location_Code == "5")
+	 VerifyResponse(res_GetServiceOperation,400,"The Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+ //Not exist Workshop
+ else if(!(GlobalVariable.Glb_Location_Code == "1"||
+	 GlobalVariable.Glb_Location_Code == "4"||
+	 GlobalVariable.Glb_Location_Code == "360"))
+	 VerifyResponse(res_GetServiceOperation,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+//Start Date after End Date
+else if(Start_Date_Str.after(End_Date_Str)) 
+ 	VerifyResponse(res_GetServiceOperation,404,"cannot be greater than end date")
+//StartDate before Current
+else if(Start_Date_Str.before(current))
+	VerifyResponse(res_GetServiceOperation,404,"is partially outside days when DMS will take bookings")
 //Duration >= 10
 else if(Duration >= 10)
-	 VerifyResponse(res_GetServiceOperation,400,"Duration 10 cannot be completed in a single day")
+	 VerifyResponse(res_GetServiceOperation,400,"Duration" +Duration+ "cannot be completed in a single day")
 //All valid
 	 else {
 	 VerifyResponse(res_GetServiceOperation,200,"")
@@ -108,7 +121,7 @@ use(groovy.time.TimeCategory) {
 for (def i=0;i< duration_days+1;i++){
 	if(!(Start_Date_Str.format("E")=="Sat" || Start_Date_Str.format("E")=="Sun" )){
 //Verify for each date
-WS.verifyElementPropertyValue(res_GetServiceOperation, "["+i+"].Date", Start_Date + "T00:00:00")
+WS.verifyElementPropertyValue(res_GetServiceOperation, "["+i+"].Date", GlobalVariable.Glb_StartDate + "T00:00:00")
 //Verify response Times array
 //Create Data Times Array
 //Create real time variable

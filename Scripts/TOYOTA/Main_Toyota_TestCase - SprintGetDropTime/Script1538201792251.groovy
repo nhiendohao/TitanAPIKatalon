@@ -15,22 +15,33 @@ import internal.GlobalVariable as GlobalVariable
 
 //This testcase is followed workflow below:
 //1. Setup value for dynamic Global variables
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variables - Beta'), [
-	('Setup_Interval') : var_Interval        , 
-	('Setup_WorkshopStart') : var_WorkshopStart, 
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variables - V1'), [
+	('Setup_Interval') : var_Interval, 
+	('Setup_WorkshopStart') : var_WorkshopStart        , 
 	('Setup_WorkshopEnd') : var_WorkshopEnd, 
-	('Setup_Duration') : var_Duration        , 
+	('Setup_Duration') : var_Duration, 
 	('Setup_Dealer_Code') : var_Dealer_Code, 
-	('Setup_Location_Code') : var_Location_Code, 
+	('Setup_Location_Code') : var_Location_Code        , 
 	('Setup_VIN') : var_VIN, 
-	('Setup_REGNumber') : var_REGNumber], 
-    FailureHandling.STOP_ON_FAILURE)
+	('Setup_REGNumber') : var_REGNumber, 
+	('Setup_ServiceDate') : var, 
+	('Setup_DropOffTime') : '08:00'        , 
+	('Setup_PickUpTime') : '17:00', 
+	('Setup_TotalPrice') : '', 
+	('Setup_TotalDuration') : '', 
+	('Setup_FirstName') : 'TITAN'        , 
+	('Setup_LastName') : 'DMS', 
+	('Setup_StartDropDate') : '', 
+	('Setup_EndDropDate') : '', 
+	('Setup_StartSearchDate') : ''        , 
+	('Setup_EndSearchDate') : ''
+	], FailureHandling.STOP_ON_FAILURE)
 
 //2. Get Operation Code for customer
 if (var_Status_OpCode == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON'), [
-		('Service_Type') : var_Service_Type] //Set the Type of Service. Ex: OSB_SERVICE_TYPE_LOGBOOK
-        , FailureHandling.STOP_ON_FAILURE)
+		('Service_Type') : var_Service_Type //Set the Type of Service. Ex: OSB_SERVICE_TYPE_LOGBOOK
+        ], FailureHandling.STOP_ON_FAILURE)
 }
 
 //3. Get Drop Off Timeslot for Customer
@@ -39,7 +50,8 @@ if (var_Status_OpCode == 'true') {
 //If the timeslot is taken, it will not show on the list
 if (var_Status_GetOffTime == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3'), [
-            ('Reserve_Timeslot') : ''], FailureHandling.STOP_ON_FAILURE)
+		('Reserve_Timeslot') : ''], 
+        FailureHandling.STOP_ON_FAILURE)
 }
 
 //4. Get PickUp Timeslot for Customer
@@ -47,7 +59,8 @@ if (var_Status_GetOffTime == 'true') {
 //System will show all enable timeslots that service can be completed before pick up time
 //One pick up time can be chosen by many customer
 if (var_Status_PickupTime == 'true') {
-    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON'), [('Drop_Off_Time') : var_Drop_Off_Time], 
+    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON'), [
+		('Drop_Off_Time') : var_Drop_Off_Time], 
         FailureHandling.STOP_ON_FAILURE)
 }
 

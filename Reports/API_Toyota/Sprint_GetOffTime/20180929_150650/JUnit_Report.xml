@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Sprint_GetOffTime" time="1" tests="1" failures="0" errors="0">
+   <testsuite name="Sprint_GetOffTime" tests="1" failures="0" errors="0" time="1" timestamp="2018-09-29 15:06:51" hostname="vinh.le - TITAN-V-2001.titandms.local" id="Test Suites/API_Toyota/Sprint_GetOffTime">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="C:\\Users\\vinh.le\\git\\TitanAPIKatalon_titan\\Reports\\API_Toyota\\Sprint_GetOffTime\\20180929_150650"/>
+         <property name="logFiles" value="C:\\Users\\vinh.le\\git\\TitanAPIKatalon_titan\\Reports\\API_Toyota\\Sprint_GetOffTime\\20180929_150650\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="vinh.le - TITAN-V-2001.titandms.local"/>
+         <property name="hostAddress" value="192.168.3.19"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.7.1.1"/>
+      </properties>
+      <testcase name="Test Cases/TOYOTA/Main_Toyota_TestCase - SprintGetDropTime" classname="Test Cases/TOYOTA/Main_Toyota_TestCase - SprintGetDropTime" status="PASSED">
+         <system-out><![CDATA[2018-09-29 15:06:51 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Main_Toyota_TestCase - SprintGetDropTime: Test Cases/TOYOTA/Main_Toyota_TestCase - SprintGetDropTime
+
+2018-09-29 15:06:51 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables - Beta' successfully
+
+2018-09-29 15:06:52 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables - Beta: Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables - Beta
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_Interval == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_WorkshopStart == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_WorkshopEnd == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_Dealer_Code == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_Location_Code == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_VIN == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_REGNumber == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_FirstName == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_LastName == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_TotalPrice == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_TotalDuration == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_StartDropDate == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_EndDropDate == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_StartSearchDate == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Setup_EndSearchDate == "")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - SetDate = { java.util.Date current_time, int number_month, int number_day -> ... }: null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - RandomNumber = { int number -> ... }: null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - today = new java.util.Date(): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - current_date = today.format("YYYY-MM-dd"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - Glb_Current_Date = current_date: null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (Glb_ServiceDate.toString().toLowerCase() == "cr"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (Glb_StartDate.toString().toLowerCase() == "cr"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (Glb_EndDate.toString().toLowerCase() == "cr"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (Glb_StartSearchDate.toString().toLowerCase() == "cr"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (Glb_EndSearchDate.toString().toLowerCase() == "cr"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - Glb_ContactId = "1901" + RandomNumber.call(999999): null
+
+2018-09-29 15:06:52 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Setup_Method_And_Variables - Beta' successfully
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (var_Status_OpCode == "true"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (var_Status_GetOffTime == "true"): Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3' successfully
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3' successfully
+
+2018-09-29 15:06:52 - [TEST_CASE][PASSED] - Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3: Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - current = java.util.Date.parse("yyyy-MM-dd", Glb_Current_Date): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - Start_Date_Str = java.util.Date.parse("yyyy-MM-dd", Glb_StartDate): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - End_Date_Str = java.util.Date.parse("yyyy-MM-dd", Glb_EndDate): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - Start = Glb_WorkshopStart: null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - End = Glb_WorkshopEnd: null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - Interval = Glb_Interval: null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - Duration = Glb_Duration_Time: null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - GetServiceOperation = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Toyota/GetDropOffTimes_JSON, [Start_Date:internal.GlobalVariable.Glb_StartDate, End_Date:internal.GlobalVariable.Glb_EndDate, ServiceBay_Type:internal.GlobalVariable.Glb_ServiceBay_Type, ... ]): Finding Test Object with id 'Object Repository/Toyota/GetDropOffTimes_JSON'
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - GetServiceOperation.getHttpHeaderProperties().add(new com.kms.katalon.core.testobject.TestObjectProperty(Authorization, com.kms.katalon.core.testobject.ConditionType.EQUALS, (Basic  + internal.GlobalVariable.Glb_Authorization_Token))): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - res_GetServiceOperation = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(GetServiceOperation): Send request successfully
+
+2018-09-29 15:06:52 - [MESSAGE][PASSED] - Send request successfully
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(Glb_Dealer_Code == "765A")): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - verifyResponseStatusCode: Verify response status code successfully
+
+2018-09-29 15:06:52 - [MESSAGE][PASSED] - Verify response status code successfully
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText()): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (!(ExpectedMessage == "")): null
+
+2018-09-29 15:06:52 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3' successfully
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (var_Status_PickupTime == "true"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (var_Status_ReservedTimeslot == "true"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (var_Status_GetTransport == "true"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (var_Status_MakeBooking == "true"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (var_Status_SearchBooking == "true"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (var_Status_GetBookingDetail == "true"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (var_Status_ChangeBooking == "true"): null
+
+2018-09-29 15:06:52 - [TEST_STEP][PASSED] - Statement - If (var_Status_CancelBooking == "true"): null]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-09-29 15:06:51 - [TEST_SUITE][PASSED] - Sprint_GetOffTime: Test Cases/TOYOTA/Main_Toyota_TestCase - SprintGetDropTime]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

@@ -1,0 +1,15 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Sprint_GetOffTime,,,2018-09-29 15:30:11,2018-09-29 15:30:13,1.986s,PASSED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - SprintGetDropTime,,,2018-09-29 15:30:12,2018-09-29 15:30:13,1.779s,PASSED
+callTestCase,,,2018-09-29 15:30:12,2018-09-29 15:30:12,0.411s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-09-29 15:30:12,2018-09-29 15:30:12,0.000s,PASSED
+"Statement - If (var_Status_GetOffTime == ""true"")",,,2018-09-29 15:30:12,2018-09-29 15:30:13,1.172s,PASSED
+"Statement - If (var_Status_PickupTime == ""true"")",,,2018-09-29 15:30:13,2018-09-29 15:30:13,0.000s,PASSED
+"Statement - If (var_Status_ReservedTimeslot == ""true"")",,,2018-09-29 15:30:13,2018-09-29 15:30:13,0.000s,PASSED
+"Statement - If (var_Status_GetTransport == ""true"")",,,2018-09-29 15:30:13,2018-09-29 15:30:13,0.000s,PASSED
+"Statement - If (var_Status_MakeBooking == ""true"")",,,2018-09-29 15:30:13,2018-09-29 15:30:13,0.000s,PASSED
+"Statement - If (var_Status_SearchBooking == ""true"")",,,2018-09-29 15:30:13,2018-09-29 15:30:13,0.001s,PASSED
+"Statement - If (var_Status_GetBookingDetail == ""true"")",,,2018-09-29 15:30:13,2018-09-29 15:30:13,0.000s,PASSED
+"Statement - If (var_Status_ChangeBooking == ""true"")",,,2018-09-29 15:30:13,2018-09-29 15:30:13,0.000s,PASSED
+"Statement - If (var_Status_CancelBooking == ""true"")",,,2018-09-29 15:30:13,2018-09-29 15:30:13,0.000s,PASSED
