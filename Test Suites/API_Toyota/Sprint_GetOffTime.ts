@@ -15,7 +15,7 @@
       <guid>d9a0388b-193b-4768-a036-b9d2de3e928a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TOYOTA/Main_Toyota_TestCase - SprintGetDropTime</testCaseId>
+      <testCaseId>Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>

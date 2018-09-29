@@ -68,8 +68,6 @@ GetPickupTime.getHttpHeaderProperties().add(new TestObjectProperty("Authorizatio
 ResponseObject res_GetPickupTime = WS.sendRequest(GetPickupTime)
 //Convert String to Date
 def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
-def Start_Date_Str = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_StartDate) as Date
-def End_Date_Str = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_EndDate) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 def DropOffTime = Date.parse("HH:mm", GlobalVariable.Glb_DropOffTime) as Date
 //Convert String to Integer
@@ -115,17 +113,17 @@ else if (Service_Date.before(current))
 	VerifyResponse(res_GetPickupTime,404,"is partially outside days when DMS will take bookings")
 //Duration >=10
 else if (Duration >= 10)
-	VerifyResponse(res_GetPickupTime,400,"Duration" +Duration+ "cannot be completed in a single day")
+	VerifyResponse(res_GetPickupTime,400,"Duration " +Duration+ " cannot be completed in a single day")
 //Drop Off time before WS Start, after WS End or need time < expected duration
 else if((DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration) &&
-	!(Start_Date_Str.format("E")=="Sat" || Start_Date_Str.format("E")=="Sun" ))
-VerifyResponse(res_GetPickupTime,400,"Duration" +Duration+ "do not match values from GetDropOffTimes")
+	!(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ))
+VerifyResponse(res_GetPickupTime,400,"Duration " +Duration+ " do not match values from GetDropOffTimes")
 //All valid
 else {
 	//Verify Response Status = 200 OK
 	WS.verifyResponseStatusCode(res_GetPickupTime, 200)
 	//Case Saturday, Sunday
-	if(Start_Date_Str.format("E")=="Sat" || Start_Date_Str.format("E")=="Sun" ){
+	if(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ){
 		def res_Text = new groovy.json.JsonSlurper().parseText(res_GetPickupTime.getResponseText())
 		assert  res_Text[0] == null
 	}
