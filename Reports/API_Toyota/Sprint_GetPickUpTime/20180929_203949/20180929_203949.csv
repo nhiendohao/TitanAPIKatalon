@@ -1,8 +1,0 @@
-Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
-Sprint_GetPickUpTime,,,2018-09-29 20:39:50,2018-09-29 20:39:52,1.891s,FAILED
-,,,,,,
-Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-09-29 20:39:50,2018-09-29 20:39:52,1.677s,FAILED
-callTestCase,,,2018-09-29 20:39:50,2018-09-29 20:39:51,0.434s,PASSED
-"Statement - If (var_Status_OpCode == ""true"")",,,2018-09-29 20:39:51,2018-09-29 20:39:51,0.000s,PASSED
-"Statement - If (var_Status_GetOffTime == ""true"")",,,2018-09-29 20:39:51,2018-09-29 20:39:51,0.001s,PASSED
-"Statement - If (var_Status_PickupTime == ""true"")",,,2018-09-29 20:39:51,2018-09-29 20:39:52,0.992s,FAILED

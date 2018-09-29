@@ -63,7 +63,7 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ReserveTimeslots
 
 //6. Get information about the Transport Option for Customer
 if(var_Status_GetTransport == "true"){
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetTransportOption_JSON'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetTransportOption_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //7. Make Booking with all required information
@@ -73,12 +73,12 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooki
 
 //8. Get Drop off time and Pickup time and Booking Id from REGNumber
 if(var_Status_SearchBooking == "true"){
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //9. Get all detail booking service for recheck
 if(var_Status_GetBookingDetail == "true"){
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //10. Change booking detail
@@ -88,5 +88,5 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ChangeBooking_JS
 
 //11. Cancel Booking
 if(var_Status_CancelBooking == "true"){
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }

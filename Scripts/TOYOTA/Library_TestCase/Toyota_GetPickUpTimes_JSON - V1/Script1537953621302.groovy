@@ -33,6 +33,7 @@ import java.util.Date
 //V0. Get pick up timeslot and check all slot for any date input, not validate
 //V1. Check the number element between JSON and timeslot of WS
 //Valiate Service Date, Duration, Drop Off Time and ServiceBay Type, Saturday and Sunday
+//=========================================================================================
 
 //METHOD
 //Verify response
@@ -52,6 +53,7 @@ def ConvertString_toDate = {String Date_Str, String format ->
 		System.out.println(_date);
 		return _date
 }
+//=========================================================================================
 
 //CODE
 // Declare request
@@ -85,8 +87,8 @@ use(groovy.time.TimeCategory) {
 	duration_hours = _duration.hours as Integer
 	println duration_hours
 	}
-//Validate Negative parameters 
-//Dealer Code
+//Classify cases 
+//Invalid Dealer Code
 if (!(GlobalVariable.Glb_Dealer_Code == "765A")) 
 	VerifyResponse(res_GetPickupTime,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
 //Duration = 0
@@ -117,11 +119,11 @@ else if (Duration >= 10)
 //Drop Off time before WS Start, after WS End or need time < expected duration
 else if((DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration) &&
 	!(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ))
-VerifyResponse(res_GetPickupTime,400,"Duration " +Duration+ " do not match values from GetDropOffTimes")
+	VerifyResponse(res_GetPickupTime,400,"Duration " +Duration+ " do not match values from GetDropOffTimes")
 //All valid
 else {
 	//Verify Response Status = 200 OK
-	WS.verifyResponseStatusCode(res_GetPickupTime, 200)
+	VerifyResponse(res_GetPickupTime,200,"")
 	//Case Saturday, Sunday
 	if(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ){
 		def res_Text = new groovy.json.JsonSlurper().parseText(res_GetPickupTime.getResponseText())
