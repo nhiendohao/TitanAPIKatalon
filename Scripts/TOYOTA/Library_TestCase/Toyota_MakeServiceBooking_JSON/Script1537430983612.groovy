@@ -86,7 +86,7 @@ ResponseObject res_MakeServiceBooking = WS.sendRequest(MakeServiceBooking)
 
 //Convert type data section
 //Convert String to Integer
-int Duration = GlobalVariable.Glb_Duration_Time as Integer
+int TotalDuration = GlobalVariable.Glb_TotalDuration as Integer
 //Convert String to Date
 def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
@@ -119,8 +119,8 @@ else if(!(GlobalVariable.Glb_TotalDuration == "1"))
 //Total Price is not equal to duration job line
 else if(!(GlobalVariable.Glb_TotalPrice == "110"))
 	 VerifyResponse(res_MakeServiceBooking,400,"Booking Rejected - The total price "+GlobalVariable.Glb_TotalPrice+" of RepairOrder not equals total price 110 of RepairOrder Line")
-else if(duration_hours < Duration)
-	 VerifyResponse(res_MakeServiceBooking,400,"Duration " +Duration+ " cannot be completed in a single day")
+else if(duration_hours < TotalDuration)
+	 VerifyResponse(res_MakeServiceBooking,400,"Booking Rejected - The total duration of service greater than duration booking time")
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
 	GlobalVariable.Glb_Location_Code == "3"||
@@ -136,10 +136,10 @@ else if(Service_Date.before(current))
 	VerifyResponse(res_MakeServiceBooking,404,"is partially outside days when DMS will take bookings")
 //Drop Off Time before WS Start Hour
 else if( DropOffTime.before(Start_WS_Hr))
-	VerifyResponse(res_MakeServiceBooking,400,"")
+	VerifyResponse(res_MakeServiceBooking,400,"The drop off timeslot taken")
 //Pickup Time after WS End Hour
 else if( PickUpTime.after(End_WS_Hr)(Start_WS_Hr))
-	 VerifyResponse(res_MakeServiceBooking,400,"")
+	 VerifyResponse(res_MakeServiceBooking,400,"The pick up timeslot taken")
 /*else if((DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration) &&
 	 !(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ))
 	 VerifyResponse(res_ReserveTimeslot,400,"Duration " +Duration+ " do not match values from GetDropOffTimes")*/
