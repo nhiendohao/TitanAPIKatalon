@@ -56,23 +56,29 @@ def ConvertString_toDate = {String Date_Str, String format ->
 //=========================================================================================
 
 //CODE
+//Setup DMSOperationCode base on Service Type
+String DMSOperationCode
+if(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK") DMSOperationCode = "OSB_SERVICE_TYPE_LOGBOOK"
+	else DMSOperationCode = "OSB_SERVICE_TYPE_ADDITIONAL"
+
 //Declare request
 RequestObject MakeServiceBooking = findTestObject('Toyota/MakeServiceBooking_JSON', [
 	('VIN') : GlobalVariable.Glb_VIN, 
-	('REGNumber') : GlobalVariable.Glb_REGNumber            , 
+	('REGNumber') : GlobalVariable.Glb_REGNumber, 
 	('Service_Date') : GlobalVariable.Glb_ServiceDate, 
 	('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, 
 	('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, 
-	('Reserve_Token') : GlobalVariable.Glb_Reserve_Token            , 
-	('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type,
-	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code            , 
+	('Reserve_Token') : GlobalVariable.Glb_Reserve_Token, 
+	('ServiceBay_Type') : GlobalVariable.Glb_ServiceBay_Type,
+	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
 	('Location_Code') : GlobalVariable.Glb_Location_Code,
-	('') : GlobalVariable.Glb_TotalPrice,
-	('') : GlobalVariable.Glb_TotalDuration,
-	('') : GlobalVariable.Glb_ContactId,
-	('') : GlobalVariable.Glb_FirstName,
-	('') : GlobalVariable.Glb_LastName,
-	('') : GlobalVariable.G])
+	('TotalPrice') : GlobalVariable.Glb_TotalPrice,
+	('TotalDuration') : GlobalVariable.Glb_TotalDuration,
+	('ContactId') : GlobalVariable.Glb_ContactId,
+	('FirstName') : GlobalVariable.Glb_FirstName,
+	('LastName') : GlobalVariable.Glb_LastName,
+	('ServiceType') : GlobalVariable.Glb_ServiceType,
+	('DMSOperationCode') : DMSOperationCode])
 //Setup header value
 MakeServiceBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
 //Declare response

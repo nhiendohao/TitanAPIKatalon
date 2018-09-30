@@ -8,7 +8,7 @@
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;Vehicle\&quot;: {\n        \&quot;VIN\&quot;: \&quot;${VIN}\&quot;,\n        \&quot;RegistrationNumber\&quot;: \&quot;${REGNumber}\&quot;,\n        \&quot;RegistrationState\&quot;: \&quot;OSB_STATE_VIC\&quot;,\n        \&quot;CustomerOdometerReading\&quot;: 20500,\n        \&quot;VehicleInformation\&quot;: {\n            \&quot;VehicleDetail\&quot;: []\n        }\n    },\n    \&quot;RepairOrder\&quot;: {\n        \&quot;TotalPriceQuoted\&quot;: 110,\n        \&quot;TotalDuration\&quot;: 1,\n        \&quot;Services\&quot;: [\n            {\n                \&quot;Name\&quot;: \&quot;VW105 - VW105 - Carry out 105,000km service as per VW schedule\&quot;,\n                \&quot;Description\&quot;: null,\n                \&quot;ServiceType\&quot;: \&quot;OSB_SERVICE_TYPE_LOGBOOK\&quot;,\n                \&quot;ServiceCode\&quot;: null,\n                \&quot;DMSOperationalCode\&quot;: \&quot;VW105\&quot;,\n                \&quot;Duration\&quot;: 1,\n                \&quot;EMFlag\&quot;: false,\n                \&quot;EMDuration\&quot;: 0,\n                \&quot;DealerPrice\&quot;: 0,\n                \&quot;POAFlag\&quot;: false,\n                \&quot;Price\&quot;: 110\n            }\n        ]\n    },\n    \&quot;Appointment\&quot;: {\n        \&quot;BookingDate\&quot;: \&quot;${Service_Date}T00:00:00\&quot;,\n        \&quot;DropOffTime\&quot;: \&quot;${Drop_Off_Time_Change}\&quot;,\n        \&quot;PickUpTime\&quot;: \&quot;${Pick_Up_Time}\&quot;,\n        \&quot;ServiceBayType\&quot;: \&quot;${ServiceBay_Time}\&quot;\n    },\n    \&quot;Contact\&quot;: {\n        \&quot;ToyotaContactID\&quot;: \&quot;43054\&quot;,\n        \&quot;FirstName\&quot;: \&quot;John\&quot;,\n        \&quot;LastName\&quot;: \&quot;Smith\&quot;,\n        \&quot;PhoneNumber\&quot;: \&quot;0411555666\&quot;,\n        \&quot;Email\&quot;: \&quot;john.smith@imaginaryemail.com\&quot;,\n        \&quot;DealerMarketingAllowedFlag\&quot;: false,\n        \&quot;ContactRelationship\&quot;: \&quot;OSB_CUSTOMER_OWNER\&quot;,\n        \&quot;AlternativeContactName\&quot;: \&quot;Jane Smith\&quot;,\n        \&quot;AlternativeContactNumber\&quot;: \&quot;0396474677\&quot;\n    },\n    \&quot;Comment\&quot;: null,\n    \&quot;BookingSource\&quot;: \&quot;OSB_SOURCE_DEALER_WEBSITE\&quot;,\n    \&quot;ExpressMaintenanceBookingRequest\&quot;: false,\n    \&quot;TransportOption\&quot;: \&quot;OSB_TRANSPORT_OPTION_NONE\&quot;,\n    \&quot;PreferredContactMethod\&quot;: \&quot;OSB_CONTACT_PHONE\&quot;,\n    \&quot;ConfirmationMessageByDMS\&quot;: false\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;Vehicle\&quot;: {\n        \&quot;VIN\&quot;: \&quot;${VIN_Change}\&quot;,\n        \&quot;RegistrationNumber\&quot;: \&quot;${REGNumber_Change}\&quot;,\n        \&quot;RegistrationState\&quot;: \&quot;OSB_STATE_VIC\&quot;,\n        \&quot;CustomerOdometerReading\&quot;: 20500,\n        \&quot;VehicleInformation\&quot;: {\n            \&quot;VehicleDetail\&quot;: []\n        }\n    },\n    \&quot;RepairOrder\&quot;: {\n        \&quot;TotalPriceQuoted\&quot;: ${TotalPrice},\n        \&quot;TotalDuration\&quot;: ${TotalDuration},\n        \&quot;Services\&quot;: [\n            {\n                \&quot;Name\&quot;: \&quot;Operation Code for Test\&quot;,\n                \&quot;Description\&quot;: null,\n                \&quot;ServiceType\&quot;: \&quot;${ServiceType}\&quot;,\n                \&quot;ServiceCode\&quot;: null,\n                \&quot;DMSOperationalCode\&quot;: \&quot;${DMSOperationCode}\&quot;,\n                \&quot;Duration\&quot;: 1,\n                \&quot;EMFlag\&quot;: false,\n                \&quot;EMDuration\&quot;: 0,\n                \&quot;DealerPrice\&quot;: 0,\n                \&quot;POAFlag\&quot;: false,\n                \&quot;Price\&quot;: 110\n            }\n        ]\n    },\n    \&quot;Appointment\&quot;: {\n        \&quot;BookingDate\&quot;: \&quot;${Service_Date_Change}T00:00:00\&quot;,\n        \&quot;DropOffTime\&quot;: \&quot;${Drop_Off_Time_Change}\&quot;,\n        \&quot;PickUpTime\&quot;: \&quot;${Pick_Up_Time_Change}\&quot;,\n        \&quot;ServiceBayType\&quot;: \&quot;${ServiceBay_Time}\&quot;\n    },\n    \&quot;Contact\&quot;: {\n        \&quot;ToyotaContactID\&quot;: \&quot;${ContactId}\&quot;,\n        \&quot;FirstName\&quot;: \&quot;${FirstName}\&quot;,\n        \&quot;LastName\&quot;: \&quot;${LastName}\&quot;,\n        \&quot;PhoneNumber\&quot;: \&quot;0983612137\&quot;,\n        \&quot;Email\&quot;: \&quot;QAteam.automation@titandms.com\&quot;,\n        \&quot;DealerMarketingAllowedFlag\&quot;: false,\n        \&quot;ContactRelationship\&quot;: \&quot;OSB_CUSTOMER_OWNER\&quot;,\n        \&quot;AlternativeContactName\&quot;: \&quot;ANH THY\&quot;,\n        \&quot;AlternativeContactNumber\&quot;: \&quot;0919011995\&quot;\n    },\n    \&quot;Comment\&quot;: null,\n    \&quot;BookingSource\&quot;: \&quot;OSB_SOURCE_DEALER_WEBSITE\&quot;,\n    \&quot;ExpressMaintenanceBookingRequest\&quot;: false,\n    \&quot;TransportOption\&quot;: \&quot;OSB_TRANSPORT_OPTION_NONE\&quot;,\n    \&quot;PreferredContactMethod\&quot;: \&quot;OSB_CONTACT_PHONE\&quot;,\n    \&quot;ConfirmationMessageByDMS\&quot;: false\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -68,7 +68,7 @@
       <description></description>
       <id>8c29fa83-4ea7-40c4-a56f-2fd9b0351173</id>
       <masked>false</masked>
-      <name>Service_Date</name>
+      <name>Service_Date_Change</name>
    </variables>
    <variables>
       <defaultValue>'09:45'</defaultValue>
@@ -90,6 +90,69 @@
       <id>6f94ffff-4657-42e6-8238-61f577305e48</id>
       <masked>false</masked>
       <name>ServiceBay_Time</name>
+   </variables>
+   <variables>
+      <defaultValue>'110'</defaultValue>
+      <description></description>
+      <id>7d955ce2-c7bd-4d23-b50e-3c1b2bfce1ea</id>
+      <masked>false</masked>
+      <name>TotalPrice_Change</name>
+   </variables>
+   <variables>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>80690c08-185c-4715-b5cc-bf99d099b33c</id>
+      <masked>false</masked>
+      <name>TotalDuration_Change</name>
+   </variables>
+   <variables>
+      <defaultValue>'VINCHANGE'</defaultValue>
+      <description></description>
+      <id>75cdcb41-508a-40de-908e-cffd91d1ecbd</id>
+      <masked>false</masked>
+      <name>VIN_Change</name>
+   </variables>
+   <variables>
+      <defaultValue>'REGCHANGE'</defaultValue>
+      <description></description>
+      <id>af503f4c-6867-49b2-bfc1-e295912b538f</id>
+      <masked>false</masked>
+      <name>REGNumber_Change</name>
+   </variables>
+   <variables>
+      <defaultValue>'1901'</defaultValue>
+      <description></description>
+      <id>9829c61c-5a89-40df-8b39-df992e5fa6f8</id>
+      <masked>false</masked>
+      <name>ContactId</name>
+   </variables>
+   <variables>
+      <defaultValue>'TITAN'</defaultValue>
+      <description></description>
+      <id>626f5a24-38b0-43e7-b6f2-aac366909dd6</id>
+      <masked>false</masked>
+      <name>FirstName</name>
+   </variables>
+   <variables>
+      <defaultValue>'DMS'</defaultValue>
+      <description></description>
+      <id>9bdc219e-f3e9-4c4d-85b3-19786437dba5</id>
+      <masked>false</masked>
+      <name>LastName</name>
+   </variables>
+   <variables>
+      <defaultValue>'OSB_SERVICE_TYPE_LOGBOOK'</defaultValue>
+      <description></description>
+      <id>bf61a1cb-52a1-4eda-8f6b-d9e4ac965195</id>
+      <masked>false</masked>
+      <name>ServiceType</name>
+   </variables>
+   <variables>
+      <defaultValue>'TITAN_OP_CODE_LOG'</defaultValue>
+      <description></description>
+      <id>b13c2a6b-b124-43dc-97cd-c4aa3f6c596d</id>
+      <masked>false</masked>
+      <name>DMSOperationCode</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
