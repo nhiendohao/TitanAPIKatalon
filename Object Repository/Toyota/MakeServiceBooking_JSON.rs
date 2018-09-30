@@ -8,7 +8,7 @@
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;Vehicle\&quot;: {\n        \&quot;VIN\&quot;: \&quot;${VIN}\&quot;,\n        \&quot;RegistrationNumber\&quot;: \&quot;${REGNumber}\&quot;,\n        \&quot;RegistrationState\&quot;: \&quot;OSB_STATE_VIC\&quot;,\n        \&quot;CustomerOdometerReading\&quot;: 20500,\n        \&quot;VehicleInformation\&quot;: {\n            \&quot;VehicleDetail\&quot;: [\n                {\n                    \&quot;Key\&quot;: 0,\n                    \&quot;Value\&quot;: \&quot;TOYOTA\&quot;\n                },\n                {\n                    \&quot;Key\&quot;: 1,\n                    \&quot;Value\&quot;: \&quot;Corolla Sedan\&quot;\n                },\n                {\n                    \&quot;Key\&quot;: 3,\n                    \&quot;Value\&quot;: \&quot;2016-09\&quot;\n                }\n            ]\n        }\n    },\n    \&quot;RepairOrder\&quot;: {\n        \&quot;TotalPriceQuoted\&quot;: 110,\n        \&quot;TotalDuration\&quot;: 1,\n        \&quot;Services\&quot;: [\n            {\n                \&quot;Name\&quot;: \&quot;VW105 - Carry out 105,000km service as per VW schedule\&quot;,\n                \&quot;Description\&quot;: null,\n                \&quot;ServiceType\&quot;: \&quot;OSB_SERVICE_TYPE_LOGBOOK\&quot;,\n                \&quot;ServiceCode\&quot;: null,\n                \&quot;DMSOperationalCode\&quot;: \&quot;LEVINH\&quot;,\n                \&quot;Duration\&quot;: 1,\n                \&quot;EMFlag\&quot;: false,\n                \&quot;EMDuration\&quot;: 0,\n                \&quot;DealerPrice\&quot;: 0,\n                \&quot;POAFlag\&quot;: false,\n                \&quot;Price\&quot;: 110\n            }\n         ]   \n        \n    },\n    \&quot;Appointment\&quot;: {\n        \&quot;BookingDate\&quot;: \&quot;${Service_Date}T00:00:00\&quot;,\n        \&quot;DropOffTime\&quot;: \&quot;${Drop_Off_Time}\&quot;,\n        \&quot;PickUpTime\&quot;: \&quot;${Pick_Up_Time}\&quot;,\n        \&quot;XReserveToken\&quot;: ${Reserve_Token},\n        \&quot;ServiceBayType\&quot;: \&quot;${ServiceBay_Time}\&quot;\n    },\n    \&quot;Contact\&quot;: {\n        \&quot;ToyotaContactID\&quot;: \&quot;43054\&quot;,\n        \&quot;FirstName\&quot;: \&quot;John\&quot;,\n        \&quot;LastName\&quot;: \&quot;Smith\&quot;,\n        \&quot;PhoneNumber\&quot;: \&quot;0411555666\&quot;,\n        \&quot;Email\&quot;: \&quot;john.smith@imaginaryemail.com\&quot;,\n        \&quot;DealerMarketingAllowedFlag\&quot;: false,\n        \&quot;ContactRelationship\&quot;: \&quot;OSB_CUSTOMER_OWNER\&quot;,\n        \&quot;AlternativeContactName\&quot;: \&quot;Jane Smith\&quot;,\n        \&quot;AlternativeContactNumber\&quot;: \&quot;0396474677\&quot;\n    },\n     \&quot;Comment\&quot;: {\n\t    \&quot;CommentLine\&quot;: [\n\t      \&quot;Engine\&quot;,\n\t      \&quot;Engine gives a rough sound when sharply braking from 100 km/h.\&quot;\n\t    ]\n\t  },\n    \&quot;BookingSource\&quot;: null,\n    \&quot;ExpressMaintenanceBookingRequest\&quot;: false,\n    \&quot;TransportOption\&quot;: 3,\n    \&quot;PreferredContactMethod\&quot;: 0,\n    \&quot;ConfirmationMessageByDMS\&quot;: false\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;Vehicle\&quot;: {\n        \&quot;VIN\&quot;: \&quot;${VIN}\&quot;,\n        \&quot;RegistrationNumber\&quot;: \&quot;${REGNumber}\&quot;,\n        \&quot;RegistrationState\&quot;: \&quot;OSB_STATE_VIC\&quot;,\n        \&quot;CustomerOdometerReading\&quot;: 20500,\n        \&quot;VehicleInformation\&quot;: {\n            \&quot;VehicleDetail\&quot;: [\n                {\n                    \&quot;Key\&quot;: 0,\n                    \&quot;Value\&quot;: \&quot;TOYOTA\&quot;\n                },\n                {\n                    \&quot;Key\&quot;: 1,\n                    \&quot;Value\&quot;: \&quot;Corolla Sedan\&quot;\n                },\n                {\n                    \&quot;Key\&quot;: 3,\n                    \&quot;Value\&quot;: \&quot;2016-09\&quot;\n                }\n            ]\n        }\n    },\n    \&quot;RepairOrder\&quot;: {\n        \&quot;TotalPriceQuoted\&quot;: ${TotalPrice},\n        \&quot;TotalDuration\&quot;: ${TotalDuration},\n        \&quot;Services\&quot;: [\n            {\n                \&quot;Name\&quot;: \&quot;Operation Code for Test\&quot;,\n                \&quot;Description\&quot;: null,\n                \&quot;ServiceType\&quot;: \&quot;${ServiceType}\&quot;,\n                \&quot;ServiceCode\&quot;: null,\n                \&quot;DMSOperationalCode\&quot;: \&quot;${DMSOperationCode}\&quot;,\n                \&quot;Duration\&quot;: 1,\n                \&quot;EMFlag\&quot;: false,\n                \&quot;EMDuration\&quot;: 0,\n                \&quot;DealerPrice\&quot;: 0.5,\n                \&quot;POAFlag\&quot;: false,\n                \&quot;Price\&quot;: 110\n            }\n         ]   \n        \n    },\n    \&quot;Appointment\&quot;: {\n        \&quot;BookingDate\&quot;: \&quot;${Service_Date}T00:00:00\&quot;,\n        \&quot;DropOffTime\&quot;: \&quot;${Drop_Off_Time}\&quot;,\n        \&quot;PickUpTime\&quot;: \&quot;${Pick_Up_Time}\&quot;,\n        \&quot;XReserveToken\&quot;: ${Reserve_Token},\n        \&quot;ServiceBayType\&quot;: \&quot;${ServiceBay_Time}\&quot;\n    },\n    \&quot;Contact\&quot;: {\n        \&quot;ToyotaContactID\&quot;: \&quot;${ContactId}\&quot;,\n        \&quot;FirstName\&quot;: \&quot;${FirstName}\&quot;,\n        \&quot;LastName\&quot;: \&quot;${LastName}\&quot;,\n        \&quot;PhoneNumber\&quot;: \&quot;0983612137\&quot;,\n        \&quot;Email\&quot;: \&quot;QAteam.automation@titandms.com\&quot;,\n        \&quot;DealerMarketingAllowedFlag\&quot;: false,\n        \&quot;ContactRelationship\&quot;: \&quot;OSB_CUSTOMER_OWNER\&quot;,\n        \&quot;AlternativeContactName\&quot;: \&quot;ANH THY\&quot;,\n        \&quot;AlternativeContactNumber\&quot;: \&quot;0919011995\&quot;\n    },\n     \&quot;Comment\&quot;: {\n\t    \&quot;CommentLine\&quot;: [\n\t      \&quot;TITANDMS\&quot;,\n\t      \&quot;TITAN DMS - QA TEAM - AUTOMATION - VINH LE\&quot;\n\t    ]\n\t  },\n    \&quot;BookingSource\&quot;: null,\n    \&quot;ExpressMaintenanceBookingRequest\&quot;: false,\n    \&quot;TransportOption\&quot;: 3,\n    \&quot;PreferredContactMethod\&quot;: 0,\n    \&quot;ConfirmationMessageByDMS\&quot;: false\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -89,7 +89,56 @@
       <description></description>
       <id>2a607707-3803-44e6-a4bd-7c53b772aab7</id>
       <masked>false</masked>
-      <name>ServiceBay_Time</name>
+      <name>ServiceBay_Type</name>
+   </variables>
+   <variables>
+      <defaultValue>'110'</defaultValue>
+      <description></description>
+      <id>e989d975-0b3c-4ac2-a35a-0e309afc3e46</id>
+      <masked>false</masked>
+      <name>TotalPrice</name>
+   </variables>
+   <variables>
+      <defaultValue>'1'</defaultValue>
+      <description></description>
+      <id>2186be28-46a8-4a4d-85ac-fe912d359ddf</id>
+      <masked>false</masked>
+      <name>TotalDuration</name>
+   </variables>
+   <variables>
+      <defaultValue>'1901'</defaultValue>
+      <description></description>
+      <id>ccecc091-9d12-4444-8336-7b62561c30f5</id>
+      <masked>false</masked>
+      <name>ContactId</name>
+   </variables>
+   <variables>
+      <defaultValue>'TITAN'</defaultValue>
+      <description></description>
+      <id>a9c883b4-aeff-4fc9-a4b1-7859eb244f6e</id>
+      <masked>false</masked>
+      <name>FirstName</name>
+   </variables>
+   <variables>
+      <defaultValue>'DMS'</defaultValue>
+      <description></description>
+      <id>9d0ba3d2-b0d9-48c8-a5c5-e07d7c6d7f0a</id>
+      <masked>false</masked>
+      <name>LastName</name>
+   </variables>
+   <variables>
+      <defaultValue>'OSB_SERVICE_TYPE_LOGBOOK'</defaultValue>
+      <description></description>
+      <id>ca9eb618-6ba2-4019-91aa-d8c2aa01d760</id>
+      <masked>false</masked>
+      <name>ServiceType</name>
+   </variables>
+   <variables>
+      <defaultValue>'TITAN_OP_CODE_LOG'</defaultValue>
+      <description></description>
+      <id>1c82ab21-9c06-4c36-9a55-a0af2966d730</id>
+      <masked>false</masked>
+      <name>DMSOperationCode</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

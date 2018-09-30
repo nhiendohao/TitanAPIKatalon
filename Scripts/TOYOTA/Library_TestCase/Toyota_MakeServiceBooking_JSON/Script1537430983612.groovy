@@ -25,15 +25,57 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import static org.assertj.core.api.Assertions.*
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.Date
 
-//
-RequestObject MakeServiceBooking = findTestObject('Toyota/MakeServiceBooking_JSON', [('VIN') : GlobalVariable.Glb_VIN, ('REGNumber') : GlobalVariable.Glb_REGNumber
-            , ('Service_Date') : GlobalVariable.Glb_ServiceDate, ('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, ('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, ('Reserve_Token') : GlobalVariable.Glb_Reserve_Token
-            , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type,('Dealer_Code') : GlobalVariable.Glb_Dealer_Code
-            , ('Location_Code') : GlobalVariable.Glb_Location_Code])
 
+//V0. Check send request successfully and get Booking Id
+//V1. Vaidate dealer, WS, duration, need Duration, drop off and pick up time,
+//=========================================================================================
+
+//METHOD
+//Verify response
+def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
+	//Verify Response Status = 200 OK
+	WS.verifyResponseStatusCode(response, StatusCode)
+	
+	//Transfer response to Text
+	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
+	if(!(ExpectedMessage==""))assertThat(response.getResponseText()).contains(ExpectedMessage)
+}
+//Convert String to Date
+def ConvertString_toDate = {String Date_Str, String format ->
+	SimpleDateFormat formatter = new SimpleDateFormat(format);
+	
+		Date _date = formatter.parse(Date_Str);
+		System.out.println(_date);
+		return _date
+}
+//=========================================================================================
+
+//CODE
+//Declare request
+RequestObject MakeServiceBooking = findTestObject('Toyota/MakeServiceBooking_JSON', [
+	('VIN') : GlobalVariable.Glb_VIN, 
+	('REGNumber') : GlobalVariable.Glb_REGNumber            , 
+	('Service_Date') : GlobalVariable.Glb_ServiceDate, 
+	('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, 
+	('Pick_Up_Time') : GlobalVariable.Glb_PickUpTime, 
+	('Reserve_Token') : GlobalVariable.Glb_Reserve_Token            , 
+	('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type,
+	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code            , 
+	('Location_Code') : GlobalVariable.Glb_Location_Code,
+	('') : GlobalVariable.Glb_TotalPrice,
+	('') : GlobalVariable.Glb_TotalDuration,
+	('') : GlobalVariable.Glb_ContactId,
+	('') : GlobalVariable.Glb_FirstName,
+	('') : GlobalVariable.Glb_LastName,
+	('') : GlobalVariable.G])
+//Setup header value
 MakeServiceBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
-
+//Declare response
 ResponseObject res_MakeServiceBooking = WS.sendRequest(MakeServiceBooking)
 
 //Verify Response Status = 200 OK
@@ -44,6 +86,5 @@ WS.verifyResponseStatusCode(res_MakeServiceBooking, 200)
 def res_Text = new groovy.json.JsonSlurper().parseText(res_MakeServiceBooking.getResponseText())
 //get the retrieved token
 GlobalVariable.Glb_Booking_ID = res_Text.BookingID
-if(GlobalVariable.Glb_Reserve_Token == "") println "Error"
-else println GlobalVariable.Glb_Booking_ID
+println GlobalVariable.Glb_Booking_ID
 

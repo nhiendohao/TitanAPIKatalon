@@ -134,4 +134,9 @@
       <initValue>'current'</initValue>
       <name>Glb_BookingStatus</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'OSB_SERVICE_TYPE_LOGBOOK'</initValue>
+      <name>Glb_ServiceType</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
