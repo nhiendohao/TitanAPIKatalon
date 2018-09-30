@@ -57,17 +57,32 @@ def ConvertString_toDate = {String Date_Str, String format ->
 
 //CODE
 //Set up value for variable depend on input value
+//Set service date change
 if(var_DateChange == "") var_DateChange = GlobalVariable.Glb_ServiceDate
+	else GlobalVariable.Glb_ServiceDate = var_DateChange
+//Set Drop Off Time Change
 if(var_DropOffChange == "") var_DropOffChange = GlobalVariable.Glb_DropOffTime
+	else GlobalVariable.Glb_DropOffTime = var_DropOffChange
+//Set Pick Up Change
 if(var_PickUpChange == "") var_PickUpChange = GlobalVariable.Glb_PickUpTime
+	else GlobalVariable.Glb_PickUpTime = var_PickUpChange
+//Set Total Price Change
 if(var_PriceChange == "") var_PriceChange = GlobalVariable.Glb_TotalPrice
+	else GlobalVariable.Glb_TotalPrice = var_PriceChange
+//Set Total Duration change
 if(var_DurationChange == "") var_DurationChange = GlobalVariable.Glb_TotalDuration
+	else GlobalVariable.Glb_TotalDuration = var_DurationChange
+//Set VIN Change
 if(var_VINChange == "") var_VINChange = GlobalVariable.Glb_VIN
+	else GlobalVariable.Glb_VIN = var_VINChange
+//Set REGNumber Change
 if(var_REGNumberChange == "") var_REGNumberChange = GlobalVariable.Glb_REGNumber
+	else GlobalVariable.Glb_REGNumber = var_REGNumberChange
 //Setup DMSOperationCode base on Service Type
 String DMSOperationCode
 if(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK") DMSOperationCode = "OSB_SERVICE_TYPE_LOGBOOK"
 	else DMSOperationCode = "OSB_SERVICE_TYPE_ADDITIONAL"
+
 //Declare request
 RequestObject ChangeBooking = findTestObject('Toyota/ChangeBooking_JSON', [
 	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 

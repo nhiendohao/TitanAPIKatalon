@@ -84,13 +84,73 @@ MakeServiceBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authori
 //Declare response
 ResponseObject res_MakeServiceBooking = WS.sendRequest(MakeServiceBooking)
 
-//Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(res_MakeServiceBooking, 200)
+//Convert type data section
+//Convert String to Integer
+int Duration = GlobalVariable.Glb_Duration_Time as Integer
+//Convert String to Date
+def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
+def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
+def DropOffTime = Date.parse("HH:mm", GlobalVariable.Glb_DropOffTime) as Date
+def PickUpTime = Date.parse("HH:mm", GlobalVariable.Glb_PickUpTime) as Date
+//Convert String to Date
+Start_WS_Str = "0" + GlobalVariable.Glb_WorkshopStart + ":00"
+def Start_WS_Hr = ConvertString_toDate(Start_WS_Str,"HH:mm")
+End_WS_Str = GlobalVariable.Glb_WorkshopEnd + ":00"
+def End_WS_Hr = ConvertString_toDate(End_WS_Str,"HH:mm")
+//Calculate Time avalable for service
+int duration_hours
+use(groovy.time.TimeCategory) {
+	def _duration = PickUpTime - DropOffTime
+	duration_hours = _duration.hours as Integer
+	println duration_hours
+	}
 
-//Get Reserve Token
-//Transfer response to Text
-def res_Text = new groovy.json.JsonSlurper().parseText(res_MakeServiceBooking.getResponseText())
-//get the retrieved token
-GlobalVariable.Glb_Booking_ID = res_Text.BookingID
-println GlobalVariable.Glb_Booking_ID
+//Verify Response Status
+//Clasify case
+//StartDate  after EndDate
+if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
+	VerifyResponse(res_MakeServiceBooking,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+//Drop Off Time after Pick Up Time
+else if(DropOffTime.after(PickUpTime))
+	 VerifyResponse(res_MakeServiceBooking,400,"must be greater then the drop off times")
+//Total Duration is not equal to duration job line
+else if(!(GlobalVariable.Glb_TotalDuration == "1"))
+		 VerifyResponse(res_MakeServiceBooking,400,"The total duration "+GlobalVariable.Glb_TotalDuration+" of RepairOrder not equals total duration 1 of RepairOrder Line")
+//Total Price is not equal to duration job line
+else if(!(GlobalVariable.Glb_TotalPrice == "110"))
+	 VerifyResponse(res_MakeServiceBooking,400,"Booking Rejected - The total price "+GlobalVariable.Glb_TotalPrice+" of RepairOrder not equals total price 110 of RepairOrder Line")
+else if(duration_hours < Duration)
+	 VerifyResponse(res_MakeServiceBooking,400,"Duration " +Duration+ " cannot be completed in a single day")
+//Closed Workshop
+else if(GlobalVariable.Glb_Location_Code == "2"||
+	GlobalVariable.Glb_Location_Code == "3"||
+	GlobalVariable.Glb_Location_Code == "5")
+	 VerifyResponse(res_MakeServiceBooking,400,"The Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+//Not exist Workshop
+else if(!(GlobalVariable.Glb_Location_Code == "1"||
+	 GlobalVariable.Glb_Location_Code == "4"||
+	 GlobalVariable.Glb_Location_Code == "360"))
+	 VerifyResponse(res_MakeServiceBooking,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+//StartDate before Current
+else if(Service_Date.before(current))
+	VerifyResponse(res_MakeServiceBooking,404,"is partially outside days when DMS will take bookings")
+//Drop Off Time before WS Start Hour
+else if( DropOffTime.before(Start_WS_Hr))
+	VerifyResponse(res_MakeServiceBooking,400,"")
+//Pickup Time after WS End Hour
+else if( PickUpTime.after(End_WS_Hr)(Start_WS_Hr))
+	 VerifyResponse(res_MakeServiceBooking,400,"")
+/*else if((DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration) &&
+	 !(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ))
+	 VerifyResponse(res_ReserveTimeslot,400,"Duration " +Duration+ " do not match values from GetDropOffTimes")*/
+//All valid
+else {
+	 VerifyResponse(res_MakeServiceBooking,200,"")
 
+	//Get Reserve Token
+	//Transfer response to Text
+	def res_Text = new groovy.json.JsonSlurper().parseText(res_MakeServiceBooking.getResponseText())
+	//get the retrieved token
+	GlobalVariable.Glb_Booking_ID = res_Text.BookingID
+	println GlobalVariable.Glb_Booking_ID
+	}

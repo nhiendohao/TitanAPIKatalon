@@ -85,7 +85,7 @@ def End_WS_Hr = ConvertString_toDate(End_WS_Str,"HH:mm")
 //Calculate Time avalable for service
 int duration_hours
 use(groovy.time.TimeCategory) {
-	def _duration = End_WS_Hr - DropOffTime
+	def _duration = PickUpTime - DropOffTime
 	duration_hours = _duration.hours as Integer
 	println duration_hours
 	}
