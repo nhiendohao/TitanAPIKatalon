@@ -129,25 +129,25 @@ else {
 	 VerifyResponse(res_ReserveTimeslot,200,"")
 
 
-//Verify ServiceBay Type
-WS.verifyElementPropertyValue(res_ReserveTimeslot, 'ServiceBayType', GlobalVariable.Glb_ServiceBay_Type)
-
-//Verify Action
-WS.verifyElementPropertyValue(res_ReserveTimeslot, 'Action', 'HOLD')
-
-//Get Reserve Token
-//Transfer response to Text
-def res_Text = new groovy.json.JsonSlurper().parseText(res_ReserveTimeslot.getResponseText())
-
-//get the retrieved token
-GlobalVariable.Glb_Reserve_Token = res_Text.XReserveToken
-println(GlobalVariable.Glb_Reserve_Token)
-
-//Verify the Drop Off Timeslot is not available when send request Get Off Time again
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3'), [
-	('Start_Date') : GlobalVariable.Glb_ServiceDate, 
-	('End_Date') : GlobalVariable.Glb_ServiceDate, 
-	('Service_Type') : GlobalVariable.Glb_ServiceBay_Type,
-	('Reserve_Timeslot') : GlobalVariable.Glb_DropOffTime], 
-FailureHandling.STOP_ON_FAILURE)
+	//Verify ServiceBay Type
+	WS.verifyElementPropertyValue(res_ReserveTimeslot, 'ServiceBayType', GlobalVariable.Glb_ServiceBay_Type)
+	
+	//Verify Action
+	WS.verifyElementPropertyValue(res_ReserveTimeslot, 'Action', 'HOLD')
+	
+	//Get Reserve Token
+	//Transfer response to Text
+	def res_Text = new groovy.json.JsonSlurper().parseText(res_ReserveTimeslot.getResponseText())
+	
+	//get the retrieved token
+	GlobalVariable.Glb_Reserve_Token = res_Text.XReserveToken
+	println(GlobalVariable.Glb_Reserve_Token)
+	
+	//Verify the Drop Off Timeslot is not available when send request Get Off Time again
+	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3'), [
+		('Start_Date') : GlobalVariable.Glb_ServiceDate, 
+		('End_Date') : GlobalVariable.Glb_ServiceDate, 
+		('Service_Type') : GlobalVariable.Glb_ServiceBay_Type,
+		('Reserve_Timeslot') : GlobalVariable.Glb_DropOffTime], 
+	FailureHandling.STOP_ON_FAILURE)
 }

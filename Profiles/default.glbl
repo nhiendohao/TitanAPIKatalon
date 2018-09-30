@@ -129,4 +129,9 @@
       <initValue>''</initValue>
       <name>Glb_EndSearchDate</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'current'</initValue>
+      <name>Glb_BookingStatus</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

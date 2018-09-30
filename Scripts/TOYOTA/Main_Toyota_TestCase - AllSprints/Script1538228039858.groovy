@@ -17,23 +17,23 @@ import internal.GlobalVariable as GlobalVariable
 //1. Setup value for dynamic Global variables
 WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variables - V1'), [
 	('Setup_Interval') : var_Interval, 
-	('Setup_WorkshopStart') : var_WorkshopStart        , 
+	('Setup_WorkshopStart') : var_WorkshopStart, 
 	('Setup_WorkshopEnd') : var_WorkshopEnd, 
 	('Setup_Duration') : var_Duration, 
 	('Setup_Dealer_Code') : var_Dealer_Code, 
-	('Setup_Location_Code') : var_Location_Code        , 
+	('Setup_Location_Code') : var_Location_Code, 
 	('Setup_VIN') : var_VIN, 
 	('Setup_REGNumber') : var_REGNumber, 
 	('Setup_ServiceDate') : var_ServiceDate, 
-	('Setup_DropOffTime') : var_Drop_Off_Time        , 
+	('Setup_DropOffTime') : var_Drop_Off_Time, 
 	('Setup_PickUpTime') : var_Status_PickupTime, 
 	('Setup_TotalPrice') : var_TotalPrice, 
 	('Setup_TotalDuration') : var_TotalDuration, 
-	('Setup_FirstName') : var_FirstName        , 
+	('Setup_FirstName') : var_FirstName , 
 	('Setup_LastName') :var_LastName, 
 	('Setup_StartDropDate') : var_StartDropDate, 
 	('Setup_EndDropDate') : var_EndDropDate, 
-	('Setup_StartSearchDate') : var_StartSearchDate        , 
+	('Setup_StartSearchDate') : var_StartSearchDate , 
 	('Setup_EndSearchDate') : var_EndSearchDate,
 	('Setup_BookingId') : var_BookingId
 	], FailureHandling.STOP_ON_FAILURE)
@@ -99,5 +99,7 @@ if (var_Status_ChangeBooking == 'true') {
 //11. Cancel Booking
 if (var_Status_CancelBooking == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
+	//Re-Check call Cancel again
+	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 

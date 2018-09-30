@@ -25,15 +25,72 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import static org.assertj.core.api.Assertions.*
 
-//
-RequestObject CancelBooking = findTestObject('Toyota/CancelBooking_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('BookingID') : GlobalVariable.Glb_Booking_ID])
+//V0. Check status code = 200 OK
+//V1. Check response []
+//Check the Search booking request, Drop Off Time request
+//=========================================================================================
 
+//METHOD
+//Verify response
+def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
+	//Verify Response Status = 200 OK
+	WS.verifyResponseStatusCode(response, StatusCode)
+	
+	//Transfer response to Text
+	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
+	if(!(ExpectedMessage==""))assertThat(response.getResponseText()).contains(ExpectedMessage)
+}
+//=========================================================================================
+
+//CODE
+//Declare request
+RequestObject CancelBooking = findTestObject('Toyota/CancelBooking_JSON', [
+	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
+	('Location_Code') : GlobalVariable.Glb_Location_Code, 
+	('BookingID') : GlobalVariable.Glb_Booking_ID])
+//Setup header value
 CancelBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
     GlobalVariable.Glb_Authorization_Token))
-
+//Declare response
 ResponseObject res_CancelBooking = WS.sendRequest(CancelBooking)
 
-//Verify Response Status = 200 OK
-WS.verifyResponseStatusCode(res_CancelBooking, 200)
-
+//Classify cases
+//Invalid Dealer Code
+if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
+	VerifyResponse(res_CancelBooking,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+//Closed Workshop
+else if(GlobalVariable.Glb_Location_Code == "2"||
+		GlobalVariable.Glb_Location_Code == "3"||
+		GlobalVariable.Glb_Location_Code == "5")
+	VerifyResponse(res_CancelBooking,400,"The Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+//Not exist Workshop
+else if(!(GlobalVariable.Glb_Location_Code == "1"||
+	GlobalVariable.Glb_Location_Code == "4"||
+	GlobalVariable.Glb_Location_Code == "360"))
+	VerifyResponse(res_CancelBooking,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+//Service Date Past
+else if (GlobalVariable.Glb_Booking_ID == "1901" || GlobalVariable.Glb_BookingStatus == "cancel")
+	VerifyResponse(res_CancelBooking,404,"Booking ID " +GlobalVariable.Glb_Booking_ID+ " not found")
+//All valid
+else{
+	//Verify Response Status = 200 OK
+	VerifyResponse(res_CancelBooking,200,"")
+	//Verify response content is NULL
+	def res_Text = new groovy.json.JsonSlurper().parseText(res_CancelBooking.getResponseText())
+	assert  res_Text[0] == null
+	//Set Booking Status = "cancel"
+	GlobalVariable.Glb_BookingStatus = "cancel"
+	
+	//Re-check call Get Off Time again
+	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3'), [
+		('Start_Date') : GlobalVariable.Glb_ServiceDate,
+		('End_Date') : GlobalVariable.Glb_ServiceDate,
+		('Service_Type') : GlobalVariable.Glb_ServiceBay_Type,
+		('Reserve_Timeslot') : ''],
+	FailureHandling.STOP_ON_FAILURE)
+	
+	//Re-check call Search Booking
+	
+}
