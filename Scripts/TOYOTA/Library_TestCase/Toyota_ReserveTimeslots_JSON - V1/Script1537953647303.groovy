@@ -145,9 +145,6 @@ else {
 	
 	//Verify the Drop Off Timeslot is not available when send request Get Off Time again
 	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3'), [
-		('Start_Date') : GlobalVariable.Glb_ServiceDate, 
-		('End_Date') : GlobalVariable.Glb_ServiceDate, 
-		('Service_Type') : GlobalVariable.Glb_ServiceBay_Type,
 		('Reserve_Timeslot') : GlobalVariable.Glb_DropOffTime], 
 	FailureHandling.STOP_ON_FAILURE)
 }

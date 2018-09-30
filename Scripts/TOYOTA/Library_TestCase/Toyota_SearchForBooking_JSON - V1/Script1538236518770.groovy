@@ -85,7 +85,8 @@ else{
 	//Validate Search Date do not include Service Date && validate not exist REGNumber
 	if(EndSearchDate.before(Service_Date) || 
 		StartSearchDate.after(Service_Date) || 
-		!(GlobalVariable.Glb_REGNumber == "REG_TITAN_API"))
+		!(GlobalVariable.Glb_REGNumber == "REG_TITAN_API") ||
+		GlobalVariable.Glb_BookingStatus == "cancel")
 	{
 		def res_Text = new groovy.json.JsonSlurper().parseText(res_SearchForBooking.getResponseText())
 		assert  res_Text[0] == null

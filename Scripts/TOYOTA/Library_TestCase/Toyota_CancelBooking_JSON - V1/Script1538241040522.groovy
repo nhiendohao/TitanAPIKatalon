@@ -85,12 +85,10 @@ else{
 	
 	//Re-check call Get Off Time again
 	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3'), [
-		('Start_Date') : GlobalVariable.Glb_ServiceDate,
-		('End_Date') : GlobalVariable.Glb_ServiceDate,
-		('Service_Type') : GlobalVariable.Glb_ServiceBay_Type,
 		('Reserve_Timeslot') : ''],
 	FailureHandling.STOP_ON_FAILURE)
 	
 	//Re-check call Search Booking
-	
+	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON - V1'), [:], 
+	FailureHandling.STOP_ON_FAILURE)
 }
