@@ -46,9 +46,22 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
 	if(!(ExpectedMessage==""))assertThat(response.getResponseText()).contains(ExpectedMessage)
 }
+
+//Round number
+	def RoundNumber = { Float floatnumber ->
+		String roundvalue =  new DecimalFormat("#.##").format(floatnumber)
+			if (!(roundvalue.contains("."))) roundvalue = roundvalue + ".0"
+		return roundvalue
+}
 //=====================================================================================================
 
 //CODE
+//Declare File path CSV
+String Filepath
+if(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK")
+	Filepath = "Data Files/Toyota/OperationCode_LOGBOOK.csv"
+	else Filepath = "Data Files/Toyota/OperationCode_ADDITIONAL.csv"
+
 //Declare request
 RequestObject GetServiceOperation = findTestObject('Toyota/GetServiceOperations_JSON', [
 	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
@@ -84,11 +97,11 @@ else { VerifyResponse(res_GetServiceOperation,200,"")
 //Transfer response to Text
 def res_Text = new groovy.json.JsonSlurper().parseText(res_GetServiceOperation.getResponseText())
 def OpCodeJSON
-res_Text.each{ OpCodeJSON = it}
+res_Text.each{ OpCodeJSON += 1}
 
 //Get data from CSV file
 int count_CSV = 0
-CSVReader = new File('Data Files/Toyota/test.csv')
+CSVReader = new File()
 def csv_content = CSVReader.getText('utf-8')
  //Convert CSV to text
 def CSVData = parseCsv(csv_content, separator: ',', readFirstLine: false)
@@ -96,11 +109,24 @@ def CSVData = parseCsv(csv_content, separator: ',', readFirstLine: false)
 for (line in CSVData) {
 	 assert res_Text[count_CSV].Name == line.Name
 	 assert res_Text[count_CSV].DMSOperationalCode == line.DMSOperationalCode
-	 assert res_Text[count_CSV].Duration == line.Duration
-	 assert res_Text[count_CSV].DealerPrice == line.DealerPrice
+	 //Modify format for Duration in CSV file
+	 _duration = line.Duration as String
+	 if(!_duration.contains(".")) _duration = line.Duration + ".0"
+	 assert RoundNumber(res_Text[count_CSV].Duration) == _duration
+	 //Modify format for Price in CSV file
+	 _price = line.DealerPrice as String
+	 if(!_price.contains(".")) _price = line.DealerPrice + ".0"
+	 assert RoundNumber(res_Text[count_CSV].DealerPrice as Float) == _price
+	 assert res_Text[count_CSV].ServiceType == ServiceType
+	 assert res_Text[count_CSV].ServiceCode == null
+	 assert res_Text[count_CSV].EMFlag as String == "false"
+	 assert res_Text[count_CSV].EMDuration as String == "0.0"
+	 assert res_Text[count_CSV].POAFlag as String == "false"
+	 assert res_Text[count_CSV].Price as String== "0.0"
 	 count_CSV += 1
   }
 
 //Verify number of element between JSON response and slot of WS
 assert OpCodeJSON.size == count_CSV
 }
+

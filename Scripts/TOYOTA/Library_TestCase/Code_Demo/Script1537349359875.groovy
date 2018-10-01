@@ -30,28 +30,65 @@ import static org.assertj.core.api.Assertions.*
 import java.text.ParseException as ParseException
 import java.text.SimpleDateFormat as SimpleDateFormat
 import java.util.Date as Date
+import static com.xlson.groovycsv.CsvParser.parseCsv
+import java.text.DecimalFormat
 
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variables - V1'), [
-	('Setup_Interval') : '15', 
-	('Setup_WorkshopStart') : '8'        , 
-	('Setup_WorkshopEnd') : '17', 
-	('Setup_Duration') : '1', 
-	('Setup_Dealer_Code') : '764A', 
-	('Setup_Location_Code') : '1'        , 
-	('Setup_VIN') : 'VNVNVNVNVNVNVNVNV', 
-	('Setup_REGNumber') : 'REG_TITAN_API', 
-	('Setup_ServiceDate') : '', 
-	('Setup_DropOffTime') : '08:00'        , 
-	('Setup_PickUpTime') : '17:00', 
-	('Setup_TotalPrice') : '', 
-	('Setup_TotalDuration') : '', 
-	('Setup_FirstName') : 'TITAN'        , 
-	('Setup_LastName') : 'DMS',
-	 ('Setup_StartDropDate') : '', 
-	 ('Setup_EndDropDate') : '',
-	  ('Setup_StartSearchDate') : ''        , 
-	  ('Setup_EndSearchDate') : '', 
-		('Setup_BookingId') : '', 
-		('Setup_ServiceType') : 'OSB_SERVICE_TYPE_ADDITIONAL'], 
-    FailureHandling.STOP_ON_FAILURE)
+@Grab('com.xlson.groovycsv:groovycsv:1.3')
 
+//CODE
+//Declare request
+RequestObject GetServiceOperation = findTestObject('Toyota/GetServiceOperations_JSON', [
+	('Dealer_Code') : '765A', 
+	('Location_Code') : '1', 
+	('VIN') : 'VNVNVNVNVNVNVNVNV', 
+	('Service_Type') : 'OSB_SERVICE_TYPE_ADDITIONAL'])
+//Declare header
+GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
+    GlobalVariable.Glb_Authorization_Token))
+//Send request
+ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
+
+String ServiceType = "OSB_SERVICE_TYPE_ADDITIONAL"
+def res_Text = new groovy.json.JsonSlurper().parseText(res_GetServiceOperation.getResponseText())
+def OpCodeJSON = 0
+res_Text.each{ OpCodeJSON += 1}
+
+def RoundNumber = { Float floatnumber ->
+String roundvalue =  new DecimalFormat("#.##").format(floatnumber)
+	if (!(roundvalue.contains("."))) roundvalue = roundvalue + ".0"
+return roundvalue
+}
+println  RoundNumber(5)
+
+
+//Get data from CSV file
+int count_CSV = 0
+CSVReader = new File('Data Files/Toyota/OperationCode_ADDITIONAL.csv')
+def csv_content = CSVReader.getText('utf-8')
+ //Convert CSV to text
+def CSVData = parseCsv(csv_content, separator: ',', readFirstLine: false)
+ //Get for each column and Assert with Response
+
+
+for (line in CSVData) {
+	 assert res_Text[count_CSV].Name == line.Name
+	 assert res_Text[count_CSV].DMSOperationalCode == line.DMSOperationalCode
+	 //Modify format for Duration in CSV file
+	 _duration = line.Duration as String
+	 if(!_duration.contains(".")) _duration = line.Duration + ".0"
+	 assert RoundNumber(res_Text[count_CSV].Duration) == _duration
+	 //Modify format for Price in CSV file
+	 _price = line.DealerPrice as String
+	 if(!_price.contains(".")) _price = line.DealerPrice + ".0"
+	 assert RoundNumber(res_Text[count_CSV].DealerPrice as Float) == _price
+	 assert res_Text[count_CSV].ServiceType == ServiceType
+	 assert res_Text[count_CSV].ServiceCode == null
+	 assert res_Text[count_CSV].EMFlag as String == "false"
+	 assert res_Text[count_CSV].EMDuration as String == "0.0"
+	 assert res_Text[count_CSV].POAFlag as String == "false"
+	 assert res_Text[count_CSV].Price as String== "0.0"
+	 count_CSV += 1
+  }
+
+//Verify number of element between JSON response and slot of WS
+assert OpCodeJSON == count_CSV

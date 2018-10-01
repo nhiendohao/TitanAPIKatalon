@@ -1,31 +1,31 @@
-Name;DMSOperationalCode;Duration;DealerPrice
-Evacuate & Recharge Air Conditioning System;SACS;0.7;0
-Check Wheel Alignment, Both Front & Rear;SAWA;1.2;0
-Balance Wheels, All;SAWB;1;0
-Replace Brake Fluid;SBF;1.1;0
-Replace Clutch Fluid;SCF;0.5;0
-Carry out Complimentary Vehicle Inspection;SCVI;0.6;0
-Replace Engine Oil;SEO;0.5;0
-Replace Differential Oil, Front;SFDO;0.4;0
-Check Wheel Alignment, Front;SFWA;1.2;0
-Balance Wheels, Front;SFWB;0.6;0
-Adjust Handbrake;SHA;0.5;0
-Replace Engine Oil and Oil Filter;SOF;0.6;0
-Carry out Pre Delivery Inspection;SPD;1.2;0
-Replace Radiator Coolant;SRC;0.6;0
-Rotate Wheels Following Manufacturers Recommended Sequence;SRW;0.8;0
-Replace Spark Plugs;SSP;0.3;0
-Replace Transmission Oil;STO;0.4;0
-Replace Wiper Inserts, Front;SWBFI;0.2;0
-Replace Wiper Inserts, Rear;SWBRI;0.2;0
-Replace Wiper Inserts, Rear;SWBRI;0.2;0
-100 Point Quality inspection;100P;1.3;1.3
-Courtesy supplied vehicle;LOANCAR;0;0
-Recycling Fee;REC;0;0
-"\""Whip around for Rio\"" Donation";RIO;0;0
-TITAN_OP_CODE_ADD1;TITAN_OP_CODE_ADD1;1;0.5
-TITAN_OP_CODE_ADD2;TITAN_OP_CODE_ADD2;1;0.5
-Volkswagen Pre Delivery and Clean.;VWPD;2.7;230
-Wheel Balance;WB;0.1;7.5
-Wheel Balance (4wheels);WB4;0.4;30
-Wheel Balance (5 wheels);WB5;0.45;35
+Name,DMSOperationalCode,Duration,DealerPrice
+Evacuate & Recharge Air Conditioning System,SACS,0.7,0
+"Check Wheel Alignment, Both Front & Rear",SAWA,1.2,0
+"Balance Wheels, All",SAWB,1,0
+Replace Brake Fluid,SBF,1.1,0
+Replace Clutch Fluid,SCF,0.5,0
+Carry out Complimentary Vehicle Inspection,SCVI,0.6,0
+Replace Engine Oil,SEO,0.5,0
+"Replace Differential Oil, Front",SFDO,0.4,0
+"Check Wheel Alignment, Front",SFWA,1.2,0
+"Balance Wheels, Front",SFWB,0.6,0
+Adjust Handbrake,SHA,0.5,0
+Replace Engine Oil and Oil Filter,SOF,0.6,0
+Carry out Pre Delivery Inspection,SPD,1.2,0
+Replace Radiator Coolant,SRC,0.6,0
+Rotate Wheels Following Manufacturers Recommended Sequence,SRW,0.8,0
+Replace Spark Plugs,SSP,0.3,0
+Replace Transmission Oil,STO,0.4,0
+"Replace Wiper Inserts, Front",SWBFI,0.2,0
+"Replace Wiper Inserts, Rear",SWBRI,0.2,0
+"Replace Wiper Inserts, Rear",SWBRI,0.2,0
+100 Point Quality inspection,100P,1.3,1.3
+Courtesy supplied vehicle,LOANCAR,0,0
+Recycling Fee,REC,0,0
+"""Whip around for Rio"" Donation",RIO,0,0
+TITAN_OP_CODE_ADD1,TITAN_OP_CODE_ADD1,1,0.5
+TITAN_OP_CODE_ADD2,TITAN_OP_CODE_ADD2,1,0.5
+Volkswagen Pre Delivery and Clean.,VWPD,2.7,230
+Wheel Balance,WB,0.1,7.5
+Wheel Balance (4wheels),WB4,0.4,30
+Wheel Balance (5 wheels),WB5,0.45,35

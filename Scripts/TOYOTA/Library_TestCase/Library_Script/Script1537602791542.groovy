@@ -110,4 +110,14 @@ import java.sql.Driver
 		  System.out.println(date);
 		  //Print Date after converting to String
 		  System.out.println(formatter.format(date));
-	  
+		  
+		  //--------------------------------------------------------------------------------------------------------------------------
+		  //Round method
+		  import java.text.DecimalFormat
+		  def RoundNumber = { Float floatnumber ->
+			  String roundvalue =  new DecimalFormat("#.##").format(floatnumber)
+			  //Handle for missing .000...
+			  import static org.assertj.core.api.Assertions.*
+			  if (!(roundvalue.contains("."))) roundvalue = roundvalue + ".0....."
+			  return roundvalue
+			  }

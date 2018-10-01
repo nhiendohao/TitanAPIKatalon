@@ -35,7 +35,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 //V3. Check Status code response when Start Date is after End Date
 //Check Status code response when ServiceBay Type is wrong
 //Validate Duration
-//V4. Validate response = "" when Service Date = Saturday and Sunday (not yet done)
+//V4. Validate response = "" when Service Date = Saturday and Sunday
 
 //METHOD
 //Verify response
