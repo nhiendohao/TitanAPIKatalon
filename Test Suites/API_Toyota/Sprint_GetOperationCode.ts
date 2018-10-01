@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Sprint_GetPickUpTime - Copy</name>
+   <name>Sprint_GetOperationCode</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -9,7 +9,7 @@
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>0662960d-fa1f-406d-b49a-b7495cd9604d</testSuiteGuid>
+   <testSuiteGuid>672fcbbe-89f4-4629-9d73-90ef274bd865</testSuiteGuid>
    <testCaseLink>
       <guid>d9a0388b-193b-4768-a036-b9d2de3e928a</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -20,7 +20,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>873-973</value>
+            <value>35-40</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_getofftime</testDataId>
       </testDataLink>

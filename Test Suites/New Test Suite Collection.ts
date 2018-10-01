@@ -12,7 +12,7 @@
             <runConfigurationId>Firefox</runConfigurationId>
          </configuration>
          <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/API_Toyota/Sprint_GetOffTime</testSuiteEntity>
+         <testSuiteEntity>Test Suites/API_Toyota/Sprint_GetOffTime - P3</testSuiteEntity>
       </TestSuiteRunConfiguration>
       <TestSuiteRunConfiguration>
          <configuration>
