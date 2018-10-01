@@ -28,6 +28,7 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import static com.xlson.groovycsv.CsvParser.parseCsv
 import static org.assertj.core.api.Assertions.*
+import java.text.DecimalFormat
 @Grab('com.xlson.groovycsv:groovycsv:1.3')
 
 //V0. Verify Status code and get Json data
@@ -44,7 +45,7 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 	
 	//Transfer response to Text
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
-	if(!(ExpectedMessage==""))assertThat(response.getResponseText()).contains(ExpectedMessage)
+	if(!(ExpectedMessage=="")) assertThat(response.getResponseText()).contains(ExpectedMessage)
 }
 
 //Round number
@@ -56,6 +57,8 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 //=====================================================================================================
 
 //CODE
+//Set Service Type
+	ServiceType = GlobalVariable.Glb_ServiceType
 //Declare File path CSV
 String Filepath
 if(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK")
@@ -67,7 +70,7 @@ RequestObject GetServiceOperation = findTestObject('Toyota/GetServiceOperations_
 	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
 	('Location_Code') : GlobalVariable.Glb_Location_Code, 
 	('VIN') : GlobalVariable.Glb_VIN, 
-	('Service_Type') : Service_Type])
+	('Service_Type') : GlobalVariable.Glb_ServiceType])
 //Declare header
 GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
     GlobalVariable.Glb_Authorization_Token))
@@ -78,9 +81,9 @@ ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 //Invalid Dealer Code
 if(!(GlobalVariable.Glb_Dealer_Code == "765A")) 
 	VerifyResponse(res_GetServiceOperation,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
-//Invalid VIN
-else if(GlobalVariable.Glb_VIN.toString().toLowerCase() == "invalid")
-	VerifyResponse(res_GetServiceOperation,404,"The VIN mapping to many vehicles")
+//Invalid Service Type
+else if(!(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK" || GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_ADDITIONAL"))
+	VerifyResponse(res_GetServiceOperation,404,"Service Type Unknown")
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||
@@ -91,17 +94,20 @@ else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "4"||
 	GlobalVariable.Glb_Location_Code == "360"))
 VerifyResponse(res_GetServiceOperation,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+//Invalid VIN
+else if(GlobalVariable.Glb_VIN.toString().toLowerCase() == "invalid")
+	VerifyResponse(res_GetServiceOperation,404,"The VIN mapping to many vehicles")
 //Valid All
 else { VerifyResponse(res_GetServiceOperation,200,"")
 
 //Transfer response to Text
 def res_Text = new groovy.json.JsonSlurper().parseText(res_GetServiceOperation.getResponseText())
-def OpCodeJSON
+def OpCodeJSON = 0
 res_Text.each{ OpCodeJSON += 1}
 
 //Get data from CSV file
 int count_CSV = 0
-CSVReader = new File()
+CSVReader = new File(Filepath)
 def csv_content = CSVReader.getText('utf-8')
  //Convert CSV to text
 def CSVData = parseCsv(csv_content, separator: ',', readFirstLine: false)
@@ -127,6 +133,6 @@ for (line in CSVData) {
   }
 
 //Verify number of element between JSON response and slot of WS
-assert OpCodeJSON.size == count_CSV
+assert OpCodeJSON == count_CSV
 }
 

@@ -1,0 +1,42 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Sprint_GetOperationCode,,,2018-10-01 17:03:14,2018-10-01 17:03:19,4.537s,ERROR
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-01 17:03:15,2018-10-01 17:03:16,1.321s,ERROR
+callTestCase,,,2018-10-01 17:03:15,2018-10-01 17:03:15,0.462s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-01 17:03:15,2018-10-01 17:03:16,0.666s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-01 17:03:16,2018-10-01 17:03:16,0.377s,ERROR
+callTestCase,,,2018-10-01 17:03:16,2018-10-01 17:03:16,0.082s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-01 17:03:16,2018-10-01 17:03:16,0.280s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-01 17:03:16,2018-10-01 17:03:17,0.341s,ERROR
+callTestCase,,,2018-10-01 17:03:16,2018-10-01 17:03:16,0.079s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-01 17:03:16,2018-10-01 17:03:17,0.250s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-01 17:03:17,2018-10-01 17:03:17,0.348s,ERROR
+callTestCase,,,2018-10-01 17:03:17,2018-10-01 17:03:17,0.073s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-01 17:03:17,2018-10-01 17:03:17,0.265s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-01 17:03:17,2018-10-01 17:03:17,0.324s,ERROR
+callTestCase,,,2018-10-01 17:03:17,2018-10-01 17:03:17,0.079s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-01 17:03:17,2018-10-01 17:03:17,0.238s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-01 17:03:17,2018-10-01 17:03:18,0.313s,ERROR
+callTestCase,,,2018-10-01 17:03:17,2018-10-01 17:03:17,0.068s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-01 17:03:17,2018-10-01 17:03:18,0.239s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-01 17:03:18,2018-10-01 17:03:18,0.316s,ERROR
+callTestCase,,,2018-10-01 17:03:18,2018-10-01 17:03:18,0.072s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-01 17:03:18,2018-10-01 17:03:18,0.235s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-01 17:03:18,2018-10-01 17:03:18,0.302s,ERROR
+callTestCase,,,2018-10-01 17:03:18,2018-10-01 17:03:18,0.066s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-01 17:03:18,2018-10-01 17:03:18,0.230s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-01 17:03:18,2018-10-01 17:03:19,0.312s,ERROR
+callTestCase,,,2018-10-01 17:03:18,2018-10-01 17:03:18,0.068s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-01 17:03:18,2018-10-01 17:03:19,0.239s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-01 17:03:19,2018-10-01 17:03:19,0.302s,ERROR
+callTestCase,,,2018-10-01 17:03:19,2018-10-01 17:03:19,0.066s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-01 17:03:19,2018-10-01 17:03:19,0.230s,FAILED
