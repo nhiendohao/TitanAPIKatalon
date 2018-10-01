@@ -5,11 +5,4 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>117fa2a1-98a2-45df-9728-76bd3de5e949</testCaseGuid>
-   <variable>
-      <defaultValue>'08:00'</defaultValue>
-      <description></description>
-      <id>820962f3-a78d-40d3-91a0-fddfb8865bca</id>
-      <masked>false</masked>
-      <name>Drop_Off_Time</name>
-   </variable>
 </TestCaseEntity>

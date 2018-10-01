@@ -44,8 +44,16 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 //=========================================================================================
 
 //CODE
+//Setup DMSOperationCode base on Service Type
+String DMSOperationCode
+if(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK") DMSOperationCode = "OSB_SERVICE_TYPE_LOGBOOK"
+	else DMSOperationCode = "OSB_SERVICE_TYPE_ADDITIONAL"
+	
 //Declare request
-RequestObject GetBookingDetail = findTestObject('Toyota/GetBookingDetails_JSON', [('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, ('Location_Code') : GlobalVariable.Glb_Location_Code, ('BookingID') : GlobalVariable.Glb_Booking_ID])
+RequestObject GetBookingDetail = findTestObject('Toyota/GetBookingDetails_JSON', [
+	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
+	('Location_Code') : GlobalVariable.Glb_Location_Code, 
+	('BookingID') : GlobalVariable.Glb_Booking_ID])
 //Setup header value
 GetBookingDetail.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', 
     ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
@@ -67,7 +75,7 @@ else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "360"))
 	VerifyResponse(res_GetBookingDetail,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //Service Date Past
-else if (GlobalVariable.Glb_Booking_ID == "1901")
+else if (GlobalVariable.Glb_Booking_ID == "1901" || GlobalVariable.Glb_BookingStatus == "cancel")
 	VerifyResponse(res_GetBookingDetail,404,"Booking ID " +GlobalVariable.Glb_Booking_ID+ " not found")
 //All valid
 else{
@@ -83,12 +91,43 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Vehicle.CustomerOdometerReading', '20500')
 	
 	//Verify Repair Order Information
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.TotalPriceQuoted', '110.0000')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.TotalDuration', '1.00')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.TotalPriceQuoted', GlobalVariable.Glb_TotalPrice + '.0000')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.TotalDuration', GlobalVariable.Glb_Duration_Time + '.00')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Name', 'Operation Code for Test')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Description', 'null')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].ServiceType', GlobalVariable.Glb_ServiceType)
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].ServiceCode', 'null')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].DMSOperationalCode', DMSOperationCode)
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Duration', '1.00')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].EMFlag', 'false')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].EMDuration', '0.0')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].DealerPrice', '0.5')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].POAFlag', 'false')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Price', '110.0000')
 	
-	//Verify Drop off Time
+	//Verify Appointment Information
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Appointment.BookingDate', GlobalVariable.Glb_ServiceDate + 'T00:00:00')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Appointment.DropOffTime', GlobalVariable.Glb_DropOffTime)
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Appointment.PickUpTime', GlobalVariable.Glb_PickUpTime)
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Appointment.XReserveToken', 'null')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Appointment.ServiceBayType', 'null')
 	
-	//Verify Pick Up Time
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ToyotaContactID', '43054')
+	//Verify Contact Information
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ToyotaContactID', GlobalVariable.Glb_ContactId)
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.FirstName', GlobalVariable.Glb_FirstName)
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.LastName', GlobalVariable.Glb_LastName)
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.PhoneNumber', '0983612137')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.Email', 'QAteam.automation@titandms.com')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.DealerMarketingAllowedFlag', 'false')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ContactRelationship', 'OSB_CUSTOMER_OWNER')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.AlternativeContactName', 'ANH THY')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.AlternativeContactNumber', '0919011995')
+	
+	//Verify remained information
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Comment', 'null')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'BookingSource', 'OSB_SOURCE_DEALER_WEBSITE')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'ExpressMaintenanceBookingRequest', 'false')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'TransportOption', 'OSB_TRANSPORT_OPTION_NONE')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'PreferredContactMethod', 'OSB_CONTACT_PHONE')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'ConfirmationMessageByDMS', 'false')
 	}

@@ -131,11 +131,11 @@ else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	 GlobalVariable.Glb_Location_Code == "4"||
 	 GlobalVariable.Glb_Location_Code == "360"))
 	 VerifyResponse(res_MakeServiceBooking,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
-//StartDate before Current
+//ServiceDate before Current
 else if(Service_Date.before(current))
 	VerifyResponse(res_MakeServiceBooking,404,"is partially outside days when DMS will take bookings")
 //Drop Off Time before WS Start Hour
-else if( DropOffTime.before(Start_WS_Hr))
+else if( DropOffTime.before(Start_WS_Hr) || GlobalVariable.Glb_BookingStatus == "current")
 	VerifyResponse(res_MakeServiceBooking,400,"The drop off timeslot taken")
 //Pickup Time after WS End Hour
 else if( PickUpTime.after(End_WS_Hr)(Start_WS_Hr))
@@ -144,8 +144,10 @@ else if( PickUpTime.after(End_WS_Hr)(Start_WS_Hr))
 	 !(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ))
 	 VerifyResponse(res_ReserveTimeslot,400,"Duration " +Duration+ " do not match values from GetDropOffTimes")*/
 //All valid
-else {
+else if(!(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" )){
 	 VerifyResponse(res_MakeServiceBooking,200,"")
+	 //Set Status Booking: not yet --> current
+	 GlobalVariable.Glb_BookingStatus == "current"
 
 	//Get Reserve Token
 	//Transfer response to Text

@@ -35,14 +35,13 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variab
 	('Setup_EndDropDate') : var_EndDropDate, 
 	('Setup_StartSearchDate') : var_StartSearchDate , 
 	('Setup_EndSearchDate') : var_EndSearchDate,
-	('Setup_BookingId') : var_BookingId
+	('Setup_BookingId') : var_BookingId,
+	('Service_Type') : var_Service_Type
 	], FailureHandling.STOP_ON_FAILURE)
 
 //2. Get Operation Code for customer
 if (var_Status_OpCode == 'true') {
-    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON'), [
-		('Service_Type') : var_Service_Type //Set the Type of Service. Ex: OSB_SERVICE_TYPE_LOGBOOK
-        ], FailureHandling.STOP_ON_FAILURE)
+    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON - V2'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //3. Get Drop Off Timeslot for Customer
@@ -60,15 +59,13 @@ if (var_Status_GetOffTime == 'true') {
 //System will show all enable timeslots that service can be completed before pick up time
 //One pick up time can be chosen by many customer
 if (var_Status_PickupTime == 'true') {
-    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON - V1'), [
-		('Drop_Off_Time') : var_Drop_Off_Time], 
-        FailureHandling.STOP_ON_FAILURE)
+    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //5. Make a reservation for Drop off timeslot of service.
 //If the timeslot is available, 1 reservation token will be return. This number is unique.
 if (var_Status_ReservedTimeslot == 'true') {
-    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ReserveTimeslots_JSON'), [:], FailureHandling.STOP_ON_FAILURE)
+    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ReserveTimeslots_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //6. Get information about the Transport Option for Customer
@@ -78,7 +75,9 @@ if (var_Status_GetTransport == 'true') {
 
 //7. Make Booking with all required information
 if (var_Status_MakeBooking == 'true') {
-    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON'), [:], FailureHandling.STOP_ON_FAILURE)
+    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
+	//Recall again
+	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //8. Get Drop off time and Pickup time and Booking Id from REGNumber
@@ -93,7 +92,15 @@ if (var_Status_GetBookingDetail == 'true') {
 
 //10. Change booking detail
 if (var_Status_ChangeBooking == 'true') {
-    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
+    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON - V1'), [
+	('var_VINChange') : var_VINChange, 
+	('var_REGNumberChange') : var_REGNumberChange, 
+	('var_PriceChange') : var_PriceChange, 
+	('var_DurationChange') : var_DurationChange, 
+	('var_DropOffChange') : var_DropOffChange, 
+	('var_PickUpChange') : var_PickUpChange, 
+	('var_DateChange') : var_DateChange], 
+    FailureHandling.STOP_ON_FAILURE)
 }
 
 //11. Cancel Booking

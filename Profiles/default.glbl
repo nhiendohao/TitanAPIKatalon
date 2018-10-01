@@ -56,7 +56,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'136889'</initValue>
+      <initValue>'136894'</initValue>
       <name>Glb_Booking_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -131,7 +131,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'current'</initValue>
+      <initValue>'not yet'</initValue>
       <name>Glb_BookingStatus</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

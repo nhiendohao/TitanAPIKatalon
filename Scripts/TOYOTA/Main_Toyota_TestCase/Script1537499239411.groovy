@@ -68,7 +68,7 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetTransportOpti
 
 //7. Make Booking with all required information
 if(var_Status_MakeBooking == "true"){
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //8. Get Drop off time and Pickup time and Booking Id from REGNumber

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Toyota_MakeServiceBooking_JSON</name>
+   <name>Toyota_MakeServiceBooking_JSON - V1</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>76e1c7a7-c0db-4b90-b185-5996c3411ddb</testCaseGuid>

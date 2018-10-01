@@ -145,4 +145,11 @@
       <masked>false</masked>
       <name>Setup_BookingId</name>
    </variable>
+   <variable>
+      <defaultValue>'OSB_SERVICE_TYPE_ADDITIONAL'</defaultValue>
+      <description></description>
+      <id>a644630f-5c25-4cc6-b282-305ede4c1d3d</id>
+      <masked>false</masked>
+      <name>Setup_ServiceType</name>
+   </variable>
 </TestCaseEntity>

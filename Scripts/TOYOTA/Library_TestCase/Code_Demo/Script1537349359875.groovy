@@ -22,16 +22,36 @@ import com.kms.katalon.core.testobject.TestObjectProperty as TestObjectProperty
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
-import com.sun.jna.StringArray
+import com.sun.jna.StringArray as StringArray
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import static org.assertj.core.api.Assertions.*
-import java.text.ParseException
-import java.text.SimpleDateFormat
-import java.util.Date
+import java.text.ParseException as ParseException
+import java.text.SimpleDateFormat as SimpleDateFormat
+import java.util.Date as Date
 
-def date = new Date()
-println date
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variables - V1'), [
+	('Setup_Interval') : '15', 
+	('Setup_WorkshopStart') : '8'        , 
+	('Setup_WorkshopEnd') : '17', 
+	('Setup_Duration') : '1', 
+	('Setup_Dealer_Code') : '764A', 
+	('Setup_Location_Code') : '1'        , 
+	('Setup_VIN') : 'VNVNVNVNVNVNVNVNV', 
+	('Setup_REGNumber') : 'REG_TITAN_API', 
+	('Setup_ServiceDate') : '', 
+	('Setup_DropOffTime') : '08:00'        , 
+	('Setup_PickUpTime') : '17:00', 
+	('Setup_TotalPrice') : '', 
+	('Setup_TotalDuration') : '', 
+	('Setup_FirstName') : 'TITAN'        , 
+	('Setup_LastName') : 'DMS',
+	 ('Setup_StartDropDate') : '', 
+	 ('Setup_EndDropDate') : '',
+	  ('Setup_StartSearchDate') : ''        , 
+	  ('Setup_EndSearchDate') : '', 
+		('Setup_BookingId') : '', 
+		('Setup_ServiceType') : 'OSB_SERVICE_TYPE_ADDITIONAL'], 
+    FailureHandling.STOP_ON_FAILURE)
 
-assert date.before(date) == true
