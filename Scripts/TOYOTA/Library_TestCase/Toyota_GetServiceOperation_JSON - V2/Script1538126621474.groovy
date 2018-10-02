@@ -95,7 +95,7 @@ else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "360"))
 VerifyResponse(res_GetServiceOperation,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //Invalid VIN
-else if(GlobalVariable.Glb_VIN.toString().toLowerCase() == "invalid")
+else if(GlobalVariable.Glb_VIN.toString().toLowerCase() == "vininvalid")
 	VerifyResponse(res_GetServiceOperation,404,"VIN mapping to many vehicles")
 //Valid All
 else { VerifyResponse(res_GetServiceOperation,200,"")

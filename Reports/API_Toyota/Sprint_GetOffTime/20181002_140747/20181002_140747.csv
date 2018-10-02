@@ -1,0 +1,80 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Sprint_GetOffTime,,,2018-10-02 14:07:48,2018-10-02 14:07:51,2.646s,PASSED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-02 14:07:48,2018-10-02 14:07:50,1.318s,PASSED
+callTestCase,,,2018-10-02 14:07:48,2018-10-02 14:07:49,0.441s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-02 14:07:49,2018-10-02 14:07:49,0.001s,PASSED
+"Statement - If (var_Status_GetOffTime == ""true"")",,,2018-10-02 14:07:49,2018-10-02 14:07:50,0.646s,PASSED
+"Statement - If (var_Status_PickupTime == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.001s,PASSED
+"Statement - If (var_Status_ReservedTimeslot == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetTransport == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_MakeBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.001s,PASSED
+"Statement - If (var_Status_SearchBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetBookingDetail == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_ChangeBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_CancelBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.001s,PASSED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.252s,PASSED
+callTestCase,,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.082s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetOffTime == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.158s,PASSED
+"Statement - If (var_Status_PickupTime == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_ReservedTimeslot == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetTransport == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_MakeBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.001s,PASSED
+"Statement - If (var_Status_SearchBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetBookingDetail == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_ChangeBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_CancelBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.211s,PASSED
+callTestCase,,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.077s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetOffTime == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.123s,PASSED
+"Statement - If (var_Status_PickupTime == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_ReservedTimeslot == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.001s,PASSED
+"Statement - If (var_Status_GetTransport == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_MakeBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_SearchBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetBookingDetail == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_ChangeBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_CancelBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.001s,PASSED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.213s,PASSED
+callTestCase,,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.080s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetOffTime == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.123s,PASSED
+"Statement - If (var_Status_PickupTime == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_ReservedTimeslot == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetTransport == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_MakeBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_SearchBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.001s,PASSED
+"Statement - If (var_Status_GetBookingDetail == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_ChangeBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_CancelBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.207s,PASSED
+callTestCase,,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.072s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetOffTime == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.124s,PASSED
+"Statement - If (var_Status_PickupTime == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_ReservedTimeslot == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetTransport == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_MakeBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_SearchBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetBookingDetail == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_ChangeBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_CancelBooking == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-02 14:07:50,2018-10-02 14:07:51,0.205s,PASSED
+callTestCase,,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.072s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:50,0.000s,PASSED
+"Statement - If (var_Status_GetOffTime == ""true"")",,,2018-10-02 14:07:50,2018-10-02 14:07:51,0.125s,PASSED
+"Statement - If (var_Status_PickupTime == ""true"")",,,2018-10-02 14:07:51,2018-10-02 14:07:51,0.000s,PASSED
+"Statement - If (var_Status_ReservedTimeslot == ""true"")",,,2018-10-02 14:07:51,2018-10-02 14:07:51,0.000s,PASSED
+"Statement - If (var_Status_GetTransport == ""true"")",,,2018-10-02 14:07:51,2018-10-02 14:07:51,0.000s,PASSED
+"Statement - If (var_Status_MakeBooking == ""true"")",,,2018-10-02 14:07:51,2018-10-02 14:07:51,0.000s,PASSED
+"Statement - If (var_Status_SearchBooking == ""true"")",,,2018-10-02 14:07:51,2018-10-02 14:07:51,0.000s,PASSED
+"Statement - If (var_Status_GetBookingDetail == ""true"")",,,2018-10-02 14:07:51,2018-10-02 14:07:51,0.000s,PASSED
+"Statement - If (var_Status_ChangeBooking == ""true"")",,,2018-10-02 14:07:51,2018-10-02 14:07:51,0.000s,PASSED
+"Statement - If (var_Status_CancelBooking == ""true"")",,,2018-10-02 14:07:51,2018-10-02 14:07:51,0.000s,PASSED

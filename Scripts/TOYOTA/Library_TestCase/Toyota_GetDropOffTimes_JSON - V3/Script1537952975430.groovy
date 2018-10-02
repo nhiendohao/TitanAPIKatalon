@@ -51,7 +51,7 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 
 //CODE
 //Parse String data to Date type Data
-def current_hour = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Hour) as Date
+def current_hour = Date.parse("HH:mm", GlobalVariable.Glb_Current_Hour) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 def Start_Date_Str = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_StartDate) as Date
 def End_Date_Str = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_EndDate) as Date
@@ -103,7 +103,7 @@ else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	 VerifyResponse(res_GetServiceOperation,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //StartDate before Current
 else if(Start_Date_Str.before(current))
-	VerifyResponse(res_GetServiceOperation,404,"is partially outside days when DMS will take bookings")
+	VerifyResponse(res_GetServiceOperation,404,"is before the current date")
 //Duration >= 10
 else if(Duration >= 10)
 	 VerifyResponse(res_GetServiceOperation,400,"Duration " +Duration+ " cannot be completed in a single day")
@@ -124,8 +124,10 @@ for (def i=0;i< duration_days+1;i++){
 	if(!(Start_Date_Str.format("E")=="Sat" || Start_Date_Str.format("E")=="Sun" )){
 //Verify for each date
 WS.verifyElementPropertyValue(res_GetServiceOperation, "["+i+"].Date", GlobalVariable.Glb_StartDate + "T00:00:00")
-//Setup IsCurrentDate = true
-def IsCurrentDate = "true"
+//Set IsCurrentDate = false
+def IsCurrentDate = "false"
+//Setup IsCurrentDate = true if isCurrent
+if(Start_Date_Str.equals(current)) IsCurrentDate = "true"
 //Verify response Times array
 //Create Data Times Array
 //Create real time variable

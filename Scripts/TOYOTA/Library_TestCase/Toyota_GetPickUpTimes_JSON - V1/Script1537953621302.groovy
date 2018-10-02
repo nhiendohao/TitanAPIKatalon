@@ -69,7 +69,7 @@ GetPickupTime.getHttpHeaderProperties().add(new TestObjectProperty("Authorizatio
 //Send request
 ResponseObject res_GetPickupTime = WS.sendRequest(GetPickupTime)
 //Convert String to Date
-def current_hour = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Hour) as Date
+def current_hour = Date.parse("HH:mm", GlobalVariable.Glb_Current_Hour) as Date
 def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 def DropOffTime = Date.parse("HH:mm", GlobalVariable.Glb_DropOffTime) as Date
@@ -123,7 +123,7 @@ else if (DropOffTime.before(current_hour))
 //Drop Off time before WS Start, after WS End or need time < expected duration
 else if((DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration) &&
 	!(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ))
-	VerifyResponse(res_GetPickupTime,400,"Duration " +Duration+ " do not match values from GetDropOffTimes")
+	VerifyResponse(res_GetPickupTime,400,"Drop Off Time "+ GlobalVariable.Glb_DropOffTime +" do not match values from GetDropOffTimes")
 //All valid
 else {
 	//Verify Response Status = 200 OK
@@ -174,7 +174,7 @@ else {
 		res_Text.Times.each{ timeslotJSON = it}
 		
 		//Verify number of element between JSON response and slot of WS
-		assert timeslotJSON.size == count + 1
+		assert timeslotJSON.size == count
 		println count
 		//Loop Verification
 		for (def j = 0; j < count; j++) {
