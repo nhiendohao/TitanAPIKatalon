@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Sprint_GetOperationCode</name>
+   <name>Sprint_GetOffTime - P6</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-02T17:29:59</lastRun>
+   <lastRun>2018-10-02T21:22:34</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>672fcbbe-89f4-4629-9d73-90ef274bd865</testSuiteGuid>
+   <testSuiteGuid>6e70afde-2907-434e-910e-9703ce94e607</testSuiteGuid>
    <testCaseLink>
       <guid>d9a0388b-193b-4768-a036-b9d2de3e928a</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -21,7 +21,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>1-36</value>
+            <value>637-736</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All</testDataId>
       </testDataLink>

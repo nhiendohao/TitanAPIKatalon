@@ -4,7 +4,7 @@
    <name>Sprint_GetOffTime - P3</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-02T08:15:24</lastRun>
+   <lastRun>2018-10-02T21:22:24</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -21,7 +21,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>334-433</value>
+            <value>337-436</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All</testDataId>
       </testDataLink>

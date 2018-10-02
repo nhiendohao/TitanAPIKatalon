@@ -1,6 +1,0 @@
-Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
-Sprint_GetOperationCode,,,2018-10-01 17:08:29,2018-10-01 17:08:36,7.527s,ERROR
-,,,,,,
-Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-01 17:08:29,2018-10-01 17:08:36,7.255s,ERROR
-callTestCase,,,2018-10-01 17:08:29,2018-10-01 17:08:30,0.403s,PASSED
-"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-01 17:08:30,2018-10-01 17:08:36,6.662s,FAILED

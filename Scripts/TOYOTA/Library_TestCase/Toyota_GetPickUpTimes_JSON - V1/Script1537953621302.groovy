@@ -118,7 +118,7 @@ else if (Service_Date.before(current))
 else if (Duration >= 10)
 	VerifyResponse(res_GetPickupTime,400,"Duration " +Duration+ " cannot be completed in a single day")
 //DropOff Time is before Current Hour
-else if (DropOffTime.before(current_hour))
+else if (DropOffTime.before(current_hour) && Service_Date.equals(current))
 	VerifyResponse(res_GetPickupTime,400,"Drop Off Time "+ GlobalVariable.Glb_DropOffTime +" do not match values from GetDropOffTimes")
 //Drop Off time before WS Start, after WS End or need time < expected duration
 else if((DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration) &&
