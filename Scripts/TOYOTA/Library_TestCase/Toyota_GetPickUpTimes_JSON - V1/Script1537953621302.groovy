@@ -69,6 +69,7 @@ GetPickupTime.getHttpHeaderProperties().add(new TestObjectProperty("Authorizatio
 //Send request
 ResponseObject res_GetPickupTime = WS.sendRequest(GetPickupTime)
 //Convert String to Date
+def current_hour = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Hour) as Date
 def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 def DropOffTime = Date.parse("HH:mm", GlobalVariable.Glb_DropOffTime) as Date
@@ -93,7 +94,7 @@ if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
 	VerifyResponse(res_GetPickupTime,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
 //Duration = 0
 else if(Duration <= 0)
-	VerifyResponse(res_GetPickupTime, 400, "The duration must be greater than 0")
+	VerifyResponse(res_GetPickupTime, 400, "duration must be greater than 0")
 //Invalid Service bay
 else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	GlobalVariable.Glb_ServiceBay_Type == "EXPRESS"||
@@ -104,18 +105,21 @@ else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||
 		GlobalVariable.Glb_Location_Code == "5")
-	VerifyResponse(res_GetPickupTime,400,"The Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	VerifyResponse(res_GetPickupTime,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "4"||
 	GlobalVariable.Glb_Location_Code == "360"))
-	VerifyResponse(res_GetPickupTime,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+	VerifyResponse(res_GetPickupTime,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //Service Date Past
 else if (Service_Date.before(current))
-	VerifyResponse(res_GetPickupTime,404,"is partially outside days when DMS will take bookings")
+	VerifyResponse(res_GetPickupTime,404,"is before the current date")
 //Duration >=10
 else if (Duration >= 10)
 	VerifyResponse(res_GetPickupTime,400,"Duration " +Duration+ " cannot be completed in a single day")
+//DropOff Time is before Current Hour
+else if (DropOffTime.before(current_hour))
+	VerifyResponse(res_GetPickupTime,400,"Drop Off Time "+ GlobalVariable.Glb_DropOffTime +" do not match values from GetDropOffTimes")
 //Drop Off time before WS Start, after WS End or need time < expected duration
 else if((DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration) &&
 	!(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ))
@@ -170,7 +174,7 @@ else {
 		res_Text.Times.each{ timeslotJSON = it}
 		
 		//Verify number of element between JSON response and slot of WS
-		assert timeslotJSON.size == count
+		assert timeslotJSON.size == count + 1
 		println count
 		//Loop Verification
 		for (def j = 0; j < count; j++) {

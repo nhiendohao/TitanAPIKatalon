@@ -88,15 +88,15 @@ else if(!(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK" || Global
 else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||
 		GlobalVariable.Glb_Location_Code == "5")
-	VerifyResponse(res_GetServiceOperation,400,"The Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	VerifyResponse(res_GetServiceOperation,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "4"||
 	GlobalVariable.Glb_Location_Code == "360"))
-VerifyResponse(res_GetServiceOperation,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+VerifyResponse(res_GetServiceOperation,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //Invalid VIN
 else if(GlobalVariable.Glb_VIN.toString().toLowerCase() == "invalid")
-	VerifyResponse(res_GetServiceOperation,404,"The VIN mapping to many vehicles")
+	VerifyResponse(res_GetServiceOperation,404,"VIN mapping to many vehicles")
 //Valid All
 else { VerifyResponse(res_GetServiceOperation,200,"")
 

@@ -36,6 +36,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 //Check Status code response when ServiceBay Type is wrong
 //Validate Duration
 //V4. Validate response = "" when Service Date = Saturday and Sunday
+//V5. Validate for Current date, only show timeslot after current HH:mm, next day always show all timeslot
 
 //METHOD
 //Verify response
@@ -50,6 +51,7 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 
 //CODE
 //Parse String data to Date type Data
+def current_hour = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Hour) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 def Start_Date_Str = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_StartDate) as Date
 def End_Date_Str = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_EndDate) as Date
@@ -122,6 +124,8 @@ for (def i=0;i< duration_days+1;i++){
 	if(!(Start_Date_Str.format("E")=="Sat" || Start_Date_Str.format("E")=="Sun" )){
 //Verify for each date
 WS.verifyElementPropertyValue(res_GetServiceOperation, "["+i+"].Date", GlobalVariable.Glb_StartDate + "T00:00:00")
+//Setup IsCurrentDate = true
+def IsCurrentDate = "true"
 //Verify response Times array
 //Create Data Times Array
 //Create real time variable
@@ -137,8 +141,16 @@ time_close_ws.set(hourOfDay: End - Duration, minute: 00)
 def times = new String[100]
 def count = 0
 while(realtime_ws.before(time_close_ws)){
+	//If point is Current Date, dont get the timeslot before current hours
+	if(IsCurrentDate == "true"){
+		if(!realtime_ws.before(current_hour))
 	times[count]=realtime_ws.format("HH:mm") as String
 	count=count +1
+	} else {
+	times[count]=realtime_ws.format("HH:mm") as String
+	count=count +1
+	}
+	//Auto increase timeslot follow the interval
 	use(groovy.time.TimeCategory){
 	realtime_ws = realtime_ws + Interval.minute }
 }
@@ -166,4 +178,6 @@ use(groovy.time.TimeCategory) {
 	Start_Date = Start_Date_Str.format("yyyy-MM-dd") as String
 	}
   }
+//Set IsCurrentDate = false
+IsCurrentDate = "false"
 }

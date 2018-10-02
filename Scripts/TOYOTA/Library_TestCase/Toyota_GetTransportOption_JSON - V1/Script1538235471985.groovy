@@ -67,15 +67,15 @@ if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
 else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||
 		GlobalVariable.Glb_Location_Code == "5")
-	VerifyResponse(res_GetTransportOption,400,"The Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	VerifyResponse(res_GetTransportOption,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "4"||
 	GlobalVariable.Glb_Location_Code == "360"))
-	VerifyResponse(res_GetTransportOption,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+	VerifyResponse(res_GetTransportOption,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //Service Date Past
 else if (Service_Date.before(current))
-	VerifyResponse(res_GetTransportOption,404,"is partially outside days when DMS will take bookings")
+	VerifyResponse(res_GetTransportOption,404,"is before the current date")
 //All valid
 else{
 	//Verify Response Status = 200 OK

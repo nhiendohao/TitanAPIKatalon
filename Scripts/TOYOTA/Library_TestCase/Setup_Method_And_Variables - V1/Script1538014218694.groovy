@@ -43,10 +43,10 @@ if(!(Setup_ServiceType == "")) GlobalVariable.Glb_ServiceType = Setup_ServiceTyp
 
 //METHOD
 //Create Date Past/Future with specific Date from current Date
-def SetDate = {Date current_time ,int number_month, int number_day ->
+def SetDate = {Date current_time ,int number_month, int number_day, int number_hour, String format_date ->
 	use(groovy.time.TimeCategory) {
-	  def Expected_Date = current_time + number_day.day + number_month.month
-	  Expected_Date.format("YYYY-MM-dd")
+	  def Expected_Date = current_time + number_day.day + number_month.month + number_hour.hour
+	  Expected_Date.format(format_date)
    }
 }
 //Create random number
@@ -58,50 +58,53 @@ def RandomNumber = {int number ->
 }
 
 //CODE EXECUTIVE
-//Create Current Date
+//Create Current Date & Time
 def today = new Date()
+//Set current Date
 def current_date = today.format("YYYY-MM-dd")
 GlobalVariable.Glb_Current_Date = current_date
+//Set current Time
+GlobalVariable.Glb_Current_Hour = SetDate(today,0,0,3,"HH:mm")
 
 //Set up value Past/Current/Future for Service Date
 if(GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="cr") 
 	GlobalVariable.Glb_ServiceDate = current_date
 else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="p") 
-	GlobalVariable.Glb_ServiceDate = SetDate(today,0,-1)
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
 else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_ServiceDate = SetDate(today,0,1)
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,1,0,"YYYY-MM-dd")
 
 //Set up value Past/Current/Future for Start Date
 if(GlobalVariable.Glb_StartDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_StartDate = current_date
 else if (GlobalVariable.Glb_StartDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_StartDate = SetDate(today,0,-1)
+	GlobalVariable.Glb_StartDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
 else if (GlobalVariable.Glb_StartDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_StartDate = SetDate(today,0,1)
+	GlobalVariable.Glb_StartDate = SetDate(today,0,1,0,"YYYY-MM-dd")
 
 //Set up value Past/Current/Future for End Date
 if(GlobalVariable.Glb_EndDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_EndDate = current_date
 else if (GlobalVariable.Glb_EndDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_EndDate = SetDate(today,0,-1)
+	GlobalVariable.Glb_EndDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
 else if (GlobalVariable.Glb_EndDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_EndDate = SetDate(today,0,1)
+	GlobalVariable.Glb_EndDate = SetDate(today,0,1,0,"YYYY-MM-dd")
 	
 //Set up value Past/Current/Future for Start Date
 if(GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_StartSearchDate = current_date
 else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,-1)
+	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
 else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,1)
+	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,1,0,"YYYY-MM-dd")
 
 //Set up value Past/Current/Future for End Date
 if(GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_EndSearchDate = current_date
 else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,-1)
+	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
 else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,1)
+	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,1,0,"YYYY-MM-dd")
 	
 //Set up ContactId
 	GlobalVariable.Glb_ContactId = "1901" + RandomNumber(999999)

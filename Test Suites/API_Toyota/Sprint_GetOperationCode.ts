@@ -4,7 +4,7 @@
    <name>Sprint_GetOperationCode</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-01T17:20:50</lastRun>
+   <lastRun>2018-10-02T09:51:21</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>

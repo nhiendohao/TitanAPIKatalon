@@ -5,4 +5,11 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>2f6e9037-393c-4611-b51c-768d509890bf</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>43d082e1-3202-491e-bb36-7b7e5d71ba6f</id>
+      <masked>false</masked>
+      <name>Reserve_Timeslot</name>
+   </variable>
 </TestCaseEntity>

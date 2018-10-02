@@ -139,4 +139,9 @@
       <initValue>'OSB_SERVICE_TYPE_LOGBOOK'</initValue>
       <name>Glb_ServiceType</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_Current_Hour</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

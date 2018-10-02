@@ -138,7 +138,7 @@ else if(DropOffTime.after(PickUpTime))
 	 VerifyResponse(res_ChangeBooking,400,"must be greater then the drop off times")
 //Total Duration is not equal to duration job line
 else if(!(GlobalVariable.Glb_TotalDuration == "1"))
-		 VerifyResponse(res_ChangeBooking,400,"The total duration "+GlobalVariable.Glb_TotalDuration+" of RepairOrder not equals total duration 1 of RepairOrder Line")
+		 VerifyResponse(res_ChangeBooking,400,"total duration "+GlobalVariable.Glb_TotalDuration+" of RepairOrder not equals total duration 1 of RepairOrder Line")
 //Total Price is not equal to duration job line
 else if(!(GlobalVariable.Glb_TotalPrice == "110"))
 	 VerifyResponse(res_ChangeBooking,400,"Booking Rejected - The total price "+GlobalVariable.Glb_TotalPrice+" of RepairOrder not equals total price 110 of RepairOrder Line")
@@ -148,21 +148,21 @@ else if(duration_hours < TotalDuration)
 else if(GlobalVariable.Glb_Location_Code == "2"||
 	GlobalVariable.Glb_Location_Code == "3"||
 	GlobalVariable.Glb_Location_Code == "5")
-	 VerifyResponse(res_ChangeBooking,400,"The Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	 VerifyResponse(res_ChangeBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	 GlobalVariable.Glb_Location_Code == "4"||
 	 GlobalVariable.Glb_Location_Code == "360"))
-	 VerifyResponse(res_ChangeBooking,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+	 VerifyResponse(res_ChangeBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //StartDate before Current
 else if(!(var_DateChange == ""))
-	VerifyResponse(res_ChangeBooking,404,"The pick up timeslot taken")
+	VerifyResponse(res_ChangeBooking,404,"pick up timeslot taken")
 //Drop Off Time before WS Start Hour
 else if( DropOffTime.before(Start_WS_Hr))
-	VerifyResponse(res_ChangeBooking,400,"The drop off timeslot taken")
+	VerifyResponse(res_ChangeBooking,400,"drop off timeslot taken")
 //Pickup Time after WS End Hour
 else if( PickUpTime.after(End_WS_Hr)(Start_WS_Hr))
-	 VerifyResponse(res_ChangeBooking,400,"The pick up timeslot taken")
+	 VerifyResponse(res_ChangeBooking,400,"pick up timeslot taken")
 /*else if((DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration) &&
 	 !(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ))
 	 VerifyResponse(res_ReserveTimeslot,400,"Duration " +Duration+ " do not match values from GetDropOffTimes")*/

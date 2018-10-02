@@ -98,7 +98,7 @@ if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
 	VerifyResponse(res_ReserveTimeslot,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
 //Duration <=0
 else if(Duration <= 0)
-	 VerifyResponse(res_ReserveTimeslot,400,"The duration must be greater than 0")
+	 VerifyResponse(res_ReserveTimeslot,400,"duration must be greater than 0")
 //Invalid Servicebay
 else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	 GlobalVariable.Glb_ServiceBay_Type == "EXPRESS"||
@@ -109,15 +109,15 @@ else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
  else if(GlobalVariable.Glb_Location_Code == "2"||
 	GlobalVariable.Glb_Location_Code == "3"||
 	GlobalVariable.Glb_Location_Code == "5")
-	 VerifyResponse(res_ReserveTimeslot,400,"The Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	 VerifyResponse(res_ReserveTimeslot,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
  //Not exist Workshop
  else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	 GlobalVariable.Glb_Location_Code == "4"||
 	 GlobalVariable.Glb_Location_Code == "360"))
-	 VerifyResponse(res_ReserveTimeslot,400,"The Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+	 VerifyResponse(res_ReserveTimeslot,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //StartDate before Current
 else if(Service_Date.before(current))
-	VerifyResponse(res_ReserveTimeslot,404,"is partially outside days when DMS will take bookings")
+	VerifyResponse(res_ReserveTimeslot,404,"is before the current date")
 //Duration >= 10
 else if(Duration >= 10)
 	 VerifyResponse(res_ReserveTimeslot,400,"Duration " +Duration+ " cannot be completed in a single day")
