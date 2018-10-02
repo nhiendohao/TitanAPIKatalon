@@ -121,9 +121,12 @@ else if(Service_Date.before(current))
 //Duration >= 10
 else if(Duration >= 10)
 	 VerifyResponse(res_ReserveTimeslot,400,"Duration " +Duration+ " cannot be completed in a single day")
-/*else if((DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration) &&
-	 !(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ))
- 	VerifyResponse(res_ReserveTimeslot,400,"Duration " +Duration+ " do not match values from GetDropOffTimes")*/
+//Validate for Saturday and Sunday
+else if(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun")
+ 	VerifyResponse(res_ReserveTimeslot,400,"is can't book more hours than are available hours in this workshop")
+//Validate DropOff Time and Pickup Time and need duration	 
+else if(DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration)
+	VerifyResponse(res_ReserveTimeslot,400,"timeslot is taken")
 //All valid
 else {
 	 VerifyResponse(res_ReserveTimeslot,200,"")
