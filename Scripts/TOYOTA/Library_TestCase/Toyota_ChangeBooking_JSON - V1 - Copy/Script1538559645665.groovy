@@ -74,6 +74,12 @@ if(var_PriceChange == "") var_PriceChange = GlobalVariable.Glb_TotalPrice
 //Set Total Duration change
 if(var_DurationChange == "") var_DurationChange = GlobalVariable.Glb_TotalDuration
 	else GlobalVariable.Glb_TotalDuration = var_DurationChange
+//Set VIN Change
+if(var_VINChange == "") var_VINChange = GlobalVariable.Glb_VIN
+	else GlobalVariable.Glb_VIN = var_VINChange
+//Set REGNumber Change
+if(var_REGNumberChange == "") var_REGNumberChange = GlobalVariable.Glb_REGNumber
+	else GlobalVariable.Glb_REGNumber = var_REGNumberChange
 //Setup DMSOperationCode base on Service Type
 String DMSOperationCode
 if(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK") DMSOperationCode = "OSB_SERVICE_TYPE_LOGBOOK"
@@ -84,9 +90,9 @@ RequestObject ChangeBooking = findTestObject('Toyota/ChangeBooking_JSON', [
 	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
 	('Location_Code') : GlobalVariable.Glb_Location_Code, 
 	('BookingID') : GlobalVariable.Glb_Booking_ID, 
-	('Service_Date_Change') : var_DateChange, 
+	('Service_Date') : var_DateChange, 
 	('Drop_Off_Time_Change') : var_DropOffChange, 
-	('Pick_Up_Time') : var_PickUpChange, 
+	('Pick_Up_Time_Change') : var_PickUpChange, 
 	('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type,
 	('TotalPrice_Change') : var_PriceChange,
 	('TotalDuration_Change') : var_DurationChange,
@@ -95,8 +101,8 @@ RequestObject ChangeBooking = findTestObject('Toyota/ChangeBooking_JSON', [
 	('LastName') : GlobalVariable.Glb_LastName,
 	('ServiceType') : GlobalVariable.Glb_ServiceType,
 	('DMSOperationCode') : DMSOperationCode,
-	('VIN') : GlobalVariable.Glb_VIN , 
-	('REGNumber') : GlobalVariable.Glb_REGNumber ])
+	('VIN') : var_VINChange , 
+	('REGNumber') : var_REGNumberChange ])
 //Setup header value
 ChangeBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
     GlobalVariable.Glb_Authorization_Token))
@@ -151,7 +157,7 @@ else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	 GlobalVariable.Glb_Location_Code == "360"))
 	 VerifyResponse(res_ChangeBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //StartDate before Current
-else if(!(var_DateChange == GlobalVariable.Glb_ServiceDate))
+else if(!(var_DateChange == ""))
 	VerifyResponse(res_ChangeBooking,404,"pick up timeslot taken")
 //Drop Off Time before WS Start Hour
 else if( DropOffTime.before(Start_WS_Hr))

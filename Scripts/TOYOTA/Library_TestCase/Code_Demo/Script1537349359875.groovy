@@ -2,10 +2,9 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import java.lang.reflect.Array
+import java.lang.reflect.Array as Array
 import static org.assertj.core.api.Assertions.*
-
-import org.eclipse.persistence.internal.oxm.record.json.JSONParser.array_return
+import org.eclipse.persistence.internal.oxm.record.json.JSONParser.array_return as array_return
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -27,31 +26,31 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
-import java.text.ParseException
-import java.text.SimpleDateFormat
-import java.util.Date
+import java.text.ParseException as ParseException
+import java.text.SimpleDateFormat as SimpleDateFormat
+import java.util.Date as Date
 
-//CODE
 //Declare request
-RequestObject SearchForBooking = findTestObject('Toyota/SearchForBooking_JSON', [
-	('Dealer_Code') : "765A", 
-	('Location_Code') : "1", 
-	('Service_Date') : "2018-0"            , 
-	('REGNumber') : GlobalVariable.Glb_REGNumber])
-//Set header value
-SearchForBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
-    GlobalVariable.Glb_Authorization_Token))
-//Declare response
-ResponseObject res_SearchForBooking = WS.sendRequest(SearchForBooking)
+//RequestObject ChangeBooking = findTestObject('Toyota/ChangeBooking_JSON', [('Dealer_Code') : '765A', ('Location_Code') : '1'
+//        , ('BookingID') : '136910', ('Service_Date_Change') : '2018-10-04', ('Drop_Off_Time_Change') : '08:30', ('Pick_Up_Time') : '17:00'
+//        , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type, ('TotalPrice_Change') : '110', ('TotalDuration_Change') : '1'
+//        , ('ContactId') : '123', ('FirstName') : 'le', ('LastName') : 'vinh', ('ServiceType') : GlobalVariable.Glb_ServiceType
+//        , ('DMSOperationCode') : 'DMSOperationCode', ('VIN_Change') : 'VINChange', ('REGNumber_Change') : 'REGNumberChange'])
+//
+////Setup header value
+//ChangeBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
+//
+////Declare respone
+//ResponseObject res_ChangeBooking = WS.sendRequest(ChangeBooking)
+//
+//WS.verifyResponseStatusCode(res_ChangeBooking, 200)
+//
+////Verify Booking ID
+//WS.verifyElementPropertyValue(res_ChangeBooking, 'BookingID', GlobalVariable.Glb_Booking_ID)
 
+WS.sendRequest(findTestObject('Toyota/ChangeBooking_JSON', [('Dealer_Code') : '765A', ('Location_Code') : '1', ('BookingID') : '136910'
+            , ('Service_Date_Change') : '2018-10-04', ('Drop_Off_Time_Change') : '10:30', ('Pick_Up_Time') : '17:00', ('ServiceBay_Time') : 'PERIODIC'
+            , ('TotalPrice_Change') : '110', ('TotalDuration_Change') : '1', ('VIN_Change') : 'VINhle', ('REGNumber_Change') : 'REGCHANGE'
+            , ('ContactId') : '1901', ('FirstName') : 'TITAN', ('LastName') : 'DMS', ('ServiceType') : 'OSB_SERVICE_TYPE_LOGBOOK'
+            , ('DMSOperationCode') : 'TITAN_OP_CODE_LOG']))
 
-		//Verify Booking ID
-		WS.verifyElementPropertyValue(res_SearchForBooking, '[0].BookingID', GlobalVariable.Glb_Booking_ID)
-		//Verify REG Number
-		WS.verifyElementPropertyValue(res_SearchForBooking, '[0].RegistrationNumber', GlobalVariable.Glb_REGNumber)
-		//Verify Booking Date
-		WS.verifyElementPropertyValue(res_SearchForBooking, '[0].BookingDate', GlobalVariable.Glb_ServiceDate + "T00:00:00")
-		//Verify Drop off Time
-		WS.verifyElementPropertyValue(res_SearchForBooking, '[0].DropOffTime', GlobalVariable.Glb_DropOffTime)
-		//Verify Pick Up Time
-		WS.verifyElementPropertyValue(res_SearchForBooking, '[0].PickUpTime', GlobalVariable.Glb_PickUpTime)

@@ -8,7 +8,7 @@
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;Vehicle\&quot;: {\n        \&quot;VIN\&quot;: \&quot;${VIN_Change}\&quot;,\n        \&quot;RegistrationNumber\&quot;: \&quot;${REGNumber_Change}\&quot;,\n        \&quot;RegistrationState\&quot;: \&quot;OSB_STATE_VIC\&quot;,\n        \&quot;CustomerOdometerReading\&quot;: 20500,\n        \&quot;VehicleInformation\&quot;: {\n            \&quot;VehicleDetail\&quot;: []\n        }\n    },\n    \&quot;RepairOrder\&quot;: {\n        \&quot;TotalPriceQuoted\&quot;: ${TotalPrice},\n        \&quot;TotalDuration\&quot;: ${TotalDuration},\n        \&quot;Services\&quot;: [\n            {\n                \&quot;Name\&quot;: \&quot;Operation Code for Test\&quot;,\n                \&quot;Description\&quot;: null,\n                \&quot;ServiceType\&quot;: \&quot;${ServiceType}\&quot;,\n                \&quot;ServiceCode\&quot;: null,\n                \&quot;DMSOperationalCode\&quot;: \&quot;${DMSOperationCode}\&quot;,\n                \&quot;Duration\&quot;: 1,\n                \&quot;EMFlag\&quot;: false,\n                \&quot;EMDuration\&quot;: 0,\n                \&quot;DealerPrice\&quot;: 0,\n                \&quot;POAFlag\&quot;: false,\n                \&quot;Price\&quot;: 110\n            }\n        ]\n    },\n    \&quot;Appointment\&quot;: {\n        \&quot;BookingDate\&quot;: \&quot;${Service_Date_Change}T00:00:00\&quot;,\n        \&quot;DropOffTime\&quot;: \&quot;${Drop_Off_Time_Change}\&quot;,\n        \&quot;PickUpTime\&quot;: \&quot;${Pick_Up_Time_Change}\&quot;,\n        \&quot;ServiceBayType\&quot;: \&quot;${ServiceBay_Time}\&quot;\n    },\n    \&quot;Contact\&quot;: {\n        \&quot;ToyotaContactID\&quot;: \&quot;${ContactId}\&quot;,\n        \&quot;FirstName\&quot;: \&quot;${FirstName}\&quot;,\n        \&quot;LastName\&quot;: \&quot;${LastName}\&quot;,\n        \&quot;PhoneNumber\&quot;: \&quot;0983612137\&quot;,\n        \&quot;Email\&quot;: \&quot;QAteam.automation@titandms.com\&quot;,\n        \&quot;DealerMarketingAllowedFlag\&quot;: false,\n        \&quot;ContactRelationship\&quot;: \&quot;OSB_CUSTOMER_OWNER\&quot;,\n        \&quot;AlternativeContactName\&quot;: \&quot;ANH THY\&quot;,\n        \&quot;AlternativeContactNumber\&quot;: \&quot;0919011995\&quot;\n    },\n    \&quot;Comment\&quot;: null,\n    \&quot;BookingSource\&quot;: \&quot;OSB_SOURCE_DEALER_WEBSITE\&quot;,\n    \&quot;ExpressMaintenanceBookingRequest\&quot;: false,\n    \&quot;TransportOption\&quot;: \&quot;OSB_TRANSPORT_OPTION_NONE\&quot;,\n    \&quot;PreferredContactMethod\&quot;: \&quot;OSB_CONTACT_PHONE\&quot;,\n    \&quot;ConfirmationMessageByDMS\&quot;: false\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;Vehicle\&quot;: {\n        \&quot;VIN\&quot;: \&quot;${VIN}\&quot;,\n        \&quot;RegistrationNumber\&quot;: \&quot;${REGNumber}\&quot;,\n        \&quot;RegistrationState\&quot;: \&quot;OSB_STATE_VIC\&quot;,\n        \&quot;CustomerOdometerReading\&quot;: 20500,\n        \&quot;VehicleInformation\&quot;: {\n            \&quot;VehicleDetail\&quot;: []\n        }\n    },\n    \&quot;RepairOrder\&quot;: {\n        \&quot;TotalPriceQuoted\&quot;: ${TotalPrice_Change},\n        \&quot;TotalDuration\&quot;: ${TotalDuration_Change},\n        \&quot;Services\&quot;: [\n            {\n                \&quot;Name\&quot;: \&quot;Operation Code for Test\&quot;,\n                \&quot;Description\&quot;: null,\n                \&quot;ServiceType\&quot;: \&quot;${ServiceType}\&quot;,\n                \&quot;ServiceCode\&quot;: null,\n                \&quot;DMSOperationalCode\&quot;: \&quot;${DMSOperationCode}\&quot;,\n                \&quot;Duration\&quot;: 1,\n                \&quot;EMFlag\&quot;: false,\n                \&quot;EMDuration\&quot;: 0,\n                \&quot;DealerPrice\&quot;: 0,\n                \&quot;POAFlag\&quot;: false,\n                \&quot;Price\&quot;: 110\n            }\n        ]\n    },\n    \&quot;Appointment\&quot;: {\n        \&quot;BookingDate\&quot;: \&quot;${Service_Date_Change}T00:00:00\&quot;,\n        \&quot;DropOffTime\&quot;: \&quot;${Drop_Off_Time_Change}\&quot;,\n        \&quot;PickUpTime\&quot;: \&quot;${Pick_Up_Time}\&quot;,\n        \&quot;ServiceBayType\&quot;: \&quot;${ServiceBay_Time}\&quot;\n    },\n    \&quot;Contact\&quot;: {\n        \&quot;ToyotaContactID\&quot;: \&quot;${ContactId}\&quot;,\n        \&quot;FirstName\&quot;: \&quot;${FirstName}\&quot;,\n        \&quot;LastName\&quot;: \&quot;${LastName}\&quot;,\n        \&quot;PhoneNumber\&quot;: \&quot;0983612137\&quot;,\n        \&quot;Email\&quot;: \&quot;QAteam.automation@titandms.com\&quot;,\n        \&quot;DealerMarketingAllowedFlag\&quot;: false,\n        \&quot;ContactRelationship\&quot;: \&quot;OSB_CUSTOMER_OWNER\&quot;,\n        \&quot;AlternativeContactName\&quot;: \&quot;ANH THY\&quot;,\n        \&quot;AlternativeContactNumber\&quot;: \&quot;0919011995\&quot;\n    },\n    \&quot;Comment\&quot;: null,\n    \&quot;BookingSource\&quot;: \&quot;OSB_SOURCE_DEALER_WEBSITE\&quot;,\n    \&quot;ExpressMaintenanceBookingRequest\&quot;: false,\n    \&quot;TransportOption\&quot;: \&quot;OSB_TRANSPORT_OPTION_NONE\&quot;,\n    \&quot;PreferredContactMethod\&quot;: \&quot;OSB_CONTACT_PHONE\&quot;,\n    \&quot;ConfirmationMessageByDMS\&quot;: false\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -57,14 +57,14 @@
       <name>Location_Code</name>
    </variables>
    <variables>
-      <defaultValue>'136872'</defaultValue>
+      <defaultValue>'136910'</defaultValue>
       <description></description>
       <id>de5eadab-8d1c-4bd4-90bf-1b245086885d</id>
       <masked>false</masked>
       <name>BookingID</name>
    </variables>
    <variables>
-      <defaultValue>'2018-09-21'</defaultValue>
+      <defaultValue>'2018-10-04'</defaultValue>
       <description></description>
       <id>8c29fa83-4ea7-40c4-a56f-2fd9b0351173</id>
       <masked>false</masked>
@@ -110,14 +110,14 @@
       <description></description>
       <id>75cdcb41-508a-40de-908e-cffd91d1ecbd</id>
       <masked>false</masked>
-      <name>VIN_Change</name>
+      <name>VIN</name>
    </variables>
    <variables>
       <defaultValue>'REGCHANGE'</defaultValue>
       <description></description>
       <id>af503f4c-6867-49b2-bfc1-e295912b538f</id>
       <masked>false</masked>
-      <name>REGNumber_Change</name>
+      <name>REGNumber</name>
    </variables>
    <variables>
       <defaultValue>'1901'</defaultValue>
