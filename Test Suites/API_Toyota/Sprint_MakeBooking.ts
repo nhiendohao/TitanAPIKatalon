@@ -4,6 +4,7 @@
    <name>Sprint_MakeBooking</name>
    <tag></tag>
    <isRerun>false</isRerun>
+   <lastRun>2018-10-03T12:26:37</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -19,8 +20,8 @@
          <combinationType>ONE</combinationType>
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
-            <iterationType>RANGE</iterationType>
-            <value>35-40</value>
+            <iterationType>SPECIFIC</iterationType>
+            <value>3295</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All</testDataId>
       </testDataLink>
@@ -251,6 +252,12 @@
          <type>DATA_COLUMN</type>
          <value>Booking ID</value>
          <variableId>8b20f35d-d622-45ba-a051-5f468688a5e4</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>4d3ccf86-9169-472c-8536-11a4c42a33de</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

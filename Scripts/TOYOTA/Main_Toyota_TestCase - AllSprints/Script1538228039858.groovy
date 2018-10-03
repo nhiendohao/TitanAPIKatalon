@@ -26,7 +26,7 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variab
 	('Setup_REGNumber') : var_REGNumber, 
 	('Setup_ServiceDate') : var_ServiceDate, 
 	('Setup_DropOffTime') : var_Drop_Off_Time, 
-	('Setup_PickUpTime') : var_Status_PickupTime, 
+	('Setup_PickUpTime') : var_PickUpTime,
 	('Setup_TotalPrice') : var_TotalPrice, 
 	('Setup_TotalDuration') : var_TotalDuration, 
 	('Setup_FirstName') : var_FirstName , 

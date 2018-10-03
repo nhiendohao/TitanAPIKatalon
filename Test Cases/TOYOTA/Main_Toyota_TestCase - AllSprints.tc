@@ -271,4 +271,11 @@
       <masked>false</masked>
       <name>var_BookingId</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>4d3ccf86-9169-472c-8536-11a4c42a33de</id>
+      <masked>false</masked>
+      <name>var_PickUpTime</name>
+   </variable>
 </TestCaseEntity>

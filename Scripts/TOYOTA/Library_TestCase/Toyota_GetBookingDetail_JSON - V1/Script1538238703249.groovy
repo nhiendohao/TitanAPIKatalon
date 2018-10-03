@@ -93,7 +93,7 @@ else{
 	//Verify Repair Order Information
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.TotalPriceQuoted', GlobalVariable.Glb_TotalPrice + '.0000')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.TotalDuration', GlobalVariable.Glb_Duration_Time + '.00')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Name', 'Operation Code for Test')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Name', 'OSB_SERVICE_TYPE_ADDITIONAL - Operation Code for Test')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Description', 'null')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].ServiceType', GlobalVariable.Glb_ServiceType)
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].ServiceCode', 'null')
@@ -101,7 +101,7 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Duration', '1.00')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].EMFlag', 'false')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].EMDuration', '0.0')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].DealerPrice', '0.5')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].DealerPrice', '0.0')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].POAFlag', 'false')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Price', '110.0000')
 	
@@ -113,9 +113,9 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Appointment.ServiceBayType', 'null')
 	
 	//Verify Contact Information
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ToyotaContactID', GlobalVariable.Glb_ContactId)
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.FirstName', GlobalVariable.Glb_FirstName)
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.LastName', GlobalVariable.Glb_LastName)
+//	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ToyotaContactID', GlobalVariable.Glb_ContactId)
+//	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.FirstName', GlobalVariable.Glb_FirstName)
+//	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.LastName', GlobalVariable.Glb_LastName)
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.PhoneNumber', '0983612137')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.Email', 'QAteam.automation@titandms.com')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.DealerMarketingAllowedFlag', 'false')
@@ -128,6 +128,6 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'BookingSource', 'OSB_SOURCE_DEALER_WEBSITE')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'ExpressMaintenanceBookingRequest', 'false')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'TransportOption', 'OSB_TRANSPORT_OPTION_NONE')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'PreferredContactMethod', 'OSB_CONTACT_PHONE')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'PreferredContactMethod', 'null')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'ConfirmationMessageByDMS', 'false')
 	}

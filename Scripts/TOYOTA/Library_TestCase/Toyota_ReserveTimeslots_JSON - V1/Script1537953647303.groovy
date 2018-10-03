@@ -45,14 +45,16 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
 	if(!(ExpectedMessage=="")) assertThat(response.getResponseText()).contains(ExpectedMessage)
 }
-//Convert String to Date
-def ConvertString_toDate = {String Date_Str, String format ->
-	SimpleDateFormat formatter = new SimpleDateFormat(format);
-	
-		Date _date = formatter.parse(Date_Str);
-		System.out.println(_date);
-		return _date
-}
+//Convert Object to Time
+def ConvertObjectToDate = {Object global ->
+	String Time_Str = global as String
+	int Time_hour = Time_Str.substring(0, 2) as Integer
+	int Time_min = Time_Str.substring(3) as Integer
+	def Time = new Date()
+	Time.set(hourOfDay: Time_hour, minute:Time_min, second: 0)
+	println Time
+	return Time
+	}
 //=========================================================================================
 
 //CODE
@@ -72,17 +74,19 @@ ResponseObject res_ReserveTimeslot = WS.sendRequest(ReserveTimeslot)
 
 //Convert String to Integer
 int Duration = GlobalVariable.Glb_Duration_Time as Integer
-//Convert String to Date
+//Convert String to Date and time
 def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
+println GlobalVariable.Glb_ServiceDate
+println Service_Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
-def DropOffTime = Date.parse("HH:mm", GlobalVariable.Glb_DropOffTime) as Date
-def PickUpTime = Date.parse("HH:mm", GlobalVariable.Glb_PickUpTime) as Date
-//Convert String to Date
-Start_WS_Str = "0" + GlobalVariable.Glb_WorkshopStart + ":00"
-def Start_WS_Hr = ConvertString_toDate(Start_WS_Str,"HH:mm")
-End_WS_Str = GlobalVariable.Glb_WorkshopEnd + ":00"
-def End_WS_Hr = ConvertString_toDate(End_WS_Str,"HH:mm")
-//Calculate Time avalable for service
+Date current_hour = ConvertObjectToDate(GlobalVariable.Glb_Current_Hour)
+Date DropOffTime = ConvertObjectToDate(GlobalVariable.Glb_DropOffTime)
+Date PickUpTime = ConvertObjectToDate(GlobalVariable.Glb_PickUpTime)
+Object Start_WS_Hr_Obj = "0" + GlobalVariable.Glb_WorkshopStart +":00"
+Date Start_WS_Hr = ConvertObjectToDate(Start_WS_Hr_Obj)
+Object End_WS_Hr_Obj = GlobalVariable.Glb_WorkshopEnd +":00"
+Date End_WS_Hr = ConvertObjectToDate(End_WS_Hr_Obj)
+//Calculate service duration
 int duration_hours
 use(groovy.time.TimeCategory) {
 	def _duration = PickUpTime - DropOffTime

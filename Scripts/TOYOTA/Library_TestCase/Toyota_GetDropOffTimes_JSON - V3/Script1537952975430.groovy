@@ -54,6 +54,7 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 def current_hour = Date.parse("HH:mm", GlobalVariable.Glb_Current_Hour) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 def Start_Date_Str = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_StartDate) as Date
+String Start_Date = Start_Date_Str.format("yyyy-MM-dd") as String
 def End_Date_Str = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_EndDate) as Date
 //Declare Time Workshop Open and Time WS Close
 int Start = GlobalVariable.Glb_WorkshopStart as Integer
@@ -123,11 +124,17 @@ use(groovy.time.TimeCategory) {
 for (def i=0;i< duration_days+1;i++){
 	if(!(Start_Date_Str.format("E")=="Sat" || Start_Date_Str.format("E")=="Sun" )){
 //Verify for each date
-WS.verifyElementPropertyValue(res_GetServiceOperation, "["+i+"].Date", GlobalVariable.Glb_StartDate + "T00:00:00")
+WS.verifyElementPropertyValue(res_GetServiceOperation, "["+i+"].Date", Start_Date + "T00:00:00")
+
 //Set IsCurrentDate = false
 def IsCurrentDate = "false"
 //Setup IsCurrentDate = true if isCurrent
 if(Start_Date_Str.equals(current)) IsCurrentDate = "true"
+def today = new Date()
+use(groovy.time.TimeCategory){
+	today = today + 3.hour 
+}
+
 //Verify response Times array
 //Create Data Times Array
 //Create real time variable
@@ -142,12 +149,13 @@ time_close_ws.set(hourOfDay: End - Duration, minute: 00)
 //Create Array for Times
 def times = new String[100]
 def count = 0
-while(realtime_ws.before(time_close_ws)){
+while(!(realtime_ws.after(time_close_ws))){
 	//If point is Current Date, dont get the timeslot before current hours
 	if(IsCurrentDate == "true"){
-		if(!realtime_ws.before(current_hour))
+		if(realtime_ws.after(today)){
 	times[count]=realtime_ws.format("HH:mm") as String
 	count=count +1
+		}
 	} else {
 	times[count]=realtime_ws.format("HH:mm") as String
 	count=count +1
@@ -166,11 +174,11 @@ println times
 
 //Convert JSON data into Array string
 def res_Text = new groovy.json.JsonSlurper().parseText(res_GetServiceOperation.getResponseText())
-def timeslotJSON
-res_Text.Times.each{ timeslotJSON = it}
+def timeslotJSON = 0
+res_Text[i].Times.each{ timeslotJSON += 1}
 
 //Verify number of element between JSON response and slot of WS
-assert timeslotJSON.size == count
+assert timeslotJSON == count
 //Loop Verification
 for(def j  = 0;j<count;j++) WS.verifyElementPropertyValue(res_GetServiceOperation, "["+i+"].Times["+j+"]", times[j])
 
@@ -179,7 +187,8 @@ use(groovy.time.TimeCategory) {
 	Start_Date_Str = Start_Date_Str + 1.day}
 	Start_Date = Start_Date_Str.format("yyyy-MM-dd") as String
 	}
+	//Set IsCurrentDate = false
+	IsCurrentDate = "false"
   }
-//Set IsCurrentDate = false
-IsCurrentDate = "false"
+
 }

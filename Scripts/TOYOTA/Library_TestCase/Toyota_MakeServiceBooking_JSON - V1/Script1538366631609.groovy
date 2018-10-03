@@ -45,14 +45,16 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
 	if(!(ExpectedMessage==""))assertThat(response.getResponseText()).contains(ExpectedMessage)
 }
-//Convert String to Date
-def ConvertString_toDate = {String Date_Str, String format ->
-	SimpleDateFormat formatter = new SimpleDateFormat(format);
-	
-		Date _date = formatter.parse(Date_Str);
-		System.out.println(_date);
-		return _date
-}
+//Convert Object to Time
+def ConvertObjectToDate = {Object global ->
+	String Time_Str = global as String
+	int Time_hour = Time_Str.substring(0, 2) as Integer
+	int Time_min = Time_Str.substring(3) as Integer
+	def Time = new Date()
+	Time.set(hourOfDay: Time_hour, minute:Time_min, second: 0)
+	println Time
+	return Time
+	}
 //=========================================================================================
 
 //CODE
@@ -90,13 +92,13 @@ int TotalDuration = GlobalVariable.Glb_TotalDuration as Integer
 //Convert String to Date
 def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
-def DropOffTime = Date.parse("HH:mm", GlobalVariable.Glb_DropOffTime) as Date
-def PickUpTime = Date.parse("HH:mm", GlobalVariable.Glb_PickUpTime) as Date
+Date DropOffTime = ConvertObjectToDate(GlobalVariable.Glb_DropOffTime)
+Date PickUpTime = ConvertObjectToDate(GlobalVariable.Glb_PickUpTime)
 //Convert String to Date
-Start_WS_Str = "0" + GlobalVariable.Glb_WorkshopStart + ":00"
-def Start_WS_Hr = ConvertString_toDate(Start_WS_Str,"HH:mm")
-End_WS_Str = GlobalVariable.Glb_WorkshopEnd + ":00"
-def End_WS_Hr = ConvertString_toDate(End_WS_Str,"HH:mm")
+Object Start_WS_Hr_Obj = "0" + GlobalVariable.Glb_WorkshopStart +":00"
+Date Start_WS_Hr = ConvertObjectToDate(Start_WS_Hr_Obj)
+Object End_WS_Hr_Obj = GlobalVariable.Glb_WorkshopEnd +":00"
+Date End_WS_Hr = ConvertObjectToDate(End_WS_Hr_Obj)
 //Calculate Time avalable for service
 int duration_hours
 use(groovy.time.TimeCategory) {
@@ -105,6 +107,7 @@ use(groovy.time.TimeCategory) {
 	println duration_hours
 	}
 
+println GlobalVariable.Glb_BookingStatus 
 //Verify Response Status
 //Clasify case
 //StartDate  after EndDate
@@ -136,18 +139,18 @@ else if(Service_Date.before(current))
 	VerifyResponse(res_MakeServiceBooking,404,"is before the current date")
 //Drop Off Time before WS Start Hour
 else if( DropOffTime.before(Start_WS_Hr) || GlobalVariable.Glb_BookingStatus == "current")
-	VerifyResponse(res_MakeServiceBooking,400,"drop off timeslot taken")
+	VerifyResponse(res_MakeServiceBooking,400,"drop off timeslot is taken")
 //Pickup Time after WS End Hour
-else if( PickUpTime.after(End_WS_Hr)(Start_WS_Hr))
+else if( PickUpTime.after(End_WS_Hr))
 	 VerifyResponse(res_MakeServiceBooking,400,"pick up timeslot taken")
-/*else if((DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration) &&
-	 !(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ))
-	 VerifyResponse(res_ReserveTimeslot,400,"Duration " +Duration+ " do not match values from GetDropOffTimes")*/
+ //X Reserve Token = no
+ else if( GlobalVariable.Glb_Reserve_Token.toString().toLowerCase() == "no" )
+	  VerifyResponse(res_MakeServiceBooking,404,"Booking not found")
 //All valid
 else if(!(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" )){
 	 VerifyResponse(res_MakeServiceBooking,200,"")
 	 //Set Status Booking: not yet --> current
-	 GlobalVariable.Glb_BookingStatus == "current"
+	 GlobalVariable.Glb_BookingStatus = "current"
 
 	//Get Reserve Token
 	//Transfer response to Text

@@ -48,7 +48,8 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 RequestObject SearchForBooking = findTestObject('Toyota/SearchForBooking_JSON', [
 	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
 	('Location_Code') : GlobalVariable.Glb_Location_Code, 
-	('Service_Date') : GlobalVariable.Glb_ServiceDate            , 
+	('StartSearchDate') : GlobalVariable.Glb_StartSearchDate            , 
+	('EndSearchDate') : GlobalVariable.Glb_EndSearchDate            , 
 	('REGNumber') : GlobalVariable.Glb_REGNumber])
 //Set header value
 SearchForBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 

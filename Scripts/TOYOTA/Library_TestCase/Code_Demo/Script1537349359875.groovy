@@ -27,17 +27,31 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKe
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.Date
 
-//V0. Check timeslot for 1 day
-//V1. Check timeslot for more days from TODAY. Check for Saturday and Sunday
-//Get the current Date
-//V2. Check the number of drop off list == expected timeslot.
-//V3. Check Status code response when Start Date is after End Date
-//Check Status code response when ServiceBay Type is wrong
-//Validate Duration
-//V4. Validate response = "" when Service Date = Saturday and Sunday
-//V5. Validate for Current date, only show timeslot after current HH:mm, next day always show all timeslot
+//CODE
+//Declare request
+RequestObject SearchForBooking = findTestObject('Toyota/SearchForBooking_JSON', [
+	('Dealer_Code') : "765A", 
+	('Location_Code') : "1", 
+	('Service_Date') : "2018-0"            , 
+	('REGNumber') : GlobalVariable.Glb_REGNumber])
+//Set header value
+SearchForBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + 
+    GlobalVariable.Glb_Authorization_Token))
+//Declare response
+ResponseObject res_SearchForBooking = WS.sendRequest(SearchForBooking)
 
-//METHOD
-//Verify response
- 
+
+		//Verify Booking ID
+		WS.verifyElementPropertyValue(res_SearchForBooking, '[0].BookingID', GlobalVariable.Glb_Booking_ID)
+		//Verify REG Number
+		WS.verifyElementPropertyValue(res_SearchForBooking, '[0].RegistrationNumber', GlobalVariable.Glb_REGNumber)
+		//Verify Booking Date
+		WS.verifyElementPropertyValue(res_SearchForBooking, '[0].BookingDate', GlobalVariable.Glb_ServiceDate + "T00:00:00")
+		//Verify Drop off Time
+		WS.verifyElementPropertyValue(res_SearchForBooking, '[0].DropOffTime', GlobalVariable.Glb_DropOffTime)
+		//Verify Pick Up Time
+		WS.verifyElementPropertyValue(res_SearchForBooking, '[0].PickUpTime', GlobalVariable.Glb_PickUpTime)

@@ -43,7 +43,7 @@
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>'2018-09-20'</defaultValue>
+      <defaultValue>'2018-10-04'</defaultValue>
       <description></description>
       <id>3d00d777-dbed-4af8-bd45-0ef37a744f50</id>
       <masked>false</masked>
@@ -57,7 +57,7 @@
       <name>Duration</name>
    </variables>
    <variables>
-      <defaultValue>'14:00'</defaultValue>
+      <defaultValue>'13:00'</defaultValue>
       <description></description>
       <id>17b59cb1-1613-48eb-af8b-b2c22051cf3c</id>
       <masked>false</masked>

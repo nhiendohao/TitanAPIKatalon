@@ -53,6 +53,16 @@ def ConvertString_toDate = {String Date_Str, String format ->
 		System.out.println(_date);
 		return _date
 }
+//Convert Object to Time
+def ConvertObjectToDate = {Object global ->
+	String Time_Str = global as String
+	int Time_hour = Time_Str.substring(0, 2) as Integer
+	int Time_min = Time_Str.substring(3) as Integer
+	def Time = new Date()
+	Time.set(hourOfDay: Time_hour, minute:Time_min)
+	println Time
+	return Time
+	}
 //=========================================================================================
 
 //CODE
@@ -69,18 +79,35 @@ GetPickupTime.getHttpHeaderProperties().add(new TestObjectProperty("Authorizatio
 //Send request
 ResponseObject res_GetPickupTime = WS.sendRequest(GetPickupTime)
 //Convert String to Date
-def current_hour = Date.parse("HH:mm", GlobalVariable.Glb_Current_Hour) as Date
+Date current_hour = ConvertObjectToDate(GlobalVariable.Glb_Current_Hour)
 def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
-def DropOffTime = Date.parse("HH:mm", GlobalVariable.Glb_DropOffTime) as Date
+Date DropOffTime = ConvertObjectToDate(GlobalVariable.Glb_DropOffTime)
+println DropOffTime
 //Convert String to Integer
 int Duration = GlobalVariable.Glb_Duration_Time as Integer
 //Declare Time Workshop Open and Time WS Close
 //Convert String to Date
-Start_WS_Str = "0" + GlobalVariable.Glb_WorkshopStart + ":00"
-def Start_WS_Hr = ConvertString_toDate(Start_WS_Str,"HH:mm")
-End_WS_Str = GlobalVariable.Glb_WorkshopEnd + ":00"
-def End_WS_Hr = ConvertString_toDate(End_WS_Str,"HH:mm")
+//Create real time variable
+def realtime_ws = new Date()
+//Declare Time Workshop Open and Time WS Close
+int Start = ((GlobalVariable.Glb_WorkshopStart) as Integer)
+int End = ((GlobalVariable.Glb_WorkshopEnd) as Integer)
+//Declare Interval for Timeslots and Duration for Service
+int Interval = ((GlobalVariable.Glb_Interval) as Integer)
+
+//Set realtime as Time Workshop Open
+realtime_ws.set(hourOfDay: Start + Duration, minute:00)
+println(realtime_ws.format('HH:mm'))
+
+//Set Time WS Close, this time is early 15 minutes
+def time_close_ws = new Date()
+time_close_ws.set(hourOfDay: End, minute:00)
+
+Date Start_WS_Hr = realtime_ws
+println  Start_WS_Hr
+Date End_WS_Hr = time_close_ws
+println  Start_WS_Hr
 //Calculate Time avalable for service
 int duration_hours
 use(groovy.time.TimeCategory) {
@@ -139,26 +166,12 @@ else {
 		
 		//Verify response Times array
 		//Create Data Times Array
-		//Create real time variable
-		def realtime_ws = new Date()
-		//Declare Time Workshop Open and Time WS Close
-		int Start = ((GlobalVariable.Glb_WorkshopStart) as Integer)
-		int End = ((GlobalVariable.Glb_WorkshopEnd) as Integer)
-		//Declare Interval for Timeslots and Duration for Service
-		int Interval = ((GlobalVariable.Glb_Interval) as Integer)
 		
-		//Set realtime as Time Workshop Open
-		realtime_ws.set(hourOfDay: Start + Duration, minute:00)
-		println(realtime_ws.format('HH:mm'))
-		
-		//Set Time WS Close, this time is early 15 minutes
-		def time_close_ws = new Date()
-		time_close_ws.set(hourOfDay: End, minute:00)
 		
 		//Create Array for Times
 		def times = new String[100]
 		def count = 0
-		while (realtime_ws.before(time_close_ws)) {
+		while (!realtime_ws.after(time_close_ws)) {
 		    if(realtime_ws.after(DropOffTime)){
 				(times[count]) = ((realtime_ws.format('HH:mm')) as String)
 				count = (count + 1)

@@ -4,7 +4,7 @@
    <name>Sprint_GetOffTime - P3</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-02T21:22:24</lastRun>
+   <lastRun>2018-10-03T08:06:18</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -252,6 +252,12 @@
          <type>DATA_COLUMN</type>
          <value>Booking ID</value>
          <variableId>8b20f35d-d622-45ba-a051-5f468688a5e4</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>4d3ccf86-9169-472c-8536-11a4c42a33de</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

@@ -8,7 +8,7 @@
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n\t \&quot;SearchStartDate\&quot;: \&quot;${Service_Date}\&quot;,\n\t \&quot;SearchEndDate\&quot;: \&quot;${Service_Date}\&quot;,\n\t \&quot;RegistrationNumber\&quot;: \&quot;${REGNumber}\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n\t \&quot;SearchStartDate\&quot;: \&quot;${StartSearchDate}\&quot;,\n\t \&quot;SearchEndDate\&quot;: \&quot;${EndSearchDate}\&quot;,\n\t \&quot;RegistrationNumber\&quot;: \&quot;${REGNumber}\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -61,7 +61,7 @@
       <description></description>
       <id>049fe140-0c94-491a-a872-e0d18dfadd53</id>
       <masked>false</masked>
-      <name>Service_Date</name>
+      <name>StartSearchDate</name>
    </variables>
    <variables>
       <defaultValue>'REG12121240'</defaultValue>
@@ -69,6 +69,13 @@
       <id>fb7ea01d-e663-429c-ae7e-af1afd342ebf</id>
       <masked>false</masked>
       <name>REGNumber</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ab234097-987d-4231-8f39-c54eae5701ab</id>
+      <masked>false</masked>
+      <name>EndSearchDate</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

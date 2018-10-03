@@ -6,7 +6,7 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'56'</initValue>
+      <initValue>'no'</initValue>
       <name>Glb_Reserve_Token</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -56,12 +56,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'136894'</initValue>
+      <initValue>'wrong'</initValue>
       <name>Glb_Booking_ID</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'08:00'</initValue>
+      <initValue>'16:30'</initValue>
       <name>Glb_DropOffTime</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -101,7 +101,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'2018-10-01'</initValue>
+      <initValue>'2018-10-03'</initValue>
       <name>Glb_StartDate</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

@@ -71,24 +71,25 @@ else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "360"))
 	VerifyResponse(res_CancelBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //Service Date Past
-else if (GlobalVariable.Glb_Booking_ID == "1901" || GlobalVariable.Glb_BookingStatus == "cancel")
-	VerifyResponse(res_CancelBooking,404,"Booking ID " +GlobalVariable.Glb_Booking_ID+ " not found")
+else if (GlobalVariable.Glb_Booking_ID == "1901" || GlobalVariable.Glb_BookingStatus == "cancel" ||GlobalVariable.Glb_Booking_ID == "wrong")
+	VerifyResponse(res_CancelBooking,400,"Booking ID " +GlobalVariable.Glb_Booking_ID+ " not found")
 //All valid
 else{
 	//Verify Response Status = 200 OK
-	VerifyResponse(res_CancelBooking,200,"")
-	//Verify response content is NULL
-	def res_Text = new groovy.json.JsonSlurper().parseText(res_CancelBooking.getResponseText())
-	assert  res_Text[0] == null
+	WS.verifyResponseStatusCode(res_CancelBooking, 200)
 	//Set Booking Status = "cancel"
 	GlobalVariable.Glb_BookingStatus = "cancel"
+	println GlobalVariable.Glb_BookingStatus
 	
+	//Set StartDrop and EndDrop
+	GlobalVariable.Glb_StartDate = GlobalVariable.Glb_ServiceDate
+	GlobalVariable.Glb_EndDate = GlobalVariable.Glb_ServiceDate
 	//Re-check call Get Off Time again
 	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3'), [
 		('Reserve_Timeslot') : ''],
 	FailureHandling.STOP_ON_FAILURE)
-	
-	//Re-check call Search Booking
-	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON - V1'), [:], 
-	FailureHandling.STOP_ON_FAILURE)
+//	
+//	//Re-check call Search Booking
+//	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON - V1'), [:], 
+//	FailureHandling.STOP_ON_FAILURE)
 }

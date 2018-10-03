@@ -1,0 +1,13 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Sprint_ReserveTimeslot,,,2018-10-03 15:57:32,2018-10-03 15:57:36,3.350s,FAILED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints,,,2018-10-03 15:57:32,2018-10-03 15:57:36,3.137s,FAILED
+callTestCase,,,2018-10-03 15:57:33,2018-10-03 15:57:35,2.055s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-03 15:57:35,2018-10-03 15:57:35,0.001s,PASSED
+"Statement - If (var_Status_GetOffTime == ""true"")",,,2018-10-03 15:57:35,2018-10-03 15:57:35,0.000s,PASSED
+"Statement - If (var_Status_PickupTime == ""true"")",,,2018-10-03 15:57:35,2018-10-03 15:57:35,0.001s,PASSED
+"Statement - If (var_Status_ReservedTimeslot == ""true"")",,,2018-10-03 15:57:35,2018-10-03 15:57:35,0.000s,PASSED
+"Statement - If (var_Status_GetTransport == ""true"")",,,2018-10-03 15:57:35,2018-10-03 15:57:35,0.000s,PASSED
+"Statement - If (var_Status_MakeBooking == ""true"")",,,2018-10-03 15:57:35,2018-10-03 15:57:35,0.000s,PASSED
+"Statement - If (var_Status_SearchBooking == ""true"")",,,2018-10-03 15:57:35,2018-10-03 15:57:35,0.000s,PASSED
+"Statement - If (var_Status_GetBookingDetail == ""true"")",,,2018-10-03 15:57:35,2018-10-03 15:57:36,0.893s,FAILED
