@@ -130,6 +130,11 @@ if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
 	println "Invalid Dealer Code"
 	VerifyResponse(res_MakeServiceBooking,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
 }
+//X Reserve Token = no
+else if( GlobalVariable.Glb_Reserve_Token.toString().toLowerCase() == "no" ){
+	println "X Reserve Token = no"
+	 VerifyResponse(res_MakeServiceBooking,404,"Booking not found")
+}
 //Drop Off Time after Pick Up Time
 else if(DropOffTime.after(PickUpTime)){
 	println "Drop Off Time after Pick Up Time"
@@ -179,11 +184,7 @@ else if( PickUpTime.after(End_WS_Hr)){
 	println "Pickup Time after WS End Hour"
 	 VerifyResponse(res_MakeServiceBooking,400,"pick up timeslot taken")
 }
- //X Reserve Token = no
- else if( GlobalVariable.Glb_Reserve_Token.toString().toLowerCase() == "no" ){
-	 println "X Reserve Token = no"
-	  VerifyResponse(res_MakeServiceBooking,404,"Booking not found")
- }
+ 
 //All valid
 else if(!(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" )){
 	println "All valid"

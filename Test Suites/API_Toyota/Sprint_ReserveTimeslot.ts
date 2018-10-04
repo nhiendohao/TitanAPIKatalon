@@ -4,7 +4,7 @@
    <name>Sprint_ReserveTimeslot</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-04T14:55:43</lastRun>
+   <lastRun>2018-10-04T17:11:51</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -21,7 +21,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>4245-4268</value>
+            <value>3335-3434</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All</testDataId>
       </testDataLink>

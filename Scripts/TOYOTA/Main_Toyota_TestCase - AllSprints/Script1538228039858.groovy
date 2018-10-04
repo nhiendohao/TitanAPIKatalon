@@ -67,7 +67,7 @@ if (var_Status_PickupTime == 'true') {
 //If the timeslot is available, 1 reservation token will be return. This number is unique.
 if (var_Status_ReservedTimeslot == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ReserveTimeslots_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-}
+} else GlobalVariable.Glb_Reserve_Token = "0"
 
 //6. Get information about the Transport Option for Customer
 if (var_Status_GetTransport == 'true') {
