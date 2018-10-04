@@ -36,7 +36,8 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variab
 	('Setup_StartSearchDate') : var_StartSearchDate , 
 	('Setup_EndSearchDate') : var_EndSearchDate,
 	('Setup_BookingId') : var_BookingId,
-	('Service_Type') : var_Service_Type
+	('Service_Type') : var_Service_Type,
+	('Setup_ServiceBay_Type') : var_ServiceBay_Type
 	], FailureHandling.STOP_ON_FAILURE)
 
 //2. Get Operation Code for customer

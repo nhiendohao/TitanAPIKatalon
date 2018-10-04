@@ -49,6 +49,9 @@ String DMSOperationCode
 if(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK") DMSOperationCode = "OSB_SERVICE_TYPE_LOGBOOK"
 	else DMSOperationCode = "OSB_SERVICE_TYPE_ADDITIONAL"
 	
+	println GlobalVariable.Glb_Dealer_Code
+	println GlobalVariable.Glb_Location_Code
+	println GlobalVariable.Glb_Booking_ID
 //Declare request
 RequestObject GetBookingDetail = findTestObject('Toyota/GetBookingDetails_JSON', [
 	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
@@ -62,23 +65,32 @@ ResponseObject res_GetBookingDetail = WS.sendRequest(GetBookingDetail)
 
 //Classify cases
 //Invalid Dealer Code
-if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
+if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
+	println "Invalid Dealer Code"
 	VerifyResponse(res_GetBookingDetail,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+}
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||
-		GlobalVariable.Glb_Location_Code == "5")
+		GlobalVariable.Glb_Location_Code == "5"){
+		println "Closed Workshop"
 	VerifyResponse(res_GetBookingDetail,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+}
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "4"||
-	GlobalVariable.Glb_Location_Code == "360"))
+	GlobalVariable.Glb_Location_Code == "360")){
+	println "Not exist Workshop"
 	VerifyResponse(res_GetBookingDetail,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
-//Service Date Past
-else if (GlobalVariable.Glb_Booking_ID == "1901" || GlobalVariable.Glb_BookingStatus == "cancel")
+}
+//Booking ID wrong or booking cancled
+else if (GlobalVariable.Glb_Booking_ID == "1901" || GlobalVariable.Glb_BookingStatus == "cancel"){
+	println "Booking ID wrong or booking cancled"
 	VerifyResponse(res_GetBookingDetail,404,"Booking ID " +GlobalVariable.Glb_Booking_ID+ " not found")
+}
 //All valid
 else{
+	println "All valid"
 	//Verify Response Status = 200 OK
 	VerifyResponse(res_GetBookingDetail,200,"")
 	//Verify Booking ID
@@ -113,9 +125,9 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Appointment.ServiceBayType', 'null')
 	
 	//Verify Contact Information
-//	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ToyotaContactID', GlobalVariable.Glb_ContactId)
-//	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.FirstName', GlobalVariable.Glb_FirstName)
-//	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.LastName', GlobalVariable.Glb_LastName)
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ToyotaContactID', GlobalVariable.Glb_ContactId)
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.FirstName', GlobalVariable.Glb_FirstName)
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.LastName', GlobalVariable.Glb_LastName)
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.PhoneNumber', '0983612137')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.Email', 'QAteam.automation@titandms.com')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.DealerMarketingAllowedFlag', 'false')

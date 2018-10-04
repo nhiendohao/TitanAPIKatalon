@@ -59,7 +59,7 @@ def ConvertObjectToDate = {Object global ->
 	int Time_hour = Time_Str.substring(0, 2) as Integer
 	int Time_min = Time_Str.substring(3) as Integer
 	def Time = new Date()
-	Time.set(hourOfDay: Time_hour, minute:Time_min)
+	Time.set(hourOfDay: Time_hour, minute:Time_min, second: 0)
 	println Time
 	return Time
 	}
@@ -67,6 +67,12 @@ def ConvertObjectToDate = {Object global ->
 
 //CODE
 // Declare request
+println GlobalVariable.Glb_ServiceDate
+println GlobalVariable.Glb_DropOffTime
+println GlobalVariable.Glb_ServiceBay_Type
+println GlobalVariable.Glb_Duration_Time
+println GlobalVariable.Glb_Dealer_Code
+println GlobalVariable.Glb_Location_Code
 RequestObject GetPickupTime = findTestObject('Toyota/GetPickUpTimes_JSON', [
 	('Service_Date') : GlobalVariable.Glb_ServiceDate, 
 	('Drop_Off_Time') : GlobalVariable.Glb_DropOffTime, 
@@ -78,14 +84,19 @@ RequestObject GetPickupTime = findTestObject('Toyota/GetPickUpTimes_JSON', [
 GetPickupTime.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Basic " + GlobalVariable.Glb_Authorization_Token))
 //Send request
 ResponseObject res_GetPickupTime = WS.sendRequest(GetPickupTime)
+//Convert String to Integer
+int Duration = GlobalVariable.Glb_Duration_Time as Integer
 //Convert String to Date
 Date current_hour = ConvertObjectToDate(GlobalVariable.Glb_Current_Hour)
 def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 Date DropOffTime = ConvertObjectToDate(GlobalVariable.Glb_DropOffTime)
-println DropOffTime
-//Convert String to Integer
-int Duration = GlobalVariable.Glb_Duration_Time as Integer
+//Calculate time customer can pick up car
+Date TimeCanPickUp
+use(groovy.time.TimeCategory){
+	TimeCanPickUp = DropOffTime + Duration.hour
+}
+println "Time can pickup is: " + TimeCanPickUp
 //Declare Time Workshop Open and Time WS Close
 //Convert String to Date
 //Create real time variable
@@ -97,12 +108,12 @@ int End = ((GlobalVariable.Glb_WorkshopEnd) as Integer)
 int Interval = ((GlobalVariable.Glb_Interval) as Integer)
 
 //Set realtime as Time Workshop Open
-realtime_ws.set(hourOfDay: Start + Duration, minute:00)
+realtime_ws.set(hourOfDay: Start + Duration, minute:00,second: 0)
 println(realtime_ws.format('HH:mm'))
 
 //Set Time WS Close, this time is early 15 minutes
 def time_close_ws = new Date()
-time_close_ws.set(hourOfDay: End, minute:00)
+time_close_ws.set(hourOfDay: End, minute:00,second: 0)
 
 Date Start_WS_Hr = realtime_ws
 println  Start_WS_Hr
@@ -113,50 +124,70 @@ int duration_hours
 use(groovy.time.TimeCategory) {
 	def _duration = End_WS_Hr - DropOffTime
 	duration_hours = _duration.hours as Integer
-	println duration_hours
+	println "Available hours is: " + duration_hours
 	}
 //Classify cases 
 //Invalid Dealer Code
-if (!(GlobalVariable.Glb_Dealer_Code == "765A")) 
+if (!(GlobalVariable.Glb_Dealer_Code == "765A")) {
+	println "Invalid Dealer Code"
 	VerifyResponse(res_GetPickupTime,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+}
 //Duration = 0
-else if(Duration <= 0)
+else if(Duration <= 0){
+	println "Duration = 0"
 	VerifyResponse(res_GetPickupTime, 400, "duration must be greater than 0")
+	}
 //Invalid Service bay
 else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	GlobalVariable.Glb_ServiceBay_Type == "EXPRESS"||
 	GlobalVariable.Glb_ServiceBay_Type == "REPAIR"||
-	GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC"))
-	VerifyResponse(res_GetPickupTime,400,"Service Bay Type Unknown")
+	GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC")){
+	println "Invalid Service bay"
+	VerifyResponse(res_GetPickupTime,400,"Service Bay Type is unknown")
+	}
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||
-		GlobalVariable.Glb_Location_Code == "5")
+		GlobalVariable.Glb_Location_Code == "5"){
+		println "Closed Workshop"
 	VerifyResponse(res_GetPickupTime,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+}
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "4"||
-	GlobalVariable.Glb_Location_Code == "360"))
+	GlobalVariable.Glb_Location_Code == "360")){
+	println "Not exist Workshop"
 	VerifyResponse(res_GetPickupTime,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+}
 //Service Date Past
-else if (Service_Date.before(current))
+else if (Service_Date.before(current)){
+	println "Service Date Past"
 	VerifyResponse(res_GetPickupTime,404,"is before the current date")
+	}
 //Duration >=10
-else if (Duration >= 10)
+else if (Duration >= 10){
+	println "Duration >=10"
 	VerifyResponse(res_GetPickupTime,400,"Duration " +Duration+ " cannot be completed in a single day")
+}
 //DropOff Time is before Current Hour
-else if (DropOffTime.before(current_hour) && Service_Date.equals(current))
+else if (DropOffTime.before(current_hour) && GlobalVariable.Glb_ServiceDate == GlobalVariable.Glb_Current_Date){
+	println "DropOff Time is before Current Hour"
 	VerifyResponse(res_GetPickupTime,400,"Drop Off Time "+ GlobalVariable.Glb_DropOffTime +" do not match values from GetDropOffTimes")
+}
 //Drop Off time before WS Start, after WS End or need time < expected duration
 else if((DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration) &&
-	!(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ))
+	!(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" )){
+	println "Drop Off time before WS Start, after WS End or need time < expected duration"
 	VerifyResponse(res_GetPickupTime,400,"Drop Off Time "+ GlobalVariable.Glb_DropOffTime +" do not match values from GetDropOffTimes")
+}
 //All valid
 else {
+	println "All valid"
 	//Verify Response Status = 200 OK
 	VerifyResponse(res_GetPickupTime,200,"")
 	//Case Saturday, Sunday
 	if(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" ){
+		println "Service Date is weekend"
 		def res_Text = new groovy.json.JsonSlurper().parseText(res_GetPickupTime.getResponseText())
 		assert  res_Text[0] == null
 	}
@@ -172,7 +203,7 @@ else {
 		def times = new String[100]
 		def count = 0
 		while (!realtime_ws.after(time_close_ws)) {
-		    if(realtime_ws.after(DropOffTime)){
+		    if(!realtime_ws.before(TimeCanPickUp)){
 				(times[count]) = ((realtime_ws.format('HH:mm')) as String)
 				count = (count + 1)
 				}
@@ -180,10 +211,11 @@ else {
 		            realtime_ws = (realtime_ws + Interval.minute)
 		        })
 		}
-		
+		println times
 		//Convert JSON data into Array string
 		def res_Text = new groovy.json.JsonSlurper().parseText(res_GetPickupTime.getResponseText())
 		def timeslotJSON
+		println res_Text.Times
 		res_Text.Times.each{ timeslotJSON = it}
 		
 		//Verify number of element between JSON response and slot of WS

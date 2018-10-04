@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Sprint_GetOffTime - P4</name>
+   <name>Sprint_GetPickUpTime - P12</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-04T07:55:19</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>d2690ee0-9484-4281-bcbf-0bc6d52e9626</testSuiteGuid>
+   <testSuiteGuid>990a4437-6d23-46d1-80ba-1a0367595221</testSuiteGuid>
    <testCaseLink>
       <guid>d9a0388b-193b-4768-a036-b9d2de3e928a</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -21,7 +20,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>437-536</value>
+            <value>2047-2146</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All</testDataId>
       </testDataLink>

@@ -4,7 +4,7 @@
    <name>Sprint_GetOffTime</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-03T10:19:11</lastRun>
+   <lastRun>2018-10-04T08:03:12</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>

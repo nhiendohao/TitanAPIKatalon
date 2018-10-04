@@ -152,4 +152,11 @@
       <masked>false</masked>
       <name>Setup_ServiceType</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f2148342-99e3-4fcf-afe5-632e940562b4</id>
+      <masked>false</masked>
+      <name>Setup_ServiceBay_Type</name>
+   </variable>
 </TestCaseEntity>

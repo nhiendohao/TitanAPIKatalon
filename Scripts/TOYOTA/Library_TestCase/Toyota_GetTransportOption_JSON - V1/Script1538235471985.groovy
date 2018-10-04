@@ -61,23 +61,32 @@ def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 
 //Classify cases
 //Invalid Dealer Code
-if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
+if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
+	println "Invalid Dealer Code"
 	VerifyResponse(res_GetTransportOption,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+}
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||
-		GlobalVariable.Glb_Location_Code == "5")
+		GlobalVariable.Glb_Location_Code == "5"){
+		println "Closed Workshop"
 	VerifyResponse(res_GetTransportOption,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+}
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "4"||
-	GlobalVariable.Glb_Location_Code == "360"))
+	GlobalVariable.Glb_Location_Code == "360")){
+	println "Not exist Workshop"
 	VerifyResponse(res_GetTransportOption,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+}
 //Service Date Past
-else if (Service_Date.before(current))
+else if (Service_Date.before(current)){
+	println "Service Date Past"
 	VerifyResponse(res_GetTransportOption,404,"is before the current date")
+}
 //All valid
 else{
+	println "All valid"
 	//Verify Response Status = 200 OK
 	VerifyResponse(res_GetTransportOption,200,"")
 	//Verify OptionType

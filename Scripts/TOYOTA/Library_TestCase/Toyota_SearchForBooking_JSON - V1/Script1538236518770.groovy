@@ -44,6 +44,11 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 //=========================================================================================
 
 //CODE
+println GlobalVariable.Glb_Dealer_Code
+println GlobalVariable.Glb_Location_Code
+println GlobalVariable.Glb_StartSearchDate
+println GlobalVariable.Glb_EndSearchDate
+println GlobalVariable.Glb_REGNumber
 //Declare request
 RequestObject SearchForBooking = findTestObject('Toyota/SearchForBooking_JSON', [
 	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
@@ -64,23 +69,32 @@ def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as D
 
 //Classify cases
 //Invalid Dealer Code
-if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
+if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
+	println "Invalid Dealer Code"
 	VerifyResponse(res_SearchForBooking,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+}
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||
-		GlobalVariable.Glb_Location_Code == "5")
+		GlobalVariable.Glb_Location_Code == "5"){
+		println "Closed Workshop"
 	VerifyResponse(res_SearchForBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+}
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "4"||
-	GlobalVariable.Glb_Location_Code == "360"))
+	GlobalVariable.Glb_Location_Code == "360")){
+	println "Not exist Workshop"
 	VerifyResponse(res_SearchForBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+}
 //Service Date Past
-else if (StartSearchDate.after(EndSearchDate))
+else if (StartSearchDate.after(EndSearchDate)){
+	println "Service Date Past"
 	VerifyResponse(res_SearchForBooking,404,"cannot be greater than end date")
+}
 //All valid
 else{
+	println "All valid"
 	//Verify Response Status = 200 OK
 	VerifyResponse(res_SearchForBooking,200,"")
 	//Validate Search Date do not include Service Date && validate not exist REGNumber

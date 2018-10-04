@@ -58,6 +58,21 @@ def ConvertObjectToDate = {Object global ->
 //=========================================================================================
 
 //CODE
+println GlobalVariable.Glb_VIN
+println GlobalVariable.Glb_REGNumber
+println GlobalVariable.Glb_ServiceDate
+println GlobalVariable.Glb_DropOffTime
+println GlobalVariable.Glb_PickUpTime
+println GlobalVariable.Glb_Reserve_Token
+println GlobalVariable.Glb_ServiceBay_Type
+println GlobalVariable.Glb_Dealer_Code
+println GlobalVariable.Glb_Location_Code
+println GlobalVariable.Glb_TotalPrice
+println GlobalVariable.Glb_TotalDuration
+println GlobalVariable.Glb_ContactId
+println GlobalVariable.Glb_FirstName
+println GlobalVariable.Glb_LastName
+println GlobalVariable.Glb_ServiceType
 //Setup DMSOperationCode base on Service Type
 String DMSOperationCode
 if(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK") DMSOperationCode = "OSB_SERVICE_TYPE_LOGBOOK"
@@ -104,50 +119,74 @@ int duration_hours
 use(groovy.time.TimeCategory) {
 	def _duration = PickUpTime - DropOffTime
 	duration_hours = _duration.hours as Integer
-	println duration_hours
+	println "available hour is: "+duration_hours
 	}
 
 println GlobalVariable.Glb_BookingStatus 
 //Verify Response Status
 //Clasify case
-//StartDate  after EndDate
-if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
+//Invalid Dealer Code
+if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
+	println "Invalid Dealer Code"
 	VerifyResponse(res_MakeServiceBooking,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+}
 //Drop Off Time after Pick Up Time
-else if(DropOffTime.after(PickUpTime))
+else if(DropOffTime.after(PickUpTime)){
+	println "Drop Off Time after Pick Up Time"
 	 VerifyResponse(res_MakeServiceBooking,400,"must be greater then the drop off times")
+}
 //Total Duration is not equal to duration job line
-else if(!(GlobalVariable.Glb_TotalDuration == "1"))
-		 VerifyResponse(res_MakeServiceBooking,400,"total duration "+GlobalVariable.Glb_TotalDuration+" of RepairOrder not equals total duration 1 of RepairOrder Line")
+else if(!(GlobalVariable.Glb_TotalDuration == "1")){
+	println "Total Duration is not equal to duration job line"
+	VerifyResponse(res_MakeServiceBooking,400,"total duration "+GlobalVariable.Glb_TotalDuration+" of RepairOrder not equals total duration 1 of RepairOrder Line")
+}
 //Total Price is not equal to duration job line
-else if(!(GlobalVariable.Glb_TotalPrice == "110"))
+else if(!(GlobalVariable.Glb_TotalPrice == "110")){
+	println "Total Price is not equal to duration job line"
 	 VerifyResponse(res_MakeServiceBooking,400,"Booking Rejected - The total price "+GlobalVariable.Glb_TotalPrice+" of RepairOrder not equals total price 110 of RepairOrder Line")
-else if(duration_hours < TotalDuration)
+}
+//Available is less than need hour
+else if(duration_hours < TotalDuration){
+	println "Available is less than need hour"
 	 VerifyResponse(res_MakeServiceBooking,400,"Booking Rejected - The total duration of service greater than duration booking time")
+}
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
 	GlobalVariable.Glb_Location_Code == "3"||
-	GlobalVariable.Glb_Location_Code == "5")
+	GlobalVariable.Glb_Location_Code == "5"){
+	println "Closed Workshop"
 	 VerifyResponse(res_MakeServiceBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+}
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	 GlobalVariable.Glb_Location_Code == "4"||
-	 GlobalVariable.Glb_Location_Code == "360"))
+	 GlobalVariable.Glb_Location_Code == "360")){
+ 	println "Not exist Workshop"
 	 VerifyResponse(res_MakeServiceBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+}
 //ServiceDate before Current
-else if(Service_Date.before(current))
+else if(Service_Date.before(current)){
+	println "ServiceDate before Current"
 	VerifyResponse(res_MakeServiceBooking,404,"is before the current date")
+}
 //Drop Off Time before WS Start Hour
-else if( DropOffTime.before(Start_WS_Hr) || GlobalVariable.Glb_BookingStatus == "current")
+else if( DropOffTime.before(Start_WS_Hr) || GlobalVariable.Glb_BookingStatus == "current"){
+	println "Drop Off Time before WS Start Hour"
 	VerifyResponse(res_MakeServiceBooking,400,"drop off timeslot is taken")
+}
 //Pickup Time after WS End Hour
-else if( PickUpTime.after(End_WS_Hr))
+else if( PickUpTime.after(End_WS_Hr)){
+	println "Pickup Time after WS End Hour"
 	 VerifyResponse(res_MakeServiceBooking,400,"pick up timeslot taken")
+}
  //X Reserve Token = no
- else if( GlobalVariable.Glb_Reserve_Token.toString().toLowerCase() == "no" )
+ else if( GlobalVariable.Glb_Reserve_Token.toString().toLowerCase() == "no" ){
+	 println "X Reserve Token = no"
 	  VerifyResponse(res_MakeServiceBooking,404,"Booking not found")
+ }
 //All valid
 else if(!(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" )){
+	println "All valid"
 	 VerifyResponse(res_MakeServiceBooking,200,"")
 	 //Set Status Booking: not yet --> current
 	 GlobalVariable.Glb_BookingStatus = "current"

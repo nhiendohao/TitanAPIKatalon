@@ -42,6 +42,7 @@ if(!(Setup_BookingId == "")) GlobalVariable.Glb_Booking_ID = Setup_BookingId
 if(!(Setup_ServiceType == "")) GlobalVariable.Glb_ServiceType = Setup_ServiceType
 if(!(Setup_DropOffTime == "")) GlobalVariable.Glb_DropOffTime = Setup_DropOffTime
 if(!(Setup_PickUpTime == "")) GlobalVariable.Glb_PickUpTime = Setup_PickUpTime
+if(!(Setup_ServiceBay_Type == "")) GlobalVariable.Glb_ServiceBay_Type = Setup_ServiceBay_Type
 
 //METHOD
 //Create Date Past/Future with specific Date from current Date

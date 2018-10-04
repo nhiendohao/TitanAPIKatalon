@@ -48,10 +48,20 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
 	if(!(ExpectedMessage==""))assertThat(response.getResponseText()).contains(ExpectedMessage)
 }
+//Convert Object to Time
+def ConvertObjectToDate = {Object global ->
+	String Time_Str = global as String
+	int Time_hour = Time_Str.substring(0, 2) as Integer
+	int Time_min = Time_Str.substring(3) as Integer
+	def Time = new Date()
+	Time.set(hourOfDay: Time_hour, minute:Time_min, second: 0)
+	println Time
+	return Time
+	}
 
 //CODE
 //Parse String data to Date type Data
-def current_hour = Date.parse("HH:mm", GlobalVariable.Glb_Current_Hour) as Date
+Date current_hour = ConvertObjectToDate(GlobalVariable.Glb_Current_Hour)
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 def Start_Date_Str = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_StartDate) as Date
 String Start_Date = Start_Date_Str.format("yyyy-MM-dd") as String
@@ -175,6 +185,7 @@ println times
 //Convert JSON data into Array string
 def res_Text = new groovy.json.JsonSlurper().parseText(res_GetServiceOperation.getResponseText())
 def timeslotJSON = 0
+println res_Text[i].Times
 res_Text[i].Times.each{ timeslotJSON += 1}
 
 //Verify number of element between JSON response and slot of WS
