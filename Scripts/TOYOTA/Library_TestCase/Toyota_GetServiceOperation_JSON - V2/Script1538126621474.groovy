@@ -134,5 +134,6 @@ for (line in CSVData) {
 
 //Verify number of element between JSON response and slot of WS
 assert OpCodeJSON == count_CSV
+GlobalVariable.Glb_Status_GetOperationCode = "passed"
 }
 

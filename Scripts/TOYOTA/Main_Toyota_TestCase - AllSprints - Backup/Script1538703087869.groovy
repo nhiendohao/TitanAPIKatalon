@@ -2,9 +2,6 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
-import com.kms.katalon.core.annotation.TearDown
-import com.kms.katalon.core.annotation.TearDownIfFailed
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -17,17 +14,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 //This testcase is followed workflow below:
-//0. Set Status for each Sprint
-GlobalVariable.Glb_Status_GetOperationCode = "failed"
-GlobalVariable.Glb_Status_GetDropOffTime = "failed"
-GlobalVariable.Glb_Status_GetPickupTime = "failed"
-GlobalVariable.Glb_Status_ReserveTimeslot = "failed"
-GlobalVariable.Glb_Status_GetTransportOption = "failed"
-GlobalVariable.Glb_Status_MakeServiceBooking = "failed"
-GlobalVariable.Glb_Status_SearchBooking = "failed"
-GlobalVariable.Glb_Status_GetBookingDetail = "failed"
-GlobalVariable.Glb_Status_ChangeBooking = "failed"
-GlobalVariable.Glb_Status_CancelBooking = "failed"
 //1. Setup value for dynamic Global variables
 WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variables - V1'), [
 	('Setup_Interval') : var_Interval, 
@@ -84,29 +70,29 @@ if (var_Status_ReservedTimeslot == 'true') {
 } else GlobalVariable.Glb_Reserve_Token = "0"
 
 //6. Get information about the Transport Option for Customer
-if (var_Status_GetTransport == 'true' && !(GlobalVariable.Glb_Reserve_Token == "no")) {
+if (var_Status_GetTransport == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetTransportOption_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //7. Make Booking with all required information
-if (var_Status_MakeBooking == 'true' && !(GlobalVariable.Glb_Reserve_Token == "no")) {
+if (var_Status_MakeBooking == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 	//Recall again
 	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //8. Get Drop off time and Pickup time and Booking Id from REGNumber
-if (var_Status_SearchBooking == 'true' && !(GlobalVariable.Glb_Reserve_Token == "no")) {
+if (var_Status_SearchBooking == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //9. Get all detail booking service for recheck
-if (var_Status_GetBookingDetail == 'true' && !(GlobalVariable.Glb_Reserve_Token == "no")) {
+if (var_Status_GetBookingDetail == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
 //10. Change booking detail
-if (var_Status_ChangeBooking == 'true' && !(GlobalVariable.Glb_Reserve_Token == "no")) {
+if (var_Status_ChangeBooking == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON - V1'), [
 	('var_VINChange') : var_VINChange, 
 	('var_REGNumberChange') : var_REGNumberChange, 
@@ -119,74 +105,9 @@ if (var_Status_ChangeBooking == 'true' && !(GlobalVariable.Glb_Reserve_Token == 
 }
 
 //11. Cancel Booking
-if (var_Status_CancelBooking == 'true' && !(GlobalVariable.Glb_Reserve_Token == "no")) {
+if (var_Status_CancelBooking == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 	//Re-Check call Cancel again
 	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 }
 
-@TearDown
-public void HandleFailing(){
-	//Handle GetOperationCode
-	if(!GlobalVariable.Glb_Status_GetOperationCode == "passed")	println "Test Case GetOperationCode: FAILED"
-		else{
-			println "Test Case GetOperationCode: PASSED"
-			if(GlobalVariable.Glb_Status_GetDropOffTime == "passed"){
-				println "Test Case GetDropOffTime: PASSED"
-				if(GlobalVariable.Glb_Status_GetPickupTime == "passed"){
-					println "Test Case GetPickupTime: PASSED"
-					if(GlobalVariable.Glb_Status_ReserveTimeslot == "passed"){
-						println "Test Case ReserveTimeslot: PASSED"
-						if(GlobalVariable.Glb_Status_GetTransportOption == "passed"){
-							println "Test Case GetTransportOption: PASSED"
-							if(GlobalVariable.Glb_Status_MakeServiceBooking == "passed"){
-								println "Test Case MakeServiceBooking: PASSED"
-								if(GlobalVariable.Glb_Status_SearchBooking == "passed"){
-									println "Test Case SearchBooking: PASSED"
-									if(GlobalVariable.Glb_Status_GetBookingDetail == "passed"){
-										println "Test Case GetBookingDetail: PASSED"
-										if(GlobalVariable.Glb_Status_ChangeBooking == "passed"){
-											println "Test Case ChangeBooking: PASSED"
-											if(GlobalVariable.Glb_Status_CancelBooking == "passed"){
-												println "Test Case CancelBooking: PASSED"
-											}
-										}
-										else{
-											println "Test Case ChangeBooking: FAILED"
-											//Cancel Booking to make timeslot available
-											WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-										}
-									}
-									else{
-										println "Test Case GetBookingDetail: FAILED"
-										//Cancel Booking to make timeslot available
-										WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-									}
-								}
-								else{
-									println "Test Case SearchBooking: FAILED"
-									//Cancel Booking to make timeslot available
-									WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-								}
-							}
-							else{
-								println "Test Case MakeServiceBooking: FAILED"
-								//Make Booking
-								WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-								//Cancel Booking to make timeslot available
-								WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-							}
-						}
-						else{
-							println "Test Case GetTransportOption: FAILED"
-							//Make Booking
-							WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-							//Cancel Booking to make timeslot available
-							WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-						}
-					}
-				}
-			}
-		}
-
-}

@@ -81,6 +81,9 @@ else{
 	GlobalVariable.Glb_BookingStatus = "cancel"
 	println GlobalVariable.Glb_BookingStatus
 	
+	//Set Status
+	GlobalVariable.Glb_Status_CancelBooking = "passed"
+	
 	//Set StartDrop and EndDrop
 	GlobalVariable.Glb_StartDate = GlobalVariable.Glb_ServiceDate
 	GlobalVariable.Glb_EndDate = GlobalVariable.Glb_ServiceDate
@@ -88,7 +91,7 @@ else{
 	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3'), [
 		('Reserve_Timeslot') : ''],
 	FailureHandling.STOP_ON_FAILURE)
-//	
+
 //	//Re-check call Search Booking
 //	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON - V1'), [:], 
 //	FailureHandling.STOP_ON_FAILURE)

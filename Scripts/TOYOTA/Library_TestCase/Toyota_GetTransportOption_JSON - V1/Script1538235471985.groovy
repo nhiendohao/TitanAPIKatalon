@@ -101,4 +101,6 @@ else{
 	WS.verifyElementPropertyValue(res_GetTransportOption, '[0].OptionPrice', '0.0')
 	//Verify POAFlag
 	WS.verifyElementPropertyValue(res_GetTransportOption, '[0].POAFlag', 'false')
+	//Set Status
+	GlobalVariable.Glb_Status_GetTransportOption = "passed"
 }

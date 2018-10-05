@@ -120,4 +120,6 @@ else{
 		WS.verifyElementPropertyValue(res_SearchForBooking, '[0].PickUpTime', GlobalVariable.Glb_PickUpTime)
 
 		}
+	//Set Status
+	GlobalVariable.Glb_Status_SearchBooking = "passed"
 }

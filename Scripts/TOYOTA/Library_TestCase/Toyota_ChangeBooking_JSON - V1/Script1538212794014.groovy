@@ -168,4 +168,7 @@ else {
 	
 	//Call Get Booking Detail
 	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
+	
+	//Set Status
+	GlobalVariable.Glb_Status_ChangeBooking = "passed"
 	} 

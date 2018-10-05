@@ -201,5 +201,6 @@ use(groovy.time.TimeCategory) {
 	//Set IsCurrentDate = false
 	IsCurrentDate = "false"
   }
-
+	GlobalVariable.Glb_Status_GetDropOffTime = "passed"
+	
 }

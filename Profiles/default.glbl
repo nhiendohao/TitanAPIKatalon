@@ -144,4 +144,54 @@
       <initValue>''</initValue>
       <name>Glb_Current_Hour</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_GetOperationCode</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_GetDropOffTime</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_GetPickupTime</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_GetTransportOption</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_ReserveTimeslot</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_MakeServiceBooking</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_SearchBooking</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_GetBookingDetail</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_ChangeBooking</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_CancelBooking</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

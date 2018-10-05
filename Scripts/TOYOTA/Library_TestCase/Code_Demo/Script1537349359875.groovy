@@ -29,37 +29,8 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 import java.text.ParseException as ParseException
 import java.text.SimpleDateFormat as SimpleDateFormat
 import java.util.Date as Date
+import java.io.File
 
-//Declare request
-//RequestObject ChangeBooking = findTestObject('Toyota/ChangeBooking_JSON', [('Dealer_Code') : '765A', ('Location_Code') : '1'
-//        , ('BookingID') : '136910', ('Service_Date_Change') : '2018-10-04', ('Drop_Off_Time_Change') : '08:30', ('Pick_Up_Time') : '17:00'
-//        , ('ServiceBay_Time') : GlobalVariable.Glb_ServiceBay_Type, ('TotalPrice_Change') : '110', ('TotalDuration_Change') : '1'
-//        , ('ContactId') : '123', ('FirstName') : 'le', ('LastName') : 'vinh', ('ServiceType') : GlobalVariable.Glb_ServiceType
-//        , ('DMSOperationCode') : 'DMSOperationCode', ('VIN_Change') : 'VINChange', ('REGNumber_Change') : 'REGNumberChange'])
-//
-////Setup header value
-//ChangeBooking.getHttpHeaderProperties().add(new TestObjectProperty('Authorization', ConditionType.EQUALS, 'Basic ' + GlobalVariable.Glb_Authorization_Token))
-//
-////Declare respone
-//ResponseObject res_ChangeBooking = WS.sendRequest(ChangeBooking)
-//
-//WS.verifyResponseStatusCode(res_ChangeBooking, 200)
-//
-////Verify Booking ID
-//WS.verifyElementPropertyValue(res_ChangeBooking, 'BookingID', GlobalVariable.Glb_Booking_ID)
-WS.sendRequest(findTestObject('Toyota/ChangeBooking_JSON', [('Dealer_Code') : '765A', ('Location_Code') : '1', ('BookingID') : '136910'
-            , ('Service_Date_Change') : '2018-10-04', ('Drop_Off_Time_Change') : '10:30', ('Pick_Up_Time') : '17:00', ('ServiceBay_Time') : 'PERIODIC'
-            , ('TotalPrice_Change') : '110', ('TotalDuration_Change') : '1', ('VIN_Change') : 'VINhle', ('REGNumber_Change') : 'REGCHANGE'
-            , ('ContactId') : '1901', ('FirstName') : 'TITAN', ('LastName') : 'DMS', ('ServiceType') : 'OSB_SERVICE_TYPE_LOGBOOK'
-            , ('DMSOperationCode') : 'TITAN_OP_CODE_LOG']))
 
-WS.delay(0)
-
-try {
-}
-catch (Exception e) {
-    throw new com.kms.katalon.core.exception.StepFailedException()
-} 
-finally { 
-}
-
+new File('C:/','demo_writerCSV.csv').withWriter('utf-8') {
+	writer -> writer.writeLine 'Hello World'}

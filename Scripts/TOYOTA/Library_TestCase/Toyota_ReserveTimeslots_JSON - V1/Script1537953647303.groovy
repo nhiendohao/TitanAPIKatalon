@@ -172,6 +172,7 @@ else {
 	//get the retrieved token
 	GlobalVariable.Glb_Reserve_Token = res_Text.XReserveToken
 	println(GlobalVariable.Glb_Reserve_Token)
+	GlobalVariable.Glb_Status_ReserveTimeslot = "passed"
 	
 	//Verify the Drop Off Timeslot is not available when send request Get Off Time again
 	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3'), [

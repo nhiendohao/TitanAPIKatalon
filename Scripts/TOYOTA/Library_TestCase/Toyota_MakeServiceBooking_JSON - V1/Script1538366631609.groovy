@@ -198,4 +198,6 @@ else if(!(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun" )){
 	//get the retrieved token
 	GlobalVariable.Glb_Booking_ID = res_Text.BookingID
 	println GlobalVariable.Glb_Booking_ID
+	//Set Status
+	GlobalVariable.Glb_Status_MakeServiceBooking = "passed"
 	}

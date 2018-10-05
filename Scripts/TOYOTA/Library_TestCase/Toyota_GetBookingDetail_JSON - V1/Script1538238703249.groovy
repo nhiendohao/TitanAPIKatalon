@@ -142,4 +142,7 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'TransportOption', 'OSB_TRANSPORT_OPTION_NONE')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'PreferredContactMethod', 'null')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'ConfirmationMessageByDMS', 'false')
+	
+	//Set Status
+	GlobalVariable.Glb_Status_GetBookingDetail = "passed"
 	}

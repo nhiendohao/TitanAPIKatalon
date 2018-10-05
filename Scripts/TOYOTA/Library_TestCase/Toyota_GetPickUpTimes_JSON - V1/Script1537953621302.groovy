@@ -226,4 +226,5 @@ else {
 		    WS.verifyElementPropertyValue(res_GetPickupTime, ('[0].Times[' + j) + ']', times[j])
 		}
 	}
+	GlobalVariable.Glb_Status_GetPickupTime = "passed"
 }
