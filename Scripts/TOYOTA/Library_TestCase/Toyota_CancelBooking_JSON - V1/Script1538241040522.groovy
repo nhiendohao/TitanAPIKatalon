@@ -92,7 +92,4 @@ else{
 		('Reserve_Timeslot') : ''],
 	FailureHandling.STOP_ON_FAILURE)
 
-//	//Re-check call Search Booking
-//	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_SearchForBooking_JSON - V1'), [:], 
-//	FailureHandling.STOP_ON_FAILURE)
 }

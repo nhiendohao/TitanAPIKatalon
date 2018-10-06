@@ -32,5 +32,26 @@ import java.util.Date as Date
 import java.io.File
 
 
-new File('C:/','demo_writerCSV.csv').withWriter('utf-8') {
-	writer -> writer.writeLine 'Hello World'}
+public void writeToFile(def directory, def fileName, def extension, def infoList) {
+  new File("$directory/$fileName$extension").withWriter { out ->
+    infoList.each {
+      out.println it
+    }
+  }
+}
+
+public void wrtiteTXTfile(String message_noti){
+	def txtFileInfo = []
+	
+	String a = message_noti
+	//String b = "Tomorrow is the future"
+	//String d = "Yesterday is the past"
+	
+	txtFileInfo << a
+	//txtFileInfo << b
+	//txtFileInfo << d
+	
+	writeToFile("C:/Users/vinh.le", "demo_writertxt", ".txt", txtFileInfo)
+}
+wrtiteTXTfile("Anh Thy")
+

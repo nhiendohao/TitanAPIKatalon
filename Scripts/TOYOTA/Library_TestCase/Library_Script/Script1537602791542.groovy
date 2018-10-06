@@ -121,3 +121,27 @@ import java.sql.Driver
 			  if (!(roundvalue.contains("."))) roundvalue = roundvalue + ".0....."
 			  return roundvalue
 			  }
+		  
+		  
+		  //--------------------------------------------------------------------------------------------------------------------------
+		  //Write to txt file
+		  import java.io.File
+		  public void writeToFile(def directory, def fileName, def extension, def infoList) {
+			  new File("$directory/$fileName$extension").withWriter { out ->
+				infoList.each {
+				  out.println it
+				}
+			  }
+			}
+			
+			def txtFileInfo = []
+			
+			String a = "Today is a new day"
+			String b = "Tomorrow is the future"
+			//String d = "Yesterday is the past"
+			
+			txtFileInfo << a
+			txtFileInfo << b
+			//txtFileInfo << d
+			
+			writeToFile("C:/Users/vinh.le", "demo_writertxt", ".txt", txtFileInfo)
