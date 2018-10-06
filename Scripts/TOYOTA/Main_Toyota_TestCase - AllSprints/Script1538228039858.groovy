@@ -28,6 +28,9 @@ GlobalVariable.Glb_Status_SearchBooking = "failed"
 GlobalVariable.Glb_Status_GetBookingDetail = "failed"
 GlobalVariable.Glb_Status_ChangeBooking = "failed"
 GlobalVariable.Glb_Status_CancelBooking = "failed"
+GlobalVariable.Glb_Reserve_Token = "no"
+GlobalVariable.Glb_BookingStatus = "not yet"
+GlobalVariable.Glb_Booking_ID = "wrong"
 //1. Setup value for dynamic Global variables
 WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variables - V1'), [
 	('Setup_Interval') : var_Interval, 
@@ -127,66 +130,77 @@ if (var_Status_CancelBooking == 'true' && !(GlobalVariable.Glb_Reserve_Token == 
 
 @TearDown
 public void HandleFailing(){
-	//Handle GetOperationCode
-	if(!GlobalVariable.Glb_Status_GetOperationCode == "passed")	println "Test Case GetOperationCode: FAILED"
-		else{
-			println "Test Case GetOperationCode: PASSED"
-			if(GlobalVariable.Glb_Status_GetDropOffTime == "passed"){
-				println "Test Case GetDropOffTime: PASSED"
-				if(GlobalVariable.Glb_Status_GetPickupTime == "passed"){
-					println "Test Case GetPickupTime: PASSED"
-					if(GlobalVariable.Glb_Status_ReserveTimeslot == "passed"){
-						println "Test Case ReserveTimeslot: PASSED"
-						if(GlobalVariable.Glb_Status_GetTransportOption == "passed"){
-							println "Test Case GetTransportOption: PASSED"
-							if(GlobalVariable.Glb_Status_MakeServiceBooking == "passed"){
-								println "Test Case MakeServiceBooking: PASSED"
-								if(GlobalVariable.Glb_Status_SearchBooking == "passed"){
-									println "Test Case SearchBooking: PASSED"
-									if(GlobalVariable.Glb_Status_GetBookingDetail == "passed"){
-										println "Test Case GetBookingDetail: PASSED"
-										if(GlobalVariable.Glb_Status_ChangeBooking == "passed"){
-											println "Test Case ChangeBooking: PASSED"
-											if(GlobalVariable.Glb_Status_CancelBooking == "passed"){
-												println "Test Case CancelBooking: PASSED"
+	//Handle GetOperationCode for case all = TRUE
+	if(var_Status_OpCode == 'true'
+		&& var_Status_GetOffTime == 'true'
+		&& var_Status_PickupTime == 'true'
+		&& var_Status_ReservedTimeslot == 'true'
+		&& var_Status_GetTransport == 'true'
+		&& var_Status_MakeBooking == 'true'
+		&& var_Status_SearchBooking == 'true'
+		&& var_Status_GetBookingDetail == 'true'
+		&& var_Status_ChangeBooking == 'true'
+		&& var_Status_CancelBooking == 'true'){
+		if(!GlobalVariable.Glb_Status_GetOperationCode == "passed")	println "Test Case GetOperationCode: FAILED"
+			else{
+				println "Test Case GetOperationCode: PASSED"
+				if(GlobalVariable.Glb_Status_GetDropOffTime == "passed"){
+					println "Test Case GetDropOffTime: PASSED"
+					if(GlobalVariable.Glb_Status_GetPickupTime == "passed"){
+						println "Test Case GetPickupTime: PASSED"
+						if(GlobalVariable.Glb_Status_ReserveTimeslot == "passed"){
+							println "Test Case ReserveTimeslot: PASSED"
+							if(GlobalVariable.Glb_Status_GetTransportOption == "passed"){
+								println "Test Case GetTransportOption: PASSED"
+								if(GlobalVariable.Glb_Status_MakeServiceBooking == "passed"){
+									println "Test Case MakeServiceBooking: PASSED"
+									if(GlobalVariable.Glb_Status_SearchBooking == "passed"){
+										println "Test Case SearchBooking: PASSED"
+										if(GlobalVariable.Glb_Status_GetBookingDetail == "passed"){
+											println "Test Case GetBookingDetail: PASSED"
+											if(GlobalVariable.Glb_Status_ChangeBooking == "passed"){
+												println "Test Case ChangeBooking: PASSED"
+												if(GlobalVariable.Glb_Status_CancelBooking == "passed"){
+													println "Test Case CancelBooking: PASSED"
+												}
+											}
+											else{
+												println "Test Case ChangeBooking: FAILED"
+												//Cancel Booking to make timeslot available
+												WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 											}
 										}
 										else{
-											println "Test Case ChangeBooking: FAILED"
+											println "Test Case GetBookingDetail: FAILED"
 											//Cancel Booking to make timeslot available
 											WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 										}
 									}
 									else{
-										println "Test Case GetBookingDetail: FAILED"
+										println "Test Case SearchBooking: FAILED"
 										//Cancel Booking to make timeslot available
 										WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 									}
 								}
 								else{
-									println "Test Case SearchBooking: FAILED"
+									println "Test Case MakeServiceBooking: FAILED"
+									//Make Booking
+									WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 									//Cancel Booking to make timeslot available
 									WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 								}
 							}
 							else{
-								println "Test Case MakeServiceBooking: FAILED"
+								println "Test Case GetTransportOption: FAILED"
 								//Make Booking
 								WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 								//Cancel Booking to make timeslot available
 								WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 							}
 						}
-						else{
-							println "Test Case GetTransportOption: FAILED"
-							//Make Booking
-							WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-							//Cancel Booking to make timeslot available
-							WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-						}
 					}
 				}
 			}
-		}
-
+	
+	}
 }

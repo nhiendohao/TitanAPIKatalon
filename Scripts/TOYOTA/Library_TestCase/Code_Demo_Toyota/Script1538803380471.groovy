@@ -32,26 +32,16 @@ import java.util.Date as Date
 import java.io.File
 
 
-public void writeToFile(def directory, def fileName, def extension, def infoList) {
-  new File("$directory/$fileName$extension").withWriter { out ->
-    infoList.each {
-      out.println it
-    }
-  }
-}
+RequestObject GetServiceOperation = findTestObject('Toyota/GetDropOffTimes_JSON', [
+	('Start_Date') : "2018-10-08",
+	('End_Date') : "2018-10-08",
+	('ServiceBay_Type') : "PERIODIC",
+	('Duration_Time') : "1",
+	('Dealer_Code') : "765A",
+	('Location_Code') : "1"])
+//Set Authorization in Header
+GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Basic " + GlobalVariable.Glb_Authorization_Token))
+//Send request
+ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 
-public void wrtiteTXTfile(String message_noti){
-	def txtFileInfo = []
-	
-	String a = message_noti
-	//String b = "Tomorrow is the future"
-	//String d = "Yesterday is the past"
-	
-	txtFileInfo << a
-	//txtFileInfo << b
-	//txtFileInfo << d
-	
-	writeToFile("C:/Users/vinh.le", "demo_writertxt", ".txt", txtFileInfo)
-}
-wrtiteTXTfile("Anh Thy")
-
+println res_GetServiceOperation.responseText
