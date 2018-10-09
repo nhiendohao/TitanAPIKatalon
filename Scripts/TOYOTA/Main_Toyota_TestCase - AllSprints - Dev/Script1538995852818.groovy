@@ -32,7 +32,7 @@ GlobalVariable.Glb_Reserve_Token = "no"
 GlobalVariable.Glb_BookingStatus = "not yet"
 GlobalVariable.Glb_Booking_ID = "wrong"
 //1. Setup value for dynamic Global variables
-WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variables - V1'), [
+WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variables - V1 - Dev'), [
 	('Setup_Interval') : var_Interval, 
 	('Setup_WorkshopStart') : var_WorkshopStart, 
 	('Setup_WorkshopEnd') : var_WorkshopEnd, 
@@ -54,7 +54,8 @@ WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Setup_Method_And_Variab
 	('Setup_EndSearchDate') : var_EndSearchDate,
 	('Setup_BookingId') : var_BookingId,
 	('Service_Type') : var_Service_Type,
-	('Setup_ServiceBay_Type') : var_ServiceBay_Type
+	('Setup_ServiceBay_Type') : var_ServiceBay_Type,
+	('Setup_AddJobLine') : var_AddJobLine
 	], FailureHandling.STOP_ON_FAILURE)
 
 //2. Get Operation Code for customer
@@ -110,15 +111,26 @@ if (var_Status_GetBookingDetail == 'true' && !(GlobalVariable.Glb_Reserve_Token 
 
 //10. Change booking detail
 if (var_Status_ChangeBooking == 'true' && !(GlobalVariable.Glb_Reserve_Token == "no")) {
-    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON - V1'), [
-	('var_VINChange') : var_VINChange, 
-	('var_REGNumberChange') : var_REGNumberChange, 
+    WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON - V1 - Dev'), [
 	('var_PriceChange') : var_PriceChange, 
 	('var_DurationChange') : var_DurationChange, 
 	('var_DropOffChange') : var_DropOffChange, 
 	('var_PickUpChange') : var_PickUpChange, 
 	('var_DateChange') : var_DateChange], 
     FailureHandling.STOP_ON_FAILURE)
+	
+	if(GlobalVariable.Glb_AddJobLine.toString().toLowerCase() == "true"){
+		//Reset value for default AddJobLineMethod
+		GlobalVariable.Glb_AddJobLine = "false"
+		//Call method again to delete Job line
+	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_ChangeBooking_JSON - V1 - Dev'), [
+	('var_PriceChange') : var_PriceChange,
+	('var_DurationChange') : var_DurationChange,
+	('var_DropOffChange') : var_DropOffChange,
+	('var_PickUpChange') : var_PickUpChange,
+	('var_DateChange') : var_DateChange],
+	FailureHandling.STOP_ON_FAILURE)
+	}
 }
 
 //11. Cancel Booking

@@ -218,20 +218,6 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>9b52e735-ae0e-4fcf-a918-d95566190e82</id>
-      <masked>false</masked>
-      <name>var_VINChange</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>efe354b0-9a72-439b-8a08-2c0621857c3e</id>
-      <masked>false</masked>
-      <name>var_REGNumberChange</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
       <id>68b6e3ab-0b51-4502-8d7a-3ce73acad084</id>
       <masked>false</masked>
       <name>var_PriceChange</name>
@@ -277,5 +263,12 @@
       <id>de6c67dd-04d3-4349-af63-2144fbd2c536</id>
       <masked>false</masked>
       <name>var_PickUpTime</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ccbcd4cd-e90e-4c20-968e-7dc9bfed46da</id>
+      <masked>false</masked>
+      <name>var_AddJobLine</name>
    </variable>
 </TestCaseEntity>

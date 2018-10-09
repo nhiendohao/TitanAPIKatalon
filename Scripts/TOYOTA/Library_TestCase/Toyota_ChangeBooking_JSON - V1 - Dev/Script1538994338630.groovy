@@ -189,9 +189,6 @@ else {
 	else
 		WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetBookingDetail_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 	
-	//Reset value for default AddJobLineMethod
-	GlobalVariable.Glb_AddJobLine.toString().toLowerCase() == "false"
-	
 	//Set Status
 	GlobalVariable.Glb_Status_ChangeBooking = "passed"
 	} 

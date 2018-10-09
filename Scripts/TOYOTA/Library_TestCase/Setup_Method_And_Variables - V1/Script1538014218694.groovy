@@ -43,6 +43,7 @@ if(!(Setup_ServiceType == "")) GlobalVariable.Glb_ServiceType = Setup_ServiceTyp
 if(!(Setup_DropOffTime == "")) GlobalVariable.Glb_DropOffTime = Setup_DropOffTime
 if(!(Setup_PickUpTime == "")) GlobalVariable.Glb_PickUpTime = Setup_PickUpTime
 if(!(Setup_ServiceBay_Type == "")) GlobalVariable.Glb_ServiceBay_Type = Setup_ServiceBay_Type
+//if(!(Setup_AddJobLine == "")) GlobalVariable.Glb_AddJobLine = Setup_AddJobLine
 
 //METHOD
 //Create Date Past/Future with specific Date from current Date

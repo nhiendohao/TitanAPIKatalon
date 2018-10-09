@@ -8,20 +8,6 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>a7809902-b5ba-41b7-9046-bdaea7c8c44d</id>
-      <masked>false</masked>
-      <name>var_VINChange</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>d18b948e-d5fe-4e82-b74c-64a129763446</id>
-      <masked>false</masked>
-      <name>var_REGNumberChange</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
       <id>cc651c28-6c13-4de4-bde6-0355ad377a3f</id>
       <masked>false</masked>
       <name>var_PriceChange</name>
