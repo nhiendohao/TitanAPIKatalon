@@ -66,8 +66,8 @@ def today = new Date()
 //Set current Date
 def current_date = today.format("YYYY-MM-dd")
 GlobalVariable.Glb_Current_Date = current_date
-//Set current Time
-GlobalVariable.Glb_Current_Hour = SetDate(today,0,0,3,"HH:mm")
+//Set current Time. AUS is earlier than VN 4 hours
+GlobalVariable.Glb_Current_Hour = SetDate(today,0,0,4,"HH:mm")
 
 //Set up value Past/Current/Future for Service Date
 if(GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="cr") 

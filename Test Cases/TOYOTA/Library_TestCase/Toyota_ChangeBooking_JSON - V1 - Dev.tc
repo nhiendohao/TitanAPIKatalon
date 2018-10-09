@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Toyota_ChangeBooking_JSON - V1 - Dev</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3488e6d4-8822-456e-ac24-151645680345</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>a7809902-b5ba-41b7-9046-bdaea7c8c44d</id>
+      <masked>false</masked>
+      <name>var_VINChange</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d18b948e-d5fe-4e82-b74c-64a129763446</id>
+      <masked>false</masked>
+      <name>var_REGNumberChange</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>cc651c28-6c13-4de4-bde6-0355ad377a3f</id>
+      <masked>false</masked>
+      <name>var_PriceChange</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ead2b3d4-2b26-4038-bc6f-1f3636b5cc61</id>
+      <masked>false</masked>
+      <name>var_DurationChange</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>518ad87d-e262-4ef6-9d2f-d731223db44d</id>
+      <masked>false</masked>
+      <name>var_DropOffChange</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>276d3b81-eb57-4a6b-ac11-474e815b51d6</id>
+      <masked>false</masked>
+      <name>var_PickUpChange</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6f23c9d7-e9e7-4b65-871e-ee44dd1d0b70</id>
+      <masked>false</masked>
+      <name>var_DateChange</name>
+   </variable>
+</TestCaseEntity>

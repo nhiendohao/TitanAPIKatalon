@@ -13,10 +13,11 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import groovy.sql.Sql
-import java.sql.Driver
+
 
 	// SQL
+	import groovy.sql.Sql
+	import java.sql.Driver
 	// Create Driver for connection
 	  def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
 	// Create Object Properties  
@@ -145,3 +146,26 @@ import java.sql.Driver
 			//txtFileInfo << d
 			
 			writeToFile("C:/Users/vinh.le", "demo_writertxt", ".txt", txtFileInfo)
+			
+			//--------------------------------------------------------------------------------------------------------------------------
+			//Get value from SOAP response
+			import javax.xml.parsers.DocumentBuilderFactory;
+			import org.w3c.dom.Document;
+			import org.w3c.dom.Element;
+			import org.w3c.dom.NodeList;
+			import org.xml.sax.InputSource;
+			import java.io.StringReader;
+			
+			
+			RequestObject GetPersonel = findTestObject('Holden/Holden_General_Method')
+			ResponseObject res_GetPersonel = WSBuiltInKeywords.sendRequest(GetPersonel)
+			
+			assertThat(res_GetPersonel.getResponseText()).contains('G')
+			
+			Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+			.parse(new InputSource(new StringReader(res_GetPersonel.getResponseText())));
+			NodeList errNodes = doc.getElementsByTagName("Ex: ParentNode");
+			if (errNodes.getLength() > 0) {
+			 Element err = (Element)errNodes.item(0);
+			 println "Ex: ChildrenNode:  "+err.getElementsByTagName("Ex: ChildrenNode").item(0).getTextContent();
+			}

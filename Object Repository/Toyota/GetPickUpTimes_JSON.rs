@@ -32,14 +32,14 @@
    <soapRequestMethod></soapRequestMethod>
    <soapServiceFunction></soapServiceFunction>
    <variables>
-      <defaultValue>'2018-10-8'</defaultValue>
+      <defaultValue>'2018-10-09'</defaultValue>
       <description></description>
       <id>11312aef-1a38-4e1f-b1de-5ba8f233a73b</id>
       <masked>false</masked>
       <name>Service_Date</name>
    </variables>
    <variables>
-      <defaultValue>'08:00'</defaultValue>
+      <defaultValue>'15:00'</defaultValue>
       <description></description>
       <id>4ede1f38-d83a-4651-b3a7-3604641d374f</id>
       <masked>false</masked>

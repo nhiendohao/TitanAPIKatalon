@@ -62,6 +62,7 @@ def ConvertObjectToDate = {Object global ->
 //CODE
 //Parse String data to Date type Data
 Date current_hour = ConvertObjectToDate(GlobalVariable.Glb_Current_Hour)
+def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 def Start_Date_Str = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_StartDate) as Date
 String Start_Date = Start_Date_Str.format("yyyy-MM-dd") as String
@@ -142,7 +143,7 @@ def IsCurrentDate = "false"
 if(Start_Date_Str.equals(current)) IsCurrentDate = "true"
 def today = new Date()
 use(groovy.time.TimeCategory){
-	today = today + 3.hour 
+	today = today + 4.hour 
 }
 
 //Verify response Times array
@@ -176,7 +177,7 @@ while(!(realtime_ws.after(time_close_ws))){
 }
 
 //Handle for unavailable timeslot
-if(!(Reserve_Timeslot == "")){
+if(!(Reserve_Timeslot == "")&&(Service_Date == Start_Date_Str)){
 	times = times - Reserve_Timeslot
 	count = count - 1
 }

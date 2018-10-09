@@ -78,6 +78,7 @@ if(var_DurationChange == "") var_DurationChange = GlobalVariable.Glb_TotalDurati
 String DMSOperationCode
 if(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK") DMSOperationCode = "OSB_SERVICE_TYPE_LOGBOOK"
 	else DMSOperationCode = "OSB_SERVICE_TYPE_ADDITIONAL"
+println DMSOperationCode 
 
 //Declare request
 RequestObject ChangeBooking = findTestObject('Toyota/ChangeBooking_JSON', [

@@ -32,60 +32,38 @@ import java.text.ParseException as ParseException
 import java.text.SimpleDateFormat as SimpleDateFormat
 import java.util.Date as Date
 import java.io.File as File
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.soap.SOAPMessage
 
+import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.StringReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import javax.xml.parsers.DocumentBuilderFactory;
+
 
 RequestObject GetPersonel = findTestObject('Holden/Holden_General_Method')
-ResponseObject res_GetPersonel = WS.sendRequest(GetPersonel)
+ResponseObject res_GetPersonel = WSBuiltInKeywords.sendRequest(GetPersonel)
 
-WS.verifyResponseStatusCode(res_GetPersonel, 200)
+assertThat(res_GetPersonel.getResponseText()).contains('G')
 
-
-
-//String locator = "//*[local-name()='Value']"//*[local-name()='Value']
-//Xpath Xlocator = locator as Xpath
-////WS.verifyElementPropertyValue(res_GetPersonel, "ProcessMessageResponse.ProcessMessageResult.payload.content.RespondPersonnel.ApplicationArea.Sender.CreatorNameCode", "GM")
-////WS.verifyElementPropertyValue(res_GetPersonel, "ProcessMessageResult.payload.content.RespondPersonnel.ApplicationArea.Sender.CreatorNameCode", "GM")
-////WS.verifyElementPropertyValue(res_GetPersonel, "payload.content.RespondPersonnel.ApplicationArea.Sender.CreatorNameCode", "GM")
-////WS.verifyElementPropertyValue(res_GetPersonel, "content.RespondPersonnel.ApplicationArea.Sender.CreatorNameCode", "GM")
-////WS.verifyElementPropertyValue(res_GetPersonel, "ApplicationArea.Sender.CreatorNameCode", "GM")
-////WS.verifyElementPropertyValue(res_GetPersonel, "Sender.CreatorNameCode", "GM")
-//WS.verifyElementPropertyValue(res_GetPersonel, locator, "GM")
-//WS.verifyElementPropertyValue(res_GetPersonel, "ProcessMessageResponse.ProcessMessageResult.payload.content.RespondPersonnel.ApplicationArea.Sender.CreatorNameCode", "GM")
-
-//Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-//.parse(new InputSource(new StringReader(res_GetPersonel.toString())));
-//NodeList errNodes = doc.getElementsByTagName("Sender");
-//if (errNodes.getLength() > 0) {
-// Element err = (Element)errNodes.item(0);
-// println "CreatorNameCode"+err.getElementsByTagName("CreatorNameCode").item(0).getTextContent();
-//}
-
-BufferedReader xml = new BufferedReader(
-	new InputStreamReader(res_GetPersonel.getInputStream()));
-	String inputLine;
-	StringBuffer response = new StringBuffer();
-	while ((inputLine = xml.readLine()) != null) {
-	  response.append(inputLine);
-	}
-   xml.close();
-   //print in String
-   // System.out.println(response.toString());
-	   Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-		.parse(new InputSource(new StringReader(response.toString())));
-   NodeList errNodes = doc.getElementsByTagName("TimeZoneResponse");
-	   if (errNodes.getLength() > 0) {
-		 Element err = (Element)errNodes.item(0);
-		 System.out.println("raw_offset -"+err.getElementsByTagName("raw_offset").item(0).getTextContent());
+Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+.parse(new InputSource(new StringReader(res_GetPersonel.getResponseText())));
+NodeList errNodes = doc.getElementsByTagName("Destination");
+if (errNodes.getLength() > 0) {
+ Element err = (Element)errNodes.item(0);
+ println "DestinationNameCode:  "+err.getElementsByTagName("DestinationNameCode").item(0).getTextContent();
 }
+
+public void verifyValue(ResponseObject response, String parentnode, String childrennode, String expectedValue){
+	Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+	.parse(new InputSource(new StringReader(response.getResponseText())))
+	NodeList errNodes = doc.getElementsByTagName(parentnode)
+	if (errNodes.getLength() > 0) {
+	 Element err = (Element)errNodes.item(0);
+	 println parentnode + "." + childrennode +  ":  "+err.getElementsByTagName(childrennode).item(0).getTextContent()
+	 assert expectedValue == err.getElementsByTagName(childrennode).item(0).getTextContent()
+	}
+}
+
+
+verifyValue(res_GetPersonel,"Destination","DestinationNameCode","QI")

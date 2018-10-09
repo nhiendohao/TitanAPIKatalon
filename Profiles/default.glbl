@@ -194,4 +194,9 @@
       <initValue>'failed'</initValue>
       <name>Glb_Status_CancelBooking</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_AddJobLine</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

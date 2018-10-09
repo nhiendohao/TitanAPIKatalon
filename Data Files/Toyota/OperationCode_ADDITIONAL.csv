@@ -1,4 +1,5 @@
 Name,DMSOperationalCode,Duration,DealerPrice
+Replace Air Cleaner Element,SACE,0.1,0
 Evacuate & Recharge Air Conditioning System,SACS,0.7,0
 "Check Wheel Alignment, Both Front & Rear",SAWA,1.2,0
 "Balance Wheels, All",SAWB,1,0
@@ -7,12 +8,14 @@ Replace Clutch Fluid,SCF,0.5,0
 Carry out Complimentary Vehicle Inspection,SCVI,0.6,0
 Replace Engine Oil,SEO,0.5,0
 "Replace Differential Oil, Front",SFDO,0.4,0
+Replace Fuel Filter,SFF,0.3,0
 "Check Wheel Alignment, Front",SFWA,1.2,0
 "Balance Wheels, Front",SFWB,0.6,0
 Adjust Handbrake,SHA,0.5,0
 Replace Engine Oil and Oil Filter,SOF,0.6,0
 Carry out Pre Delivery Inspection,SPD,1.2,0
 Replace Radiator Coolant,SRC,0.6,0
+"Replace Differential Oil, Rear",SRDO,0.4,0
 Rotate Wheels Following Manufacturers Recommended Sequence,SRW,0.8,0
 Replace Spark Plugs,SSP,0.3,0
 Replace Transmission Oil,STO,0.4,0
