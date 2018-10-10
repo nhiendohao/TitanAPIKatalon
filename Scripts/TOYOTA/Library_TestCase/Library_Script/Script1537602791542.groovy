@@ -157,7 +157,7 @@ import internal.GlobalVariable as GlobalVariable
 			import java.io.StringReader;
 			
 			
-			RequestObject GetPersonel = findTestObject('Holden/Holden_General_Method')
+			RequestObject GetPersonel = findTestObject('Holden/Holden_03_GetPersonel')
 			ResponseObject res_GetPersonel = WSBuiltInKeywords.sendRequest(GetPersonel)
 			
 			assertThat(res_GetPersonel.getResponseText()).contains('G')

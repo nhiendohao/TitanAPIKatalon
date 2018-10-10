@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>Holden_GetIntegrationConfiguration</name>
+   <name>Holden_04_Get LaborOperations</name>
    <tag></tag>
-   <elementGuidId>9c58332d-164d-4a5a-a587-f6b6b18f7b1a</elementGuidId>
+   <elementGuidId>df753491-4e49-4a6f-85ac-5cb24a52b1bd</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
@@ -13,7 +13,42 @@
    <restUrl></restUrl>
    <serviceType>SOAP</serviceType>
    <soapBody>&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:tem=&quot;http://tempuri.org/&quot; xmlns:tran=&quot;http://www.starstandards.org/webservices/2009/transport&quot; xmlns:ns=&quot;http://www.starstandard.org/STAR/5&quot; xmlns:ns1=&quot;http://www.openapplications.org/oagis/9&quot;>
-   &lt;soapenv:Header/>
+   &lt;soapenv:Header>
+     &lt;wsse:Security>
+      &lt;!--Optional:-->
+      &lt;wsu:Timestamp Id=&quot;Timestamp-f1272c36-8b22-41e4-9962-4028429e5315&quot;>
+        &lt;wsu:Created>2016-05-17T13:41:04.083Z&lt;/wsu:Created>
+        &lt;wsu:Expires>2016-05-17T13:46:04.083Z&lt;/wsu:Expires>
+      &lt;/wsu:Timestamp>
+      &lt;!--Optional:-->
+      &lt;wsse:UsernameToken wsu:Id=&quot;UsernameToken-736fa6d4-6cda-4f4f-b8e6-2c068ede4cf2&quot;>
+        &lt;!--Optional:-->
+        &lt;wsse:Username>sysad&lt;/wsse:Username>
+        &lt;!--Optional:-->
+        &lt;wsse:Password Type=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText&quot;>sysad&lt;/wsse:Password>
+        &lt;!--Optional:-->
+        &lt;wsse:Nonce EncodingType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;>sysad&lt;/wsse:Nonce>
+        &lt;wsu:Created>2016-05-17T13:41:04.129Z&lt;/wsu:Created>
+      &lt;/wsse:UsernameToken>
+      &lt;!--Optional:-->
+      &lt;wsse:BinarySecurityToken wsu:Id=&quot;x509cert00&quot; EncodingType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot; ValueType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509&quot;>MIIC+DCCAeCgAwIBAgIQfltWZ4+cJb5OShl7HFO4lDANBgkqhkiG9w0BAQsFADAl
+MSMwIQYDVQQDExpIQ00tREVWLVdFQi50aXRhbmRtcy5sb2NhbDAeFw0xODA5MjQw
+MzUxMjJaFw0xOTA5MjQwMDAwMDBaMCUxIzAhBgNVBAMTGkhDTS1ERVYtV0VCLnRp
+dGFuZG1zLmxvY2FsMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuBWf
+Jyr4KqmbieRceUVlEgTrlRMOpwcaS4g604TaTBaXHbkOATt2WO0u1Psk1ff0uw6m
+oTujDDghdAoHaCM5LEFSliffD9SAN3xoWkXrVZqf9RFOMZJh2ZNpLSfGtnBhcibt
+M0A1f77ue2c17SmR4fJ/E/nlW5pSNtRNYju7MmmnSyIyhbDXc9R55F6fBQZWxHz5
+EHhvZuB71zlwr0Q85QBBGvnf4Erai0iTWhtDUaWNyzfSL485U1xxEN7jRlABOikp
+CNLNC3rtLXkFbkPopiaEBdkDWWVvwUgSmtyhYrqjsyGSNR94K7x3Mle7Td64ve6n
+FT7qSMpt/Y3M+ulYRwIDAQABoyQwIjALBgNVHQ8EBAMCBDAwEwYDVR0lBAwwCgYI
+KwYBBQUHAwEwDQYJKoZIhvcNAQELBQADggEBAB90tsS1S2/8p1W1aFlE8O5PE4XL
+dveCNbuZAYiK26W1gqQNs0Bh0yBj7LDernsEXzbG/st2wm/8PO+STJP5telsAYpl
++bqu6ZpOApA4LD4oyanYelwwBq2XeG3WDqLB9mI8AIR2nxtEqAhEazkE2ygJtg4I
+q4WDHGGGwBDcd49E7YgjDrMK1kZbXYdly1OtBvc3FbLZ13texNbxNRRn5GhDk8UH
+IiVxWWBkLbvUK/Ps61Zm1vBLS+1RoZnvGJiNMXGPGwTwf8wAQ8fyK8I6Nt/tCL1P
+sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecurityToken>
+     &lt;/wsse:Security>
+&lt;/soapenv:Header>
    &lt;soapenv:Body>
       &lt;tem:ProcessMessage>
          &lt;!--Optional:-->
@@ -23,7 +58,7 @@
                &lt;!--Optional:-->
                &lt;tran:content id=&quot;0&quot;>
                   &lt;!--Optional:-->
-                  &lt;tran:GetIntegrationConfiguration releaseID=&quot;5.6.4&quot; versionID=&quot;5.6.4&quot; systemEnvironmentCode=&quot;Test&quot; languageCode=&quot;en-US&quot;>
+                  &lt;tran:GetLaborOperations releaseID=&quot;5.6.4&quot; versionID=&quot;5.6.4&quot; systemEnvironmentCode=&quot;Test&quot; languageCode=&quot;en-US&quot;>
                      &lt;!--Optional:-->
                      &lt;ns:ApplicationArea>
                         &lt;!--Optional:-->
@@ -58,25 +93,32 @@
                         &lt;/ns:Destination>
                      &lt;/ns:ApplicationArea>
                      &lt;!--Optional:-->
-                     &lt;ns:GetIntegrationConfigurationDataArea>
+                     &lt;ns:GetLaborOperationsDataArea>
                         &lt;!--Optional:-->
                         &lt;ns:Get uniqueIndicator=&quot;true&quot;>
                            &lt;!--Optional:-->
                            &lt;ns:Expression/>
                         &lt;/ns:Get>
                         &lt;!--Optional:-->
-                        &lt;ns:GetIntegrationConfigurationCriteria>
+                        &lt;ns:LaborOperations>
                            &lt;!--Optional:-->
-                           &lt;ns:ExtendedProperty>
+                           &lt;ns:LaborOperationsHeader>
                               &lt;!--Optional:-->
-                              &lt;ns:Name>N/A&lt;/ns:Name>
-                              &lt;!--Optional:-->
-                              &lt;ns:Value>N/A&lt;/ns:Value>
-                           &lt;/ns:ExtendedProperty>
-                        &lt;/ns:GetIntegrationConfigurationCriteria>
-                     &lt;/ns:GetIntegrationConfigurationDataArea>
-                  &lt;/tran:GetIntegrationConfiguration>
-               &lt;/tran:content>
+                              &lt;ns:LaborOperationsHeaderBase>
+                                 &lt;!--Optional:-->
+                                 &lt;ns:DocumentIdentificationGroup>
+                                    &lt;!--Optional:-->
+                                    &lt;ns:DocumentIdentification>
+                                       &lt;!--Optional:-->
+                                       &lt;ns:DocumentID>0&lt;/ns:DocumentID>
+                                    &lt;/ns:DocumentIdentification>
+                                 &lt;/ns:DocumentIdentificationGroup>
+                              &lt;/ns:LaborOperationsHeaderBase>
+                           &lt;/ns:LaborOperationsHeader>
+                        &lt;/ns:LaborOperations>
+                     &lt;/ns:GetLaborOperationsDataArea>
+                  &lt;/tran:GetLaborOperations>
+                  &lt;/tran:content>
             &lt;/tran:payload>
          &lt;/tran:processMessage>
       &lt;/tem:ProcessMessage>

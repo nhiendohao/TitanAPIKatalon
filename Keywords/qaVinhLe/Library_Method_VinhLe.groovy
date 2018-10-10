@@ -56,14 +56,35 @@ class Library_Method_VinhLe {
 	 * @return a boolean 
 	 */
 	@Keyword
-	def verifyValueSOAPNode(ResponseObject response, String parentnode, String childrennode, String expectedValue){
+	def verifyValueSOAPNode(ResponseObject response, String parentnode, String childrennode, String expectedValue, int indexParent, int indexChild){
 		Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
 				.parse(new InputSource(new StringReader(response.getResponseText())))
 		NodeList errNodes = doc.getElementsByTagName(parentnode)
 		if (errNodes.getLength() > 0) {
-			Element err = (Element)errNodes.item(0);
-			println parentnode + "." + childrennode +  ":  "+err.getElementsByTagName(childrennode).item(0).getTextContent()
-			assert expectedValue == err.getElementsByTagName(childrennode).item(0).getTextContent()
+			Element err = (Element)errNodes.item(indexParent);
+			println parentnode + "." + childrennode +  ":  "+err.getElementsByTagName(childrennode).item(indexChild).getTextContent()
+			assert expectedValue == err.getElementsByTagName(childrennode).item(indexChild).getTextContent()
+		}
+	}
+	
+	/**
+	 * VERIFY VALUE FROM ATTRIBUTE SOAP NODE WITH EXPECTED VALUE
+	 * Send request and verify text value of node with the expected value
+	 * @response response, must be an instance of ResponseObject
+	 * @parentnode parent node
+	 * @childrennode children node
+	 * @expectedValue expected value
+	 * @return a boolean
+	 */
+	@Keyword
+	def verifyAttributeSOAPNode(ResponseObject response, String parentnode, String childrennode, String attributeName, String expectedValue,int indexParent, int indexChild){
+		Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+				.parse(new InputSource(new StringReader(response.getResponseText())))
+		NodeList errNodes = doc.getElementsByTagName(parentnode)
+		if (errNodes.getLength() > 0) {
+			Element err = (Element)errNodes.item(indexParent);
+			println parentnode + "." + childrennode +  "(" + attributeName + "): " +err.getElementsByTagName(childrennode).item(indexChild).getAttributes().getNamedItem(attributeName).getTextContent()
+			assert expectedValue == err.getElementsByTagName(childrennode).item(indexChild).getAttributes().getNamedItem(attributeName).getTextContent()
 		}
 	}
 
@@ -76,19 +97,41 @@ class Library_Method_VinhLe {
 	 * @return a string value
 	 */
 	@Keyword
-	def getValueSOAPNode(ResponseObject response, String parentnode, String childrennode,int index) {
+	def getValueSOAPNode(ResponseObject response, String parentnode, String childrennode,int indexParent, int indexChild) {
 		Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
 				.parse(new InputSource(new StringReader(response.getResponseText())))
 		NodeList errNodes = doc.getElementsByTagName(parentnode)
 		String value
 		if (errNodes.getLength() > 0) {
-			Element err = (Element)errNodes.item(index);
-			println parentnode + "." + childrennode +  ":  "+err.getElementsByTagName(childrennode).item(0).getTextContent()
-			value = err.getElementsByTagName(childrennode).item(0).getTextContent()
+			Element err = (Element)errNodes.item(indexParent);
+			println parentnode + "." + childrennode +  ":  "+err.getElementsByTagName(childrennode).item(indexChild).getTextContent()
+			value = err.getElementsByTagName(childrennode).item(indexChild).getTextContent()
 		}
 		return value
 	}
 
+	/**
+	 * GET VALUE FROM ATTRIBUTE SOAP NODE
+	 * Send request and get text value of node
+	 * @response response, must be an instance of ResponseObject
+	 * @parentnode parent node
+	 * @childrennode children node
+	 * @return a string value
+	 */
+	@Keyword
+	def getAttributeSOAPNode(ResponseObject response, String parentnode, String childrennode,String attributeName,int indexParent, int indexChild) {
+		Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+				.parse(new InputSource(new StringReader(response.getResponseText())))
+		NodeList errNodes = doc.getElementsByTagName(parentnode)
+		String value
+		if (errNodes.getLength() > 0) {
+			Element err = (Element)errNodes.item(indexParent);
+			println parentnode + "." + childrennode +  ":  "+err.getElementsByTagName(childrennode).item(indexChild).getAttributes().getNamedItem(attributeName).getTextContent()
+			value = err.getElementsByTagName(childrennode).item(indexChild).getAttributes().getNamedItem(attributeName).getTextContent()
+		}
+		return value
+	}
+	
 	/**
 	 * SET DATE
 	 * @date_time request request object, must be an instance of RequestObject
@@ -105,7 +148,7 @@ class Library_Method_VinhLe {
 			return Expected_Date.format(format_date)
 		}
 	}
-	
+
 	/**
 	 *	VERIFY RESPONSE CODE AND THE RETURNED MESSAGE
 	 * @response response, must be an instance of ResponseObject
@@ -121,11 +164,11 @@ class Library_Method_VinhLe {
 
 		//Transfer response to Text
 		def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
-		if(!(ExpectedMessage=="")) 
+		if(!(ExpectedMessage==""))
 			assertThat(response.getResponseText()).contains(ExpectedMessage)
-		
+
 	}
-	
+
 	/**
 	 *	ROUND NUMBER		
 	 * @response response, must be an instance of ResponseObject
@@ -138,8 +181,8 @@ class Library_Method_VinhLe {
 		String roundvalue =  new DecimalFormat(formatDecimal).format(floatnumber)
 		//Handle for missing .000...
 		if (!(roundvalue.contains("."))) roundvalue = roundvalue + addDecimal0  //addDecimal0 = ".00"
-		return roundvalue	
-		
+		return roundvalue
+
 	}
-	
+
 }

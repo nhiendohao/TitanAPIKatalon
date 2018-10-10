@@ -38,35 +38,48 @@ import org.w3c.dom.NodeList as NodeList
 import org.xml.sax.InputSource as InputSource
 import java.io.StringReader as StringReader
 
-RequestObject GetPersonel = findTestObject('Holden/Holden_General_Method')
+//RequestObject GetPersonel = findTestObject('Holden/Holden_03_GetPersonel')
+//
+//ResponseObject res_GetPersonel = WSBuiltInKeywords.sendRequest(GetPersonel)
+//
+//assertThat(res_GetPersonel.getResponseText()).contains('G')
+//
+//Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(new StringReader(res_GetPersonel.getResponseText())))
+//
+//NodeList errNodes = doc.getElementsByTagName('Destination')
+//
+//if (errNodes.getLength() > 0) {
+//    Element err = ((errNodes.item(0)) as Element)
+//
+//    println('DestinationNameCode:  ' + err.getElementsByTagName('DestinationNameCode').item(0).getTextContent())
+//}
+//
+//verifyValue(res_GetPersonel, 'Destination', 'DestinationNameCode', 'QI')
 
-ResponseObject res_GetPersonel = WSBuiltInKeywords.sendRequest(GetPersonel)
+public void verifyAttributeSOAPNode(String xml, String parentnode, String childrennode, String attributeName, String expectedValue,int indexParent,int indexChild){
+		Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+				.parse(new InputSource(new StringReader(xml)))
+		NodeList errNodes = doc.getElementsByTagName(parentnode)
+		if (errNodes.getLength() > 0) {
+			Element err = (Element)errNodes.item(indexParent);
+			println parentnode + "." + childrennode +  "(" + attributeName + "): " +err.getElementsByTagName(childrennode).item(indexChild).getAttributes().getNamedItem(attributeName).getTextContent()
+			assert expectedValue == err.getElementsByTagName(childrennode).item(indexChild).getAttributes().getNamedItem(attributeName).getTextContent()
+		}
+	}
 
-assertThat(res_GetPersonel.getResponseText()).contains('G')
+String Str_xml = '<bookstore> '+
+'<book category="cooking">' +
+'<title lang="en">Everyday Italian</title> '+
+' <author>Giada De Laurentiis</author> '+
+'<year>2005</year> '+
+'<price>30.00</price> </book> '+
+'<book category="children">' +
+'<title lang="en">Harry Potter</title> '+
+' <author>J K. Rowling</author> '+
+'<year>2005</year> '+
+'<price>29.99</price> </book>'+
+'</bookstore>'
+verifyAttributeSOAPNode(Str_xml,'bookstore','book','category','children',0,1)
 
-Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(new StringReader(res_GetPersonel.getResponseText())))
-
-NodeList errNodes = doc.getElementsByTagName('Destination')
-
-if (errNodes.getLength() > 0) {
-    Element err = ((errNodes.item(0)) as Element)
-
-    println('DestinationNameCode:  ' + err.getElementsByTagName('DestinationNameCode').item(0).getTextContent())
-}
-
-verifyValue(res_GetPersonel, 'Destination', 'DestinationNameCode', 'QI')
-
-void verifyValue(ResponseObject response, String parentnode, String childrennode, String expectedValue) {
-    Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(new StringReader(response.getResponseText())))
-
-    NodeList errNodes = doc.getElementsByTagName(parentnode)
-
-    if (errNodes.getLength() > 0) {
-        Element err = ((errNodes.item(0)) as Element)
-
-        println((((parentnode + '.') + childrennode) + ':  ') + err.getElementsByTagName(childrennode).item(0).getTextContent())
-
-        assert expectedValue == err.getElementsByTagName(childrennode).item(0).getTextContent()
-    }
-}
-
+println GlobalVariable.Glb_Authorization_Token
+println GlobalVariable.Glb_Dealer_Code

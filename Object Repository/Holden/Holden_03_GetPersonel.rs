@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>Holden_General_Method</name>
+   <name>Holden_03_GetPersonel</name>
    <tag></tag>
    <elementGuidId>455fa76f-45f0-43e3-b09a-c095d654bd6a</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>

@@ -2,11 +2,11 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import java.lang.reflect.Array as Array
+import java.lang.reflect.Array
+import java.security.AccessControlContext
 import static org.assertj.core.api.Assertions.*
-
-import org.apache.xmlbeans.impl.xb.xsdschema.FieldDocument.Field.Xpath
-import org.eclipse.persistence.internal.oxm.record.json.JSONParser.array_return as array_return
+import org.eclipse.persistence.internal.oxm.record.json.JSONParser.array_return
+import org.sikuli.api.API
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -25,18 +25,29 @@ import com.kms.katalon.core.testobject.TestObjectProperty as TestObjectProperty
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WSBuiltInKeywords
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
+import com.sun.jna.platform.win32.WinNT.ACCESS_ACEStructure
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
-import java.text.ParseException as ParseException
-import java.text.SimpleDateFormat as SimpleDateFormat
-import java.util.Date as Date
-import java.io.File as File
 
-RequestObject GetPersonel = findTestObject('Holden/Holden_General_Method')
-ResponseObject res_GetPersonel = WS.sendRequest(GetPersonel)
+//V0. Create framework
+//=====================================================================================================================
 
-CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetPersonel,"Destination","DestinationNameCode","QI")
+//CODE 
+//## DECLARE VIABLE
 
-def demo = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetPersonel, "SpecifiedPerson","GivenName",1)
-println demo
+//## PROCESS API
+//Declare request
+	RequestObject ProcessServiceVisit = findTestObject("", null)
+//Declare response
+	ResponseObject res_ProcessServiceVisit = WS.sendRequest(ProcessServiceVisit)
+	
+//## RESPONSE ACCESS
+//All negative case
+
+	/**
+	 * Use If/ If else Statement
+	 */
+	
+//## VALID RESPONSE VERIFICATION
+

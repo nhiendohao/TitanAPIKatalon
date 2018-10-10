@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>demo_inherit</name>
+   <name>Holden_06_SearchServiceVisit</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>d41ec519-bd33-4907-95dc-7f5f08392fb7</testCaseGuid>
+   <testCaseGuid>1368ab33-70b5-4be1-9baf-bf4b8df0c67e</testCaseGuid>
 </TestCaseEntity>
