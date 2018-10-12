@@ -41,7 +41,8 @@ import java.text.DecimalFormat
 //Method veirfy Status Code for each case
 def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
 	//Verify Response Status = 200 OK
-	WS.verifyResponseStatusCode(response, StatusCode)
+	if(StatusCode == 0) WS.verifyResponseStatusCodeInRange(response, 400, 404)
+	else WS.verifyResponseStatusCode(response, StatusCode)
 	
 	//Transfer response to Text
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
@@ -64,7 +65,12 @@ String Filepath
 if(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK")
 	Filepath = "Data Files/Toyota/OperationCode_LOGBOOK.csv"
 	else Filepath = "Data Files/Toyota/OperationCode_ADDITIONAL.csv"
-
+	
+	println GlobalVariable.Glb_Dealer_Code
+	println GlobalVariable.Glb_Location_Code
+	println GlobalVariable.Glb_VIN
+	println GlobalVariable.Glb_ServiceType
+	
 //Declare request
 RequestObject GetServiceOperation = findTestObject('Toyota/GetServiceOperations_JSON', [
 	('Dealer_Code') : GlobalVariable.Glb_Dealer_Code, 
@@ -83,7 +89,7 @@ if(!(GlobalVariable.Glb_Dealer_Code == "765A"))
 	VerifyResponse(res_GetServiceOperation,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
 //Invalid Service Type
 else if(!(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK" || GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_ADDITIONAL"))
-	VerifyResponse(res_GetServiceOperation,404,"Service Type Unknown")
+	VerifyResponse(res_GetServiceOperation,400,"Service Type Unknown")
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||

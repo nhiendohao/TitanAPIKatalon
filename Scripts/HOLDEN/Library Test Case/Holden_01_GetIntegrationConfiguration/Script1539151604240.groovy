@@ -32,15 +32,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
-//V0. Create framework
-//=====================================================================================================================
+/**
+ * V0. Build framework
+ */
 
 //CODE 
 //## DECLARE VIABLE
 
 //## PROCESS API
+//Print all value before request
+println GlobalVariable.Glb_Dealer_Code
 //Declare request
-	RequestObject IntegrationConfig = findTestObject("", null)
+	RequestObject IntegrationConfig = findTestObject('Holden/Holden_01_GetIntegrationConfiguration', [
+		('obj_DealerId') : GlobalVariable.Glb_Dealer_Code])
 //Declare response
 	ResponseObject res_IntegrationConfig = WS.sendRequest(IntegrationConfig)
 	
@@ -52,7 +56,9 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 	 */
 	
 //## VALID RESPONSE VERIFICATION
-
+//Validate Response Status Code
+	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_IntegrationConfig, 200, "")
+	
 //Validate "Sender"
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_IntegrationConfig, "Sender", "CreatorNameCode", "GM", 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_IntegrationConfig, "Sender", "SenderNameCode", "OSS", 0, 0)

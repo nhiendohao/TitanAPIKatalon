@@ -1,3 +1,4 @@
+
 package qaVinhLe
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -66,7 +67,7 @@ class Library_Method_VinhLe {
 			assert expectedValue == err.getElementsByTagName(childrennode).item(indexChild).getTextContent()
 		}
 	}
-	
+
 	/**
 	 * VERIFY VALUE FROM ATTRIBUTE SOAP NODE WITH EXPECTED VALUE
 	 * Send request and verify text value of node with the expected value
@@ -131,7 +132,26 @@ class Library_Method_VinhLe {
 		}
 		return value
 	}
-	
+
+	/**
+	 * GET SIZE OF NODE
+	 * Send request and get size of Node
+	 * @response response, must be an instance of ResponseObject
+	 * @parentnode parent node
+	 * @childrennode children node
+	 * @return a string value
+	 */
+	@Keyword
+	def getSizeSOAPNode(ResponseObject response, String parentnode) {
+		Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+				.parse(new InputSource(new StringReader(response.getResponseText())))
+		NodeList errNodes = doc.getElementsByTagName(parentnode)
+		int sizeNode = 0
+		sizeNode = errNodes.getLength()
+		println "Number of Element: " + sizeNode
+		return sizeNode
+	}
+
 	/**
 	 * SET DATE
 	 * @date_time request request object, must be an instance of RequestObject
@@ -160,10 +180,10 @@ class Library_Method_VinhLe {
 	def verifyResponseCode_Msg(ResponseObject response, int StatusCode, String ExpectedMessage) {
 
 		//Verify Response Status = 200 OK
-		WS.verifyResponseStatusCode(response, StatusCode)
+		if(StatusCode == 0) WS.verifyResponseStatusCodeInRange(response, 400, 404)
+		else WS.verifyResponseStatusCode(response, StatusCode)
 
 		//Transfer response to Text
-		def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
 		if(!(ExpectedMessage==""))
 			assertThat(response.getResponseText()).contains(ExpectedMessage)
 
@@ -182,6 +202,39 @@ class Library_Method_VinhLe {
 		//Handle for missing .000...
 		if (!(roundvalue.contains("."))) roundvalue = roundvalue + addDecimal0  //addDecimal0 = ".00"
 		return roundvalue
+
+	}
+	
+	
+	/**
+	 *	GET SQL SIZE
+	 * @response response, must be an instance of ResponseObject
+	 * @StatusCode Code of Status response
+	 * @ExpectedMessage Expected message want to display
+	 * @return a boolean to indicate whether the response status code equals the expected one
+	 */
+	@Keyword
+	int getSQLSize( String user, String pass, String URL, String queryCmd ) {
+		// Create Driver for connection
+		def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
+	  // Create Object Properties
+		def props = new Properties()
+	  // Setup user and password through Object Properties
+		props.setProperty("user", user)
+		props.setProperty("password", pass)
+	  //Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
+		def conn = driver.connect(URL, props)
+		def sql = new Sql(conn)
+	  //Executive query for database
+	  //Read data row by row by expression eachRow
+		int sizeSQL = 0
+		sql.eachRow(queryCmd) {row ->
+			sizeSQL += 1
+		}
+		sql.close()
+		conn.close()
+		println sizeSQL
+		return sizeSQL
 
 	}
 

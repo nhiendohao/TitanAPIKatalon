@@ -25,7 +25,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/${Dealer_Code}/locations/${Location_Code}/dropOffs?duration=${Duration_Time}&amp;start=${Start_Date}&amp;end=${End_Date}&amp;serviceBayType=${ServiceBay_Type}</restUrl>
+   <restUrl>http://hcm-dev-web/api/dealers/${Dealer_Code}/locations/${Location_Code}/dropOffs?duration=${Duration_Time}&amp;start=${Start_Date}&amp;end=${End_Date}&amp;serviceBayType=${ServiceBay_Type}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>

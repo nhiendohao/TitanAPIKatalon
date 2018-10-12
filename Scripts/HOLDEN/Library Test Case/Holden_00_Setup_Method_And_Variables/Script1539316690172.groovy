@@ -1,0 +1,88 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+
+import java.sql.Time
+
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import internal.GlobalVariable as GlobalVariable
+
+//Set Value for GlobalVariable
+if(!(Setup_Dealer_Code == "")) GlobalVariable.Glb_Dealer_Code = Setup_Dealer_Code
+if(!(Setup_FirstName == "")) GlobalVariable.Glb_FirstName = Setup_FirstName
+if(!(Setup_LastName == "")) GlobalVariable.Glb_LastName = Setup_LastName
+if(!(Setup_StartSearchDate == "")) GlobalVariable.Glb_StartSearchDate = Setup_StartSearchDate
+if(!(Setup_EndSearchDate == "")) GlobalVariable.Glb_EndSearchDate = Setup_EndSearchDate
+
+if(Setup_CustomerType.toString().toLowerCase() == "exist"){
+	if(!(Setup_AddJobLine == "")) GlobalVariable.Glb_AddJobLine = Setup_AddJobLine
+	if(!(Setup_BookingId == "")) GlobalVariable.Glb_Booking_ID = Setup_BookingId
+	if(!(Setup_TradingEntityId == "")) GlobalVariable.Glb_Cus_TradingEntity = Setup_TradingEntityId
+	if(!(Setup_LineOne == "")) GlobalVariable.Glb_Cus_LineOne = Setup_LineOne
+	if(!(Setup_CityName == "")) GlobalVariable.Glb_Cus_CityName = Setup_CityName
+	if(!(Setup_CountryID == "")) GlobalVariable.Glb_Cus_CountryID = Setup_CountryID
+	if(!(Setup_Postcode == "")) GlobalVariable.Glb_Cus_Postcode = Setup_Postcode
+	if(!(Setup_State == "")) GlobalVariable.Glb_Cus_State = Setup_State
+	if(!(Setup_ChannelCode == "")) GlobalVariable.Glb_Cus_ChannelCode = Setup_ChannelCode
+	if(!(Setup_PhoneNumber == "")) GlobalVariable.Glb_Cus_PhoneNumber = Setup_PhoneNumber
+	if(!(Setup_Email == "")) GlobalVariable.Glb_Cus_Email = Setup_Email
+	if(!(Setup_Model == "")) GlobalVariable.Glb_veh_Model = Setup_Model
+	if(!(Setup_ModelYear == "")) GlobalVariable.Glb_veh_ModelYear = Setup_ModelYear
+	if(!(Setup_MakeString == "")) GlobalVariable.Glb_veh_MakeString = Setup_MakeString
+	if(!(Setup_ManufacturerName == "")) GlobalVariable.Glb_veh_ManufacturerName = Setup_ManufacturerName
+	if(!(Setup_VehicleID == "")) GlobalVariable.Glb_veh_VehicleId = Setup_VehicleID
+}
+
+//METHOD
+//Create Date Past/Future with specific Date from current Date
+def SetDate = {Date current_time ,int number_month, int number_day, int number_hour, String format_date ->
+	use(groovy.time.TimeCategory) {
+	  def Expected_Date = current_time + number_day.day + number_month.month + number_hour.hour
+	  Expected_Date.format(format_date)
+   }
+}
+//Create random number
+def RandomNumber = {int number ->
+	Random random = new Random()
+	def number_random = random.nextInt(number)
+	println number_random
+	return number_random
+}
+
+//CODE EXECUTIVE
+//Create Current Date & Time
+def today = new Date()
+//Set current Date
+def current_date = today.format("YYYY-MM-dd")
+GlobalVariable.Glb_Current_Date = current_date
+//Set current Time. AUS is earlier than VN 4 hours
+GlobalVariable.Glb_Current_Hour = SetDate(today,0,0,4,"HH:mm")
+
+	
+//Set up value Past/Current/Future for Start Date
+if(GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="cr")
+	GlobalVariable.Glb_StartSearchDate = current_date
+else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="p")
+	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
+else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="f")
+	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,1,0,"YYYY-MM-dd")
+
+//Set up value Past/Current/Future for End Date
+if(GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="cr")
+	GlobalVariable.Glb_EndSearchDate = current_date
+else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="p")
+	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
+else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
+	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,1,0,"YYYY-MM-dd")
+	
+//Set up ContactId
+	GlobalVariable.Glb_ContactId = "1901" + RandomNumber(999999)

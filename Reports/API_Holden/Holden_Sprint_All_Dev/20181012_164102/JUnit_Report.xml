@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Holden_Sprint_All_Dev" time="2" tests="0" failures="1" errors="0">
+   <testsuite name="Holden_Sprint_All_Dev" tests="0" failures="1" errors="0" time="2" timestamp="2018-10-12 16:41:04" hostname="vinh.le - TITAN-V-2001.titandms.local" id="Test Suites/API_Holden/Holden_Sprint_All_Dev">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="C:\\Users\\vinh.le\\git\\TitanAPIKatalon\\Reports\\API_Holden\\Holden_Sprint_All_Dev\\20181012_164102"/>
+         <property name="logFiles" value="C:\\Users\\vinh.le\\git\\TitanAPIKatalon\\Reports\\API_Holden\\Holden_Sprint_All_Dev\\20181012_164102\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="vinh.le - TITAN-V-2001.titandms.local"/>
+         <property name="hostAddress" value="192.168.3.19"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="5.7.1.1"/>
+      </properties>
+      <testcase name="Test Cases/HOLDEN/Main Holden Test Case - All Sprint" classname="Test Cases/HOLDEN/Main Holden Test Case - All Sprint" status="FAILED">
+         <failure type="FAILED" message="(Stack trace: Assertion failed: 
+
+assert (listGivenName[countNumber] + &quot; &quot; +listFamilyName[countNumber]) == row[1] as String
+        |            ||            |     ||             ||             |  |  |
+        |            |14           Info  ||             |14            |  |  ifm
+        |            Info                ||             media          |  [Emp_ID:ifm, Name:ifm, DisplayColumn:ifm - ifm, Family_Name:media, First_Name:Info, Base_Workshop_ID:[null], Is_Mechanic_Employee:0, Base_Location_ID:[null], Store_ID:[null], Branch_Key:[null], Status_Code:1, Default_Vehicle_Sales_Group_ID:[null], Default_Vehicle_Sales_Type:[null], Driver_Default_Truck_Information_Key:[null], Detail_Column:[null], Trading_Entity_Key:659965]
+        |                                ||                            false
+        |                                |[b, Grima, Notman, Sims, Grinbalt, Red, Team, Bowles, Forte, Gibbons, Innes, Maher, Delaney, Loffler, media, Attard, Horvath, Kitchen, Pernar, Gatt, Trask, Dingli, King, Fletcher, Henshaw, Kassab, Tri Nguyen, Callagan, (Phil) Clinch, Doughty, Gaal, Heath, Jinnette, Nagy, Nass, Smith, McAliece, (Steve) Ognjenovic, Paynter, Whiston, Wilson, Motor Group, Fairweather, Do, Kellam, Smith, Test, Time, Service Advisor, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+        |                                Info media
+        [b, Andrew, Alan, Adam, Calum, Code, CRM, Darren, David, David, Dylan, Danny, Greg, Glenn, Info, James, Judith, Jayne, Jeremy, kaylah, Katrina, Luke, Lindsay, Matthew, Mark, Michael, Minh, Nicole, Phillip, Patrick, Rowena, Rebecca, Ryan, Roger, Russell, Rebecca, Stephen, Steven, Stephen, Stuart, Sam, Berwick, Teigan, Thao, Trish, Terryn, Titan, X, Template, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+	at org.codehaus.groovy.runtime.InvokerHelper.assertFailed(InvokerHelper.java:402)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.assertFailed(ScriptBytecodeAdapter.java:650)
+	at Script1539153206493$_run_closure1.doCall(Script1539153206493.groovy:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1024)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:430)
+	at groovy.sql.Sql.eachRow(Sql.java:1196)
+	at groovy.sql.Sql.eachRow(Sql.java:1152)
+	at groovy.sql.Sql.eachRow(Sql.java:1091)
+	at groovy.sql.Sql$eachRow.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at Script1539153206493.run(Script1539153206493.groovy:112)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestCaseMain.runTestCase(TestCaseMain.java:99)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.doCall(CallTestCaseKeyword.groovy:60)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.call(CallTestCaseKeyword.groovy)
+	at com.kms.katalon.core.keyword.internal.KeywordMain.runKeyword(KeywordMain.groovy:54)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.callTestCase(CallTestCaseKeyword.groovy:81)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.execute(CallTestCaseKeyword.groovy:45)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:53)
+	at com.kms.katalon.core.keyword.BuiltinKeywords.callTestCase(BuiltinKeywords.groovy:334)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeStaticMethod(MetaClassImpl.java:1469)
+	at org.codehaus.groovy.runtime.callsite.StaticMetaClassSite.call(StaticMetaClassSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at Script1538798457291.run(Script1538798457291.groovy:95)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:129)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:112)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:81)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:142)
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at TempTestSuite1539337262975.run(TempTestSuite1539337262975.groovy:36)
+	at groovy.lang.GroovyShell.runScriptOrMainOrTestOrRunnable(GroovyShell.java:263)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:518)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:507)
+	at groovy.ui.GroovyMain.processOnce(GroovyMain.java:653)
+	at groovy.ui.GroovyMain.run(GroovyMain.java:384)
+	at groovy.ui.GroovyMain.process(GroovyMain.java:370)
+	at groovy.ui.GroovyMain.processArgs(GroovyMain.java:129)
+	at groovy.ui.GroovyMain.main(GroovyMain.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.tools.GroovyStarter.rootLoader(GroovyStarter.java:109)
+	at org.codehaus.groovy.tools.GroovyStarter.main(GroovyStarter.java:131)
+)"/>
+         <system-out><![CDATA[2018-10-12 16:41:04 - [TEST_CASE][FAILED] - Test Cases/HOLDEN/Main Holden Test Case - All Sprint: Test Cases/HOLDEN/Main Holden Test Case - All Sprint FAILED because (of) (Stack trace: Assertion failed: 
+
+assert (listGivenName[countNumber] + " " +listFamilyName[countNumber]) == row[1] as String
+        |            ||            |     ||             ||             |  |  |
+        |            |14           Info  ||             |14            |  |  ifm
+        |            Info                ||             media          |  [Emp_ID:ifm, Name:ifm, DisplayColumn:ifm - ifm, Family_Name:media, First_Name:Info, Base_Workshop_ID:[null], Is_Mechanic_Employee:0, Base_Location_ID:[null], Store_ID:[null], Branch_Key:[null], Status_Code:1, Default_Vehicle_Sales_Group_ID:[null], Default_Vehicle_Sales_Type:[null], Driver_Default_Truck_Information_Key:[null], Detail_Column:[null], Trading_Entity_Key:659965]
+        |                                ||                            false
+        |                                |[b, Grima, Notman, Sims, Grinbalt, Red, Team, Bowles, Forte, Gibbons, Innes, Maher, Delaney, Loffler, media, Attard, Horvath, Kitchen, Pernar, Gatt, Trask, Dingli, King, Fletcher, Henshaw, Kassab, Tri Nguyen, Callagan, (Phil) Clinch, Doughty, Gaal, Heath, Jinnette, Nagy, Nass, Smith, McAliece, (Steve) Ognjenovic, Paynter, Whiston, Wilson, Motor Group, Fairweather, Do, Kellam, Smith, Test, Time, Service Advisor, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+        |                                Info media
+        [b, Andrew, Alan, Adam, Calum, Code, CRM, Darren, David, David, Dylan, Danny, Greg, Glenn, Info, James, Judith, Jayne, Jeremy, kaylah, Katrina, Luke, Lindsay, Matthew, Mark, Michael, Minh, Nicole, Phillip, Patrick, Rowena, Rebecca, Ryan, Roger, Russell, Rebecca, Stephen, Steven, Stephen, Stuart, Sam, Berwick, Teigan, Thao, Trish, Terryn, Titan, X, Template, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+	at org.codehaus.groovy.runtime.InvokerHelper.assertFailed(InvokerHelper.java:402)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.assertFailed(ScriptBytecodeAdapter.java:650)
+	at Script1539153206493$_run_closure1.doCall(Script1539153206493.groovy:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1024)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:430)
+	at groovy.sql.Sql.eachRow(Sql.java:1196)
+	at groovy.sql.Sql.eachRow(Sql.java:1152)
+	at groovy.sql.Sql.eachRow(Sql.java:1091)
+	at groovy.sql.Sql$eachRow.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at Script1539153206493.run(Script1539153206493.groovy:112)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestCaseMain.runTestCase(TestCaseMain.java:99)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.doCall(CallTestCaseKeyword.groovy:60)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.call(CallTestCaseKeyword.groovy)
+	at com.kms.katalon.core.keyword.internal.KeywordMain.runKeyword(KeywordMain.groovy:54)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.callTestCase(CallTestCaseKeyword.groovy:81)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.execute(CallTestCaseKeyword.groovy:45)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:53)
+	at com.kms.katalon.core.keyword.BuiltinKeywords.callTestCase(BuiltinKeywords.groovy:334)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeStaticMethod(MetaClassImpl.java:1469)
+	at org.codehaus.groovy.runtime.callsite.StaticMetaClassSite.call(StaticMetaClassSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at Script1538798457291.run(Script1538798457291.groovy:95)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:129)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:112)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:81)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:142)
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at TempTestSuite1539337262975.run(TempTestSuite1539337262975.groovy:36)
+	at groovy.lang.GroovyShell.runScriptOrMainOrTestOrRunnable(GroovyShell.java:263)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:518)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:507)
+	at groovy.ui.GroovyMain.processOnce(GroovyMain.java:653)
+	at groovy.ui.GroovyMain.run(GroovyMain.java:384)
+	at groovy.ui.GroovyMain.process(GroovyMain.java:370)
+	at groovy.ui.GroovyMain.processArgs(GroovyMain.java:129)
+	at groovy.ui.GroovyMain.main(GroovyMain.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.tools.GroovyStarter.rootLoader(GroovyStarter.java:109)
+	at org.codehaus.groovy.tools.GroovyStarter.main(GroovyStarter.java:131)
+)
+
+2018-10-12 16:41:04 - [TEST_STEP][PASSED] - callTestCase: Call Test Case 'Test Cases/HOLDEN/Library Test Case/Holden_00_Setup_Method_And_Variables' successfully
+
+2018-10-12 16:41:04 - [TEST_CASE][PASSED] - Test Cases/HOLDEN/Library Test Case/Holden_00_Setup_Method_And_Variables: Test Cases/HOLDEN/Library Test Case/Holden_00_Setup_Method_And_Variables
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_Dealer_Code == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_FirstName == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_LastName == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_StartSearchDate == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_EndSearchDate == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (Setup_CustomerType.toString().toLowerCase() == "exist"): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_AddJobLine == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_BookingId == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_TradingEntityId == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_LineOne == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_CityName == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_CountryID == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_Postcode == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_State == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_ChannelCode == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_PhoneNumber == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_Email == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_Model == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_ModelYear == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_MakeString == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_ManufacturerName == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (!(Setup_VehicleID == "")): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - SetDate = { java.util.Date current_time, int number_month, int number_day, int number_hour, java.lang.String format_date -> ... }: null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - RandomNumber = { int number -> ... }: null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - today = new java.util.Date(): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - current_date = today.format("YYYY-MM-dd"): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - Glb_Current_Date = current_date: null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - Glb_Current_Hour = SetDate.call(today, 0, 0, 4, "HH:mm"): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (Glb_StartSearchDate.toString().toLowerCase() == "cr"): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (Glb_EndSearchDate.toString().toLowerCase() == "cr"): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - Glb_ContactId = "1901" + RandomNumber.call(999999): null
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/HOLDEN/Library Test Case/Holden_00_Setup_Method_And_Variables' successfully
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (var_Status_GetIntegration == "true"): null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - If (var_Status_GetCustomer == "true"): null
+
+2018-10-12 16:41:05 - [TEST_STEP][FAILED] - Statement - If (var_Status_GetPersonel == "true"): Unable to call Test Case with id 'Test Cases/HOLDEN/Library Test Case/Holden_03_GetPersonel' (Root cause: Call Test Case 'Test Cases/HOLDEN/Library Test Case/Holden_03_GetPersonel' failed)
+
+2018-10-12 16:41:05 - [TEST_CASE][FAILED] - Test Cases/HOLDEN/Library Test Case/Holden_03_GetPersonel: Test Cases/HOLDEN/Library Test Case/Holden_03_GetPersonel FAILED because (of) (Stack trace: Assertion failed: 
+
+assert (listGivenName[countNumber] + " " +listFamilyName[countNumber]) == row[1] as String
+        |            ||            |     ||             ||             |  |  |
+        |            |14           Info  ||             |14            |  |  ifm
+        |            Info                ||             media          |  [Emp_ID:ifm, Name:ifm, DisplayColumn:ifm - ifm, Family_Name:media, First_Name:Info, Base_Workshop_ID:[null], Is_Mechanic_Employee:0, Base_Location_ID:[null], Store_ID:[null], Branch_Key:[null], Status_Code:1, Default_Vehicle_Sales_Group_ID:[null], Default_Vehicle_Sales_Type:[null], Driver_Default_Truck_Information_Key:[null], Detail_Column:[null], Trading_Entity_Key:659965]
+        |                                ||                            false
+        |                                |[b, Grima, Notman, Sims, Grinbalt, Red, Team, Bowles, Forte, Gibbons, Innes, Maher, Delaney, Loffler, media, Attard, Horvath, Kitchen, Pernar, Gatt, Trask, Dingli, King, Fletcher, Henshaw, Kassab, Tri Nguyen, Callagan, (Phil) Clinch, Doughty, Gaal, Heath, Jinnette, Nagy, Nass, Smith, McAliece, (Steve) Ognjenovic, Paynter, Whiston, Wilson, Motor Group, Fairweather, Do, Kellam, Smith, Test, Time, Service Advisor, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+        |                                Info media
+        [b, Andrew, Alan, Adam, Calum, Code, CRM, Darren, David, David, Dylan, Danny, Greg, Glenn, Info, James, Judith, Jayne, Jeremy, kaylah, Katrina, Luke, Lindsay, Matthew, Mark, Michael, Minh, Nicole, Phillip, Patrick, Rowena, Rebecca, Ryan, Roger, Russell, Rebecca, Stephen, Steven, Stephen, Stuart, Sam, Berwick, Teigan, Thao, Trish, Terryn, Titan, X, Template, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+	at org.codehaus.groovy.runtime.InvokerHelper.assertFailed(InvokerHelper.java:402)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.assertFailed(ScriptBytecodeAdapter.java:650)
+	at Script1539153206493$_run_closure1.doCall(Script1539153206493.groovy:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1024)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:430)
+	at groovy.sql.Sql.eachRow(Sql.java:1196)
+	at groovy.sql.Sql.eachRow(Sql.java:1152)
+	at groovy.sql.Sql.eachRow(Sql.java:1091)
+	at groovy.sql.Sql$eachRow.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at Script1539153206493.run(Script1539153206493.groovy:112)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestCaseMain.runTestCase(TestCaseMain.java:99)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.doCall(CallTestCaseKeyword.groovy:60)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.call(CallTestCaseKeyword.groovy)
+	at com.kms.katalon.core.keyword.internal.KeywordMain.runKeyword(KeywordMain.groovy:54)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.callTestCase(CallTestCaseKeyword.groovy:81)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.execute(CallTestCaseKeyword.groovy:45)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:53)
+	at com.kms.katalon.core.keyword.BuiltinKeywords.callTestCase(BuiltinKeywords.groovy:334)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeStaticMethod(MetaClassImpl.java:1469)
+	at org.codehaus.groovy.runtime.callsite.StaticMetaClassSite.call(StaticMetaClassSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at Script1538798457291.run(Script1538798457291.groovy:95)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:129)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:112)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:81)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:142)
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at TempTestSuite1539337262975.run(TempTestSuite1539337262975.groovy:36)
+	at groovy.lang.GroovyShell.runScriptOrMainOrTestOrRunnable(GroovyShell.java:263)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:518)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:507)
+	at groovy.ui.GroovyMain.processOnce(GroovyMain.java:653)
+	at groovy.ui.GroovyMain.run(GroovyMain.java:384)
+	at groovy.ui.GroovyMain.process(GroovyMain.java:370)
+	at groovy.ui.GroovyMain.processArgs(GroovyMain.java:129)
+	at groovy.ui.GroovyMain.main(GroovyMain.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.tools.GroovyStarter.rootLoader(GroovyStarter.java:109)
+	at org.codehaus.groovy.tools.GroovyStarter.main(GroovyStarter.java:131)
+)
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - GetPersonel = com.kms.katalon.core.testobject.ObjectRepository.findTestObject(Holden/Holden_03_GetPersonel, [obj_DealerCode:internal.GlobalVariable.Glb_Dealer_Code]): Finding Test Object with id 'Object Repository/Holden/Holden_03_GetPersonel'
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - res_GetPersonel = com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords.sendRequest(GetPersonel): Send request successfully
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - Send request successfully
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg: qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - Verify response status code successfully
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode: qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode: qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode: qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode: qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode: qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode: qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode: qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode: qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode: qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode: qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId = []: null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName = []: null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName = []: null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - numberPersonel = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getSizeSOAPNode(res_GetPersonel, "DocumentID"): qaVinhLe.Library_Method_VinhLe.getSizeSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getSizeSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - For ([i = 0, i < numberPersonel, (i++)]): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listDocId[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "DocumentIdentification", "DocumentID", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listGivenName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "GivenName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listFamilyName[i] = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getValueSOAPNode(res_GetPersonel, "SpecifiedPerson", "FamilyName", i, 0): qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getValueSOAPNode is PASSED
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listId = []: null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - listName = []: null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - sqlUser = "TitanDBA": null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - sqlPass = "T1t@nDB4F0rBRIS-DEV-QADB": null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - sqlURL = "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24": null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - sqlQuery = "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20": null
+
+2018-10-12 16:41:05 - [TEST_STEP][PASSED] - Statement - sizeSQl = CustomKeywords.qaVinhLe.Library_Method_VinhLe.getSQLSize(sqlUser, sqlPass, sqlURL, sqlQuery): qaVinhLe.Library_Method_VinhLe.getSQLSize is PASSED
+
+2018-10-12 16:41:06 - [MESSAGE][PASSED] - qaVinhLe.Library_Method_VinhLe.getSQLSize is PASSED
+
+2018-10-12 16:41:06 - [TEST_STEP][PASSED] - Statement - driver = java.lang.Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance(): null
+
+2018-10-12 16:41:06 - [TEST_STEP][PASSED] - Statement - props = new java.util.Properties(): null
+
+2018-10-12 16:41:06 - [TEST_STEP][PASSED] - Statement - props.setProperty("user", sqlUser): null
+
+2018-10-12 16:41:06 - [TEST_STEP][PASSED] - Statement - props.setProperty("password", sqlPass): null
+
+2018-10-12 16:41:06 - [TEST_STEP][PASSED] - Statement - conn = driver.connect(sqlURL, props): null
+
+2018-10-12 16:41:06 - [TEST_STEP][PASSED] - Statement - sql = new groovy.sql.Sql(conn): null
+
+2018-10-12 16:41:06 - [TEST_STEP][PASSED] - Statement - countNumber = 0: null
+
+2018-10-12 16:41:06 - [TEST_STEP][PASSED] - Statement - sql.eachRow(sqlQuery, { java.lang.Object row -> ... }): null
+
+2018-10-12 16:41:06 - [MESSAGE][FAILED] - Unable to call Test Case with id 'Test Cases/HOLDEN/Library Test Case/Holden_03_GetPersonel' (Root cause: Call Test Case 'Test Cases/HOLDEN/Library Test Case/Holden_03_GetPersonel' failed)]]></system-out>
+         <system-err><![CDATA[2018-10-12 16:41:04 - [TEST_CASE][FAILED] - Test Cases/HOLDEN/Main Holden Test Case - All Sprint: Test Cases/HOLDEN/Main Holden Test Case - All Sprint FAILED because (of) (Stack trace: Assertion failed: 
+
+assert (listGivenName[countNumber] + " " +listFamilyName[countNumber]) == row[1] as String
+        |            ||            |     ||             ||             |  |  |
+        |            |14           Info  ||             |14            |  |  ifm
+        |            Info                ||             media          |  [Emp_ID:ifm, Name:ifm, DisplayColumn:ifm - ifm, Family_Name:media, First_Name:Info, Base_Workshop_ID:[null], Is_Mechanic_Employee:0, Base_Location_ID:[null], Store_ID:[null], Branch_Key:[null], Status_Code:1, Default_Vehicle_Sales_Group_ID:[null], Default_Vehicle_Sales_Type:[null], Driver_Default_Truck_Information_Key:[null], Detail_Column:[null], Trading_Entity_Key:659965]
+        |                                ||                            false
+        |                                |[b, Grima, Notman, Sims, Grinbalt, Red, Team, Bowles, Forte, Gibbons, Innes, Maher, Delaney, Loffler, media, Attard, Horvath, Kitchen, Pernar, Gatt, Trask, Dingli, King, Fletcher, Henshaw, Kassab, Tri Nguyen, Callagan, (Phil) Clinch, Doughty, Gaal, Heath, Jinnette, Nagy, Nass, Smith, McAliece, (Steve) Ognjenovic, Paynter, Whiston, Wilson, Motor Group, Fairweather, Do, Kellam, Smith, Test, Time, Service Advisor, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+        |                                Info media
+        [b, Andrew, Alan, Adam, Calum, Code, CRM, Darren, David, David, Dylan, Danny, Greg, Glenn, Info, James, Judith, Jayne, Jeremy, kaylah, Katrina, Luke, Lindsay, Matthew, Mark, Michael, Minh, Nicole, Phillip, Patrick, Rowena, Rebecca, Ryan, Roger, Russell, Rebecca, Stephen, Steven, Stephen, Stuart, Sam, Berwick, Teigan, Thao, Trish, Terryn, Titan, X, Template, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+	at org.codehaus.groovy.runtime.InvokerHelper.assertFailed(InvokerHelper.java:402)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.assertFailed(ScriptBytecodeAdapter.java:650)
+	at Script1539153206493$_run_closure1.doCall(Script1539153206493.groovy:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1024)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:430)
+	at groovy.sql.Sql.eachRow(Sql.java:1196)
+	at groovy.sql.Sql.eachRow(Sql.java:1152)
+	at groovy.sql.Sql.eachRow(Sql.java:1091)
+	at groovy.sql.Sql$eachRow.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at Script1539153206493.run(Script1539153206493.groovy:112)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestCaseMain.runTestCase(TestCaseMain.java:99)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.doCall(CallTestCaseKeyword.groovy:60)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.call(CallTestCaseKeyword.groovy)
+	at com.kms.katalon.core.keyword.internal.KeywordMain.runKeyword(KeywordMain.groovy:54)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.callTestCase(CallTestCaseKeyword.groovy:81)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.execute(CallTestCaseKeyword.groovy:45)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:53)
+	at com.kms.katalon.core.keyword.BuiltinKeywords.callTestCase(BuiltinKeywords.groovy:334)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeStaticMethod(MetaClassImpl.java:1469)
+	at org.codehaus.groovy.runtime.callsite.StaticMetaClassSite.call(StaticMetaClassSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at Script1538798457291.run(Script1538798457291.groovy:95)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:129)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:112)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:81)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:142)
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at TempTestSuite1539337262975.run(TempTestSuite1539337262975.groovy:36)
+	at groovy.lang.GroovyShell.runScriptOrMainOrTestOrRunnable(GroovyShell.java:263)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:518)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:507)
+	at groovy.ui.GroovyMain.processOnce(GroovyMain.java:653)
+	at groovy.ui.GroovyMain.run(GroovyMain.java:384)
+	at groovy.ui.GroovyMain.process(GroovyMain.java:370)
+	at groovy.ui.GroovyMain.processArgs(GroovyMain.java:129)
+	at groovy.ui.GroovyMain.main(GroovyMain.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.tools.GroovyStarter.rootLoader(GroovyStarter.java:109)
+	at org.codehaus.groovy.tools.GroovyStarter.main(GroovyStarter.java:131)
+)]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2018-10-12 16:41:04 - [TEST_SUITE][FAILED] - Holden_Sprint_All_Dev: Test Cases/HOLDEN/Main Holden Test Case - All Sprint FAILED because (of) (Stack trace: Assertion failed: 
+
+assert (listGivenName[countNumber] + " " +listFamilyName[countNumber]) == row[1] as String
+        |            ||            |     ||             ||             |  |  |
+        |            |14           Info  ||             |14            |  |  ifm
+        |            Info                ||             media          |  [Emp_ID:ifm, Name:ifm, DisplayColumn:ifm - ifm, Family_Name:media, First_Name:Info, Base_Workshop_ID:[null], Is_Mechanic_Employee:0, Base_Location_ID:[null], Store_ID:[null], Branch_Key:[null], Status_Code:1, Default_Vehicle_Sales_Group_ID:[null], Default_Vehicle_Sales_Type:[null], Driver_Default_Truck_Information_Key:[null], Detail_Column:[null], Trading_Entity_Key:659965]
+        |                                ||                            false
+        |                                |[b, Grima, Notman, Sims, Grinbalt, Red, Team, Bowles, Forte, Gibbons, Innes, Maher, Delaney, Loffler, media, Attard, Horvath, Kitchen, Pernar, Gatt, Trask, Dingli, King, Fletcher, Henshaw, Kassab, Tri Nguyen, Callagan, (Phil) Clinch, Doughty, Gaal, Heath, Jinnette, Nagy, Nass, Smith, McAliece, (Steve) Ognjenovic, Paynter, Whiston, Wilson, Motor Group, Fairweather, Do, Kellam, Smith, Test, Time, Service Advisor, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+        |                                Info media
+        [b, Andrew, Alan, Adam, Calum, Code, CRM, Darren, David, David, Dylan, Danny, Greg, Glenn, Info, James, Judith, Jayne, Jeremy, kaylah, Katrina, Luke, Lindsay, Matthew, Mark, Michael, Minh, Nicole, Phillip, Patrick, Rowena, Rebecca, Ryan, Roger, Russell, Rebecca, Stephen, Steven, Stephen, Stuart, Sam, Berwick, Teigan, Thao, Trish, Terryn, Titan, X, Template, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+	at org.codehaus.groovy.runtime.InvokerHelper.assertFailed(InvokerHelper.java:402)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.assertFailed(ScriptBytecodeAdapter.java:650)
+	at Script1539153206493$_run_closure1.doCall(Script1539153206493.groovy:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1024)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:430)
+	at groovy.sql.Sql.eachRow(Sql.java:1196)
+	at groovy.sql.Sql.eachRow(Sql.java:1152)
+	at groovy.sql.Sql.eachRow(Sql.java:1091)
+	at groovy.sql.Sql$eachRow.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at Script1539153206493.run(Script1539153206493.groovy:112)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestCaseMain.runTestCase(TestCaseMain.java:99)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.doCall(CallTestCaseKeyword.groovy:60)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.call(CallTestCaseKeyword.groovy)
+	at com.kms.katalon.core.keyword.internal.KeywordMain.runKeyword(KeywordMain.groovy:54)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.callTestCase(CallTestCaseKeyword.groovy:81)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.execute(CallTestCaseKeyword.groovy:45)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:53)
+	at com.kms.katalon.core.keyword.BuiltinKeywords.callTestCase(BuiltinKeywords.groovy:334)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeStaticMethod(MetaClassImpl.java:1469)
+	at org.codehaus.groovy.runtime.callsite.StaticMetaClassSite.call(StaticMetaClassSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at Script1538798457291.run(Script1538798457291.groovy:95)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:129)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:112)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:81)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:142)
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at TempTestSuite1539337262975.run(TempTestSuite1539337262975.groovy:36)
+	at groovy.lang.GroovyShell.runScriptOrMainOrTestOrRunnable(GroovyShell.java:263)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:518)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:507)
+	at groovy.ui.GroovyMain.processOnce(GroovyMain.java:653)
+	at groovy.ui.GroovyMain.run(GroovyMain.java:384)
+	at groovy.ui.GroovyMain.process(GroovyMain.java:370)
+	at groovy.ui.GroovyMain.processArgs(GroovyMain.java:129)
+	at groovy.ui.GroovyMain.main(GroovyMain.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.tools.GroovyStarter.rootLoader(GroovyStarter.java:109)
+	at org.codehaus.groovy.tools.GroovyStarter.main(GroovyStarter.java:131)
+)]]></system-out>
+      <system-err><![CDATA[2018-10-12 16:41:04 - [TEST_SUITE][FAILED] - Holden_Sprint_All_Dev: Test Cases/HOLDEN/Main Holden Test Case - All Sprint FAILED because (of) (Stack trace: Assertion failed: 
+
+assert (listGivenName[countNumber] + " " +listFamilyName[countNumber]) == row[1] as String
+        |            ||            |     ||             ||             |  |  |
+        |            |14           Info  ||             |14            |  |  ifm
+        |            Info                ||             media          |  [Emp_ID:ifm, Name:ifm, DisplayColumn:ifm - ifm, Family_Name:media, First_Name:Info, Base_Workshop_ID:[null], Is_Mechanic_Employee:0, Base_Location_ID:[null], Store_ID:[null], Branch_Key:[null], Status_Code:1, Default_Vehicle_Sales_Group_ID:[null], Default_Vehicle_Sales_Type:[null], Driver_Default_Truck_Information_Key:[null], Detail_Column:[null], Trading_Entity_Key:659965]
+        |                                ||                            false
+        |                                |[b, Grima, Notman, Sims, Grinbalt, Red, Team, Bowles, Forte, Gibbons, Innes, Maher, Delaney, Loffler, media, Attard, Horvath, Kitchen, Pernar, Gatt, Trask, Dingli, King, Fletcher, Henshaw, Kassab, Tri Nguyen, Callagan, (Phil) Clinch, Doughty, Gaal, Heath, Jinnette, Nagy, Nass, Smith, McAliece, (Steve) Ognjenovic, Paynter, Whiston, Wilson, Motor Group, Fairweather, Do, Kellam, Smith, Test, Time, Service Advisor, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+        |                                Info media
+        [b, Andrew, Alan, Adam, Calum, Code, CRM, Darren, David, David, Dylan, Danny, Greg, Glenn, Info, James, Judith, Jayne, Jeremy, kaylah, Katrina, Luke, Lindsay, Matthew, Mark, Michael, Minh, Nicole, Phillip, Patrick, Rowena, Rebecca, Ryan, Roger, Russell, Rebecca, Stephen, Steven, Stephen, Stuart, Sam, Berwick, Teigan, Thao, Trish, Terryn, Titan, X, Template, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+	at org.codehaus.groovy.runtime.InvokerHelper.assertFailed(InvokerHelper.java:402)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.assertFailed(ScriptBytecodeAdapter.java:650)
+	at Script1539153206493$_run_closure1.doCall(Script1539153206493.groovy:114)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1024)
+	at groovy.lang.Closure.call(Closure.java:414)
+	at groovy.lang.Closure.call(Closure.java:430)
+	at groovy.sql.Sql.eachRow(Sql.java:1196)
+	at groovy.sql.Sql.eachRow(Sql.java:1152)
+	at groovy.sql.Sql.eachRow(Sql.java:1091)
+	at groovy.sql.Sql$eachRow.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:133)
+	at Script1539153206493.run(Script1539153206493.groovy:112)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestCaseMain.runTestCase(TestCaseMain.java:99)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.doCall(CallTestCaseKeyword.groovy:60)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword$_callTestCase_closure1.call(CallTestCaseKeyword.groovy)
+	at com.kms.katalon.core.keyword.internal.KeywordMain.runKeyword(KeywordMain.groovy:54)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.callTestCase(CallTestCaseKeyword.groovy:81)
+	at com.kms.katalon.core.keyword.builtin.CallTestCaseKeyword.execute(CallTestCaseKeyword.groovy:45)
+	at com.kms.katalon.core.keyword.internal.KeywordExecutor.executeKeywordForPlatform(KeywordExecutor.groovy:53)
+	at com.kms.katalon.core.keyword.BuiltinKeywords.callTestCase(BuiltinKeywords.groovy:334)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeStaticMethod(MetaClassImpl.java:1469)
+	at org.codehaus.groovy.runtime.callsite.StaticMetaClassSite.call(StaticMetaClassSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at Script1538798457291.run(Script1538798457291.groovy:95)
+	at com.kms.katalon.core.main.ScriptEngine.run(ScriptEngine.java:183)
+	at com.kms.katalon.core.main.ScriptEngine.runScriptAsRawText(ScriptEngine.java:108)
+	at com.kms.katalon.core.main.TestCaseExecutor.runScript(TestCaseExecutor.java:294)
+	at com.kms.katalon.core.main.TestCaseExecutor.doExecute(TestCaseExecutor.java:285)
+	at com.kms.katalon.core.main.TestCaseExecutor.processExecutionPhase(TestCaseExecutor.java:264)
+	at com.kms.katalon.core.main.TestCaseExecutor.accessMainPhase(TestCaseExecutor.java:256)
+	at com.kms.katalon.core.main.TestCaseExecutor.execute(TestCaseExecutor.java:200)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestCaseMainPhase(TestSuiteExecutor.java:129)
+	at com.kms.katalon.core.main.TestSuiteExecutor.accessTestSuiteMainPhase(TestSuiteExecutor.java:112)
+	at com.kms.katalon.core.main.TestSuiteExecutor.execute(TestSuiteExecutor.java:81)
+	at com.kms.katalon.core.main.TestCaseMain.startTestSuite(TestCaseMain.java:142)
+	at com.kms.katalon.core.main.TestCaseMain$startTestSuite$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)
+	at TempTestSuite1539337262975.run(TempTestSuite1539337262975.groovy:36)
+	at groovy.lang.GroovyShell.runScriptOrMainOrTestOrRunnable(GroovyShell.java:263)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:518)
+	at groovy.lang.GroovyShell.run(GroovyShell.java:507)
+	at groovy.ui.GroovyMain.processOnce(GroovyMain.java:653)
+	at groovy.ui.GroovyMain.run(GroovyMain.java:384)
+	at groovy.ui.GroovyMain.process(GroovyMain.java:370)
+	at groovy.ui.GroovyMain.processArgs(GroovyMain.java:129)
+	at groovy.ui.GroovyMain.main(GroovyMain.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.tools.GroovyStarter.rootLoader(GroovyStarter.java:109)
+	at org.codehaus.groovy.tools.GroovyStarter.main(GroovyStarter.java:131)
+)]]></system-err>
+   </testsuite>
+</testsuites>

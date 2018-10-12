@@ -37,49 +37,49 @@ import org.w3c.dom.Element as Element
 import org.w3c.dom.NodeList as NodeList
 import org.xml.sax.InputSource as InputSource
 import java.io.StringReader as StringReader
+import groovy.sql.Sql
+import java.sql.Driver
 
-//RequestObject GetPersonel = findTestObject('Holden/Holden_03_GetPersonel')
-//
-//ResponseObject res_GetPersonel = WSBuiltInKeywords.sendRequest(GetPersonel)
-//
-//assertThat(res_GetPersonel.getResponseText()).contains('G')
-//
-//Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(new StringReader(res_GetPersonel.getResponseText())))
-//
-//NodeList errNodes = doc.getElementsByTagName('Destination')
-//
-//if (errNodes.getLength() > 0) {
-//    Element err = ((errNodes.item(0)) as Element)
-//
-//    println('DestinationNameCode:  ' + err.getElementsByTagName('DestinationNameCode').item(0).getTextContent())
-//}
-//
-//verifyValue(res_GetPersonel, 'Destination', 'DestinationNameCode', 'QI')
 
-public void verifyAttributeSOAPNode(String xml, String parentnode, String childrennode, String attributeName, String expectedValue,int indexParent,int indexChild){
-		Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-				.parse(new InputSource(new StringReader(xml)))
-		NodeList errNodes = doc.getElementsByTagName(parentnode)
-		if (errNodes.getLength() > 0) {
-			Element err = (Element)errNodes.item(indexParent);
-			println parentnode + "." + childrennode +  "(" + attributeName + "): " +err.getElementsByTagName(childrennode).item(indexChild).getAttributes().getNamedItem(attributeName).getTextContent()
-			assert expectedValue == err.getElementsByTagName(childrennode).item(indexChild).getAttributes().getNamedItem(attributeName).getTextContent()
-		}
-	}
+//	// Create Driver for connection
+//	  def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
+//	// Create Object Properties  
+//	  def props = new Properties()
+//	// Setup user and password through Object Properties
+//	  props.setProperty("user", "TitanDBA")
+//	  props.setProperty("password", "T1t@nDB4F0rBRIS-DEV-QADB")
+//	//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
+//	  def conn = driver.connect("jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", props)
+//	  def sql = new Sql(conn)
+//	//Executive query for database
+//	//Read data row by row by expression eachRow  
+//	  sql.eachRow("exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20") {row ->
+//		  def VEH = row[0]
+//		  def VIN = row.Name
+//		  println VIN
+//		  println VEH
+//	  }
+//	  sql.close()
+//	  conn.close()
+	  
+	  int size = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLSize'("TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20")
+	  //String demo = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLValue'("TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20", 0)
+	  
+	  def sql
+	  CustomKeywords.'qaVinhLe.Library_Method_VinhLe.connectSQL'(sql, "TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20")
+	  sql.eachRow("exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20") {row ->
+  		  def VEH = row[0]
+  		  def VIN = row.Name
+  		  println VIN
+  		  println VEH
+	  }
+	  	  sql.close()
+	  	  conn.close()
+	  
+String Str_xml = (((((((((((((((((((((((('<Gbookstore> ' + '<bookstore1> ') + '<book category="cooking">') + '<title lang="en">Everyday Italian</title> ') + 
+' <author>Giada De Laurentiis</author> ') + '<year>2005</year> ') + '<price>30.00</price> </book> ') + '<book category="children">') + 
+'<title lang="en">Harry Potter</title> ') + ' <author>J K. Rowling</author> ') + '<year>2005</year> ') + '<price>29.99</price> </book>') + 
+'</bookstore1>') + '<bookstore> ') + '<book category="cooking">') + '<title lang="en">Everyday Italian</title> ') + ' <author>Giada De Laurentiis</author> ') + 
+'<year>2005</year> ') + '<price>30.00</price> </book> ') + '<book category="children">') + '<title lang="en">Harry Potter</title> ') + 
+' <author>J K. Rowling</author> ') + '<year>2005</year> ') + '<price>29.99</price> </book>') + '</bookstore>') + '</Gbookstore> '
 
-String Str_xml = '<bookstore> '+
-'<book category="cooking">' +
-'<title lang="en">Everyday Italian</title> '+
-' <author>Giada De Laurentiis</author> '+
-'<year>2005</year> '+
-'<price>30.00</price> </book> '+
-'<book category="children">' +
-'<title lang="en">Harry Potter</title> '+
-' <author>J K. Rowling</author> '+
-'<year>2005</year> '+
-'<price>29.99</price> </book>'+
-'</bookstore>'
-verifyAttributeSOAPNode(Str_xml,'bookstore','book','category','children',0,1)
-
-println GlobalVariable.Glb_Authorization_Token
-println GlobalVariable.Glb_Dealer_Code

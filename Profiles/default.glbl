@@ -26,7 +26,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'15'</initValue>
+      <initValue>'60'</initValue>
       <name>Glb_Interval</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -198,5 +198,10 @@
       <description></description>
       <initValue>'false'</initValue>
       <name>Glb_AddJobLine</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://hcm-dev-web/api/dealers/'</initValue>
+      <name>Glb_URL</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

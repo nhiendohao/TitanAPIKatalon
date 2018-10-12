@@ -12,26 +12,27 @@
    <restRequestMethod></restRequestMethod>
    <restUrl></restUrl>
    <serviceType>SOAP</serviceType>
-   <soapBody>&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:tem=&quot;http://tempuri.org/&quot; xmlns:tran=&quot;http://www.starstandards.org/webservices/2009/transport&quot; xmlns:ns=&quot;http://www.starstandard.org/STAR/5&quot; xmlns:ns1=&quot;http://www.openapplications.org/oagis/9&quot;>
+   <soapBody>&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot; xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot; xmlns:tran=&quot;http://www.starstandards.org/webservices/2009/transport&quot; xmlns:ns=&quot;http://www.starstandard.org/STAR/5&quot; xmlns:ns1=&quot;http://www.openapplications.org/oagis/9&quot;>
    &lt;soapenv:Header>
-	&lt;wsse:Security>
-      &lt;!--Optional:-->
-      &lt;wsu:Timestamp Id=&quot;Timestamp-f1272c36-8b22-41e4-9962-4028429e5315&quot;>
-        &lt;wsu:Created>2016-05-17T13:41:04.083Z&lt;/wsu:Created>
-        &lt;wsu:Expires>2016-05-17T13:46:04.083Z&lt;/wsu:Expires>
-      &lt;/wsu:Timestamp>
-      &lt;!--Optional:-->
-      &lt;wsse:UsernameToken wsu:Id=&quot;UsernameToken-736fa6d4-6cda-4f4f-b8e6-2c068ede4cf2&quot;>
-        &lt;!--Optional:-->
-        &lt;wsse:Username>sysad&lt;/wsse:Username>
-        &lt;!--Optional:-->
-        &lt;wsse:Password Type=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText&quot;>sysad&lt;/wsse:Password>
-        &lt;!--Optional:-->
-        &lt;wsse:Nonce EncodingType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;>sysad&lt;/wsse:Nonce>
-        &lt;wsu:Created>2016-05-17T13:41:04.129Z&lt;/wsu:Created>
-      &lt;/wsse:UsernameToken>
-      &lt;!--Optional:-->
-      &lt;wsse:BinarySecurityToken wsu:Id=&quot;x509cert00&quot; EncodingType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot; ValueType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509&quot;>MIIC+DCCAeCgAwIBAgIQfltWZ4+cJb5OShl7HFO4lDANBgkqhkiG9w0BAQsFADAl
+   &lt;wsse:Security>
+         &lt;!--Optional:-->
+         &lt;wsu:Timestamp Id=&quot;Timestamp-f1272c36-8b22-41e4-9962-4028429e5315&quot;>
+            &lt;wsu:Created>2016-05-17T13:41:04.083Z&lt;/wsu:Created>
+            &lt;wsu:Expires>2016-05-17T13:46:04.083Z&lt;/wsu:Expires>
+         &lt;/wsu:Timestamp>
+         &lt;!--Optional:-->
+         &lt;wsse:UsernameToken wsu:Id=&quot;UsernameToken-736fa6d4-6cda-4f4f-b8e6-2c068ede4cf2&quot;>
+            &lt;!--Optional:-->
+            &lt;wsse:Username>sysad&lt;/wsse:Username>
+            &lt;!--Optional:-->
+            &lt;wsse:Password Type=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText&quot;>sysad&lt;/wsse:Password>
+            &lt;!--Optional:-->
+            &lt;wsse:Nonce EncodingType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;>sysad&lt;/wsse:Nonce>
+            &lt;wsu:Created>2016-05-17T13:41:04.129Z&lt;/wsu:Created>
+         &lt;/wsse:UsernameToken>
+         &lt;!--Optional:-->
+         &lt;wsse:BinarySecurityToken EncodingType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot; ValueType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509&quot; wsu:Id=&quot;x509cert00&quot;>
+MIIC+DCCAeCgAwIBAgIQfltWZ4+cJb5OShl7HFO4lDANBgkqhkiG9w0BAQsFADAl
 MSMwIQYDVQQDExpIQ00tREVWLVdFQi50aXRhbmRtcy5sb2NhbDAeFw0xODA5MjQw
 MzUxMjJaFw0xOTA5MjQwMDAwMDBaMCUxIzAhBgNVBAMTGkhDTS1ERVYtV0VCLnRp
 dGFuZG1zLmxvY2FsMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuBWf
@@ -47,40 +48,38 @@ dveCNbuZAYiK26W1gqQNs0Bh0yBj7LDernsEXzbG/st2wm/8PO+STJP5telsAYpl
 q4WDHGGGwBDcd49E7YgjDrMK1kZbXYdly1OtBvc3FbLZ13texNbxNRRn5GhDk8UH
 IiVxWWBkLbvUK/Ps61Zm1vBLS+1RoZnvGJiNMXGPGwTwf8wAQ8fyK8I6Nt/tCL1P
 sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecurityToken>
-     &lt;/wsse:Security>
-&lt;/soapenv:Header>
+      &lt;/wsse:Security>
+   &lt;/soapenv:Header>
    &lt;soapenv:Body>
-      &lt;tem:ProcessMessage>
-         &lt;!--Optional:-->
-         &lt;tran:processMessage>
-            &lt;!--Optional:-->
-            &lt;tran:payload>
-               &lt;!--Optional:-->
-               &lt;tran:content id=&quot;0&quot;>
-                  &lt;!--Optional:-->
-                  &lt;tran:ProcessServiceVisit releaseID=&quot;5.6.4&quot; versionID=&quot;5.6.4&quot; systemEnvironmentCode=&quot;Test&quot; languageCode=&quot;en-US&quot;>
-                  &lt;!--Optional:-->
-		            &lt;ns:ApplicationArea>
-						&lt;ns:Sender>
-							&lt;ns:CreatorNameCode>GM&lt;/ns:CreatorNameCode>
-							&lt;ns:SenderNameCode>OSS&lt;/ns:SenderNameCode>
-							&lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
-							&lt;ns:DealerCountryCode>US&lt;/ns:DealerCountryCode>
-							&lt;ns:LanguageCode>en-US&lt;/ns:LanguageCode>
-						&lt;/ns:Sender>
-						&lt;ns:CreationDateTime>2016-05-17T09:41:01.673-04:00&lt;/ns:CreationDateTime>
-						&lt;ns:Signature/>
-						&lt;ns:BODID>5ab690dd-4580-4b00-b988-f826b83c44ca&lt;/ns:BODID>
-						&lt;ns:Destination>
-							&lt;ns:DestinationNameCode>QI&lt;/ns:DestinationNameCode>
-							&lt;ns:DestinationSoftwareCode>QI&lt;/ns:DestinationSoftwareCode>
-							&lt;ns:DestinationSoftware>QI&lt;/ns:DestinationSoftware>
-							&lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
-							&lt;ns:DealerTargetCountry>US&lt;/ns:DealerTargetCountry>
-						&lt;/ns:Destination>
-					&lt;/ns:ApplicationArea>
-		            &lt;!--Optional:-->
-		            &lt;ns:ProcessServiceVisitDataArea>
+      &lt;tran:ProcessMessage>
+		&lt;!--Optional:-->
+		&lt;tran:payload>
+		   &lt;!--Optional:-->
+		   &lt;tran:content id=&quot;0&quot;>
+			  &lt;!--Optional:-->
+			  &lt;ns:ProcessServiceVisit releaseID=&quot;5.6.4&quot; versionID=&quot;5.6.4&quot; systemEnvironmentCode=&quot;Test&quot; languageCode=&quot;en-US&quot;>
+			  &lt;!--Optional:-->
+				&lt;ns:ApplicationArea>
+					&lt;ns:Sender>
+						&lt;ns:CreatorNameCode>GM&lt;/ns:CreatorNameCode>
+						&lt;ns:SenderNameCode>OSS&lt;/ns:SenderNameCode>
+						&lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
+						&lt;ns:DealerCountryCode>US&lt;/ns:DealerCountryCode>
+						&lt;ns:LanguageCode>en-US&lt;/ns:LanguageCode>
+					&lt;/ns:Sender>
+					&lt;ns:CreationDateTime>2016-05-17T09:41:01.673-04:00&lt;/ns:CreationDateTime>
+					&lt;ns1:Signature/>
+					&lt;ns:BODID>5ab690dd-4580-4b00-b988-f826b83c44ca&lt;/ns:BODID>
+					&lt;ns:Destination>
+						&lt;ns:DestinationNameCode>QI&lt;/ns:DestinationNameCode>
+						&lt;ns:DestinationSoftwareCode>QI&lt;/ns:DestinationSoftwareCode>
+						&lt;ns:DestinationSoftware>QI&lt;/ns:DestinationSoftware>
+						&lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
+						&lt;ns:DealerTargetCountry>US&lt;/ns:DealerTargetCountry>
+					&lt;/ns:Destination>
+				&lt;/ns:ApplicationArea>
+				&lt;!--Optional:-->
+				&lt;ns:ProcessServiceVisitDataArea>
 					&lt;ns:Process>
 						&lt;ns1:ActionCriteria>
 							&lt;ns1:ActionExpression actionCode=&quot;Add&quot;>Add&lt;/ns1:ActionExpression>
@@ -179,16 +178,36 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 						&lt;/ns:ServiceVisitDetail>
 					&lt;/ns:ServiceVisit>
 				&lt;/ns:ProcessServiceVisitDataArea>	
-                  &lt;/tran:ProcessServiceVisit>
-               &lt;/tran:content>
-            &lt;/tran:payload>
-         &lt;/tran:processMessage>
-      &lt;/tem:ProcessMessage>
+			  &lt;/ns:ProcessServiceVisit>
+		   &lt;/tran:content>
+		&lt;/tran:payload>
+      &lt;/tran:ProcessMessage>
    &lt;/soapenv:Body>
 &lt;/soapenv:Envelope></soapBody>
    <soapHeader></soapHeader>
    <soapRequestMethod>SOAP</soapRequestMethod>
    <soapServiceFunction>ProcessMessage</soapServiceFunction>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Dealer_Code</defaultValue>
+      <description></description>
+      <id>3a465e54-fda5-4e78-9e05-ee0e97459087</id>
+      <masked>false</masked>
+      <name>Obj_DealerID</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_CustomerGivenName</defaultValue>
+      <description></description>
+      <id>85c129da-0769-4c1f-80b4-e8497690d37f</id>
+      <masked>false</masked>
+      <name>Obj_GivenName</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_CustomerFamilyName</defaultValue>
+      <description></description>
+      <id>4cfaa8f7-532b-4ae9-91d5-6b0cb3612ef2</id>
+      <masked>false</masked>
+      <name>Obj_FamilyName</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject

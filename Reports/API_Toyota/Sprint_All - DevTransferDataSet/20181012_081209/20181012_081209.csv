@@ -1,0 +1,29 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Sprint_All - DevTransferDataSet,,,2018-10-12 08:12:10,2018-10-12 08:13:08,57.930s,PASSED
+,,,,,,
+Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints - Dev,,,2018-10-12 08:12:10,2018-10-12 08:13:08,57.682s,PASSED
+"Statement - Glb_Status_GetOperationCode = ""failed""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.007s,PASSED
+"Statement - Glb_Status_GetDropOffTime = ""failed""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.000s,PASSED
+"Statement - Glb_Status_GetPickupTime = ""failed""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.000s,PASSED
+"Statement - Glb_Status_ReserveTimeslot = ""failed""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.000s,PASSED
+"Statement - Glb_Status_GetTransportOption = ""failed""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.000s,PASSED
+"Statement - Glb_Status_MakeServiceBooking = ""failed""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.000s,PASSED
+"Statement - Glb_Status_SearchBooking = ""failed""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.000s,PASSED
+"Statement - Glb_Status_GetBookingDetail = ""failed""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.001s,PASSED
+"Statement - Glb_Status_ChangeBooking = ""failed""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.000s,PASSED
+"Statement - Glb_Status_CancelBooking = ""failed""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.000s,PASSED
+"Statement - Glb_Reserve_Token = ""no""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.001s,PASSED
+"Statement - Glb_BookingStatus = ""not yet""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.000s,PASSED
+"Statement - Glb_Booking_ID = ""wrong""",,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.000s,PASSED
+callTestCase,,,2018-10-12 08:12:11,2018-10-12 08:12:11,0.417s,PASSED
+"Statement - If (var_Status_OpCode == ""true"")",,,2018-10-12 08:12:11,2018-10-12 08:12:22,11.123s,PASSED
+"Statement - If (var_Status_GetOffTime == ""true"")",,,2018-10-12 08:12:22,2018-10-12 08:12:24,1.723s,PASSED
+"Statement - If (var_Status_PickupTime == ""true"")",,,2018-10-12 08:12:24,2018-10-12 08:12:25,0.726s,PASSED
+"Statement - If (var_Status_ReservedTimeslot == ""true"")",,,2018-10-12 08:12:25,2018-10-12 08:12:26,1.529s,PASSED
+"Statement - If (var_Status_GetTransport == ""true"" && !(Glb_Reserve_Token == ""no""))",,,2018-10-12 08:12:26,2018-10-12 08:12:27,0.454s,PASSED
+"Statement - If (var_Status_MakeBooking == ""true"" && !(Glb_Reserve_Token == ""no""))",,,2018-10-12 08:12:27,2018-10-12 08:13:03,36.079s,PASSED
+"Statement - If (var_Status_SearchBooking == ""true"" && !(Glb_Reserve_Token == ""no""))",,,2018-10-12 08:13:03,2018-10-12 08:13:03,0.427s,PASSED
+"Statement - If (var_Status_GetBookingDetail == ""true"" && !(Glb_Reserve_Token == ""no""))",,,2018-10-12 08:13:03,2018-10-12 08:13:05,2.216s,PASSED
+"Statement - If (var_Status_ChangeBooking == ""true"" && !(Glb_Reserve_Token == ""no""))",,,2018-10-12 08:13:05,2018-10-12 08:13:07,1.478s,PASSED
+"Statement - If (var_Status_CancelBooking == ""true"" && !(Glb_Reserve_Token == ""no""))",,,2018-10-12 08:13:07,2018-10-12 08:13:08,1.206s,PASSED
+Start tear down : HandleFailing,,,2018-10-12 08:13:08,2018-10-12 08:13:08,0.003s,PASSED

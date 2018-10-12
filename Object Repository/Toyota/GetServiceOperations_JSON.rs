@@ -25,7 +25,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>http://hcm-dev-web/ThirdPartyAPIGetway/api/v1/dealers/${Dealer_Code}/locations/${Location_Code}/serviceOperations?vehicle=${VIN}&amp;serviceType=${Service_Type}</restUrl>
+   <restUrl>http://hcm-dev-web/api/dealers/${Dealer_Code}/locations/${Location_Code}/serviceOperations?vehicle=${VIN}&amp;serviceType=${Service_Type}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -70,15 +70,12 @@ import groovy.json.JsonSlurper
 import internal.GlobalVariable as GlobalVariable
 
 
-GlobalVariable.gb_token
 
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-WS.verifyResponseStatusCode(response, 200)
 
-assertThat(response.getStatusCode()).isEqualTo(200)
 
 
 </verificationScript>

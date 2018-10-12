@@ -1,0 +1,8 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+Holden_Sprint_All_Dev,,,2018-10-12 15:49:46,2018-10-12 15:49:49,2.054s,ERROR
+,,,,,,
+Test Cases/HOLDEN/Main Holden Test Case - All Sprint,,,2018-10-12 15:49:47,2018-10-12 15:49:49,1.825s,ERROR
+callTestCase,,,2018-10-12 15:49:47,2018-10-12 15:49:48,0.464s,PASSED
+"Statement - If (var_Status_GetIntegration == ""true"")",,,2018-10-12 15:49:48,2018-10-12 15:49:48,0.000s,PASSED
+"Statement - If (var_Status_GetCustomer == ""true"")",,,2018-10-12 15:49:48,2018-10-12 15:49:48,0.001s,PASSED
+"Statement - If (var_Status_GetPersonel == ""true"")",,,2018-10-12 15:49:48,2018-10-12 15:49:49,1.021s,FAILED
