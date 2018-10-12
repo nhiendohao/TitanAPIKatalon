@@ -1,4 +1,5 @@
 
+
 package qaVinhLe
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -236,4 +237,19 @@ class Library_Method_VinhLe {
 
 	}
 
+	/**
+	 * GET DATE WITH FORMAT
+	 * @date_time request request object, must be an instance of RequestObject
+	 * @number_month number of month
+	 * @number_day number of day
+	 * @number_hour number of hour
+	 * @format_date format date want to format
+	 * @return Date after format
+	 */
+	@Keyword
+	String getDateFormat(String formatDate) {
+		Date today = new Date()
+		String dateFormat = today.format(formatDate)
+		return dateFormat
+	}
 }

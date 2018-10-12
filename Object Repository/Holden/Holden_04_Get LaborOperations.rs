@@ -67,7 +67,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
                         &lt;!--Optional:-->
                         &lt;ns:SenderNameCode>OSS&lt;/ns:SenderNameCode>
                         &lt;!--Optional:-->
-                        &lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
+                        &lt;ns:DealerNumberID>${obj_DealerCode}&lt;/ns:DealerNumberID>
                         &lt;!--Optional:-->
                         &lt;ns:DealerCountryCode>US&lt;/ns:DealerCountryCode>
                         &lt;!--Optional:-->
@@ -86,7 +86,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
                            &lt;ns:DestinationSoftwareCode>QI&lt;/ns:DestinationSoftwareCode>
                            &lt;!--Optional:-->
                            &lt;ns:DestinationSoftware>QI&lt;/ns:DestinationSoftware>
-                           &lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
+                           &lt;ns:DealerNumberID>${obj_DealerCode}&lt;/ns:DealerNumberID>
                            &lt;!--Optional:-->
                            &lt;ns:DealerTargetCountry>US&lt;/ns:DealerTargetCountry>
                        &lt;/ns:Destination>
@@ -125,6 +125,13 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
    <soapHeader></soapHeader>
    <soapRequestMethod>SOAP</soapRequestMethod>
    <soapServiceFunction>ProcessMessage</soapServiceFunction>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Dealer_Code</defaultValue>
+      <description>Dealer Code Value, Holden --> 111148</description>
+      <id>3e7c6745-c1d9-4ee0-a6ae-4645e5d96799</id>
+      <masked>false</masked>
+      <name>obj_DealerCode</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject

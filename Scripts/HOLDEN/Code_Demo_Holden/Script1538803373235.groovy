@@ -62,19 +62,19 @@ import java.sql.Driver
 //	  sql.close()
 //	  conn.close()
 	  
-	  int size = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLSize'("TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20")
-	  //String demo = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLValue'("TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20", 0)
-	  
-	  def sql
-	  CustomKeywords.'qaVinhLe.Library_Method_VinhLe.connectSQL'(sql, "TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20")
-	  sql.eachRow("exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20") {row ->
-  		  def VEH = row[0]
-  		  def VIN = row.Name
-  		  println VIN
-  		  println VEH
-	  }
-	  	  sql.close()
-	  	  conn.close()
+//	  int size = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLSize'("TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20")
+//	  //String demo = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLValue'("TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20", 0)
+//	  
+//	  def sql
+//	  CustomKeywords.'qaVinhLe.Library_Method_VinhLe.connectSQL'(sql, "TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20")
+//	  sql.eachRow("exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20") {row ->
+//  		  def VEH = row[0]
+//  		  def VIN = row.Name
+//  		  println VIN
+//  		  println VEH
+//	  }
+//	  	  sql.close()
+//	  	  conn.close()
 	  
 String Str_xml = (((((((((((((((((((((((('<Gbookstore> ' + '<bookstore1> ') + '<book category="cooking">') + '<title lang="en">Everyday Italian</title> ') + 
 ' <author>Giada De Laurentiis</author> ') + '<year>2005</year> ') + '<price>30.00</price> </book> ') + '<book category="children">') + 
@@ -83,3 +83,5 @@ String Str_xml = (((((((((((((((((((((((('<Gbookstore> ' + '<bookstore1> ') + '<
 '<year>2005</year> ') + '<price>30.00</price> </book> ') + '<book category="children">') + '<title lang="en">Harry Potter</title> ') + 
 ' <author>J K. Rowling</author> ') + '<year>2005</year> ') + '<price>29.99</price> </book>') + '</bookstore>') + '</Gbookstore> '
 
+String demo  = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'("dd/MM/YYYY")
+println demo

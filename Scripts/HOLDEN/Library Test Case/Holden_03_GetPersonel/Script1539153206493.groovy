@@ -33,8 +33,9 @@ import groovy.sql.Sql
 import java.sql.Driver
 
 
-//V0. Create framework
-//=====================================================================================================================
+/**
+ * V0. Build Framework
+ */
 
 //CODE 
 //## DECLARE VIABLE
@@ -87,12 +88,11 @@ import java.sql.Driver
 
 //Code to get data from SQL 
 //Declare information
-	def listId = new String[100]
-	def listName = new String[100]
-	String sqlUser = "TitanDBA"
-	String sqlPass = "T1t@nDB4F0rBRIS-DEV-QADB"
-	String sqlURL = "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24"
-	String sqlQuery = "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20"
+	String currentDate = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'("dd/MM/YYYY") //TerminationDate =currentDate
+	String sqlUser = GlobalVariable.Glb_sqlUser.toString()
+	String sqlPass = GlobalVariable.Glb_sqlPass.toString()
+	String sqlURL = GlobalVariable.Glb_sqlURL.toString()
+	String sqlQuery = "exec Get_All_Service_Advisors @TerminationDate= '"+ currentDate +"', @FinancialYearKey= 20"
 	int sizeSQl = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLSize'(sqlUser, sqlPass, sqlURL, sqlQuery)
 	
 //Assert value
