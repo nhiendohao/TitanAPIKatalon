@@ -104,4 +104,19 @@
       <initValue>''</initValue>
       <name>Glb_Cus_TradingEntity</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'TitanDBA'</initValue>
+      <name>Glb_sqlUser</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'T1t@nDB4F0rBRIS-DEV-QADB'</initValue>
+      <name>Glb_sqlPass</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24'</initValue>
+      <name>Glb_sqlURL</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

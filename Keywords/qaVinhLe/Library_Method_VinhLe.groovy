@@ -1,4 +1,5 @@
 
+
 package qaVinhLe
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -204,8 +205,8 @@ class Library_Method_VinhLe {
 		return roundvalue
 
 	}
-	
-	
+
+
 	/**
 	 *	GET SQL SIZE
 	 * @response response, must be an instance of ResponseObject
@@ -217,20 +218,18 @@ class Library_Method_VinhLe {
 	int getSQLSize( String user, String pass, String URL, String queryCmd ) {
 		// Create Driver for connection
 		def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
-	  // Create Object Properties
+		// Create Object Properties
 		def props = new Properties()
-	  // Setup user and password through Object Properties
+		// Setup user and password through Object Properties
 		props.setProperty("user", user)
 		props.setProperty("password", pass)
-	  //Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
+		//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
 		def conn = driver.connect(URL, props)
 		def sql = new Sql(conn)
-	  //Executive query for database
-	  //Read data row by row by expression eachRow
+		//Executive query for database
+		//Read data row by row by expression eachRow
 		int sizeSQL = 0
-		sql.eachRow(queryCmd) {row ->
-			sizeSQL += 1
-		}
+		sql.eachRow(queryCmd) {row -> sizeSQL += 1 }
 		sql.close()
 		conn.close()
 		println sizeSQL
@@ -238,4 +237,19 @@ class Library_Method_VinhLe {
 
 	}
 
+	/**
+	 * GET DATE WITH FORMAT
+	 * @date_time request request object, must be an instance of RequestObject
+	 * @number_month number of month
+	 * @number_day number of day
+	 * @number_hour number of hour
+	 * @format_date format date want to format
+	 * @return Date after format
+	 */
+	@Keyword
+	String getDateFormat(String formatDate) {
+		Date today = new Date()
+		String dateFormat = today.format(formatDate)
+		return dateFormat
+	}
 }
