@@ -204,8 +204,8 @@ class Library_Method_VinhLe {
 		return roundvalue
 
 	}
-	
-	
+
+
 	/**
 	 *	GET SQL SIZE
 	 * @response response, must be an instance of ResponseObject
@@ -217,20 +217,18 @@ class Library_Method_VinhLe {
 	int getSQLSize( String user, String pass, String URL, String queryCmd ) {
 		// Create Driver for connection
 		def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
-	  // Create Object Properties
+		// Create Object Properties
 		def props = new Properties()
-	  // Setup user and password through Object Properties
+		// Setup user and password through Object Properties
 		props.setProperty("user", user)
 		props.setProperty("password", pass)
-	  //Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
+		//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
 		def conn = driver.connect(URL, props)
 		def sql = new Sql(conn)
-	  //Executive query for database
-	  //Read data row by row by expression eachRow
+		//Executive query for database
+		//Read data row by row by expression eachRow
 		int sizeSQL = 0
-		sql.eachRow(queryCmd) {row ->
-			sizeSQL += 1
-		}
+		sql.eachRow(queryCmd) {row -> sizeSQL += 1 }
 		sql.close()
 		conn.close()
 		println sizeSQL
