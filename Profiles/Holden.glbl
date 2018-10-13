@@ -119,4 +119,29 @@
       <initValue>'jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24'</initValue>
       <name>Glb_sqlURL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_Adv_Id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_Adv_FirstName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_Adv_LastName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'553058218'</initValue>
+      <name>Glb_PartyID</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'69246578'</initValue>
+      <name>Glb_DocumentId</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -2,9 +2,8 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
+import java.sql.SQLClientInfoException
 import java.sql.Time
-
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -15,6 +14,8 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import groovy.sql.Sql
+import java.sql.Driver
 
 //Set Value for GlobalVariable
 if(!(Setup_Dealer_Code == "")) GlobalVariable.Glb_Dealer_Code = Setup_Dealer_Code
@@ -86,3 +87,37 @@ else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
 	
 //Set up ContactId
 	GlobalVariable.Glb_ContactId = "1901" + RandomNumber(999999)
+	
+	
+	
+//SQL
+	String sqlUser = GlobalVariable.Glb_sqlUser.toString()
+	String sqlPass = GlobalVariable.Glb_sqlPass.toString()
+	String sqlURL = GlobalVariable.Glb_sqlURL.toString()
+//Query Financial Year 
+
+//Query information of valid Advisor
+	// Create Driver for connection
+	def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
+	// Create Object Properties
+	def props = new Properties()
+	// Setup user and password through Object Properties
+	props.setProperty("user", sqlUser)
+	props.setProperty("password", sqlPass)
+	//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
+	def conn = driver.connect(sqlURL, props)
+	def sql = new Sql(conn)
+	int countNumber = 0
+	//Executive query for database
+	sql.eachRow("exec Get_All_Service_Advisors @TerminationDate= '10/12/2018', @FinancialYearKey= 20") {row ->
+	if(countNumber == 1){
+		GlobalVariable.Glb_Adv_Id = row[0] as String
+		GlobalVariable.Glb_Adv_FirstName= row.First_Name as String
+		GlobalVariable.Glb_Adv_LastName= row.Family_Name as String
+		println GlobalVariable.Glb_Adv_Id + GlobalVariable.Glb_Adv_FirstName  + GlobalVariable.Glb_Adv_LastName
+	}
+	countNumber += 1
+	
+	}
+	sql.close()
+	conn.close()

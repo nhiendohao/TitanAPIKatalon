@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebServiceRequestEntity>
+   <description></description>
+   <name>Holden_05_ProcessServiceVisit_Add</name>
+   <tag></tag>
+   <elementGuidId>2146a771-99c2-4644-9ea5-d1be7bb70fda</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <httpBody></httpBody>
+   <httpBodyContent></httpBodyContent>
+   <httpBodyType></httpBodyType>
+   <restRequestMethod></restRequestMethod>
+   <restUrl></restUrl>
+   <serviceType>SOAP</serviceType>
+   <soapBody>&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot; xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot; xmlns:tran=&quot;http://www.starstandards.org/webservices/2009/transport&quot; xmlns:ns=&quot;http://www.starstandard.org/STAR/5&quot; xmlns:ns1=&quot;http://www.openapplications.org/oagis/9&quot;>
+   &lt;soapenv:Header>
+   &lt;wsse:Security>
+         &lt;!--Optional:-->
+         &lt;wsu:Timestamp Id=&quot;Timestamp-f1272c36-8b22-41e4-9962-4028429e5315&quot;>
+            &lt;wsu:Created>2016-05-17T13:41:04.083Z&lt;/wsu:Created>
+            &lt;wsu:Expires>2016-05-17T13:46:04.083Z&lt;/wsu:Expires>
+         &lt;/wsu:Timestamp>
+         &lt;!--Optional:-->
+         &lt;wsse:UsernameToken wsu:Id=&quot;UsernameToken-736fa6d4-6cda-4f4f-b8e6-2c068ede4cf2&quot;>
+            &lt;!--Optional:-->
+            &lt;wsse:Username>sysad&lt;/wsse:Username>
+            &lt;!--Optional:-->
+            &lt;wsse:Password Type=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText&quot;>sysad&lt;/wsse:Password>
+            &lt;!--Optional:-->
+            &lt;wsse:Nonce EncodingType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot;>sysad&lt;/wsse:Nonce>
+            &lt;wsu:Created>2016-05-17T13:41:04.129Z&lt;/wsu:Created>
+         &lt;/wsse:UsernameToken>
+         &lt;!--Optional:-->
+         &lt;wsse:BinarySecurityToken EncodingType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary&quot; ValueType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509&quot; wsu:Id=&quot;x509cert00&quot;>
+MIIC+DCCAeCgAwIBAgIQfltWZ4+cJb5OShl7HFO4lDANBgkqhkiG9w0BAQsFADAl
+MSMwIQYDVQQDExpIQ00tREVWLVdFQi50aXRhbmRtcy5sb2NhbDAeFw0xODA5MjQw
+MzUxMjJaFw0xOTA5MjQwMDAwMDBaMCUxIzAhBgNVBAMTGkhDTS1ERVYtV0VCLnRp
+dGFuZG1zLmxvY2FsMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuBWf
+Jyr4KqmbieRceUVlEgTrlRMOpwcaS4g604TaTBaXHbkOATt2WO0u1Psk1ff0uw6m
+oTujDDghdAoHaCM5LEFSliffD9SAN3xoWkXrVZqf9RFOMZJh2ZNpLSfGtnBhcibt
+M0A1f77ue2c17SmR4fJ/E/nlW5pSNtRNYju7MmmnSyIyhbDXc9R55F6fBQZWxHz5
+EHhvZuB71zlwr0Q85QBBGvnf4Erai0iTWhtDUaWNyzfSL485U1xxEN7jRlABOikp
+CNLNC3rtLXkFbkPopiaEBdkDWWVvwUgSmtyhYrqjsyGSNR94K7x3Mle7Td64ve6n
+FT7qSMpt/Y3M+ulYRwIDAQABoyQwIjALBgNVHQ8EBAMCBDAwEwYDVR0lBAwwCgYI
+KwYBBQUHAwEwDQYJKoZIhvcNAQELBQADggEBAB90tsS1S2/8p1W1aFlE8O5PE4XL
+dveCNbuZAYiK26W1gqQNs0Bh0yBj7LDernsEXzbG/st2wm/8PO+STJP5telsAYpl
++bqu6ZpOApA4LD4oyanYelwwBq2XeG3WDqLB9mI8AIR2nxtEqAhEazkE2ygJtg4I
+q4WDHGGGwBDcd49E7YgjDrMK1kZbXYdly1OtBvc3FbLZ13texNbxNRRn5GhDk8UH
+IiVxWWBkLbvUK/Ps61Zm1vBLS+1RoZnvGJiNMXGPGwTwf8wAQ8fyK8I6Nt/tCL1P
+sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecurityToken>
+      &lt;/wsse:Security>
+   &lt;/soapenv:Header>
+   &lt;soapenv:Body>
+      &lt;tran:ProcessMessage>
+		&lt;!--Optional:-->
+		&lt;tran:payload>
+		   &lt;!--Optional:-->
+		   &lt;tran:content id=&quot;0&quot;>
+			  &lt;!--Optional:-->
+			  &lt;ns:ProcessServiceVisit releaseID=&quot;5.6.4&quot; versionID=&quot;5.6.4&quot; systemEnvironmentCode=&quot;Test&quot; languageCode=&quot;en-US&quot;>
+			  &lt;!--Optional:-->
+				&lt;ns:ApplicationArea>
+					&lt;ns:Sender>
+						&lt;ns:CreatorNameCode>GM&lt;/ns:CreatorNameCode>
+						&lt;ns:SenderNameCode>OSS&lt;/ns:SenderNameCode>
+						&lt;ns:DealerNumberID>${obj_DealerCode}&lt;/ns:DealerNumberID>
+						&lt;ns:DealerCountryCode>US&lt;/ns:DealerCountryCode>
+						&lt;ns:LanguageCode>en-US&lt;/ns:LanguageCode>
+					&lt;/ns:Sender>
+					&lt;ns:CreationDateTime>2016-05-17T09:41:01.673-04:00&lt;/ns:CreationDateTime>
+					&lt;ns1:Signature/>
+					&lt;ns:BODID>5ab690dd-4580-4b00-b988-f826b83c44ca&lt;/ns:BODID>
+					&lt;ns:Destination>
+						&lt;ns:DestinationNameCode>QI&lt;/ns:DestinationNameCode>
+						&lt;ns:DestinationSoftwareCode>QI&lt;/ns:DestinationSoftwareCode>
+						&lt;ns:DestinationSoftware>QI&lt;/ns:DestinationSoftware>
+						&lt;ns:DealerNumberID>${obj_DealerCode}&lt;/ns:DealerNumberID>
+						&lt;ns:DealerTargetCountry>US&lt;/ns:DealerTargetCountry>
+					&lt;/ns:Destination>
+				&lt;/ns:ApplicationArea>
+				&lt;!--Optional:-->
+				&lt;ns:ProcessServiceVisitDataArea>
+					&lt;ns:Process>
+						&lt;ns1:ActionCriteria>
+							&lt;ns1:ActionExpression actionCode=&quot;Add&quot;>Add&lt;/ns1:ActionExpression>
+						&lt;/ns1:ActionCriteria>
+					&lt;/ns:Process>
+					&lt;ns:ServiceVisit>
+						&lt;ns:ServiceVisitHeader>
+							&lt;ns:DocumentIdentificationGroup>
+								&lt;ns:DocumentIdentification>
+									&lt;ns:DocumentID>69246578&lt;/ns:DocumentID>
+								&lt;/ns:DocumentIdentification>
+							&lt;/ns:DocumentIdentificationGroup>
+							&lt;ns:CustomerInfo>
+								&lt;ns:AppointmentContactParty>
+									&lt;ns:SpecifiedPerson>
+										&lt;ns:GivenName>${Obj_GivenName}&lt;/ns:GivenName>
+										&lt;ns:FamilyName>${Obj_FamilyName}&lt;/ns:FamilyName>
+										&lt;ns:ResidenceAddress>
+											&lt;ns:LineOne>${obj_LineOne}&lt;/ns:LineOne>
+											&lt;ns:CityName>${obj_CityName}&lt;/ns:CityName>
+											&lt;ns:CountryID>${obj_CountryId}&lt;/ns:CountryID>
+											&lt;ns:Postcode>${obj_PostCode}&lt;/ns:Postcode>
+											&lt;ns:StateOrProvinceCountrySub-DivisionID>${obj_State}&lt;/ns:StateOrProvinceCountrySub-DivisionID>
+										&lt;/ns:ResidenceAddress>
+										&lt;ns:TelephoneCommunication>
+											&lt;ns:ChannelCode>${obj_ChannelCode}&lt;/ns:ChannelCode>
+											&lt;ns:CompleteNumber>${obj_PhoneNumber}&lt;/ns:CompleteNumber>
+										&lt;/ns:TelephoneCommunication>
+										&lt;ns:URICommunication>
+											&lt;ns:URIID>${obj_Email}&lt;/ns:URIID>
+											&lt;ns:ChannelCode>EMAIL&lt;/ns:ChannelCode>
+										&lt;/ns:URICommunication>
+										&lt;ns:ContactMethodTypeCode>Day Phone&lt;/ns:ContactMethodTypeCode>
+									&lt;/ns:SpecifiedPerson>
+								&lt;/ns:AppointmentContactParty>
+							&lt;/ns:CustomerInfo>
+							&lt;ns:VehicleInfo>
+								&lt;ns:Vehicle>
+									&lt;ns:Model>${obj_Model}&lt;/ns:Model>
+									&lt;ns:ModelYear>${obj_ModelYear}&lt;/ns:ModelYear>
+									&lt;ns:MakeString>${obj_MakeString}&lt;/ns:MakeString>
+									&lt;ns:ManufacturerName>${obj_ManufacturerName}&lt;/ns:ManufacturerName>
+								&lt;/ns:Vehicle>
+								&lt;ns:InDistanceMeasure unitCode=&quot;mile&quot;>5000&lt;/ns:InDistanceMeasure>
+							&lt;/ns:VehicleInfo>
+						&lt;/ns:ServiceVisitHeader>
+						&lt;ns:ServiceVisitDetail>
+							&lt;ns:ServiceAppointment>
+								&lt;ns:ServiceVisitAppointmentHeader>
+									&lt;ns:DocumentIdentificationGroup>
+										&lt;ns:DocumentIdentification>
+											&lt;ns:DocumentID>&lt;/ns:DocumentID>
+										&lt;/ns:DocumentIdentification>
+									&lt;/ns:DocumentIdentificationGroup>
+								&lt;/ns:ServiceVisitAppointmentHeader>
+								&lt;ns:ServiceVisitAppointmentDetail>
+									&lt;ns:Appointment>
+										&lt;ns:AppointmentDateTime>${obj_DateAppointment}&lt;/ns:AppointmentDateTime>
+										&lt;ns:AppointmentNotes>Please wash car. Thank you.&lt;/ns:AppointmentNotes>
+										&lt;ns:AppointmentStatus>SCHEDULED&lt;/ns:AppointmentStatus>
+										&lt;ns:AlternateTransportation>WAIT_AT_DEALER&lt;/ns:AlternateTransportation>
+										&lt;ns:EndAppointmentDateTime>2016-05-19T13:10:00.000-04:00&lt;/ns:EndAppointmentDateTime>
+										&lt;ns:RequestedService>
+											&lt;ns:JobNumberString>A&lt;/ns:JobNumberString>
+											&lt;ns:RepeatRepairIndicator>false&lt;/ns:RepeatRepairIndicator>
+											&lt;ns:JobTypeString>Customer Pay&lt;/ns:JobTypeString>
+											&lt;ns:ServiceLaborScheduling>
+												&lt;ns:LaborOperationID>1&lt;/ns:LaborOperationID>
+												&lt;ns:LaborOperationIdTypeCode>1234&lt;/ns:LaborOperationIdTypeCode>
+												&lt;ns:LaborOperationDescription>Change Oil &amp;amp; Filter&lt;/ns:LaborOperationDescription>
+											&lt;/ns:ServiceLaborScheduling>
+											&lt;ns:CustomerSalesRequestDescription>Change Oil &amp;amp; Filter&lt;/ns:CustomerSalesRequestDescription>
+										&lt;/ns:RequestedService>
+										&lt;ns:RequestedService>
+											&lt;ns:JobNumberString>B&lt;/ns:JobNumberString>
+											&lt;ns:RepeatRepairIndicator>false&lt;/ns:RepeatRepairIndicator>
+											&lt;ns:JobTypeString>Customer Pay&lt;/ns:JobTypeString>
+											&lt;ns:ServiceLaborScheduling>
+												&lt;ns:LaborOperationID>2&lt;/ns:LaborOperationID>
+												&lt;ns:LaborOperationIdTypeCode>9401-4&lt;/ns:LaborOperationIdTypeCode>
+												&lt;ns:LaborOperationDescription>Alignment&lt;/ns:LaborOperationDescription>
+											&lt;/ns:ServiceLaborScheduling>
+											&lt;ns:CustomerSalesRequestDescription>Alignment&lt;/ns:CustomerSalesRequestDescription>
+										&lt;/ns:RequestedService>
+										&lt;ns:ServiceAdvisorParty>
+											&lt;ns:PartyID>${obj_PartyId}&lt;/ns:PartyID>
+											&lt;ns:DealerManagementSystemID>${obj_AdvisorId}&lt;/ns:DealerManagementSystemID>
+											&lt;ns:SpecifiedPerson>
+												&lt;ns:GivenName>${obj_AdvisorGivenName}&lt;/ns:GivenName>
+												&lt;ns:FamilyName>${obj_AdvisorFamilyName}&lt;/ns:FamilyName>
+											&lt;/ns:SpecifiedPerson>
+										&lt;/ns:ServiceAdvisorParty>
+									&lt;/ns:Appointment>
+								&lt;/ns:ServiceVisitAppointmentDetail>
+							&lt;/ns:ServiceAppointment>
+						&lt;/ns:ServiceVisitDetail>
+					&lt;/ns:ServiceVisit>
+				&lt;/ns:ProcessServiceVisitDataArea>	
+			  &lt;/ns:ProcessServiceVisit>
+		   &lt;/tran:content>
+		&lt;/tran:payload>
+      &lt;/tran:ProcessMessage>
+   &lt;/soapenv:Body>
+&lt;/soapenv:Envelope></soapBody>
+   <soapHeader></soapHeader>
+   <soapRequestMethod>SOAP</soapRequestMethod>
+   <soapServiceFunction>ProcessMessage</soapServiceFunction>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Dealer_Code</defaultValue>
+      <description>Dealer Code Value, Holden --> 111148</description>
+      <id>3a465e54-fda5-4e78-9e05-ee0e97459087</id>
+      <masked>false</masked>
+      <name>obj_DealerCode</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_FirstName</defaultValue>
+      <description>First Name --> TITAN</description>
+      <id>85c129da-0769-4c1f-80b4-e8497690d37f</id>
+      <masked>false</masked>
+      <name>Obj_GivenName</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_LastName</defaultValue>
+      <description>Last Name --> DMS</description>
+      <id>4cfaa8f7-532b-4ae9-91d5-6b0cb3612ef2</id>
+      <masked>false</masked>
+      <name>Obj_FamilyName</name>
+   </variables>
+   <variables>
+      <defaultValue>'Add'</defaultValue>
+      <description>Define action Create Appointment</description>
+      <id>71b596ae-b696-4285-810d-6718ff9747f0</id>
+      <masked>false</masked>
+      <name>obj_ActionCode</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>e968a851-b595-4474-adac-fd4d0b39001a</id>
+      <masked>false</masked>
+      <name>obj_DocumentId</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Cus_LineOne</defaultValue>
+      <description></description>
+      <id>c09c7a65-ff6c-467f-8ac4-3ed95f0c17c2</id>
+      <masked>false</masked>
+      <name>obj_LineOne</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Cus_CityName</defaultValue>
+      <description></description>
+      <id>98fcc536-e547-4f78-bb77-c65e527aa020</id>
+      <masked>false</masked>
+      <name>obj_CityName</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Cus_CountryID</defaultValue>
+      <description></description>
+      <id>244ce809-03af-4677-a2e4-830fb68f2eb7</id>
+      <masked>false</masked>
+      <name>obj_CountryId</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Cus_Postcode</defaultValue>
+      <description></description>
+      <id>b9e0add0-1968-41e8-96ef-efda73047ae4</id>
+      <masked>false</masked>
+      <name>obj_PostCode</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Cus_State</defaultValue>
+      <description></description>
+      <id>5f137998-7395-47fe-b618-8b2c37876fa9</id>
+      <masked>false</masked>
+      <name>obj_State</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Cus_ChannelCode</defaultValue>
+      <description></description>
+      <id>60466553-7a2f-4637-a115-eabf89bfcd85</id>
+      <masked>false</masked>
+      <name>obj_ChannelCode</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Cus_PhoneNumber</defaultValue>
+      <description></description>
+      <id>d028aa84-cabe-42a6-af04-b6c0e22006aa</id>
+      <masked>false</masked>
+      <name>obj_PhoneNumber</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Cus_Email</defaultValue>
+      <description></description>
+      <id>e2bb963f-def4-4078-95b5-16e443b36823</id>
+      <masked>false</masked>
+      <name>obj_Email</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_veh_Model</defaultValue>
+      <description></description>
+      <id>b0efba2d-cb94-48f8-be2a-9039166463e4</id>
+      <masked>false</masked>
+      <name>obj_Model</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_veh_ModelYear</defaultValue>
+      <description></description>
+      <id>4574e68c-b580-41f9-ba95-b886bf9c5ef1</id>
+      <masked>false</masked>
+      <name>obj_ModelYear</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_veh_MakeString</defaultValue>
+      <description></description>
+      <id>6badc366-d6d1-4b57-b79c-37d7047020a4</id>
+      <masked>false</masked>
+      <name>obj_MakeString</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_veh_ManufacturerName</defaultValue>
+      <description></description>
+      <id>cc46092b-3dc0-462f-be58-67d7b22d0f8a</id>
+      <masked>false</masked>
+      <name>obj_ManufacturerName</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Adv_Id</defaultValue>
+      <description></description>
+      <id>37e3604e-6429-40d8-a7f0-bba6a2e710dc</id>
+      <masked>false</masked>
+      <name>obj_AdvisorId</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Adv_FirstName</defaultValue>
+      <description>FirstName</description>
+      <id>079cc7bc-8c1f-46cf-adb8-0895402dd71c</id>
+      <masked>false</masked>
+      <name>obj_AdvisorGivenName</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Adv_LastName</defaultValue>
+      <description>LastName</description>
+      <id>e3ad26a4-666f-407e-8931-808813ad48c5</id>
+      <masked>false</masked>
+      <name>obj_AdvisorFamilyName</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_PartyID</defaultValue>
+      <description>Temporary</description>
+      <id>50b8fe75-5fee-4257-a2fb-d08f03c08ddb</id>
+      <masked>false</masked>
+      <name>obj_PartyId</name>
+   </variables>
+   <variables>
+      <defaultValue>'2016-05-19T13:00:00.000-04:00'</defaultValue>
+      <description>Temporary</description>
+      <id>2142e78e-4452-4325-b8b7-2559b4ac4d5e</id>
+      <masked>false</masked>
+      <name>obj_DateAppointment</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_DocumentId</defaultValue>
+      <description>Temporary</description>
+      <id>ef6d179a-aa74-4b8a-946c-20892ac568ce</id>
+      <masked>false</masked>
+      <name>obj_DocumentID</name>
+   </variables>
+   <verificationScript>import static org.assertj.core.api.Assertions.*
+
+import com.kms.katalon.core.testobject.RequestObject
+import com.kms.katalon.core.testobject.ResponseObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webservice.verification.WSResponseManager
+
+import groovy.json.JsonSlurper
+import internal.GlobalVariable as GlobalVariable
+
+RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
+
+ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
+</verificationScript>
+   <wsdlAddress>http://hcm-dev-testing.titandms.net.au:55551/NightlyBuildManufacturerInterfacesFacade/HoldenManufacturerInterface.asmx?WSDL</wsdlAddress>
+</WebServiceRequestEntity>

@@ -6,12 +6,11 @@
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
    <dataFileGUID>866e00b4-9ec0-411b-812e-7af97254ee01</dataFileGUID>
-   <dataSourceUrl></dataSourceUrl>
+   <dataSourceUrl>jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24</dataSourceUrl>
    <driver>DBData</driver>
    <isInternalPath>false</isInternalPath>
    <password>VDF0QG5EQjRGMHJCUklTLURFVi1RQURC</password>
-   <query>select * 
-from VEHICLE</query>
+   <query>select * from ENTERPRISE</query>
    <secureUserAccount>true</secureUserAccount>
    <sheetName></sheetName>
    <user>TitanDBA</user>

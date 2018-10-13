@@ -4,7 +4,7 @@
    <name>Holden_Sprint_All_Dev</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-12T17:23:41</lastRun>
+   <lastRun>2018-10-13T13:33:37</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -16,6 +16,15 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/HOLDEN/Main Holden Test Case - All Sprint</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>13cac830-b89d-4bc6-a59d-742465417fcf</id>
+         <iterationEntity>
+            <iterationType>SPECIFIC</iterationType>
+            <value>1</value>
+         </iterationEntity>
+         <testDataId>Data Files/Holden/Holden_DATA_DRIVEN</testDataId>
+      </testDataLink>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>c4f2da06-73c4-4308-95f3-311a6078fb24</id>
@@ -33,15 +42,6 @@
             <value></value>
          </iterationEntity>
          <testDataId>Data Files/Holden/Holden_Vehicle_Information</testDataId>
-      </testDataLink>
-      <testDataLink>
-         <combinationType>ONE</combinationType>
-         <id>13cac830-b89d-4bc6-a59d-742465417fcf</id>
-         <iterationEntity>
-            <iterationType>ALL</iterationType>
-            <value></value>
-         </iterationEntity>
-         <testDataId>Data Files/Holden/Holden_DATA_DRIVEN</testDataId>
       </testDataLink>
       <variableLink>
          <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>

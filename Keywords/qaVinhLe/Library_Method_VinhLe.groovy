@@ -1,5 +1,3 @@
-
-
 package qaVinhLe
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -46,6 +44,7 @@ import groovy.sql.Sql //SQL Connection
 import java.sql.Driver //SQL Connection
 import static org.assertj.core.api.Assertions.*//Assert that
 import java.text.DecimalFormat //Round Number
+
 
 class Library_Method_VinhLe {
 	/**
@@ -252,4 +251,7 @@ class Library_Method_VinhLe {
 		String dateFormat = today.format(formatDate)
 		return dateFormat
 	}
+
+
+
 }

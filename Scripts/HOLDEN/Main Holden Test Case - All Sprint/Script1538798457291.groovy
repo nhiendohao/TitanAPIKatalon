@@ -93,6 +93,10 @@ if(var_Status_GetCustomer == 'true')
 //Get all Advisor and vrify all of them
 if(var_Status_GetPersonel == 'true')
 	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_03_GetPersonel'), [:], FailureHandling.STOP_ON_FAILURE)
-
+	
+//3. Get Personel
+//Get all Advisor and vrify all of them
+if(var_Status_GetLaborCode == 'true')
+	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_04_GetLaborOperations'), [:], FailureHandling.STOP_ON_FAILURE)
 
 

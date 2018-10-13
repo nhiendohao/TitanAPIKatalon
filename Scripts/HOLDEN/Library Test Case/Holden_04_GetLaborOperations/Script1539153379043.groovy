@@ -31,6 +31,8 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import groovy.sql.Sql
 import java.sql.Driver
+import static com.xlson.groovycsv.CsvParser.parseCsv //Reading CSV
+@Grab('com.xlson.groovycsv:groovycsv:1.3') //Reading CSV
 
 /**
  * V0. Build Framework
@@ -41,7 +43,8 @@ import java.sql.Driver
 
 //## PROCESS API
 //Declare request
-	RequestObject GetLaborOperations = findTestObject("", null)
+	RequestObject GetLaborOperations = findTestObject('Holden/Holden_04_Get LaborOperations', [
+		('obj_DealerCode') : GlobalVariable.Glb_Dealer_Code])
 //Declare response
 	ResponseObject res_GetLaborOperations = WS.sendRequest(GetLaborOperations)
 	
@@ -69,46 +72,41 @@ import java.sql.Driver
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DealerNumberID", "111148", 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DealerTargetCountry", "US", 0, 0)
 	
-//Get information of all personel
-	def listDocId = new String[100]
-	def listLaborId = new String[100]
-	def listLaborOperationDes = new String[100]
-	
-	int numberPersonel = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSizeSOAPNode'(res_GetLaborOperations, "LaborOperations")
-	for (int i = 0;i<numberPersonel;i++){
-		listDocId[i] = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "DocumentIdentification", "DocumentID", i, 0) as String
-		listLaborId[i] = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "LaborOperationsDetail", "LaborOperationID", i, 0) as String
-		listLaborOperationDes[i] = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "LaborOperationsDetail", "LaborOperationDescription", i, 0) as String
-	}
 
-//Code to get data from SQL
-	//Declare information
-	String sqlUser = GlobalVariable.Glb_sqlUser.toString()
-	String sqlPass = GlobalVariable.Glb_sqlPass.toString()
-	String sqlURL = GlobalVariable.Glb_sqlURL.toString()
-	String sqlQuery = "exec Get_Search_Operation_Code @OperationCode = null, @ModelID = null, @EngineCode = null, @TransmissionCode=null, @Description= null, @Section=null, @OperationClass= null,@CurrentLanguage = 'en',@CodebookSourceCode= 1,  @ExactMatch= true, @DMSMakeCode= 17, @VehicleKey=0"
-	int sizeSQl = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLSize'(sqlUser, sqlPass, sqlURL, sqlQuery)
+//Get number of Advisors
+	int numberPersonel = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSizeSOAPNode'(res_GetLaborOperations, "LaborOperations")
 	
-//Assert value
-// Create Driver for connection
-  def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
-// Create Object Properties
-  def props = new Properties()
-// Setup user and password through Object Properties
-  props.setProperty("user", sqlUser)
-  props.setProperty("password", sqlPass)
-//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
-  def conn = driver.connect(sqlURL, props)
-  def sql = new Sql(conn)
-  int countNumber = 0
-//Executive query for database
-//Read data row by row by expression eachRow
-  sql.eachRow(sqlQuery) {row ->
-	assert listDocId[countNumber] == row.Operation_Code as String
-	assert listLaborId[countNumber] == row.Operation_Code as String
-	  assert listLaborOperationDes[countNumber] == row.Description as String
-	  countNumber += 1
-	  
+//CSV
+//Get data from CSV file
+int countCSV = 0
+CSVReader = new File("Data Files/Holden/OperationCodeCSV.csv")
+def csv_content = CSVReader.getText('utf-8')
+ //Convert CSV to text
+def CSVData = parseCsv(csv_content, separator: ',', readFirstLine: false)
+ //Get for each column and Assert with Response
+for (line in CSVData) {
+	
+	  //Get information of all personel
+	  def listDocId = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "DocumentIdentification", "DocumentID", countCSV, 0) as String
+	  def listLaborId = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "LaborOperationsDetail", "LaborOperationID", countCSV, 0) as String
+	  def listLaborOperationDes = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "LaborOperationsDetail", "LaborOperationDescription", countCSV, 0) as String
+		
+	  //Handle something
+	  String Operation_Code = line.Operation_Code.toString()
+	  if(Operation_Code == '50012' ||
+		  Operation_Code == '41024' ||
+		  Operation_Code == '91020') Operation_Code = '0' + Operation_Code
+	  //Assert value between sql and response
+	  assert listDocId == Operation_Code	
+	  assert listLaborId == Operation_Code 	
+	  assert listLaborOperationDes == line.Description as String
+	 
+	  //Increase count variable
+	  countCSV += 1
+	  println countCSV
   }
-  sql.close()
-  conn.close()
+
+//Assert number CSV and response
+assert numberPersonel == countCSV
+  
+  

@@ -1,7 +1,0 @@
-Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
-Holden_Sprint_All_Dev,,,2018-10-12 14:34:18,2018-10-12 14:34:21,3.279s,ERROR
-,,,,,,
-Test Cases/HOLDEN/Main Holden Test Case - All Sprint,,,2018-10-12 14:34:18,2018-10-12 14:34:21,3.007s,ERROR
-callTestCase,,,2018-10-12 14:34:18,2018-10-12 14:34:19,0.473s,PASSED
-"Statement - If (var_Status_GetIntegration == ""true"")",,,2018-10-12 14:34:19,2018-10-12 14:34:19,0.673s,PASSED
-"Statement - If (var_Status_GetCustomer == ""true"")",,,2018-10-12 14:34:19,2018-10-12 14:34:21,1.556s,FAILED

@@ -88,11 +88,11 @@ import java.sql.Driver
 
 //Code to get data from SQL 
 //Declare information
-	String currentDate = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'("dd/MM/YYYY") //TerminationDate =currentDate
+	String currentDate = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'("MM/dd/YYYY") //TerminationDate =currentDate
 	String sqlUser = GlobalVariable.Glb_sqlUser.toString()
 	String sqlPass = GlobalVariable.Glb_sqlPass.toString()
 	String sqlURL = GlobalVariable.Glb_sqlURL.toString()
-	String sqlQuery = "exec Get_All_Service_Advisors @TerminationDate= '"+ currentDate +"', @FinancialYearKey= 20"
+	String sqlQuery = "exec Get_All_Service_Advisors @TerminationDate= '"+currentDate+"', @FinancialYearKey= 20"
 	int sizeSQl = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLSize'(sqlUser, sqlPass, sqlURL, sqlQuery)
 	
 //Assert value

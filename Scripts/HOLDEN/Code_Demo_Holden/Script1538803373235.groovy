@@ -37,45 +37,12 @@ import org.w3c.dom.Element as Element
 import org.w3c.dom.NodeList as NodeList
 import org.xml.sax.InputSource as InputSource
 import java.io.StringReader as StringReader
-import groovy.sql.Sql
-import java.sql.Driver
+import groovy.sql.Sql as Sql
+import java.sql.Driver as Driver
+import static com.xlson.groovycsv.CsvParser.parseCsv //Reading CSV
+@Grab('com.xlson.groovycsv:groovycsv:1.3') //Reading CSV
 
 
-//	// Create Driver for connection
-//	  def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
-//	// Create Object Properties  
-//	  def props = new Properties()
-//	// Setup user and password through Object Properties
-//	  props.setProperty("user", "TitanDBA")
-//	  props.setProperty("password", "T1t@nDB4F0rBRIS-DEV-QADB")
-//	//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
-//	  def conn = driver.connect("jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", props)
-//	  def sql = new Sql(conn)
-//	//Executive query for database
-//	//Read data row by row by expression eachRow  
-//	  sql.eachRow("exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20") {row ->
-//		  def VEH = row[0]
-//		  def VIN = row.Name
-//		  println VIN
-//		  println VEH
-//	  }
-//	  sql.close()
-//	  conn.close()
-	  
-//	  int size = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLSize'("TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20")
-//	  //String demo = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLValue'("TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20", 0)
-//	  
-//	  def sql
-//	  CustomKeywords.'qaVinhLe.Library_Method_VinhLe.connectSQL'(sql, "TitanDBA", "T1t@nDB4F0rBRIS-DEV-QADB", "jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24", "exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20")
-//	  sql.eachRow("exec Get_All_Service_Advisors @TerminationDate= '12/10/2018', @FinancialYearKey= 20") {row ->
-//  		  def VEH = row[0]
-//  		  def VIN = row.Name
-//  		  println VIN
-//  		  println VEH
-//	  }
-//	  	  sql.close()
-//	  	  conn.close()
-	  
 String Str_xml = (((((((((((((((((((((((('<Gbookstore> ' + '<bookstore1> ') + '<book category="cooking">') + '<title lang="en">Everyday Italian</title> ') + 
 ' <author>Giada De Laurentiis</author> ') + '<year>2005</year> ') + '<price>30.00</price> </book> ') + '<book category="children">') + 
 '<title lang="en">Harry Potter</title> ') + ' <author>J K. Rowling</author> ') + '<year>2005</year> ') + '<price>29.99</price> </book>') + 
@@ -83,5 +50,33 @@ String Str_xml = (((((((((((((((((((((((('<Gbookstore> ' + '<bookstore1> ') + '<
 '<year>2005</year> ') + '<price>30.00</price> </book> ') + '<book category="children">') + '<title lang="en">Harry Potter</title> ') + 
 ' <author>J K. Rowling</author> ') + '<year>2005</year> ') + '<price>29.99</price> </book>') + '</bookstore>') + '</Gbookstore> '
 
-String demo  = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'("dd/MM/YYYY")
-println demo
+
+String sqlUser = GlobalVariable.Glb_sqlUser.toString()
+String sqlPass = GlobalVariable.Glb_sqlPass.toString()
+String sqlURL = GlobalVariable.Glb_sqlURL.toString()
+
+
+// Create Driver for connection
+def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
+// Create Object Properties
+def props = new Properties()
+// Setup user and password through Object Properties
+props.setProperty("user", sqlUser)
+props.setProperty("password", sqlPass)
+//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
+def conn = driver.connect(sqlURL, props)
+def sql = new Sql(conn)
+int countNumber = 0
+//Executive query for database
+sql.eachRow("exec Get_All_Service_Advisors @TerminationDate= '10/12/2018', @FinancialYearKey= 20") {row ->
+if(countNumber == 1){
+	GlobalVariable.Glb_Adv_Id = row[0] as String
+	GlobalVariable.Glb_Adv_FirstName= row.First_Name as String
+	GlobalVariable.Glb_Adv_LastName= row.Family_Name as String
+	println GlobalVariable.Glb_Adv_Id + GlobalVariable.Glb_Adv_FirstName  + GlobalVariable.Glb_Adv_LastName
+}
+countNumber += 1
+
+}
+sql.close()
+conn.close()
