@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>Holden_05_ProcessServiceVisit_Add</name>
+   <name>Holden_05A_AddServiceVisit</name>
    <tag></tag>
    <elementGuidId>2146a771-99c2-4644-9ea5-d1be7bb70fda</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
@@ -138,31 +138,20 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 								&lt;ns:ServiceVisitAppointmentDetail>
 									&lt;ns:Appointment>
 										&lt;ns:AppointmentDateTime>${obj_DateAppointment}&lt;/ns:AppointmentDateTime>
-										&lt;ns:AppointmentNotes>Please wash car. Thank you.&lt;/ns:AppointmentNotes>
+										&lt;ns:AppointmentNotes>${obj_AppNote}&lt;/ns:AppointmentNotes>
 										&lt;ns:AppointmentStatus>SCHEDULED&lt;/ns:AppointmentStatus>
-										&lt;ns:AlternateTransportation>WAIT_AT_DEALER&lt;/ns:AlternateTransportation>
+										&lt;ns:AlternateTransportation>${obj_AppTransport}&lt;/ns:AlternateTransportation>
 										&lt;ns:EndAppointmentDateTime>2016-05-19T13:10:00.000-04:00&lt;/ns:EndAppointmentDateTime>
 										&lt;ns:RequestedService>
-											&lt;ns:JobNumberString>A&lt;/ns:JobNumberString>
-											&lt;ns:RepeatRepairIndicator>false&lt;/ns:RepeatRepairIndicator>
-											&lt;ns:JobTypeString>Customer Pay&lt;/ns:JobTypeString>
+											&lt;ns:JobNumberString>${obj_JobNumberString}&lt;/ns:JobNumberString>
+											&lt;ns:RepeatRepairIndicator>${obj_RepairIndicator}&lt;/ns:RepeatRepairIndicator>
+											&lt;ns:JobTypeString>${obj_JobType}&lt;/ns:JobTypeString>
 											&lt;ns:ServiceLaborScheduling>
-												&lt;ns:LaborOperationID>1&lt;/ns:LaborOperationID>
-												&lt;ns:LaborOperationIdTypeCode>1234&lt;/ns:LaborOperationIdTypeCode>
-												&lt;ns:LaborOperationDescription>Change Oil &amp;amp; Filter&lt;/ns:LaborOperationDescription>
+												&lt;ns:LaborOperationID>${obj_LaborIndex}&lt;/ns:LaborOperationID>
+												&lt;ns:LaborOperationIdTypeCode>${obj_LaborCode}&lt;/ns:LaborOperationIdTypeCode>
+												&lt;ns:LaborOperationDescription>${obj_LaborDescription}&lt;/ns:LaborOperationDescription>
 											&lt;/ns:ServiceLaborScheduling>
-											&lt;ns:CustomerSalesRequestDescription>Change Oil &amp;amp; Filter&lt;/ns:CustomerSalesRequestDescription>
-										&lt;/ns:RequestedService>
-										&lt;ns:RequestedService>
-											&lt;ns:JobNumberString>B&lt;/ns:JobNumberString>
-											&lt;ns:RepeatRepairIndicator>false&lt;/ns:RepeatRepairIndicator>
-											&lt;ns:JobTypeString>Customer Pay&lt;/ns:JobTypeString>
-											&lt;ns:ServiceLaborScheduling>
-												&lt;ns:LaborOperationID>2&lt;/ns:LaborOperationID>
-												&lt;ns:LaborOperationIdTypeCode>9401-4&lt;/ns:LaborOperationIdTypeCode>
-												&lt;ns:LaborOperationDescription>Alignment&lt;/ns:LaborOperationDescription>
-											&lt;/ns:ServiceLaborScheduling>
-											&lt;ns:CustomerSalesRequestDescription>Alignment&lt;/ns:CustomerSalesRequestDescription>
+											&lt;ns:CustomerSalesRequestDescription>${obj_LaborDescription}&lt;/ns:CustomerSalesRequestDescription>
 										&lt;/ns:RequestedService>
 										&lt;ns:ServiceAdvisorParty>
 											&lt;ns:PartyID>${obj_PartyId}&lt;/ns:PartyID>
@@ -209,14 +198,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <name>Obj_FamilyName</name>
    </variables>
    <variables>
-      <defaultValue>'Add'</defaultValue>
-      <description>Define action Create Appointment</description>
-      <id>71b596ae-b696-4285-810d-6718ff9747f0</id>
-      <masked>false</masked>
-      <name>obj_ActionCode</name>
-   </variables>
-   <variables>
-      <defaultValue>''</defaultValue>
+      <defaultValue>GlobalVariable.Glb_DocumentId</defaultValue>
       <description></description>
       <id>e968a851-b595-4474-adac-fd4d0b39001a</id>
       <masked>false</masked>
@@ -335,18 +317,74 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <name>obj_PartyId</name>
    </variables>
    <variables>
-      <defaultValue>'2016-05-19T13:00:00.000-04:00'</defaultValue>
+      <defaultValue>GlobalVariable.Glb_DocumentId</defaultValue>
+      <description>Temporary</description>
+      <id>ef6d179a-aa74-4b8a-946c-20892ac568ce</id>
+      <masked>false</masked>
+      <name>obj_DocumentID</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_ServiceDate</defaultValue>
       <description>Temporary</description>
       <id>2142e78e-4452-4325-b8b7-2559b4ac4d5e</id>
       <masked>false</masked>
       <name>obj_DateAppointment</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.Glb_DocumentId</defaultValue>
-      <description>Temporary</description>
-      <id>ef6d179a-aa74-4b8a-946c-20892ac568ce</id>
+      <defaultValue>GlobalVariable.Glb_Ser_AppointmentNote</defaultValue>
+      <description></description>
+      <id>971edf11-fd12-4610-b961-5e0b9b62ce8d</id>
       <masked>false</masked>
-      <name>obj_DocumentID</name>
+      <name>obj_AppNote</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Ser_Transportation</defaultValue>
+      <description></description>
+      <id>5694cbf2-d9ef-4787-b5ae-b2407431b73c</id>
+      <masked>false</masked>
+      <name>obj_AppTransport</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Ser_JobNumberString</defaultValue>
+      <description></description>
+      <id>2f573642-8584-45d2-b199-1641c816e64e</id>
+      <masked>false</masked>
+      <name>obj_JobNumberString</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Ser_RepairIndicator</defaultValue>
+      <description></description>
+      <id>131934ba-172b-4c16-87d4-da272906333a</id>
+      <masked>false</masked>
+      <name>obj_RepairIndicator</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Ser_JobTypeString</defaultValue>
+      <description></description>
+      <id>b15797c0-d658-4c4c-9aba-9f984dec82b8</id>
+      <masked>false</masked>
+      <name>obj_JobType</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Ser_LaborId</defaultValue>
+      <description></description>
+      <id>15917844-eb6d-4507-a392-12ebcd68c6e5</id>
+      <masked>false</masked>
+      <name>obj_LaborIndex</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Ser_LaborCode</defaultValue>
+      <description></description>
+      <id>f5685a67-55c5-4e32-9534-8b53c5db9abf</id>
+      <masked>false</masked>
+      <name>obj_LaborCode</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Ser_LaborDescription</defaultValue>
+      <description></description>
+      <id>89fa9732-bf74-46df-a8b3-1e819559b8d6</id>
+      <masked>false</masked>
+      <name>obj_LaborDescription</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

@@ -144,4 +144,104 @@
       <initValue>'69246578'</initValue>
       <name>Glb_DocumentId</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_Status_Integration</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_Status_GetCustomer</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_Status_GetAdvisor</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_Status_GetLabor</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_Status_ProcessAdd</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_Status_ProcessChange</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_Status_ProcessDelete</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_Status_SearchService</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_Status_GetService</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment').getValue(1, 1)</initValue>
+      <name>Glb_Ser_AppointmentNote</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment').getValue(4, 1)</initValue>
+      <name>Glb_Ser_RepairIndicator</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment').getValue(2, 1)</initValue>
+      <name>Glb_Ser_Transportation</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment').getValue(3, 1)</initValue>
+      <name>Glb_Ser_JobNumberString</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment').getValue(5, 1)</initValue>
+      <name>Glb_Ser_JobTypeString</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment').getValue(6, 1)</initValue>
+      <name>Glb_Ser_LaborId</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment').getValue(7, 1)</initValue>
+      <name>Glb_Ser_LaborCode</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment').getValue(8, 1)</initValue>
+      <name>Glb_Ser_LaborDescription</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_ChangeLaborContent</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'false'</initValue>
+      <name>Glb_AddJobLine</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_ServiceDate</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
