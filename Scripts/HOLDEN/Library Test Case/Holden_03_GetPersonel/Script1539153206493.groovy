@@ -34,7 +34,9 @@ import java.sql.Driver
 
 
 /**
- * V0. Build Framework
+ * V0. Create framework 09/10/18
+ * V1. Verify response 13/10/18
+ * Declare request  14/10/18
  */
 
 //CODE 

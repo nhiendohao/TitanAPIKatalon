@@ -12,4 +12,11 @@
       <masked>false</masked>
       <name>Reserve_Timeslot</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>b1557cba-fabd-4269-bb9e-9bf5ad050d22</id>
+      <masked>false</masked>
+      <name>demo1</name>
+   </variable>
 </TestCaseEntity>

@@ -30,15 +30,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
-//V0. Create framework
-//=====================================================================================================================
+ /**
+  *V0. Create framework 09/10/18
+  *V1. Verify response 13/10/18
+  *Declare request  14/10/18
+  */
 
 //CODE 
 //## DECLARE VIABLE
 
 //## PROCESS API
 //Declare request
-	RequestObject SearchServiceVisit = findTestObject("", null)
+	RequestObject SearchServiceVisit = findTestObject('Holden/Holden_06_SearchServiceVisit', [
+	('obj_DealerCode') : GlobalVariable.Glb_Dealer_Code            , 
+	('obj_StartSearchDate') : GlobalVariable.Glb_StartSearchDate, 
+	('obj_EndSearchDate') : GlobalVariable.Glb_EndSearchDate])
 //Declare response
 	ResponseObject res_SearchServiceVisit = WS.sendRequest(SearchServiceVisit)
 	
@@ -52,6 +58,8 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 //## VALID RESPONSE VERIFICATION
 //Validate Response Status Code
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_SearchServiceVisit, 200, "")
+	
+	if(GlobalVariable.Glb_BookingStatus.toString().toLowerCase() == 'current'){
 //Validate "Sender" of Application Area
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Sender", "CreatorNameCode", "GM", 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Sender", "SenderNameCode", "OSS", 0, 0)
@@ -131,4 +139,8 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ServiceAdvisorParty", "DealerManagementSystemID", GlobalVariable.Glb_Adv_Id, 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "SpecifiedPerson", "GivenName", GlobalVariable.Glb_Adv_FirstName, 1, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "SpecifiedPerson", "FamilyName", GlobalVariable.Glb_Adv_LastName, 1, 0)
-	
+	}
+	else {
+		String verifyNotAppointmentReturn = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_SearchServiceVisit, "AppointmentContactParty", "dealerManagementSystemIDField", 0, 0)
+		assert verifyNotAppointmentReturn == null
+	}

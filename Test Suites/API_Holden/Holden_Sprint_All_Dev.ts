@@ -229,5 +229,11 @@
          <value>var_EndSearchDate</value>
          <variableId>83df209a-5b1e-45ca-8705-d1c99b1dbcc8</variableId>
       </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>910c265b-3116-4154-9d4e-1e2b6306823c</variableId>
+      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

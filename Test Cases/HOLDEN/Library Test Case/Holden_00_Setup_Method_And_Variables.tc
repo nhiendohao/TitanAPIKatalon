@@ -159,4 +159,11 @@
       <masked>false</masked>
       <name>Setup_EndSearchDate</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>0612d2ed-25eb-48bc-b194-78f5a59c3a39</id>
+      <masked>false</masked>
+      <name>Setup_AdvisorType</name>
+   </variable>
 </TestCaseEntity>

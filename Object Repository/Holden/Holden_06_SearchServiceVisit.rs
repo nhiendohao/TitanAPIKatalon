@@ -63,7 +63,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 						&lt;ns:Sender>
 							&lt;ns:CreatorNameCode>GM&lt;/ns:CreatorNameCode>
 							&lt;ns:SenderNameCode>OSS&lt;/ns:SenderNameCode>
-							&lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
+							&lt;ns:DealerNumberID>${obj_DealerCode}&lt;/ns:DealerNumberID>
 							&lt;ns:DealerCountryCode>US&lt;/ns:DealerCountryCode>
 							&lt;ns:LanguageCode>en-US&lt;/ns:LanguageCode>
 						&lt;/ns:Sender>
@@ -74,7 +74,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 							&lt;ns:DestinationNameCode>QI&lt;/ns:DestinationNameCode>
 							&lt;ns:DestinationSoftwareCode>QI&lt;/ns:DestinationSoftwareCode>
 							&lt;ns:DestinationSoftware>QI&lt;/ns:DestinationSoftware>
-							&lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
+							&lt;ns:DealerNumberID>${obj_DealerCode}&lt;/ns:DealerNumberID>
 							&lt;ns:DealerTargetCountry>US&lt;/ns:DealerTargetCountry>
 						&lt;/ns:Destination>
 					&lt;/ns:ApplicationArea>
@@ -89,8 +89,8 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
                         &lt;ns:SearchServiceVisitDataCriteria>
                            &lt;!--Optional:-->
                            &lt;ns:SearchField>DateLastModified&lt;/ns:SearchField>
-                           &lt;ns:BeginDateTime>2018-07-31T00:00:00.000-00:00&lt;/ns:BeginDateTime>
-                           &lt;ns:EndDateTime>2018-07-31T00:00:00.000-23:59&lt;/ns:EndDateTime>
+                           &lt;ns:BeginDateTime>${obj_StartSearchDate}T00:00:00.000-00:00&lt;/ns:BeginDateTime>
+                           &lt;ns:EndDateTime>${obj_EndSearchDate}T00:00:00.000-23:59&lt;/ns:EndDateTime>
                         &lt;/ns:SearchServiceVisitDataCriteria>
                      &lt;/ns:SearchServiceVisitDataArea>
                   &lt;/ns:SearchServiceVisit>
@@ -102,6 +102,27 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
    <soapHeader></soapHeader>
    <soapRequestMethod>SOAP</soapRequestMethod>
    <soapServiceFunction>ProcessMessage</soapServiceFunction>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Dealer_Code</defaultValue>
+      <description></description>
+      <id>53e1fee3-9d66-4bf5-a69c-d3a93f9ddebc</id>
+      <masked>false</masked>
+      <name>obj_DealerCode</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_StartSearchDate</defaultValue>
+      <description></description>
+      <id>21358620-cadf-4705-9c3b-70acc129a818</id>
+      <masked>false</masked>
+      <name>obj_StartSearchDate</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_EndSearchDate</defaultValue>
+      <description></description>
+      <id>fe6f375e-2a37-46fe-b57b-2d79c6e5fa8f</id>
+      <masked>false</masked>
+      <name>obj_EndSearchDate</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject

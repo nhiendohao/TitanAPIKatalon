@@ -47,7 +47,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 /**
- * V0. Build framework 12.10.18
+ * V0. Build framework 10.10.18
  */
 //Initial Declare GlobalVariable value
 
@@ -76,6 +76,7 @@ WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_00_Setup_Method
 	('Setup_ManufacturerName') : var_ManufacturerName,
 	('Setup_VehicleID') : var_VehicleID,
 	('Setup_StartSearchDate') : var_StartSearchDate,
+	('Setup_AdvisorType') : var_AdvisorType,
 	('Setup_EndSearchDate') : var_EndSearchDate],
 	FailureHandling.STOP_ON_FAILURE)
 

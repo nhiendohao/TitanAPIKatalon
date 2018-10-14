@@ -42,6 +42,18 @@ if(Setup_CustomerType.toString().toLowerCase() == "exist"){
 	if(!(Setup_ManufacturerName == "")) GlobalVariable.Glb_veh_ManufacturerName = Setup_ManufacturerName
 	if(!(Setup_VehicleID == "")) GlobalVariable.Glb_veh_VehicleId = Setup_VehicleID
 }
+else{
+	//If case New Customer required, add random number for Name Customer
+	GlobalVariable.Glb_FirstName = 'INVALID_TITAN'
+	GlobalVariable.Glb_LastName = 'INVALID_DMS'
+}
+
+if(!(Setup_AdvisorType.toString().toLowerCase() == 'exist')) {
+	GlobalVariable.Glb_Adv_Id = 'invalid'
+	GlobalVariable.Glb_Adv_FirstName= 'invalid'
+	GlobalVariable.Glb_Adv_LastName= 'invalid'
+} //Else condition is gather below
+
 
 //METHOD
 //Create Date Past/Future with specific Date from current Date
@@ -94,9 +106,6 @@ else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
 	String sqlUser = GlobalVariable.Glb_sqlUser.toString()
 	String sqlPass = GlobalVariable.Glb_sqlPass.toString()
 	String sqlURL = GlobalVariable.Glb_sqlURL.toString()
-//Query Financial Year 
-
-//Query information of valid Advisor
 	// Create Driver for connection
 	def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
 	// Create Object Properties
@@ -107,7 +116,21 @@ else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
 	//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
 	def conn = driver.connect(sqlURL, props)
 	def sql = new Sql(conn)
+	
+//Query Financial Year 
 	int countNumber = 0
+	sql.eachRow("select * from ENTERPRISE") {row ->
+	if(countNumber == 0){
+		GlobalVariable.Glb_FinancialYear = row.CURRENT_FINANCIAL_YEAR_KEY as String
+		println GlobalVariable.Glb_FinancialYear
+	}
+	countNumber += 1
+  }
+	
+
+//Query information of valid Advisor
+	if(Setup_AdvisorType.toString().toLowerCase() == 'exist') {
+	countNumber = 0
 	//Executive query for database
 	sql.eachRow("exec Get_All_Service_Advisors @TerminationDate= '10/12/2018', @FinancialYearKey= 20") {row ->
 	if(countNumber == 1){
@@ -118,6 +141,8 @@ else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
 	}
 	countNumber += 1
 	
-	}
+  }
+	
+}
 	sql.close()
 	conn.close()

@@ -222,4 +222,11 @@
       <masked>false</masked>
       <name>var_EndSearchDate</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>910c265b-3116-4154-9d4e-1e2b6306823c</id>
+      <masked>false</masked>
+      <name>var_AdvisorType</name>
+   </variable>
 </TestCaseEntity>

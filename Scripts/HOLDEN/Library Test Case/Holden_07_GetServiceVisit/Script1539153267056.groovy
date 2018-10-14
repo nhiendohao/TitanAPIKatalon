@@ -30,15 +30,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
-//V0. Create framework
-//=====================================================================================================================
+
+/**
+ * V0. Create framework 09/10/18
+ * V1. Verify response 13/10/18
+ * Declare request  14/10/18
+ */
 
 //CODE 
 //## DECLARE VIABLE
 
 //## PROCESS API
 //Declare request
-	RequestObject GetServiceVisit = findTestObject("", null)
+	RequestObject GetServiceVisit = findTestObject('Holden/Holden_07_GetServiceVisit', [
+	('obj_DealerCode') : GlobalVariable.Glb_Dealer_Code, 
+	('obj_BookingId') : GlobalVariable.Glb_Booking_ID])
 //Declare response
 	ResponseObject res_GetServiceVisit = WS.sendRequest(GetServiceVisit)
 	

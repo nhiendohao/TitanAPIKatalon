@@ -244,4 +244,14 @@
       <initValue>''</initValue>
       <name>Glb_ServiceDate</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'not yet'</initValue>
+      <name>Glb_BookingStatus</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_FinancialYear</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -39,44 +39,80 @@ import org.xml.sax.InputSource as InputSource
 import java.io.StringReader as StringReader
 import groovy.sql.Sql as Sql
 import java.sql.Driver as Driver
-import static com.xlson.groovycsv.CsvParser.parseCsv //Reading CSV
-@Grab('com.xlson.groovycsv:groovycsv:1.3') //Reading CSV
 
-
-String Str_xml = (((((((((((((((((((((((('<Gbookstore> ' + '<bookstore1> ') + '<book category="cooking">') + '<title lang="en">Everyday Italian</title> ') + 
+String Str_xml = ((((((((((((((((((((((((((('<Gbookstore> ' + '<bookstore> ') + '<book category="cooking">') + '<title lang="en">Everyday Italian</title> ') + 
 ' <author>Giada De Laurentiis</author> ') + '<year>2005</year> ') + '<price>30.00</price> </book> ') + '<book category="children">') + 
 '<title lang="en">Harry Potter</title> ') + ' <author>J K. Rowling</author> ') + '<year>2005</year> ') + '<price>29.99</price> </book>') + 
-'</bookstore1>') + '<bookstore> ') + '<book category="cooking">') + '<title lang="en">Everyday Italian</title> ') + ' <author>Giada De Laurentiis</author> ') + 
+'</bookstore>') + '<bookstore> ') + '<book category="cooking">') + '<title lang="en">Everyday Italian</title> ') + ' <author>Giada De Laurentiis</author> ') + 
 '<year>2005</year> ') + '<price>30.00</price> </book> ') + '<book category="children">') + '<title lang="en">Harry Potter</title> ') + 
-' <author>J K. Rowling</author> ') + '<year>2005</year> ') + '<price>29.99</price> </book>') + '</bookstore>') + '</Gbookstore> '
+' <author>J K. Rowling</author> ') + '<year>2005</year> ') + '<price>29.99</price> </book>') + '</bookstore>') + '<bookstore> ') + 
+'<year/> ') + '</bookstore>') + '</Gbookstore> '
 
+//String demo =  getValueSOAPNode(Str_xml,"bookstor","yea",2,0)
+//println demo
+//assert demo == null
+//String sqlUser = GlobalVariable.Glb_sqlUser.toString()
+//
+//String sqlPass = GlobalVariable.Glb_sqlPass.toString()
+//
+//String sqlURL = GlobalVariable.Glb_sqlURL.toString()
+//
+//// Create Driver for connection
+//def driver = ((Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance()) as Driver)
+//
+//// Create Object Properties
+//def props = new Properties()
+//
+//// Setup user and password through Object Properties
+//props.setProperty('user', sqlUser)
+//
+//props.setProperty('password', sqlPass)
+//
+////Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
+//def conn = driver.connect(sqlURL, props)
+//
+//def sql = new Sql(conn)
+//
+//int countNumber = 0
+//
+////Executive query for database
+//sql.eachRow('exec Get_All_Service_Advisors @TerminationDate= \'10/12/2018\', @FinancialYearKey= 20', { def row ->
+//        if (countNumber == 1) {
+//            GlobalVariable.Glb_Adv_Id = ((row[0]) as String)
+//
+//            GlobalVariable.Glb_Adv_FirstName = ((row.First_Name) as String)
+//
+//            GlobalVariable.Glb_Adv_LastName = ((row.Family_Name) as String)
+//
+//            println((GlobalVariable.Glb_Adv_Id + GlobalVariable.Glb_Adv_FirstName) + GlobalVariable.Glb_Adv_LastName)
+//        }
+//        
+//        countNumber += 1
+//    })
+//
+//sql.close()
+//
+//conn.close()
+//
+WS.sendRequest(findTestObject('Holden/Holden_07_GetServiceVisit', [
+	('obj_DealerCode') : GlobalVariable.Glb_Dealer_Code, 
+	('obj_BookingId') : GlobalVariable.Glb_Booking_ID]))
 
-String sqlUser = GlobalVariable.Glb_sqlUser.toString()
-String sqlPass = GlobalVariable.Glb_sqlPass.toString()
-String sqlURL = GlobalVariable.Glb_sqlURL.toString()
+String getValueSOAPNode(String response, String parentnode, String childrennode, int indexParent, int indexChild) {
+    Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(new StringReader(response)))
 
+    NodeList errNodes = doc.getElementsByTagName(parentnode)
 
-// Create Driver for connection
-def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
-// Create Object Properties
-def props = new Properties()
-// Setup user and password through Object Properties
-props.setProperty("user", sqlUser)
-props.setProperty("password", sqlPass)
-//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
-def conn = driver.connect(sqlURL, props)
-def sql = new Sql(conn)
-int countNumber = 0
-//Executive query for database
-sql.eachRow("exec Get_All_Service_Advisors @TerminationDate= '10/12/2018', @FinancialYearKey= 20") {row ->
-if(countNumber == 1){
-	GlobalVariable.Glb_Adv_Id = row[0] as String
-	GlobalVariable.Glb_Adv_FirstName= row.First_Name as String
-	GlobalVariable.Glb_Adv_LastName= row.Family_Name as String
-	println GlobalVariable.Glb_Adv_Id + GlobalVariable.Glb_Adv_FirstName  + GlobalVariable.Glb_Adv_LastName
+    String value
+
+    if (errNodes.getLength() > 0) {
+        Element err = ((errNodes.item(indexParent)) as Element)
+
+        println((((parentnode + '.') + childrennode) + ':  ') + err.getElementsByTagName(childrennode).item(indexChild).getTextContent())
+
+        value = err.getElementsByTagName(childrennode).item(indexChild).getTextContent()
+    }
+    
+    return value
 }
-countNumber += 1
 
-}
-sql.close()
-conn.close()

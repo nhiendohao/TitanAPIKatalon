@@ -8,49 +8,59 @@
    <dataFileGUID>f4036c1a-64cc-4a64-b4d4-a608ec852fea</dataFileGUID>
    <dataSourceUrl></dataSourceUrl>
    <driver>InternalData</driver>
-   <data>678568 Anh+Thy TCA 1 1901 QLD WORKPHONE 0919011995 qateam%40automation.com.au</data>
+   <data>TITAN DMS 678568 Anh+Thy TCA 1 1901 QLD WORKPHONE 0919011995 qateam%40automation.com.au</data>
    <internalDataColumns>
       <columnIndex>0</columnIndex>
-      <name>var_TradingEntityID</name>
+      <name>var_FirstName</name>
       <size>1</size>
    </internalDataColumns>
    <internalDataColumns>
       <columnIndex>1</columnIndex>
-      <name>var_LineOne</name>
+      <name>var_LastName</name>
       <size>1</size>
    </internalDataColumns>
    <internalDataColumns>
       <columnIndex>2</columnIndex>
-      <name>var_CityName</name>
+      <name>var_TradingEntityID</name>
       <size>1</size>
    </internalDataColumns>
    <internalDataColumns>
       <columnIndex>3</columnIndex>
-      <name>var_CountryID</name>
+      <name>var_LineOne</name>
       <size>1</size>
    </internalDataColumns>
    <internalDataColumns>
       <columnIndex>4</columnIndex>
-      <name>var_Postcode</name>
+      <name>var_CityName</name>
       <size>1</size>
    </internalDataColumns>
    <internalDataColumns>
       <columnIndex>5</columnIndex>
-      <name>var_State</name>
+      <name>var_CountryID</name>
       <size>1</size>
    </internalDataColumns>
    <internalDataColumns>
       <columnIndex>6</columnIndex>
-      <name>var_ChannelCode</name>
+      <name>var_Postcode</name>
       <size>1</size>
    </internalDataColumns>
    <internalDataColumns>
       <columnIndex>7</columnIndex>
-      <name>var_PhoneNumber</name>
+      <name>var_State</name>
       <size>1</size>
    </internalDataColumns>
    <internalDataColumns>
       <columnIndex>8</columnIndex>
+      <name>var_ChannelCode</name>
+      <size>1</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>9</columnIndex>
+      <name>var_PhoneNumber</name>
+      <size>1</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>10</columnIndex>
       <name>var_Email</name>
       <size>1</size>
    </internalDataColumns>

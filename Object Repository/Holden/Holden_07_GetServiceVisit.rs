@@ -63,7 +63,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 					&lt;ns:Sender>
 						&lt;ns:CreatorNameCode>GM&lt;/ns:CreatorNameCode>
 						&lt;ns:SenderNameCode>OSS&lt;/ns:SenderNameCode>
-						&lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
+						&lt;ns:DealerNumberID>${obj_DealerCode}&lt;/ns:DealerNumberID>
 						&lt;ns:DealerCountryCode>US&lt;/ns:DealerCountryCode>
 						&lt;ns:LanguageCode>en-US&lt;/ns:LanguageCode>
 					&lt;/ns:Sender>
@@ -74,7 +74,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 						&lt;ns:DestinationNameCode>QI&lt;/ns:DestinationNameCode>
 						&lt;ns:DestinationSoftwareCode>QI&lt;/ns:DestinationSoftwareCode>
 						&lt;ns:DestinationSoftware>QI&lt;/ns:DestinationSoftware>
-						&lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
+						&lt;ns:DealerNumberID>${obj_DealerCode}&lt;/ns:DealerNumberID>
 						&lt;ns:DealerTargetCountry>US&lt;/ns:DealerTargetCountry>
 					&lt;/ns:Destination>
 				&lt;/ns:ApplicationArea>
@@ -87,7 +87,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
                         &lt;/ns:Get>
                         &lt;!--Optional:-->
                         &lt;ns:GetServiceVisitCriteria>
-                           &lt;ns:ServiceAppointmentId>1105442&lt;/ns:ServiceAppointmentId>
+                           &lt;ns:ServiceAppointmentId>${obj_BookingId}&lt;/ns:ServiceAppointmentId>
                         &lt;/ns:GetServiceVisitCriteria>
                      &lt;/ns:GetServiceVisitRetrievalDataArea>
                   &lt;/ns:GetServiceVisit>
@@ -99,6 +99,20 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
    <soapHeader></soapHeader>
    <soapRequestMethod>SOAP</soapRequestMethod>
    <soapServiceFunction>ProcessMessage</soapServiceFunction>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Dealer_Code</defaultValue>
+      <description></description>
+      <id>1cc5f9cb-386e-4c41-bf97-d2cb0d216451</id>
+      <masked>false</masked>
+      <name>obj_DealerCode</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Booking_ID</defaultValue>
+      <description></description>
+      <id>83facfd1-a581-4487-8960-48a863012eac</id>
+      <masked>false</masked>
+      <name>obj_BookingId</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject

@@ -33,7 +33,9 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 /**
- * V0. Build framework
+ * V0. Create framework 09/10/18
+ * V1. Verify response 13/10/18
+ * Declare request  14/10/18
  */
 
 //CODE 
