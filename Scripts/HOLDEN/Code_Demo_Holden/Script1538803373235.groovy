@@ -94,25 +94,40 @@ String Str_xml = ((((((((((((((((((((((((((('<Gbookstore> ' + '<bookstore> ') + 
 //
 //conn.close()
 //
-WS.sendRequest(findTestObject('Holden/Holden_07_GetServiceVisit', [
-	('obj_DealerCode') : GlobalVariable.Glb_Dealer_Code, 
-	('obj_BookingId') : GlobalVariable.Glb_Booking_ID]))
-
-String getValueSOAPNode(String response, String parentnode, String childrennode, int indexParent, int indexChild) {
-    Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(new StringReader(response)))
-
-    NodeList errNodes = doc.getElementsByTagName(parentnode)
-
-    String value
-
-    if (errNodes.getLength() > 0) {
-        Element err = ((errNodes.item(indexParent)) as Element)
-
-        println((((parentnode + '.') + childrennode) + ':  ') + err.getElementsByTagName(childrennode).item(indexChild).getTextContent())
-
-        value = err.getElementsByTagName(childrennode).item(indexChild).getTextContent()
-    }
-    
-    return value
-}
+//WS.sendRequest(findTestObject('Holden/Holden_07_GetServiceVisit', [('obj_DealerCode') : GlobalVariable.Glb_Dealer_Code, ('obj_BookingId') : GlobalVariable.Glb_Booking_ID]))
+//
+//WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_05C_DeleteServiceVisit'), [:], FailureHandling.STOP_ON_FAILURE)
+//
+//String getValueSOAPNode(String response, String parentnode, String childrennode, int indexParent, int indexChild) {
+//    Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(new StringReader(response)))
+//
+//    NodeList errNodes = doc.getElementsByTagName(parentnode)
+//
+//    String value
+//
+//    if (errNodes.getLength() > 0) {
+//        Element err = ((errNodes.item(indexParent)) as Element)
+//
+//        println((((parentnode + '.') + childrennode) + ':  ') + err.getElementsByTagName(childrennode).item(indexChild).getTextContent())
+//
+//        value = err.getElementsByTagName(childrennode).item(indexChild).getTextContent()
+//    }
+//    
+//    return value
+//}
+println GlobalVariable.Glb_Dealer_Code
+println GlobalVariable.Glb_ChangeJobNumber
+println GlobalVariable.Glb_ChangeJobType
+println GlobalVariable.Glb_ChangeLaborCode
+println GlobalVariable.Glb_ChangeLaborDescription
+println GlobalVariable.Glb_ChangeNote
+println GlobalVariable.Glb_ChangeTransport
+println GlobalVariable.Glb_Ser_AppointmentNote
+println GlobalVariable.Glb_Ser_JobNumberString
+println GlobalVariable.Glb_Ser_JobTypeString
+println GlobalVariable.Glb_Ser_LaborCode
+println GlobalVariable.Glb_Ser_LaborDescription
+println GlobalVariable.Glb_Ser_LaborId
+println GlobalVariable.Glb_Ser_RepairIndicator
+println GlobalVariable.Glb_Ser_Transportation
 

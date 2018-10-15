@@ -40,7 +40,8 @@ import java.util.Date
 //Verify response
 def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
 	//Verify Response Status = 200 OK
-	WS.verifyResponseStatusCode(response, StatusCode)
+	if(StatusCode == 0) WS.verifyResponseStatusCodeInRange(response, 400, 404)
+	else WS.verifyResponseStatusCode(response, StatusCode)
 	
 	//Transfer response to Text
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
@@ -148,34 +149,34 @@ if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
 	VerifyResponse(res_ChangeBooking,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
 //Drop Off Time after Pick Up Time
 else if(DropOffTime.after(PickUpTime))
-	 VerifyResponse(res_ChangeBooking,400,"must be greater then the drop off times")
+	 VerifyResponse(res_ChangeBooking,0,"must be greater then the drop off times")
 //Total Duration is not equal to duration job line
 else if(!(GlobalVariable.Glb_TotalDuration == "1"))
-		 VerifyResponse(res_ChangeBooking,400,"total duration "+GlobalVariable.Glb_TotalDuration+" of RepairOrder not equals total duration 1 of RepairOrder Line")
+		 VerifyResponse(res_ChangeBooking,0,"total duration "+GlobalVariable.Glb_TotalDuration+" of RepairOrder not equals total duration 1 of RepairOrder Line")
 //Total Price is not equal to duration job line
 else if(!(GlobalVariable.Glb_TotalPrice == "110"))
-	 VerifyResponse(res_ChangeBooking,400,"Booking Rejected - The total price "+GlobalVariable.Glb_TotalPrice+" of RepairOrder not equals total price 110 of RepairOrder Line")
+	 VerifyResponse(res_ChangeBooking,0,"Booking Rejected - The total price "+GlobalVariable.Glb_TotalPrice+" of RepairOrder not equals total price 110 of RepairOrder Line")
 else if(duration_hours < TotalDuration)
-	 VerifyResponse(res_ChangeBooking,400,"Booking Rejected - The total duration of service greater than duration booking time")
+	 VerifyResponse(res_ChangeBooking,0,"Booking Rejected - The total duration of service greater than duration booking time")
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
 	GlobalVariable.Glb_Location_Code == "3"||
 	GlobalVariable.Glb_Location_Code == "5")
-	 VerifyResponse(res_ChangeBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	 VerifyResponse(res_ChangeBooking,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	 GlobalVariable.Glb_Location_Code == "4"||
 	 GlobalVariable.Glb_Location_Code == "360"))
-	 VerifyResponse(res_ChangeBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+	 VerifyResponse(res_ChangeBooking,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //StartDate before Current
 else if(!(var_DateChange == GlobalVariable.Glb_ServiceDate))
-	VerifyResponse(res_ChangeBooking,404,"pick up timeslot taken")
+	VerifyResponse(res_ChangeBooking,0,"pick up timeslot taken")
 //Drop Off Time before WS Start Hour
 else if( DropOffTime.before(Start_WS_Hr))
-	VerifyResponse(res_ChangeBooking,400,"drop off timeslot taken")
+	VerifyResponse(res_ChangeBooking,0,"drop off timeslot taken")
 //Pickup Time after WS End Hour
 else if( PickUpTime.after(End_WS_Hr))
-	 VerifyResponse(res_ChangeBooking,400,"pick up timeslot taken")
+	 VerifyResponse(res_ChangeBooking,0,"pick up timeslot taken")
 //All valid
 else {
 	 VerifyResponse(res_ChangeBooking,200,"")

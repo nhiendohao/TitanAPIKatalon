@@ -32,16 +32,18 @@ import java.util.Date as Date
 import java.io.File
 
 
-RequestObject GetServiceOperation = findTestObject('Toyota/GetDropOffTimes_JSON', [
-	('Start_Date') : "2018-10-08",
-	('End_Date') : "2018-10-08",
-	('ServiceBay_Type') : "PERIODIC",
-	('Duration_Time') : "1",
-	('Dealer_Code') : "765A",
-	('Location_Code') : "1"])
-//Set Authorization in Header
-GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Basic " + GlobalVariable.Glb_Authorization_Token))
-//Send request
-ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
+//RequestObject GetServiceOperation = findTestObject('Toyota/GetDropOffTimes_JSON', [
+//	('Start_Date') : "2018-10-08",
+//	('End_Date') : "2018-10-08",
+//	('ServiceBay_Type') : "PERIODIC",
+//	('Duration_Time') : "1",
+//	('Dealer_Code') : "765A",
+//	('Location_Code') : "1"])
+////Set Authorization in Header
+//GetServiceOperation.getHttpHeaderProperties().add(new TestObjectProperty("Authorization", ConditionType.EQUALS, "Basic " + GlobalVariable.Glb_Authorization_Token))
+////Send request
+//ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
+//
+//println res_GetServiceOperation.responseText
 
-println res_GetServiceOperation.responseText
+println GlobalVariable.Glb_Dealer_Code

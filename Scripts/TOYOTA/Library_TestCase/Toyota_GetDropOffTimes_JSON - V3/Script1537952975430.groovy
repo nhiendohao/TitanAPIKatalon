@@ -42,7 +42,8 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 //Verify response
 def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
 	//Verify Response Status = 200 OK
-	WS.verifyResponseStatusCode(response, StatusCode)
+	if(StatusCode == 0) WS.verifyResponseStatusCodeInRange(response, 400, 404)
+	else WS.verifyResponseStatusCode(response, StatusCode)
 	
 	//Transfer response to Text
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
@@ -93,32 +94,32 @@ if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
 	VerifyResponse(res_GetServiceOperation,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
 //Start Date after End Date
 else if(Start_Date_Str.after(End_Date_Str))
-	 VerifyResponse(res_GetServiceOperation,404,"cannot be greater than end date")
+	 VerifyResponse(res_GetServiceOperation,0,"cannot be greater than end date")
 //Duration <=0
 else if(Duration <= 0)
-	 VerifyResponse(res_GetServiceOperation,400,"The duration must be greater than 0")
+	 VerifyResponse(res_GetServiceOperation,0,"The duration must be greater than 0")
 //Invalid Servicebay
 else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	 GlobalVariable.Glb_ServiceBay_Type == "EXPRESS"||
 	 GlobalVariable.Glb_ServiceBay_Type == "REPAIR"||
 	 GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC"))
-	 VerifyResponse(res_GetServiceOperation,400,"Service Bay Type Unknown")
+	 VerifyResponse(res_GetServiceOperation,0,"Service Bay Type is unknown")
  //Closed Workshop
  else if(GlobalVariable.Glb_Location_Code == "2"||
 	GlobalVariable.Glb_Location_Code == "3"||
 	GlobalVariable.Glb_Location_Code == "5")
-	 VerifyResponse(res_GetServiceOperation,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	 VerifyResponse(res_GetServiceOperation,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
  //Not exist Workshop
  else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	 GlobalVariable.Glb_Location_Code == "4"||
 	 GlobalVariable.Glb_Location_Code == "360"))
-	 VerifyResponse(res_GetServiceOperation,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+	 VerifyResponse(res_GetServiceOperation,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //StartDate before Current
 else if(Start_Date_Str.before(current))
-	VerifyResponse(res_GetServiceOperation,404,"is before the current date")
+	VerifyResponse(res_GetServiceOperation,0,"is before the current date")
 //Duration >= 10
 else if(Duration >= 10)
-	 VerifyResponse(res_GetServiceOperation,400,"Duration " +Duration+ " cannot be completed in a single day")
+	 VerifyResponse(res_GetServiceOperation,0,"Duration " +Duration+ " cannot be completed in a single day")
 //All valid
 else {
 	 VerifyResponse(res_GetServiceOperation,200,"")

@@ -38,7 +38,7 @@
       <description></description>
       <id>64c0a302-1494-4b43-a24b-31f15416f12e</id>
       <masked>false</masked>
-      <name>var_Status_ProcessService</name>
+      <name>var_Status_ProcessServiceAdd</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
@@ -228,5 +228,33 @@
       <id>910c265b-3116-4154-9d4e-1e2b6306823c</id>
       <masked>false</masked>
       <name>var_AdvisorType</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c6bc830d-70dd-4edd-9588-a8f20ebb2a7a</id>
+      <masked>false</masked>
+      <name>var_Status_ProcessServiceChange</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bd9ad466-5baa-497e-afc5-f4cf3f2ccf6d</id>
+      <masked>false</masked>
+      <name>var_Status_ProcessServiceDelete</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>1c2bf487-0514-498d-917d-6d5ba6aaa227</id>
+      <masked>false</masked>
+      <name>var_ChangeLaborContent</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f89a2eae-75ce-4749-b472-0b810fbdfd3b</id>
+      <masked>false</masked>
+      <name>var_ChangeDate</name>
    </variable>
 </TestCaseEntity>

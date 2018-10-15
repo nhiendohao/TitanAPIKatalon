@@ -39,7 +39,8 @@ import java.util.Date
 //Verify response
 def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
 	//Verify Response Status = 200 OK
-	WS.verifyResponseStatusCode(response, StatusCode)
+	if(StatusCode == 0) WS.verifyResponseStatusCodeInRange(response, 400, 404)
+	else WS.verifyResponseStatusCode(response, StatusCode)
 	
 	//Transfer response to Text
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
@@ -110,7 +111,7 @@ if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
 //Duration <=0
 else if(Duration <= 0){
 	println "Duration = 0"
-	 VerifyResponse(res_ReserveTimeslot,400,"duration must be greater than 0")
+	 VerifyResponse(res_ReserveTimeslot,0,"duration must be greater than 0")
 }
 //Invalid Servicebay
 else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
@@ -118,41 +119,41 @@ else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	 GlobalVariable.Glb_ServiceBay_Type == "REPAIR"||
 	 GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC")){
  	println "Invalid Service bay"
-	 VerifyResponse(res_ReserveTimeslot,400,"Service Bay Type is unknown")
+	 VerifyResponse(res_ReserveTimeslot,0,"Service Bay Type is unknown")
 }
  //Closed Workshop
  else if(GlobalVariable.Glb_Location_Code == "2"||
 	GlobalVariable.Glb_Location_Code == "3"||
 	GlobalVariable.Glb_Location_Code == "5"){
 	println "Closed Workshop"
-	 VerifyResponse(res_ReserveTimeslot,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	 VerifyResponse(res_ReserveTimeslot,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
  }
  //Not exist Workshop
  else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	 GlobalVariable.Glb_Location_Code == "4"||
 	 GlobalVariable.Glb_Location_Code == "360")){
  	println "Not exist Workshop"
-	 VerifyResponse(res_ReserveTimeslot,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+	 VerifyResponse(res_ReserveTimeslot,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
  }
 //StartDate before Current
 else if(Service_Date.before(current)){
 	println "StartDate before Current"
-	VerifyResponse(res_ReserveTimeslot,404,"is before the current date")
+	VerifyResponse(res_ReserveTimeslot,0,"is before the current date")
 }
 //Duration >= 10
 else if(Duration >= 10){
 	println "Duration >= 10"
-	 VerifyResponse(res_ReserveTimeslot,400,"Duration " +Duration+ " cannot be completed in a single day")
+	 VerifyResponse(res_ReserveTimeslot,0,"Duration " +Duration+ " cannot be completed in a single day")
 }
 //Validate for Saturday and Sunday
 else if(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun"){
 	println "Validate for Saturday and Sunday"
- 	VerifyResponse(res_ReserveTimeslot,400,"is can't book more hours than are available hours in this workshop")
+ 	VerifyResponse(res_ReserveTimeslot,0,"is can't book more hours than are available hours in this workshop")
 }
 //Validate DropOff Time and Pickup Time and need duration	 
 else if(DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration){
 	println "Validate DropOff Time and Pickup Time and need duration"
-	VerifyResponse(res_ReserveTimeslot,400,"timeslot is taken")
+	VerifyResponse(res_ReserveTimeslot,0,"timeslot is taken")
 }
 //All valid
 else {

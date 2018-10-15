@@ -131,7 +131,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 								&lt;ns:ServiceVisitAppointmentHeader>
 									&lt;ns:DocumentIdentificationGroup>
 										&lt;ns:DocumentIdentification>
-											&lt;ns:DocumentID>&lt;/ns:DocumentID>
+											&lt;ns:DocumentID>${obj_BookingId}&lt;/ns:DocumentID>
 										&lt;/ns:DocumentIdentification>
 									&lt;/ns:DocumentIdentificationGroup>
 								&lt;/ns:ServiceVisitAppointmentHeader>
@@ -385,6 +385,13 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <id>89fa9732-bf74-46df-a8b3-1e819559b8d6</id>
       <masked>false</masked>
       <name>obj_LaborDescription</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Booking_ID</defaultValue>
+      <description></description>
+      <id>a6872cf9-8678-4451-89b7-6961dd36d098</id>
+      <masked>false</masked>
+      <name>obj_BookingId</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

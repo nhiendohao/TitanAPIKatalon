@@ -36,7 +36,8 @@ import static org.assertj.core.api.Assertions.*
 //Verify response
 def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
 	//Verify Response Status = 200 OK
-	WS.verifyResponseStatusCode(response, StatusCode)
+	if(StatusCode == 0) WS.verifyResponseStatusCodeInRange(response, 400, 404)
+	else WS.verifyResponseStatusCode(response, StatusCode)
 	
 	//Transfer response to Text
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
@@ -64,15 +65,15 @@ if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
 else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||
 		GlobalVariable.Glb_Location_Code == "5")
-	VerifyResponse(res_CancelBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	VerifyResponse(res_CancelBooking,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "4"||
 	GlobalVariable.Glb_Location_Code == "360"))
-	VerifyResponse(res_CancelBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+	VerifyResponse(res_CancelBooking,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //Service Date Past
 else if (GlobalVariable.Glb_Booking_ID == "1901" || GlobalVariable.Glb_BookingStatus == "cancel" ||GlobalVariable.Glb_Booking_ID == "wrong")
-	VerifyResponse(res_CancelBooking,400,"Booking ID " +GlobalVariable.Glb_Booking_ID+ " not found")
+	VerifyResponse(res_CancelBooking,0,"Booking ID " +GlobalVariable.Glb_Booking_ID+ " not found")
 //All valid
 else{
 	//Verify Response Status = 200 OK

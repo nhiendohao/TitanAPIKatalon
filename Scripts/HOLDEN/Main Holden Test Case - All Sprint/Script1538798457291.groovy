@@ -48,9 +48,19 @@ import internal.GlobalVariable as GlobalVariable
 
 /**
  * V0. Build framework 10.10.18
+ * V1. Add before and after 
  */
 //Initial Declare GlobalVariable value
-
+GlobalVariable.Glb_Status_Integration = 'failed'
+GlobalVariable.Glb_Status_GetCustomer = 'failed'
+GlobalVariable.Glb_Status_GetAdvisor = 'failed'
+GlobalVariable.Glb_Status_GetLabor = 'failed'
+GlobalVariable.Glb_Status_ProcessAdd = 'failed'
+GlobalVariable.Glb_Status_ProcessChange = 'failed'
+GlobalVariable.Glb_Status_ProcessDelete = 'failed'
+GlobalVariable.Glb_Status_GetService = 'failed'
+GlobalVariable.Glb_Status_SearchService = 'failed'
+GlobalVariable.Glb_BookingStatus = 'not yet'
 
 //STEP
 //0. Setup Global Variable and other value
@@ -95,9 +105,55 @@ if(var_Status_GetCustomer == 'true')
 if(var_Status_GetPersonel == 'true')
 	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_03_GetPersonel'), [:], FailureHandling.STOP_ON_FAILURE)
 	
-//3. Get Personel
-//Get all Advisor and vrify all of them
+//4. Get Labor Operation Code
+//Get all Labor Op Code and vrify all of them
 if(var_Status_GetLaborCode == 'true')
 	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_04_GetLaborOperations'), [:], FailureHandling.STOP_ON_FAILURE)
-
+	
+//5. Process service Add action
+//Create Appointment
+if(var_Status_ProcessServiceAdd == 'true')
+	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_05A_AddServiceVisit'), [:], FailureHandling.STOP_ON_FAILURE)
+	
+//6. Search Service Visit
+//Search there has any appointment in range of day
+if(var_Status_ProcessServiceAdd == 'true')
+	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_06_SearchServiceVisit'), [:], FailureHandling.STOP_ON_FAILURE)
+	
+//7. Get Service Visit
+//Get all information about the service with specific Booking Id
+if(var_Status_ProcessServiceAdd == 'true')
+	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_07_GetServiceVisit'), [:], FailureHandling.STOP_ON_FAILURE)
+	
+//5. Process service Add action
+//Create Appointment
+if(var_Status_ProcessServiceChange == 'true'){
+	if(!(var_ChangeLaborContent == 'true')){
+	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_05B_ChangeServiceVisit'), [
+		('var_ChangeLaborCode') : ''        ,
+		('var_ChangeLaborDescription') : '',
+		 ('var_ChangeDate') : '',
+		 ('var_ChangeNote') : '',
+		 ('var_ChangeTransport') : ''        ,
+		 ('var_ChangeJobNumber') : '',
+		 ('var_ChangeJobType') : ''],
+	 FailureHandling.STOP_ON_FAILURE)
+	}
+	else{
+		WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_05B_ChangeServiceVisit'), [
+			('var_ChangeLaborCode') : GlobalVariable.Glb_ChangeLaborCode ,
+			('var_ChangeLaborDescription') : GlobalVariable.Glb_ChangeLaborDescription,
+			 ('var_ChangeDate') : var_ChangeDate,
+			 ('var_ChangeNote') : GlobalVariable.Glb_ChangeNote,
+			 ('var_ChangeTransport') : GlobalVariable.Glb_ChangeNote        ,
+			 ('var_ChangeJobNumber') : GlobalVariable.Glb_ChangeNote,
+			 ('var_ChangeJobType') : GlobalVariable.Glb_ChangeNote],
+		 FailureHandling.STOP_ON_FAILURE)
+		}
+	}
+		
+//5. Process service Add action
+//Create Appointment
+if(var_Status_ProcessServiceDelete == 'true')
+	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_05C_DeleteServiceVisit'), [:], FailureHandling.STOP_ON_FAILURE)
 

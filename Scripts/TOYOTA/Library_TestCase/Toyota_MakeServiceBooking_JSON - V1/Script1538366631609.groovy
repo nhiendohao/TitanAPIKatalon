@@ -39,7 +39,8 @@ import java.util.Date
 //Verify response
 def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
 	//Verify Response Status = 200 OK
-	WS.verifyResponseStatusCode(response, StatusCode)
+	if(StatusCode == 0) WS.verifyResponseStatusCodeInRange(response, 400, 404)
+	else WS.verifyResponseStatusCode(response, StatusCode)
 	
 	//Transfer response to Text
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
@@ -133,56 +134,56 @@ if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
 //X Reserve Token = no
 else if( GlobalVariable.Glb_Reserve_Token.toString().toLowerCase() == "no" ){
 	println "X Reserve Token = no"
-	 VerifyResponse(res_MakeServiceBooking,404,"Booking not found")
+	 VerifyResponse(res_MakeServiceBooking,0,"Booking not found")
 }
 //Drop Off Time after Pick Up Time
 else if(DropOffTime.after(PickUpTime)){
 	println "Drop Off Time after Pick Up Time"
-	 VerifyResponse(res_MakeServiceBooking,400,"must be greater then the drop off times")
+	 VerifyResponse(res_MakeServiceBooking,0,"must be greater then the drop off times")
 }
 //Total Duration is not equal to duration job line
 else if(!(GlobalVariable.Glb_TotalDuration == "1")){
 	println "Total Duration is not equal to duration job line"
-	VerifyResponse(res_MakeServiceBooking,400,"total duration "+GlobalVariable.Glb_TotalDuration+" of RepairOrder not equals total duration 1 of RepairOrder Line")
+	VerifyResponse(res_MakeServiceBooking,0,"total duration "+GlobalVariable.Glb_TotalDuration+" of RepairOrder not equals total duration 1 of RepairOrder Line")
 }
 //Total Price is not equal to duration job line
 else if(!(GlobalVariable.Glb_TotalPrice == "110")){
 	println "Total Price is not equal to duration job line"
-	 VerifyResponse(res_MakeServiceBooking,400,"Booking Rejected - The total price "+GlobalVariable.Glb_TotalPrice+" of RepairOrder not equals total price 110 of RepairOrder Line")
+	 VerifyResponse(res_MakeServiceBooking,0,"Booking Rejected - The total price "+GlobalVariable.Glb_TotalPrice+" of RepairOrder not equals total price 110 of RepairOrder Line")
 }
 //Available is less than need hour
 else if(duration_hours < TotalDuration){
 	println "Available is less than need hour"
-	 VerifyResponse(res_MakeServiceBooking,400,"Booking Rejected - The total duration of service greater than duration booking time")
+	 VerifyResponse(res_MakeServiceBooking,0,"Booking Rejected - The total duration of service greater than duration booking time")
 }
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
 	GlobalVariable.Glb_Location_Code == "3"||
 	GlobalVariable.Glb_Location_Code == "5"){
 	println "Closed Workshop"
-	 VerifyResponse(res_MakeServiceBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	 VerifyResponse(res_MakeServiceBooking,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
 }
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	 GlobalVariable.Glb_Location_Code == "4"||
 	 GlobalVariable.Glb_Location_Code == "360")){
  	println "Not exist Workshop"
-	 VerifyResponse(res_MakeServiceBooking,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+	 VerifyResponse(res_MakeServiceBooking,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 }
 //ServiceDate before Current
 else if(Service_Date.before(current)){
 	println "ServiceDate before Current"
-	VerifyResponse(res_MakeServiceBooking,404,"is before the current date")
+	VerifyResponse(res_MakeServiceBooking,0,"is before the current date")
 }
 //Drop Off Time before WS Start Hour
 else if( DropOffTime.before(Start_WS_Hr) || GlobalVariable.Glb_BookingStatus == "current"){
 	println "Drop Off Time before WS Start Hour"
-	VerifyResponse(res_MakeServiceBooking,400,"drop off timeslot is taken")
+	VerifyResponse(res_MakeServiceBooking,0,"drop off timeslot is taken")
 }
 //Pickup Time after WS End Hour
 else if( PickUpTime.after(End_WS_Hr)){
 	println "Pickup Time after WS End Hour"
-	 VerifyResponse(res_MakeServiceBooking,400,"pick up timeslot taken")
+	 VerifyResponse(res_MakeServiceBooking,0,"pick up timeslot taken")
 }
  
 //All valid

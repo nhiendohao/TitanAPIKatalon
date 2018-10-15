@@ -36,7 +36,8 @@ import static org.assertj.core.api.Assertions.*
 //Verify response
 def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessage){
 	//Verify Response Status = 200 OK
-	WS.verifyResponseStatusCode(response, StatusCode)
+	if(StatusCode == 0) WS.verifyResponseStatusCodeInRange(response, 400, 404)
+	else WS.verifyResponseStatusCode(response, StatusCode)
 	
 	//Transfer response to Text
 	def res_Text = new groovy.json.JsonSlurper().parseText(response.getResponseText())
@@ -70,19 +71,19 @@ else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||
 		GlobalVariable.Glb_Location_Code == "5"){
 		println "Closed Workshop"
-	VerifyResponse(res_GetTransportOption,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	VerifyResponse(res_GetTransportOption,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
 }
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "4"||
 	GlobalVariable.Glb_Location_Code == "360")){
 	println "Not exist Workshop"
-	VerifyResponse(res_GetTransportOption,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+	VerifyResponse(res_GetTransportOption,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 }
 //Service Date Past
 else if (Service_Date.before(current)){
 	println "Service Date Past"
-	VerifyResponse(res_GetTransportOption,404,"is before the current date")
+	VerifyResponse(res_GetTransportOption,0,"is before the current date")
 }
 //All valid
 else{

@@ -146,47 +146,47 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'false'</initValue>
+      <initValue>'failed'</initValue>
       <name>Glb_Status_Integration</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'false'</initValue>
+      <initValue>'failed'</initValue>
       <name>Glb_Status_GetCustomer</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'false'</initValue>
+      <initValue>'failed'</initValue>
       <name>Glb_Status_GetAdvisor</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'false'</initValue>
+      <initValue>'failed'</initValue>
       <name>Glb_Status_GetLabor</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'false'</initValue>
+      <initValue>'failed'</initValue>
       <name>Glb_Status_ProcessAdd</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'false'</initValue>
+      <initValue>'failed'</initValue>
       <name>Glb_Status_ProcessChange</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'false'</initValue>
+      <initValue>'failed'</initValue>
       <name>Glb_Status_ProcessDelete</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'false'</initValue>
+      <initValue>'failed'</initValue>
       <name>Glb_Status_SearchService</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'false'</initValue>
+      <initValue>'failed'</initValue>
       <name>Glb_Status_GetService</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -232,11 +232,6 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>'false'</initValue>
-      <name>Glb_ChangeLaborContent</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'false'</initValue>
       <name>Glb_AddJobLine</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -253,5 +248,35 @@
       <description></description>
       <initValue>''</initValue>
       <name>Glb_FinancialYear</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(1, 1)</initValue>
+      <name>Glb_ChangeNote</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(2, 1)</initValue>
+      <name>Glb_ChangeTransport</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(3, 1)</initValue>
+      <name>Glb_ChangeJobNumber</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(4, 1)</initValue>
+      <name>Glb_ChangeJobType</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(5, 1)</initValue>
+      <name>Glb_ChangeLaborCode</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(6, 1)</initValue>
+      <name>Glb_ChangeLaborDescription</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

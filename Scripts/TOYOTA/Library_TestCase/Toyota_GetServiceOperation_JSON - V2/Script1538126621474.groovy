@@ -89,20 +89,20 @@ if(!(GlobalVariable.Glb_Dealer_Code == "765A"))
 	VerifyResponse(res_GetServiceOperation,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
 //Invalid Service Type
 else if(!(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK" || GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_ADDITIONAL"))
-	VerifyResponse(res_GetServiceOperation,400,"Service Type Unknown")
+	VerifyResponse(res_GetServiceOperation,0,"Service Type Unknown")
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
 		GlobalVariable.Glb_Location_Code == "3"||
 		GlobalVariable.Glb_Location_Code == "5")
-	VerifyResponse(res_GetServiceOperation,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
+	VerifyResponse(res_GetServiceOperation,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
 //Not exist Workshop
 else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	GlobalVariable.Glb_Location_Code == "4"||
 	GlobalVariable.Glb_Location_Code == "360"))
-VerifyResponse(res_GetServiceOperation,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+VerifyResponse(res_GetServiceOperation,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 //Invalid VIN
 else if(GlobalVariable.Glb_VIN.toString().toLowerCase() == "vininvalid")
-	VerifyResponse(res_GetServiceOperation,404,"VIN mapping to many vehicles")
+	VerifyResponse(res_GetServiceOperation,0,"VIN mapping to many vehicles")
 //Valid All
 else { VerifyResponse(res_GetServiceOperation,200,"")
 
