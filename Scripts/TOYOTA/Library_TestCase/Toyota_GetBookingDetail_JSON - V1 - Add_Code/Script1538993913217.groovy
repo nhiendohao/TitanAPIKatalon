@@ -67,7 +67,7 @@ ResponseObject res_GetBookingDetail = WS.sendRequest(GetBookingDetail)
 //Invalid Dealer Code
 if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
 	println "Invalid Dealer Code"
-	VerifyResponse(res_GetBookingDetail,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+	VerifyResponse(res_GetBookingDetail,0,"Authorization has been denied for this request")
 }
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
@@ -141,7 +141,7 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ToyotaContactID', '19011995')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.FirstName', 'QATEAM')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.LastName', 'VINHLE')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.PhoneNumber', '0983612137')
+	//WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.PhoneNumber', '0983612137')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.Email', 'QAteam.automation@titandms.com')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.DealerMarketingAllowedFlag', 'false')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ContactRelationship', 'OSB_CUSTOMER_OWNER')

@@ -106,7 +106,7 @@ use(groovy.time.TimeCategory) {
 //StartDate  after EndDate
 if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
 	println "Invalid Dealer Code"
-	VerifyResponse(res_ReserveTimeslot,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+	VerifyResponse(res_ReserveTimeslot,0,"Authorization has been denied for this request")
 }
 //Duration <=0
 else if(Duration <= 0){
@@ -151,7 +151,11 @@ else if(Service_Date.format("E")=="Sat" || Service_Date.format("E")=="Sun"){
  	VerifyResponse(res_ReserveTimeslot,0,"is can't book more hours than are available hours in this workshop")
 }
 //Validate DropOff Time and Pickup Time and need duration	 
-else if(DropOffTime.before(Start_WS_Hr) || DropOffTime.after(End_WS_Hr) || duration_hours < Duration){
+else if(DropOffTime.before(Start_WS_Hr) || 
+	DropOffTime.after(End_WS_Hr) || 
+	duration_hours < Duration || 
+	(DropOffTime.before(current_hour) && (GlobalVariable.Glb_ServiceDate == GlobalVariable.Glb_Current_Date))||
+	PickUpTime.after(End_WS_Hr)){
 	println "Validate DropOff Time and Pickup Time and need duration"
 	VerifyResponse(res_ReserveTimeslot,0,"timeslot is taken")
 }

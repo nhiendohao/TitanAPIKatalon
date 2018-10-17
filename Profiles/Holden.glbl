@@ -279,4 +279,9 @@
       <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(6, 1)</initValue>
       <name>Glb_ChangeLaborDescription</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_CustomerType</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

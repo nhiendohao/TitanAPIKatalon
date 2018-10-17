@@ -129,6 +129,7 @@ def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as D
 def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 Date DropOffTime = ConvertObjectToDate(GlobalVariable.Glb_DropOffTime)
 Date PickUpTime = ConvertObjectToDate(GlobalVariable.Glb_PickUpTime)
+Date current_hour = ConvertObjectToDate(GlobalVariable.Glb_Current_Hour)
 //Convert String to Date
 Object Start_WS_Hr_Obj = "0" + GlobalVariable.Glb_WorkshopStart +":00"
 Date Start_WS_Hr = ConvertObjectToDate(Start_WS_Hr_Obj)
@@ -146,7 +147,7 @@ use(groovy.time.TimeCategory) {
 //Clasify case
 //StartDate  after EndDate
 if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
-	VerifyResponse(res_ChangeBooking,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+	VerifyResponse(res_ChangeBooking,0,"Authorization has been denied for this request")
 //Drop Off Time after Pick Up Time
 else if(DropOffTime.after(PickUpTime))
 	 VerifyResponse(res_ChangeBooking,0,"must be greater then the drop off times")
@@ -172,7 +173,8 @@ else if(!(GlobalVariable.Glb_Location_Code == "1"||
 else if(!(var_DateChange == GlobalVariable.Glb_ServiceDate))
 	VerifyResponse(res_ChangeBooking,0,"pick up timeslot taken")
 //Drop Off Time before WS Start Hour
-else if( DropOffTime.before(Start_WS_Hr))
+else if( DropOffTime.before(Start_WS_Hr) ||
+	(DropOffTime.before(current_hour) && (GlobalVariable.Glb_ServiceDate == GlobalVariable.Glb_Current_Date)))
 	VerifyResponse(res_ChangeBooking,0,"drop off timeslot taken")
 //Pickup Time after WS End Hour
 else if( PickUpTime.after(End_WS_Hr))

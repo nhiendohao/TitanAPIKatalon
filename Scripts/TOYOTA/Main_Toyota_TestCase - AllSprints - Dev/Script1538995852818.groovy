@@ -17,6 +17,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 //This testcase is followed workflow below:
+//Dataline
+println var_LineNumber
 //0. Set Status for each Sprint
 GlobalVariable.Glb_Status_GetOperationCode = "failed"
 GlobalVariable.Glb_Status_GetDropOffTime = "failed"

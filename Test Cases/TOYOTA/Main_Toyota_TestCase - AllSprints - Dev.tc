@@ -271,4 +271,11 @@
       <masked>false</masked>
       <name>var_AddJobLine</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ec778af6-10d5-4eda-9acc-ec6b6324ac24</id>
+      <masked>false</masked>
+      <name>var_LineNumber</name>
+   </variable>
 </TestCaseEntity>

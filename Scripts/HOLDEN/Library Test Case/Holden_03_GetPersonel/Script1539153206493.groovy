@@ -54,7 +54,13 @@ import java.sql.Driver
 	/**
 	 * Use If/ If else Statement
 	 */
+	//Dealer Code invalid
+	if(!(GlobalVariable.Glb_Dealer_Code == '111148')){
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(GetPersonel, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
+		println "Dealer Code invalid"
+		}
 	
+	else{
 //## VALID RESPONSE VERIFICATION
 //Validate Response Status Code
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_GetPersonel, 200, "")
@@ -121,5 +127,6 @@ import java.sql.Driver
 	  sql.close()
 	  conn.close()
 	
-	
-	
+	  //Set Status Method
+	  GlobalVariable.Glb_Status_GetAdvisor = 'passed'
+	}

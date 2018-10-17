@@ -131,7 +131,7 @@ use(groovy.time.TimeCategory) {
 //Invalid Dealer Code
 if (!(GlobalVariable.Glb_Dealer_Code == "765A")) {
 	println "Invalid Dealer Code"
-	VerifyResponse(res_GetPickupTime,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+	VerifyResponse(res_GetPickupTime,0,"Authorization has been denied for this request")
 }
 //Duration = 0
 else if(Duration <= 0){

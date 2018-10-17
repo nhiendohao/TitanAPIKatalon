@@ -257,4 +257,11 @@
       <masked>false</masked>
       <name>var_ChangeDate</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ddecdeb9-5959-4469-9cb8-1f3550a8baa8</id>
+      <masked>false</masked>
+      <name>var_LineNumber</name>
+   </variable>
 </TestCaseEntity>

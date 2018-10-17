@@ -23,24 +23,41 @@ if(!(Setup_FirstName == "")) GlobalVariable.Glb_FirstName = Setup_FirstName
 if(!(Setup_LastName == "")) GlobalVariable.Glb_LastName = Setup_LastName
 if(!(Setup_StartSearchDate == "")) GlobalVariable.Glb_StartSearchDate = Setup_StartSearchDate
 if(!(Setup_EndSearchDate == "")) GlobalVariable.Glb_EndSearchDate = Setup_EndSearchDate
+if(!(Setup_CustomerType == "")) GlobalVariable.Glb_CustomerType = Setup_CustomerType
 
 if(Setup_CustomerType.toString().toLowerCase() == "exist"){
 	if(!(Setup_AddJobLine == "")) GlobalVariable.Glb_AddJobLine = Setup_AddJobLine
+	println GlobalVariable.Glb_AddJobLine
 	if(!(Setup_BookingId == "")) GlobalVariable.Glb_Booking_ID = Setup_BookingId
+	println GlobalVariable.Glb_Booking_ID
 	if(!(Setup_TradingEntityId == "")) GlobalVariable.Glb_Cus_TradingEntity = Setup_TradingEntityId
+	println GlobalVariable.Glb_Cus_TradingEntity
 	if(!(Setup_LineOne == "")) GlobalVariable.Glb_Cus_LineOne = Setup_LineOne
+	println GlobalVariable.Glb_Cus_LineOne
 	if(!(Setup_CityName == "")) GlobalVariable.Glb_Cus_CityName = Setup_CityName
+	println GlobalVariable.Glb_Cus_CityName
 	if(!(Setup_CountryID == "")) GlobalVariable.Glb_Cus_CountryID = Setup_CountryID
+	println GlobalVariable.Glb_Cus_CountryID
 	if(!(Setup_Postcode == "")) GlobalVariable.Glb_Cus_Postcode = Setup_Postcode
+	println GlobalVariable.Glb_Cus_Postcode
 	if(!(Setup_State == "")) GlobalVariable.Glb_Cus_State = Setup_State
+	println GlobalVariable.Glb_Cus_State
 	if(!(Setup_ChannelCode == "")) GlobalVariable.Glb_Cus_ChannelCode = Setup_ChannelCode
+	println GlobalVariable.Glb_Cus_ChannelCode
 	if(!(Setup_PhoneNumber == "")) GlobalVariable.Glb_Cus_PhoneNumber = Setup_PhoneNumber
+	println GlobalVariable.Glb_Cus_PhoneNumber
 	if(!(Setup_Email == "")) GlobalVariable.Glb_Cus_Email = Setup_Email
+	println GlobalVariable.Glb_Cus_Email
 	if(!(Setup_Model == "")) GlobalVariable.Glb_veh_Model = Setup_Model
+	println GlobalVariable.Glb_veh_Model
 	if(!(Setup_ModelYear == "")) GlobalVariable.Glb_veh_ModelYear = Setup_ModelYear
+	println GlobalVariable.Glb_veh_ModelYear
 	if(!(Setup_MakeString == "")) GlobalVariable.Glb_veh_MakeString = Setup_MakeString
+	println GlobalVariable.Glb_veh_MakeString
 	if(!(Setup_ManufacturerName == "")) GlobalVariable.Glb_veh_ManufacturerName = Setup_ManufacturerName
+	println GlobalVariable.Glb_veh_ManufacturerName
 	if(!(Setup_VehicleID == "")) GlobalVariable.Glb_veh_VehicleId = Setup_VehicleID
+	println GlobalVariable.Glb_veh_VehicleId
 }
 else{
 	//If case New Customer required, add random number for Name Customer

@@ -128,7 +128,7 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ToyotaContactID', GlobalVariable.Glb_ContactId)
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.FirstName', GlobalVariable.Glb_FirstName)
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.LastName', GlobalVariable.Glb_LastName)
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.PhoneNumber', '0983612137')
+	//WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.PhoneNumber', '0983612137')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.Email', 'QAteam.automation@titandms.com')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.DealerMarketingAllowedFlag', 'false')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ContactRelationship', 'OSB_CUSTOMER_OWNER')

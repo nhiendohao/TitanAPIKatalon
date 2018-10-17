@@ -91,7 +91,7 @@ ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 //Clasify case
 //StartDate  after EndDate
 if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
-	VerifyResponse(res_GetServiceOperation,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+	VerifyResponse(res_GetServiceOperation,0,"Authorization has been denied for this request")
 //Start Date after End Date
 else if(Start_Date_Str.after(End_Date_Str))
 	 VerifyResponse(res_GetServiceOperation,0,"cannot be greater than end date")

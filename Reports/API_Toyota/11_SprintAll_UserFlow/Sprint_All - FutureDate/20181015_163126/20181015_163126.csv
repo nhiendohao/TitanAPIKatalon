@@ -1,6 +1,0 @@
-Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
-Sprint_All - FutureDate,,,2018-10-15 16:31:27,2018-10-15 16:31:28,0.585s,ERROR
-,,,,,,
-Test Cases/TOYOTA/Main_Toyota_TestCase - AllSprints - Dev,,,2018-10-15 16:31:27,2018-10-15 16:31:28,0.348s,ERROR
-"Statement - Glb_Status_GetOperationCode = ""failed""",,,2018-10-15 16:31:27,2018-10-15 16:31:27,0.034s,PASSED
-Start tear down : HandleFailing,,,2018-10-15 16:31:28,2018-10-15 16:31:28,0.003s,PASSED

@@ -56,59 +56,64 @@ import static com.xlson.groovycsv.CsvParser.parseCsv //Reading CSV
 	/**
 	 * Use If/ If else Statement
 	 */
+	if(!(GlobalVariable.Glb_Dealer_Code == '111148')){
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_GetLaborOperations, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
+		println "Dealer Code invalid"
+		}
 	
-//## VALID RESPONSE VERIFICATION
-//Validate Response Status Code
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_GetLaborOperations, 200, "")
-//Validate "Sender"
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Sender", "CreatorNameCode", "GM", 0, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Sender", "SenderNameCode", "OSS", 0, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Sender", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 0, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Sender", "DealerCountryCode", "US", 0, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Sender", "LanguageCode", "en-US", 0, 0)
-	
-//Validate "Destination"
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DestinationNameCode", "QI", 0, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DestinationSoftwareCode", "QI", 0, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DestinationSoftware", "QI", 0, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DealerNumberID", "111148", 0, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DealerTargetCountry", "US", 0, 0)
-	
-
-//Get number of Advisors
-	int numberPersonel = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSizeSOAPNode'(res_GetLaborOperations, "LaborOperations")
-	
-//CSV
-//Get data from CSV file
-int countCSV = 0
-CSVReader = new File("Data Files/Holden/OperationCodeCSV.csv")
-def csv_content = CSVReader.getText('utf-8')
- //Convert CSV to text
-def CSVData = parseCsv(csv_content, separator: ',', readFirstLine: false)
- //Get for each column and Assert with Response
-for (line in CSVData) {
-	
-	  //Get information of all personel
-	  def listDocId = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "DocumentIdentification", "DocumentID", countCSV, 0) as String
-	  def listLaborId = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "LaborOperationsDetail", "LaborOperationID", countCSV, 0) as String
-	  def listLaborOperationDes = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "LaborOperationsDetail", "LaborOperationDescription", countCSV, 0) as String
+	else{
+		//## VALID RESPONSE VERIFICATION
+		//Validate Response Status Code
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_GetLaborOperations, 200, "")
+		//Validate "Sender"
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Sender", "CreatorNameCode", "GM", 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Sender", "SenderNameCode", "OSS", 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Sender", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Sender", "DealerCountryCode", "US", 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Sender", "LanguageCode", "en-US", 0, 0)
+			
+		//Validate "Destination"
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DestinationNameCode", "QI", 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DestinationSoftwareCode", "QI", 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DestinationSoftware", "QI", 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DealerNumberID", "111148", 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DealerTargetCountry", "US", 0, 0)
+			
 		
-	  //Handle something
-	  String Operation_Code = line.Operation_Code.toString()
-	  if(Operation_Code == '50012' ||
-		  Operation_Code == '41024' ||
-		  Operation_Code == '91020') Operation_Code = '0' + Operation_Code
-	  //Assert value between sql and response
-	  assert listDocId == Operation_Code	
-	  assert listLaborId == Operation_Code 	
-	  assert listLaborOperationDes == line.Description as String
-	 
-	  //Increase count variable
-	  countCSV += 1
-	  println countCSV
-  }
-
-//Assert number CSV and response
-assert numberPersonel == countCSV
-  
+		//Get number of Advisors
+			int numberPersonel = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSizeSOAPNode'(res_GetLaborOperations, "LaborOperations")
+			
+		//CSV
+		//Get data from CSV file
+		int countCSV = 0
+		CSVReader = new File("Data Files/Holden/OperationCodeCSV.csv")
+		def csv_content = CSVReader.getText('utf-8')
+		 //Convert CSV to text
+		def CSVData = parseCsv(csv_content, separator: ',', readFirstLine: false)
+		 //Get for each column and Assert with Response
+		for (line in CSVData) {
+			
+			  //Get information of all personel
+			  def listDocId = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "DocumentIdentification", "DocumentID", countCSV, 0) as String
+			  def listLaborId = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "LaborOperationsDetail", "LaborOperationID", countCSV, 0) as String
+			  def listLaborOperationDes = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "LaborOperationsDetail", "LaborOperationDescription", countCSV, 0) as String
+				
+			  //Handle something
+			  String Operation_Code = line.Operation_Code.toString()
+			  if(Operation_Code == '50012' ||
+				  Operation_Code == '41024' ||
+				  Operation_Code == '91020') Operation_Code = '0' + Operation_Code
+			  //Assert value between sql and response
+			  assert listDocId == Operation_Code	
+			  assert listLaborId == Operation_Code 	
+			  assert listLaborOperationDes == line.Description as String
+			 
+			  //Increase count variable
+			  countCSV += 1
+			  println countCSV
+		  }
+		
+		//Assert number CSV and response
+		assert numberPersonel == countCSV
+	}
   

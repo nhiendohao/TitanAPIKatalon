@@ -72,7 +72,12 @@ def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as D
 //Invalid Dealer Code
 if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
 	println "Invalid Dealer Code"
-	VerifyResponse(res_SearchForBooking,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+	VerifyResponse(res_SearchForBooking,0,"Authorization has been denied for this request")
+}
+//Service Date Past
+else if (StartSearchDate.after(EndSearchDate)){
+	println "Service Date Past"
+	VerifyResponse(res_SearchForBooking,0,"cannot be greater than end date")
 }
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||
@@ -88,11 +93,7 @@ else if(!(GlobalVariable.Glb_Location_Code == "1"||
 	println "Not exist Workshop"
 	VerifyResponse(res_SearchForBooking,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
 }
-//Service Date Past
-else if (StartSearchDate.after(EndSearchDate)){
-	println "Service Date Past"
-	VerifyResponse(res_SearchForBooking,0,"cannot be greater than end date")
-}
+
 //All valid
 else{
 	println "All valid"

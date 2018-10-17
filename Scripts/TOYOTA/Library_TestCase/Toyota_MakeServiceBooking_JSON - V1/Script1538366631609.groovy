@@ -113,6 +113,7 @@ Date PickUpTime = ConvertObjectToDate(GlobalVariable.Glb_PickUpTime)
 //Convert String to Date
 Object Start_WS_Hr_Obj = "0" + GlobalVariable.Glb_WorkshopStart +":00"
 Date Start_WS_Hr = ConvertObjectToDate(Start_WS_Hr_Obj)
+Date current_hour = ConvertObjectToDate(GlobalVariable.Glb_Current_Hour)
 Object End_WS_Hr_Obj = GlobalVariable.Glb_WorkshopEnd +":00"
 Date End_WS_Hr = ConvertObjectToDate(End_WS_Hr_Obj)
 //Calculate Time avalable for service
@@ -129,7 +130,7 @@ println GlobalVariable.Glb_BookingStatus
 //Invalid Dealer Code
 if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
 	println "Invalid Dealer Code"
-	VerifyResponse(res_MakeServiceBooking,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+	VerifyResponse(res_MakeServiceBooking,0,"Authorization has been denied for this request")
 }
 //X Reserve Token = no
 else if( GlobalVariable.Glb_Reserve_Token.toString().toLowerCase() == "no" ){
@@ -176,14 +177,15 @@ else if(Service_Date.before(current)){
 	VerifyResponse(res_MakeServiceBooking,0,"is before the current date")
 }
 //Drop Off Time before WS Start Hour
-else if( DropOffTime.before(Start_WS_Hr) || GlobalVariable.Glb_BookingStatus == "current"){
-	println "Drop Off Time before WS Start Hour"
+else if( DropOffTime.before(Start_WS_Hr) || GlobalVariable.Glb_BookingStatus == "current"||
+	(DropOffTime.before(current_hour) && (GlobalVariable.Glb_ServiceDate == GlobalVariable.Glb_Current_Date))){
+	println "Drop Off Time before WS Start Hour || current booking || Drop Off Time before current hour"
 	VerifyResponse(res_MakeServiceBooking,0,"drop off timeslot is taken")
 }
 //Pickup Time after WS End Hour
 else if( PickUpTime.after(End_WS_Hr)){
 	println "Pickup Time after WS End Hour"
-	 VerifyResponse(res_MakeServiceBooking,0,"pick up timeslot taken")
+	 VerifyResponse(res_MakeServiceBooking,0,"pick up timeslot is taken")
 }
  
 //All valid

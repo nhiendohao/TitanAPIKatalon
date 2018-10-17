@@ -64,7 +64,7 @@ def current = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_Current_Date) as Date
 //Invalid Dealer Code
 if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
 	println "Invalid Dealer Code"
-	VerifyResponse(res_GetTransportOption,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+	VerifyResponse(res_GetTransportOption,0,"Authorization has been denied for this request")
 }
 //Closed Workshop
 else if(GlobalVariable.Glb_Location_Code == "2"||

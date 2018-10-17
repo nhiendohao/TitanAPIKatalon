@@ -56,9 +56,14 @@ println GlobalVariable.Glb_Dealer_Code
 	/**
 	 * Use If/ If else Statement
 	 */
-	
+	//Dealer Code invalid
+	if(!(GlobalVariable.Glb_Dealer_Code == '111148')){
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_IntegrationConfig, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
+		println "Dealer Code invalid"
+		}
 //## VALID RESPONSE VERIFICATION
 //Validate Response Status Code
+	else{
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_IntegrationConfig, 200, "")
 	
 //Validate "Sender"
@@ -93,5 +98,8 @@ println GlobalVariable.Glb_Dealer_Code
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_IntegrationConfig, "IntegrationConfigurationDetail", "CustomerInformationSearchable", "true", 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_IntegrationConfig, "IntegrationConfigurationDetail", "AdvisorsRetrievable", "true", 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_IntegrationConfig, "IntegrationConfigurationDetail", "LaborOperationCodesRetrievable", "true", 0, 0)
-
+	
+	//Set Status Method
+	GlobalVariable.Glb_Status_Integration = 'passed'
+	}
 	
