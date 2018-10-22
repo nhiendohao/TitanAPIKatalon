@@ -30,6 +30,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 import java.text.ParseException as ParseException
 import java.text.SimpleDateFormat as SimpleDateFormat
 import java.util.Date as Date
+import java.awt.List
 import java.io.File as File
 import javax.xml.parsers.DocumentBuilderFactory as DocumentBuilderFactory
 import org.w3c.dom.Document as Document
@@ -115,19 +116,27 @@ String Str_xml = ((((((((((((((((((((((((((('<Gbookstore> ' + '<bookstore> ') + 
 //    
 //    return value
 //}
-println GlobalVariable.Glb_Dealer_Code
-println GlobalVariable.Glb_ChangeJobNumber
-println GlobalVariable.Glb_ChangeJobType
-println GlobalVariable.Glb_ChangeLaborCode
-println GlobalVariable.Glb_ChangeLaborDescription
-println GlobalVariable.Glb_ChangeNote
-println GlobalVariable.Glb_ChangeTransport
-println GlobalVariable.Glb_Ser_AppointmentNote
-println GlobalVariable.Glb_Ser_JobNumberString
-println GlobalVariable.Glb_Ser_JobTypeString
-println GlobalVariable.Glb_Ser_LaborCode
-println GlobalVariable.Glb_Ser_LaborDescription
-println GlobalVariable.Glb_Ser_LaborId
-println GlobalVariable.Glb_Ser_RepairIndicator
-println GlobalVariable.Glb_Ser_Transportation
+//println GlobalVariable.Glb_Dealer_Code
+//println GlobalVariable.Glb_ChangeJobNumber
+//println GlobalVariable.Glb_ChangeJobType
+//println GlobalVariable.Glb_ChangeLaborCode
+//println GlobalVariable.Glb_ChangeLaborDescription
+//println GlobalVariable.Glb_ChangeNote
+//println GlobalVariable.Glb_ChangeTransport
+//println GlobalVariable.Glb_Ser_AppointmentNote
+//println GlobalVariable.Glb_Ser_JobNumberString
+//println GlobalVariable.Glb_Ser_JobTypeString
+//println GlobalVariable.Glb_Ser_LaborCode
+//println GlobalVariable.Glb_Ser_LaborDescription
+//println GlobalVariable.Glb_Ser_LaborId
+//println GlobalVariable.Glb_Ser_RepairIndicator
+//println GlobalVariable.Glb_Ser_Transportation
 
+def date = new Date()
+Date newdate = 
+println date
+String dateStr =   date.format('yyyyMMdd')
+println date
+println dateStr.substring(0, 4) as Integer
+println date.set(year: dateStr.substring(0, 4) as Integer, month: dateStr.substring(4, 6) as Integer)
+println date

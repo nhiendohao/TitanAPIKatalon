@@ -4,6 +4,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
 import com.kms.katalon.core.annotation.TearDown
+import com.kms.katalon.core.annotation.TearDownIfError
 import com.kms.katalon.core.annotation.TearDownIfFailed
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -140,6 +141,16 @@ if (var_Status_CancelBooking == 'true' && !(GlobalVariable.Glb_Reserve_Token == 
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 	//Re-Check call Cancel again
 	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_CancelBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
+}
+
+@TearDownIfError
+public void printLineError(){
+	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.write2File'(var_LineNumber as String, "Error")
+}
+
+@TearDownIfFailed
+public void printLineFailed(){
+	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.write2File'(var_LineNumber as String, "Failed")
 }
 
 @TearDown

@@ -252,6 +252,21 @@ class Library_Method_VinhLe {
 		return dateFormat
 	}
 
+	/**
+	 * 	WRITE TO FILE
+	 */
+	@Keyword
+	String write2File(String fileNameStr, String typeMsgName) {
+		def txtFileInfo = []
+		def directory = "C:/Users/vinh.le/git/TitanAPIKatalon/LineTracking"
+		def fileName = fileNameStr + "_" +typeMsgName
+		def extension = ".txt"
+		new File("$directory/$fileName$extension").withWriter { out ->
+			txtFileInfo.each {
+			  out.println it
+			}
+		  }
+	}
 
 
 }

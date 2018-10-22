@@ -133,9 +133,11 @@ if(var_Status_ProcessServiceAdd == 'true')
 //5. Process service Add action
 //Create Appointment
 if(var_Status_ProcessServiceChange == 'true'){
+	
+	//Use for normal situation,Global variable for this method is not re set up
 	if(!(var_ChangeLaborContent == 'true')){
 	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_05B_ChangeServiceVisit'), [
-		('var_ChangeLaborCode') : ''        ,
+		('var_ChangeLaborCode') :''        ,
 		('var_ChangeLaborDescription') : '',
 		 ('var_ChangeDate') : '',
 		 ('var_ChangeNote') : '',
@@ -145,6 +147,7 @@ if(var_Status_ProcessServiceChange == 'true'){
 	 FailureHandling.STOP_ON_FAILURE)
 	}
 	else{
+		//Set the new value for Global variable
 		WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_05B_ChangeServiceVisit'), [
 			('var_ChangeLaborCode') : GlobalVariable.Glb_ChangeLaborCode ,
 			('var_ChangeLaborDescription') : GlobalVariable.Glb_ChangeLaborDescription,

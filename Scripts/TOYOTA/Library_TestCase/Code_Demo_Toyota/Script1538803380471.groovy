@@ -5,6 +5,8 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import java.lang.reflect.Array as Array
 import static org.assertj.core.api.Assertions.*
 import org.eclipse.persistence.internal.oxm.record.json.JSONParser.array_return as array_return
+
+import com.kms.katalon.core.annotation.TearDownIfFailed
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -29,8 +31,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 import java.text.ParseException as ParseException
 import java.text.SimpleDateFormat as SimpleDateFormat
 import java.util.Date as Date
-import java.io.File
-
+import java.io.File as File
 
 //RequestObject GetServiceOperation = findTestObject('Toyota/GetDropOffTimes_JSON', [
 //	('Start_Date') : "2018-10-08",
@@ -45,5 +46,12 @@ import java.io.File
 //ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 //
 //println res_GetServiceOperation.responseText
+println(GlobalVariable.Glb_Dealer_Code)
+assert 1 ==2
 
-println GlobalVariable.Glb_Dealer_Code
+@TearDownIfFailed
+public void failed(){
+	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.write2File'(GlobalVariable.Glb_Dealer_Code as String, "demo")
+}
+
+

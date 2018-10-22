@@ -4,7 +4,7 @@
    <name>Sprint_Search Booking</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-17T16:19:36</lastRun>
+   <lastRun>2018-10-22T13:18:41</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -21,7 +21,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>3616-3714</value>
+            <value>3620-3714</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All_Dev</testDataId>
       </testDataLink>

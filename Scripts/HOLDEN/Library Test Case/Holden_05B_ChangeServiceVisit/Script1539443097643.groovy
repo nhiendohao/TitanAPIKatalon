@@ -42,15 +42,14 @@ String objectRepo = "Holden/Holden_05B_ChangeServiceVisit"
 if(GlobalVariable.Glb_AddJobLine.toString().toLowerCase() == 'true')
 	objectRepo = "Holden/Holden_05B_ChangeServiceVisit_AddOpCode"
 	
-if(GlobalVariable.Glb_ChangeLaborContent.toString().toLowerCase() == "true"){
-	GlobalVariable.Glb_ServiceDate = var_ChangeDate
-	GlobalVariable.Glb_Ser_AppointmentNote = var_ChangeNote
-	GlobalVariable.Glb_Ser_Transportation = var_ChangeTransport
-	GlobalVariable.Glb_Ser_JobNumberString = var_ChangeJobNumber
-	GlobalVariable.Glb_Ser_JobTypeString = var_ChangeJobType
-	GlobalVariable.Glb_Ser_LaborCode = var_ChangeLaborCode
-	GlobalVariable.Glb_Ser_LaborDescription = var_ChangeLaborDescription
-}
+	if(!(var_ChangeDate ==  "")) GlobalVariable.Glb_ServiceDate = var_ChangeDate
+	if(!(var_ChangeNote ==  "")) GlobalVariable.Glb_Ser_AppointmentNote = var_ChangeNote
+	if(!(var_ChangeTransport ==  "")) GlobalVariable.Glb_Ser_Transportation = var_ChangeTransport
+	if(!(var_ChangeJobNumber ==  "")) GlobalVariable.Glb_Ser_JobNumberString = var_ChangeJobNumber
+	if(!(var_ChangeJobType ==  "")) GlobalVariable.Glb_Ser_JobTypeString = var_ChangeJobType
+	if(!(var_ChangeLaborCode ==  "")) GlobalVariable.Glb_Ser_LaborCode = var_ChangeLaborCode
+	if(!(var_ChangeLaborDescription ==  "")) GlobalVariable.Glb_Ser_LaborDescription = var_ChangeLaborDescription
+
 
 //## PROCESS API
 //Declare request
