@@ -22,12 +22,10 @@ Replace Transmission Oil,STO,0.4,0
 "Replace Wiper Inserts, Front",SWBFI,0.2,0
 "Replace Wiper Inserts, Rear",SWBRI,0.2,0
 "Replace Wiper Inserts, Rear",SWBRI,0.2,0
-100 Point Quality inspection,100P,1.3,1.3
+100 Point Quality inspection,100P,1.3,0
 Courtesy supplied vehicle,LOANCAR,0,0
 Recycling Fee,REC,0,0
 """Whip around for Rio"" Donation",RIO,0,0
-TITAN_OP_CODE_ADD1,TITAN_OP_CODE_ADD1,1,0.5
-TITAN_OP_CODE_ADD2,TITAN_OP_CODE_ADD2,1,0.5
 Volkswagen Pre Delivery and Clean.,VWPD,2.7,230
 Wheel Balance,WB,0.1,7.5
 Wheel Balance (4wheels),WB4,0.4,30
