@@ -121,20 +121,10 @@ else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
  	println "Invalid Service bay"
 	 VerifyResponse(res_ReserveTimeslot,0,"Service Bay Type is unknown")
 }
- //Closed Workshop
- else if(GlobalVariable.Glb_Location_Code == "2"||
-	GlobalVariable.Glb_Location_Code == "3"||
-	GlobalVariable.Glb_Location_Code == "5"){
-	println "Closed Workshop"
-	 VerifyResponse(res_ReserveTimeslot,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
- }
- //Not exist Workshop
- else if(!(GlobalVariable.Glb_Location_Code == "1"||
-	 GlobalVariable.Glb_Location_Code == "4"||
-	 GlobalVariable.Glb_Location_Code == "360")){
- 	println "Not exist Workshop"
-	 VerifyResponse(res_ReserveTimeslot,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
- }
+ //Not exist Location Code
+else if(!(GlobalVariable.Glb_Location_Code == "765"||
+	GlobalVariable.Glb_Location_Code == "37060"))
+VerifyResponse(res_ReserveTimeslot,0,"Workshop for TOYOTA make has not been set up")
 //StartDate before Current
 else if(Service_Date.before(current)){
 	println "StartDate before Current"

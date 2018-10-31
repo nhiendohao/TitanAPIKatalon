@@ -79,20 +79,10 @@ else if (StartSearchDate.after(EndSearchDate)){
 	println "Service Date Past"
 	VerifyResponse(res_SearchForBooking,0,"cannot be greater than end date")
 }
-//Closed Workshop
-else if(GlobalVariable.Glb_Location_Code == "2"||
-		GlobalVariable.Glb_Location_Code == "3"||
-		GlobalVariable.Glb_Location_Code == "5"){
-		println "Closed Workshop"
-	VerifyResponse(res_SearchForBooking,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
-}
-//Not exist Workshop
-else if(!(GlobalVariable.Glb_Location_Code == "1"||
-	GlobalVariable.Glb_Location_Code == "4"||
-	GlobalVariable.Glb_Location_Code == "360")){
-	println "Not exist Workshop"
-	VerifyResponse(res_SearchForBooking,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
-}
+//Not exist Location Code
+else if(!(GlobalVariable.Glb_Location_Code == "765"||
+	GlobalVariable.Glb_Location_Code == "37060"))
+VerifyResponse(res_SearchForBooking,0,"Workshop for TOYOTA make has not been set up")
 
 //All valid
 else{

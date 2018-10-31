@@ -3,6 +3,6 @@
    <description></description>
    <name>Collection_All_SpecialBookingScenarios</name>
    <tag></tag>
-   <executionMode>SEQUENTIAL</executionMode>
+   <executionMode>PARALLEL</executionMode>
    <testSuiteRunConfigurations/>
 </TestSuiteCollectionEntity>

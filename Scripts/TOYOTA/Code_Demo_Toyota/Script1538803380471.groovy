@@ -32,9 +32,13 @@ import java.text.SimpleDateFormat as SimpleDateFormat
 import java.util.Date as Date
 import java.io.File as File
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-WebUI.openBrowser("")
-WebUI.navigateToUrl("http://demo.guru99.com/test/")
 
-//WebUI.closeBrowser()
-
+println 'ok'
+Thread.sleep(200)

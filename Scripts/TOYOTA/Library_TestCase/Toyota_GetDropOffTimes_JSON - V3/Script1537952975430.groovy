@@ -75,6 +75,12 @@ int End = GlobalVariable.Glb_WorkshopEnd as Integer
 int Interval = GlobalVariable.Glb_Interval as Integer
 int Duration = GlobalVariable.Glb_Duration_Time as Integer
 // Declare request with parameter
+println GlobalVariable.Glb_StartDate
+println GlobalVariable.Glb_EndDate
+println GlobalVariable.Glb_ServiceBay_Type
+println GlobalVariable.Glb_Duration_Time
+println GlobalVariable.Glb_Dealer_Code
+println GlobalVariable.Glb_Location_Code
 RequestObject GetServiceOperation = findTestObject('Toyota/GetDropOffTimes_JSON', [
 	('Start_Date') : GlobalVariable.Glb_StartDate, 
 	('End_Date') : GlobalVariable.Glb_EndDate, 
@@ -104,16 +110,10 @@ else if(!(GlobalVariable.Glb_ServiceBay_Type == "PERIODIC"||
 	 GlobalVariable.Glb_ServiceBay_Type == "REPAIR"||
 	 GlobalVariable.Glb_ServiceBay_Type == "DIAGNOSTIC"))
 	 VerifyResponse(res_GetServiceOperation,0,"Service Bay Type is unknown")
- //Closed Workshop
- else if(GlobalVariable.Glb_Location_Code == "2"||
-	GlobalVariable.Glb_Location_Code == "3"||
-	GlobalVariable.Glb_Location_Code == "5")
-	 VerifyResponse(res_GetServiceOperation,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
- //Not exist Workshop
- else if(!(GlobalVariable.Glb_Location_Code == "1"||
-	 GlobalVariable.Glb_Location_Code == "4"||
-	 GlobalVariable.Glb_Location_Code == "360"))
-	 VerifyResponse(res_GetServiceOperation,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+ //Not exist Location Code
+else if(!(GlobalVariable.Glb_Location_Code == "765"||
+	GlobalVariable.Glb_Location_Code == "37060"))
+VerifyResponse(res_GetServiceOperation,0,"Workshop for TOYOTA make has not been set up")
 //StartDate before Current
 else if(Start_Date_Str.before(current))
 	VerifyResponse(res_GetServiceOperation,0,"is before the current date")
@@ -178,7 +178,7 @@ while(!(realtime_ws.after(time_close_ws))){
 }
 
 //Handle for unavailable timeslot
-if(!(Reserve_Timeslot == "")&&(Service_Date == Start_Date_Str)){
+if((!(Reserve_Timeslot == ""))&&(Service_Date.equals(Start_Date_Str))){
 	times = times - Reserve_Timeslot
 	count = count - 1
 }

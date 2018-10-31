@@ -4,7 +4,7 @@
    <name>Sprint_All - FutureDate</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-24T09:15:14</lastRun>
+   <lastRun>2018-10-31T10:19:32</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -21,7 +21,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>3869-3940</value>
+            <value>4029-4124</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All_Dev</testDataId>
       </testDataLink>

@@ -69,20 +69,10 @@ if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
 	println "Invalid Dealer Code"
 	VerifyResponse(res_GetBookingDetail,0,"Authorization has been denied for this request")
 }
-//Closed Workshop
-else if(GlobalVariable.Glb_Location_Code == "2"||
-		GlobalVariable.Glb_Location_Code == "3"||
-		GlobalVariable.Glb_Location_Code == "5"){
-		println "Closed Workshop"
-	VerifyResponse(res_GetBookingDetail,400,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
-}
-//Not exist Workshop
-else if(!(GlobalVariable.Glb_Location_Code == "1"||
-	GlobalVariable.Glb_Location_Code == "4"||
-	GlobalVariable.Glb_Location_Code == "360")){
-	println "Not exist Workshop"
-	VerifyResponse(res_GetBookingDetail,400,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
-}
+//Not exist Location Code
+else if(!(GlobalVariable.Glb_Location_Code == "765"||
+	GlobalVariable.Glb_Location_Code == "37060"))
+VerifyResponse(res_GetBookingDetail,0,"Workshop for TOYOTA make has not been set up")
 //Booking ID wrong or booking cancled
 else if (GlobalVariable.Glb_Booking_ID == "1901" || GlobalVariable.Glb_BookingStatus == "cancel"){
 	println "Booking ID wrong or booking cancled"

@@ -90,16 +90,10 @@ if(!(GlobalVariable.Glb_Dealer_Code == "765A"))
 //Invalid Service Type
 else if(!(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK" || GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_ADDITIONAL"))
 	VerifyResponse(res_GetServiceOperation,0,"Service Type Unknown")
-//Closed Workshop
-else if(GlobalVariable.Glb_Location_Code == "2"||
-		GlobalVariable.Glb_Location_Code == "3"||
-		GlobalVariable.Glb_Location_Code == "5")
-	VerifyResponse(res_GetServiceOperation,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
-//Not exist Workshop
-else if(!(GlobalVariable.Glb_Location_Code == "1"||
-	GlobalVariable.Glb_Location_Code == "4"||
-	GlobalVariable.Glb_Location_Code == "360"))
-VerifyResponse(res_GetServiceOperation,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
+//Not exist Location Code
+else if(!(GlobalVariable.Glb_Location_Code == "765"||
+	GlobalVariable.Glb_Location_Code == "37060"))
+VerifyResponse(res_GetServiceOperation,0,"Workshop for TOYOTA make has not been set up")
 //Invalid VIN
 else if(GlobalVariable.Glb_VIN.toString().toLowerCase() == "vininvalid")
 	VerifyResponse(res_GetServiceOperation,0,"VIN mapping to many vehicles")

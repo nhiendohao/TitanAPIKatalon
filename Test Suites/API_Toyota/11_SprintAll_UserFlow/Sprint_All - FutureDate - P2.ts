@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Sprint_All - DevTransferDataSet</name>
+   <name>Sprint_All - FutureDate - P2</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-31T10:00:53</lastRun>
+   <lastRun>2018-10-31T10:19:33</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>7a34ce4a-580c-48f1-9a65-7289160444d4</testSuiteGuid>
+   <testSuiteGuid>6562bb13-b860-4672-93ca-33ecc0704a06</testSuiteGuid>
    <testCaseLink>
       <guid>d9a0388b-193b-4768-a036-b9d2de3e928a</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -20,8 +20,8 @@
          <combinationType>ONE</combinationType>
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
-            <iterationType>SPECIFIC</iterationType>
-            <value>3996</value>
+            <iterationType>RANGE</iterationType>
+            <value>4125-4220</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All_Dev</testDataId>
       </testDataLink>

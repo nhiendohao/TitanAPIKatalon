@@ -14,5 +14,14 @@
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/API_Toyota/11_SprintAll_UserFlow/Sprint_All - CurrentDate</testSuiteEntity>
       </TestSuiteRunConfiguration>
+      <TestSuiteRunConfiguration>
+         <configuration>
+            <groupName>Web Desktop</groupName>
+            <profileName>default</profileName>
+            <runConfigurationId>Firefox</runConfigurationId>
+         </configuration>
+         <runEnabled>true</runEnabled>
+         <testSuiteEntity>Test Suites/API_Toyota/11_SprintAll_UserFlow/Sprint_All - CurrentDate - P2</testSuiteEntity>
+      </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>

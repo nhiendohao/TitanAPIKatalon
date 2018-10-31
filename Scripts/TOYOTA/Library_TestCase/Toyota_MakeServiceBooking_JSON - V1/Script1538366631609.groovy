@@ -157,20 +157,10 @@ else if(duration_hours < TotalDuration){
 	println "Available is less than need hour"
 	 VerifyResponse(res_MakeServiceBooking,0,"Booking Rejected - The total duration of service greater than duration booking time")
 }
-//Closed Workshop
-else if(GlobalVariable.Glb_Location_Code == "2"||
-	GlobalVariable.Glb_Location_Code == "3"||
-	GlobalVariable.Glb_Location_Code == "5"){
-	println "Closed Workshop"
-	 VerifyResponse(res_MakeServiceBooking,0,"Workshop "+ GlobalVariable.Glb_Location_Code +" is closed")
-}
-//Not exist Workshop
-else if(!(GlobalVariable.Glb_Location_Code == "1"||
-	 GlobalVariable.Glb_Location_Code == "4"||
-	 GlobalVariable.Glb_Location_Code == "360")){
- 	println "Not exist Workshop"
-	 VerifyResponse(res_MakeServiceBooking,0,"Workshop "+ GlobalVariable.Glb_Location_Code + " not found")
-}
+//Not exist Location Code
+else if(!(GlobalVariable.Glb_Location_Code == "765"||
+	GlobalVariable.Glb_Location_Code == "37060"))
+VerifyResponse(res_MakeServiceBooking,0,"Workshop for TOYOTA make has not been set up")
 //ServiceDate before Current
 else if(Service_Date.before(current)){
 	println "ServiceDate before Current"
