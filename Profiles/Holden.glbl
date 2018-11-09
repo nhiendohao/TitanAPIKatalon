@@ -141,7 +141,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'69246578'</initValue>
+      <initValue>''</initValue>
       <name>Glb_DocumentId</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

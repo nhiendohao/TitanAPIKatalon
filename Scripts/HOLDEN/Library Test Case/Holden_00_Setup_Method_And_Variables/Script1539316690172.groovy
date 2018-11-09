@@ -161,5 +161,19 @@ else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
   }
 	
 }
+//Query get the DocumentID (ThirdPartyAppointmentConfirmationKey)
+	//Executive query for database
+	if(!(GlobalVariable.Glb_DocumentId.toString() == '')){
+		String valueKey = ""
+		sql.eachRow("select * from THIRD_PARTY_APPOINTMENT_KEY_MAPPING") {row ->
+			String valueKeyTemp = row.THIRD_PARTY_APPOINTMENT_CONFIRMATION_KEY as String
+			if(valueKeyTemp == "xxx")
+				GlobalVariable.Glb_DocumentId = (valueKey as Integer) + 1
+				else valueKey = valueKeyTemp
+		}
+		println GlobalVariable.Glb_DocumentId
+  }
+	
 	sql.close()
 	conn.close()
+	

@@ -42,32 +42,32 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 //## PROCESS API
 //Declare request
 	RequestObject ProcessServiceVisit = findTestObject('Holden/Holden_05A_AddServiceVisit', [('obj_DealerCode') : GlobalVariable.Glb_Dealer_Code, 
-	('Obj_GivenName') : GlobalVariable.Glb_FirstName            , 
+	('Obj_GivenName') : GlobalVariable.Glb_FirstName, 
 	('Obj_FamilyName') : GlobalVariable.Glb_LastName, 
 	('obj_DocumentId') : GlobalVariable.Glb_DocumentId, 
-	('obj_LineOne') : GlobalVariable.Glb_Cus_LineOne            , 
+	('obj_LineOne') : GlobalVariable.Glb_Cus_LineOne, 
 	('obj_CityName') : GlobalVariable.Glb_Cus_CityName, 
 	('obj_CountryId') : GlobalVariable.Glb_Cus_CountryID, 
-	('obj_PostCode') : GlobalVariable.Glb_Cus_Postcode            , 
+	('obj_PostCode') : GlobalVariable.Glb_Cus_Postcode, 
 	('obj_State') : GlobalVariable.Glb_Cus_State, 
 	('obj_ChannelCode') : GlobalVariable.Glb_Cus_ChannelCode, 
-	('obj_PhoneNumber') : GlobalVariable.Glb_Cus_PhoneNumber            , 
+	('obj_PhoneNumber') : GlobalVariable.Glb_Cus_PhoneNumber, 
 	('obj_Email') : GlobalVariable.Glb_Cus_Email, 
 	('obj_Model') : GlobalVariable.Glb_veh_Model, 
-	('obj_ModelYear') : GlobalVariable.Glb_veh_ModelYear            , 
+	('obj_ModelYear') : GlobalVariable.Glb_veh_ModelYear, 
 	('obj_MakeString') : GlobalVariable.Glb_veh_MakeString, 
-	('obj_ManufacturerName') : GlobalVariable.Glb_veh_ManufacturerName            , 
+	('obj_ManufacturerName') : GlobalVariable.Glb_veh_ManufacturerName, 
 	('obj_AdvisorId') : GlobalVariable.Glb_Adv_Id, 
-	('obj_AdvisorGivenName') : GlobalVariable.Glb_Adv_FirstName            , 
+	('obj_AdvisorGivenName') : GlobalVariable.Glb_Adv_FirstName, 
 	('obj_AdvisorFamilyName') : GlobalVariable.Glb_Adv_LastName, 
 	('obj_PartyId') : GlobalVariable.Glb_PartyID, 
-	('obj_DocumentID') : GlobalVariable.Glb_DocumentId            , 
+	('obj_DocumentID') : GlobalVariable.Glb_DocumentId, 
 	('obj_DateAppointment') : GlobalVariable.Glb_ServiceDate, 
-	('obj_AppNote') : GlobalVariable.Glb_Ser_AppointmentNote            , 
+	('obj_AppNote') : GlobalVariable.Glb_Ser_AppointmentNote, 
 	('obj_AppTransport') : GlobalVariable.Glb_Ser_Transportation, 
-	('obj_JobNumberString') : GlobalVariable.Glb_Ser_JobNumberString            , 
+	('obj_JobNumberString') : GlobalVariable.Glb_Ser_JobNumberString, 
 	('obj_RepairIndicator') : GlobalVariable.Glb_Ser_RepairIndicator,
-	('obj_JobType') : GlobalVariable.Glb_Ser_JobTypeString            ,  
+	('obj_JobType') : GlobalVariable.Glb_Ser_JobTypeString,  
 	('obj_LaborIndex') : GlobalVariable.Glb_Ser_LaborId,
 	('obj_LaborCode') : GlobalVariable.Glb_Ser_LaborCode, 
 	('obj_LaborDescription') : GlobalVariable.Glb_Ser_LaborDescription])
@@ -146,6 +146,10 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 	GlobalVariable.Glb_Booking_ID = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_ProcessServiceVisit, "DocumentIdentification", "DocumentID", 1, 0)
 
 //Validate Service Appointment
+	/**
+	 * 11/09/2018: Remove this part in response
+	 * Only show Start and End dateTime
+	 */
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "Appointment", "AppointmentNotes", "Please wash car. Thank you.", 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "Appointment", "AppointmentStatus", "SCHEDULED", 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "Appointment", "AlternateTransportation", "WAIT_AT_DEALER", 0, 0)
@@ -160,6 +164,9 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "RequestedService", "CustomerSalesRequestDescription", "", 0, 0)
 	
 //Validate Advisor Party
+	/**
+	 * 11/09/2018: Remove this part in response
+	 */
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ServiceAdvisorParty", "PartyID", GlobalVariable.Glb_PartyID, 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ServiceAdvisorParty", "DealerManagementSystemID", GlobalVariable.Glb_Adv_Id, 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "SpecifiedPerson", "GivenName", GlobalVariable.Glb_Adv_FirstName, 1, 0)

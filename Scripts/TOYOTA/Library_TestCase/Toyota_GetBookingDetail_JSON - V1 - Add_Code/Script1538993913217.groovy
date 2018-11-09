@@ -142,7 +142,7 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Comment', 'null')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'BookingSource', 'OSB_SOURCE_DEALER_WEBSITE')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'ExpressMaintenanceBookingRequest', 'false')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'TransportOption', 'OSB_TRANSPORT_OPTION_NONE')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'TransportOption', 'OSB_TRANSPORT_OPTION_WAIT')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'PreferredContactMethod', 'null')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'ConfirmationMessageByDMS', 'false')
 	

@@ -3,7 +3,6 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
@@ -17,7 +16,6 @@ import com.kms.katalon.core.testobject.ObjectRepository
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
-
 import internal.GlobalVariable
 import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
@@ -44,6 +42,10 @@ import groovy.sql.Sql //SQL Connection
 import java.sql.Driver //SQL Connection
 import static org.assertj.core.api.Assertions.*//Assert that
 import java.text.DecimalFormat //Round Number
+import java.text.ParseException;//String2Date
+import java.text.SimpleDateFormat;//String2Date
+import java.util.Date;//String2Date
+
 
 
 class Library_Method_VinhLe {
@@ -265,6 +267,26 @@ class Library_Method_VinhLe {
 			txtFileInfo.each { out.println it }
 		}
 	}
+
+	/**
+	 * CONVERT STRING TO DATE TYPE
+	 * 
+	 */
+	@Keyword
+	Date convertStringtoDate(String stringDate, String formatDate) {
+		SimpleDateFormat formatter = new SimpleDateFormat(formatDate);
+		Date date
+		try {
+
+			date = formatter.parse(stringDate);
+			System.out.println(date);
+			System.out.println(formatter.format(date));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return date
+	}
+
 
 
 }
