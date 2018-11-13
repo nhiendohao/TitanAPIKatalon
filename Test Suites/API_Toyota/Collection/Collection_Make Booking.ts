@@ -32,14 +32,5 @@
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/API_Toyota/06_Sprint_Make Booking/Sprint_Make Booking_03</testSuiteEntity>
       </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>default</profileName>
-            <runConfigurationId>Firefox</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/API_Toyota/06_Sprint_Make Booking/Sprint_Make Booking_04</testSuiteEntity>
-      </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>

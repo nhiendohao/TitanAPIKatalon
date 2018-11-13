@@ -191,42 +191,42 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment').getValue(1, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_Ser_AppointmentNote</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment').getValue(4, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_Ser_RepairIndicator</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment').getValue(2, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_Ser_Transportation</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment').getValue(3, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_Ser_JobNumberString</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment').getValue(5, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_Ser_JobTypeString</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment').getValue(6, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_Ser_LaborId</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment').getValue(7, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_Ser_LaborCode</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment').getValue(8, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_Ser_LaborDescription</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -251,37 +251,47 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(1, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_ChangeNote</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(2, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_ChangeTransport</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(3, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_ChangeJobNumber</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(4, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_ChangeJobType</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(5, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_ChangeLaborCode</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>findTestData('Holden/Holden_Appoitment_ChangeContent').getValue(6, 1)</initValue>
+      <initValue>''</initValue>
       <name>Glb_ChangeLaborDescription</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
       <name>Glb_CustomerType</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_SubscriptionAdd</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'failed'</initValue>
+      <name>Glb_Status_SubscriptionDetact</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

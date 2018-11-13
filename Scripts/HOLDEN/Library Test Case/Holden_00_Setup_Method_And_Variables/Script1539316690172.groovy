@@ -24,12 +24,12 @@ if(!(Setup_LastName == "")) GlobalVariable.Glb_LastName = Setup_LastName
 if(!(Setup_StartSearchDate == "")) GlobalVariable.Glb_StartSearchDate = Setup_StartSearchDate
 if(!(Setup_EndSearchDate == "")) GlobalVariable.Glb_EndSearchDate = Setup_EndSearchDate
 if(!(Setup_CustomerType == "")) GlobalVariable.Glb_CustomerType = Setup_CustomerType
+if(!(Setup_AddJobLine == "")) GlobalVariable.Glb_AddJobLine = Setup_AddJobLine
+println GlobalVariable.Glb_AddJobLine
+if(!(Setup_BookingId == "")) GlobalVariable.Glb_Booking_ID = Setup_BookingId
+println GlobalVariable.Glb_Booking_ID
 
 if(Setup_CustomerType.toString().toLowerCase() == "exist"){
-	if(!(Setup_AddJobLine == "")) GlobalVariable.Glb_AddJobLine = Setup_AddJobLine
-	println GlobalVariable.Glb_AddJobLine
-	if(!(Setup_BookingId == "")) GlobalVariable.Glb_Booking_ID = Setup_BookingId
-	println GlobalVariable.Glb_Booking_ID
 	if(!(Setup_TradingEntityId == "")) GlobalVariable.Glb_Cus_TradingEntity = Setup_TradingEntityId
 	println GlobalVariable.Glb_Cus_TradingEntity
 	if(!(Setup_LineOne == "")) GlobalVariable.Glb_Cus_LineOne = Setup_LineOne

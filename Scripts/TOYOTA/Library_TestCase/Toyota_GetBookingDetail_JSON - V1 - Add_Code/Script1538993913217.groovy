@@ -118,7 +118,7 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[1].EMDuration', '0.0')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[1].DealerPrice', '0.0')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[1].POAFlag', 'false')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[1].Price', '0.0000')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[1].Price', '0.00')
 	
 	//Verify Appointment Information
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Appointment.BookingDate', GlobalVariable.Glb_ServiceDate + 'T00:00:00')

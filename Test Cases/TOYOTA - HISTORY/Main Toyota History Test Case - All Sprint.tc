@@ -201,4 +201,32 @@
       <masked>false</masked>
       <name>var_BookingId</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5f8f3bc6-b54c-4ad3-b00c-e1b2a5f86ec7</id>
+      <masked>false</masked>
+      <name>var_Entry</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>a9e3010a-c4b6-409b-a888-1974a3d3e260</id>
+      <masked>false</masked>
+      <name>var_timeTracker</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>41b7b7d4-aa94-42b2-a4f7-5026fd6454b0</id>
+      <masked>false</masked>
+      <name>var_staffName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ee276986-df67-4075-8e3c-77ded442aac0</id>
+      <masked>false</masked>
+      <name>variable</name>
+   </variable>
 </TestCaseEntity>

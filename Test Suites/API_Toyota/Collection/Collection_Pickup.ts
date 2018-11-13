@@ -86,32 +86,5 @@
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/API_Toyota/03_Sprint_Get Pickup Time/Sprint_Get Pickup Time_09</testSuiteEntity>
       </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>default</profileName>
-            <runConfigurationId>Firefox</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/API_Toyota/03_Sprint_Get Pickup Time/Sprint_Get Pickup Time_10</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>default</profileName>
-            <runConfigurationId>Firefox</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/API_Toyota/03_Sprint_Get Pickup Time/Sprint_Get Pickup Time_11</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>default</profileName>
-            <runConfigurationId>Firefox</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/API_Toyota/03_Sprint_Get Pickup Time/Sprint_Get Pickup Time_12</testSuiteEntity>
-      </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>

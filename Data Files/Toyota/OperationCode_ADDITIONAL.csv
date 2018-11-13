@@ -1,7 +1,7 @@
 Name,DMSOperationalCode,Duration,DealerPrice
 Replace Air Cleaner Element,SACE,0.1,0
-Evacuate & Recharge Air Conditioning System,SACS,0.7,0
-"Check Wheel Alignment, Both Front & Rear",SAWA,1.2,0
+Evacuate and Recharge Air Conditioning System,SACS,0.7,0
+"Check Wheel Alignment, Both Front and Rear",SAWA,1.2,0
 "Balance Wheels, All",SAWB,1,0
 Replace Brake Fluid,SBF,1.1,0
 Replace Clutch Fluid,SCF,0.5,0

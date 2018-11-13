@@ -10,8 +10,9 @@ import static org.assertj.core.api.Assertions.*
 import org.eclipse.persistence.internal.oxm.record.json.JSONParser.array_return
 import org.eclipse.persistence.internal.oxm.record.json.JSONParser.value_return
 import org.sikuli.api.API
-
 import com.kms.katalon.core.annotation.TearDown
+import com.kms.katalon.core.annotation.TearDownIfError
+import com.kms.katalon.core.annotation.TearDownIfFailed
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -53,8 +54,6 @@ import internal.GlobalVariable as GlobalVariable
  * V1. Add before and after 
  */
 //Initial Declare GlobalVariable value
-//Dataline
-println var_LineNumber
 //Setup
 GlobalVariable.Glb_His_Status_ROPost = 'failed'
 GlobalVariable.Glb_His_Status_ROPut = 'failed'
@@ -91,94 +90,66 @@ WebUI.callTestCase(findTestCase('TOYOTA - HISTORY/Lib_Testcase/Toyota_History00_
 	('Setup_VIN') : var_VIN],
 FailureHandling.STOP_ON_FAILURE)
 
-//1. Get Integration
-//Verify the authentification of OSS to integrate with DMS
-if(var_Status_GetIntegration == 'true')
-	
+//1. Repair Order Post
+if(var_Status_ROPost == 'true')
+	WebUI.callTestCase(findTestCase('TOYOTA - HISTORY/Lib_Testcase/Toyota_History01_RepairOrderPost'), [:], FailureHandling.STOP_ON_FAILURE)
 
-//2. Get Customer Information
-//Get information and validate them
-if(var_Status_GetCustomer == 'true')
+//2. Repair Order Tracker
+if(var_Status_ROTracker == 'true')
+	WebUI.callTestCase(findTestCase('TOYOTA - HISTORY/Lib_Testcase/Toyota_History02_RepairOrderTracker'), [
+		('var_Entry') : var_Entry,
+		('var_staffName') : var_staffName,
+		('var_timeTracker') : var_timeTracker],
+	FailureHandling.STOP_ON_FAILURE)
 	
+//3. Repair Order Put
+if(var_Status_ROPut == 'true')
+	WebUI.callTestCase(findTestCase('TOYOTA - HISTORY/Lib_Testcase/Toyota_History05_RepairOrderPut'), [:], FailureHandling.STOP_ON_FAILURE)
 	
-//3. Get Personel
-//Get all Advisor and vrify all of them
-if(var_Status_GetPersonel == 'true')
+//4. Invoice Post
+if(var_Status_InvoicePost == 'true')
+	WebUI.callTestCase(findTestCase('TOYOTA - HISTORY/Lib_Testcase/Toyota_History03_InvoicePost'), [:], FailureHandling.STOP_ON_FAILURE)
 	
-	
-//4. Get Labor Operation Code
-//Get all Labor Op Code and vrify all of them
-if(var_Status_GetLaborCode == 'true')
-	
-	
-//5. Process service Add action
-//Create Appointment
-if(var_Status_ProcessServiceAdd == 'true')
-	
+//5. Invoice Credit
+if(var_Status_InvoiceCredit == 'true')
+	WebUI.callTestCase(findTestCase('TOYOTA - HISTORY/Lib_Testcase/Toyota_History04_InvoiceCredit'), [:], FailureHandling.STOP_ON_FAILURE)
 	
 //6. Search Service Visit
-//Search there has any appointment in range of day
-if(var_Status_ProcessServiceAdd == 'true')
-	
-	
-//7. Get Service Visit
-//Get all information about the service with specific Booking Id
-if(var_Status_ProcessServiceAdd == 'true')
-	
-	
-//5. Process service Add action
-//Create Appointment
-if(var_Status_ProcessServiceChange == 'true'){
-	
-	
-	}
-		
-//5. Process service Add action
-//Create Appointment
-if(var_Status_ProcessServiceDelete == 'true')
-	
+
+@TearDownIfError
+public void printLineError(){
+	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.write2File'(var_LineNumber as String, "Error")
+}
+
+@TearDownIfFailed
+public void printLineFailed(){
+	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.write2File'(var_LineNumber as String, "Failed")
+}
 	
 @TearDown
 public void HandleFailing(){
 	//Handle GetOperationCode for case all = TRUE
-	if(var_Status_OpCode == 'true'
-		&& var_Status_GetIntegration == 'true'
-		&& var_Status_GetCustomer == 'true'
-		&& var_Status_GetPersonel == 'true'
-		&& var_Status_GetLaborCode == 'true'
-		&& var_Status_ProcessServiceAdd == 'true'
-		&& var_Status_ProcessServiceChange == 'true'
-		&& var_Status_ProcessServiceDelete == 'true'
-		&& var_Status_SearchService == 'true'
-		&& var_Status_GetService == 'true'){
-		if(!(GlobalVariable.Glb_Status_Integration == "passed"))	println "Test Case GetOperationCode: FAILED"
+	if(var_Status_ROPost == 'true'
+		&& var_Status_ROTracker == 'true'
+		&& var_Status_ROPut == 'true'
+		&& var_Status_InvoicePost == 'true'
+		&& var_Status_InvoiceCredit == 'true'){
+		if(!(GlobalVariable.Glb_His_Status_ROPost == "passed"))	println "Test Case ROPost: FAILED"
 			else{
-				println "Test Case GetIntegration: PASSED"
-				if(GlobalVariable.Glb_Status_GetCustomer == "passed") {
-					println "Test Case GetCustomer: PASSED"
-					if(GlobalVariable.Glb_Status_GetAdvisor == "passed"){
-						println "Test Case GetAdvisor: PASSED"
-						if(GlobalVariable.Glb_Status_GetLabor== "passed"){
-							println "Test Case GetLaborCode: PASSED"
-							if(GlobalVariable.Glb_Status_ProcessAdd== "passed"){
-								println "Test Case ProcessServiceAdd: PASSED"
-								if(GlobalVariable.Glb_Status_SearchService== "passed"){
-									println "Test Case SearchService: PASSED"
-									if(GlobalVariable.Glb_Status_GetService== "passed"){
-										println "Test Case GetService: PASSED"
-										if(GlobalVariable.Glb_Status_ProcessChange== "passed"){
-											println "Test Case ProcessServiceChange: PASSED"
-											if(GlobalVariable.Glb_Status_ProcessDelete== "passed"){
-												println "Test Case ProcessServiceDelete: PASSED"
-											}
-										}
-									}
-								}
+				println "Test Case ROPost: PASSED"
+				if(GlobalVariable.Glb_His_Status_ROTracker == "passed") {
+					println "Test Case ROTracker: PASSED"
+					if(GlobalVariable.Glb_His_Status_ROPut == "passed"){
+						println "Test Case ROPut: PASSED"
+						if(GlobalVariable.Glb_His_Status_InvoicePost== "passed"){
+							println "Test Case InvoicePost: PASSED"
+							if(GlobalVariable.Glb_His_Status_InvoiceCredit== "passed"){
+								println "Test Case InvoiceCredit: PASSED"
 							}
 						}
 					}
 				}
 			}
+		}
 	}
-}
 		

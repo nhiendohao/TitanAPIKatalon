@@ -10,8 +10,9 @@ import static org.assertj.core.api.Assertions.*
 import org.eclipse.persistence.internal.oxm.record.json.JSONParser.array_return
 import org.eclipse.persistence.internal.oxm.record.json.JSONParser.value_return
 import org.sikuli.api.API
-
 import com.kms.katalon.core.annotation.TearDown
+import com.kms.katalon.core.annotation.TearDownIfError
+import com.kms.katalon.core.annotation.TearDownIfFailed
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory as CheckpointFactory
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as MobileBuiltInKeywords
@@ -54,7 +55,6 @@ import internal.GlobalVariable as GlobalVariable
  */
 //Initial Declare GlobalVariable value
 //Dataline
-println var_LineNumber
 //Setup
 GlobalVariable.Glb_Status_Integration = 'failed'
 GlobalVariable.Glb_Status_GetCustomer = 'failed'
@@ -65,6 +65,8 @@ GlobalVariable.Glb_Status_ProcessChange = 'failed'
 GlobalVariable.Glb_Status_ProcessDelete = 'failed'
 GlobalVariable.Glb_Status_GetService = 'failed'
 GlobalVariable.Glb_Status_SearchService = 'failed'
+GlobalVariable.Glb_Status_SubscriptionAdd = 'failed'
+GlobalVariable.Glb_Status_SubscriptionDetact = 'failed'
 GlobalVariable.Glb_BookingStatus = 'not yet'
 
 //STEP
@@ -165,6 +167,23 @@ if(var_Status_ProcessServiceChange == 'true'){
 if(var_Status_ProcessServiceDelete == 'true')
 	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_05C_DeleteServiceVisit'), [:], FailureHandling.STOP_ON_FAILURE)
 	
+//6. Process Subscription
+if(var_Status_Subscription == 'true'){
+	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_08A_ProcessServiceSubsription_Add'), [:], FailureHandling.STOP_ON_FAILURE)
+	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_08B_ProcessServiceSubsription_Detact'), [:], FailureHandling.STOP_ON_FAILURE)
+}
+
+@TearDownIfError
+public void printLineError(){
+	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.write2File'(var_LineNumber as String, "Error")
+}
+
+@TearDownIfFailed
+public void printLineFailed(){
+	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.write2File'(var_LineNumber as String, "Failed")
+}
+
+	
 @TearDown
 public void HandleFailing(){
 	//Handle GetOperationCode for case all = TRUE
@@ -177,7 +196,8 @@ public void HandleFailing(){
 		&& var_Status_ProcessServiceChange == 'true'
 		&& var_Status_ProcessServiceDelete == 'true'
 		&& var_Status_SearchService == 'true'
-		&& var_Status_GetService == 'true'){
+		&& var_Status_GetService == 'true'
+		&& var_Status_Subscription == 'true'){
 		if(!(GlobalVariable.Glb_Status_Integration == "passed"))	println "Test Case GetOperationCode: FAILED"
 			else{
 				println "Test Case GetIntegration: PASSED"
@@ -197,6 +217,12 @@ public void HandleFailing(){
 											println "Test Case ProcessServiceChange: PASSED"
 											if(GlobalVariable.Glb_Status_ProcessDelete== "passed"){
 												println "Test Case ProcessServiceDelete: PASSED"
+												if(GlobalVariable.Glb_Status_SubscriptionAdd== "passed"){
+													println "Test Case SubscriptionAdd: PASSED"
+													if(GlobalVariable.Glb_Status_SubscriptionDetact== "passed"){
+														println "Test Case SubscriptionDetact: PASSED"
+													}
+												}
 											}
 										}
 									}

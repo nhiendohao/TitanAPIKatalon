@@ -59,7 +59,7 @@
       <description></description>
       <id>40ebf426-72d6-41b6-996d-90e6c414387a</id>
       <masked>false</masked>
-      <name>var_Subscription</name>
+      <name>var_Status_Subscription</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>

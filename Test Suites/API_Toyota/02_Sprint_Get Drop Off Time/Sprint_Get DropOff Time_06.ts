@@ -4,13 +4,12 @@
    <name>Sprint_Get DropOff Time_06</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-30T11:22:14</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>284612f6-7922-4385-afbc-0e3cae53d51b</testSuiteGuid>
+   <testSuiteGuid>e37f83ef-e56b-43ed-9fe9-99e94e00dfed</testSuiteGuid>
    <testCaseLink>
       <guid>d9a0388b-193b-4768-a036-b9d2de3e928a</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -21,7 +20,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>535-634</value>
+            <value>523-550</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All_Dev</testDataId>
       </testDataLink>

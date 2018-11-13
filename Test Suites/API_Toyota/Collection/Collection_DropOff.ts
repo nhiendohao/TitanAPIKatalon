@@ -59,23 +59,5 @@
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/API_Toyota/02_Sprint_Get Drop Off Time/Sprint_Get DropOff Time_06</testSuiteEntity>
       </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>default</profileName>
-            <runConfigurationId>Firefox</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/API_Toyota/02_Sprint_Get Drop Off Time/Sprint_Get DropOff Time_07</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>default</profileName>
-            <runConfigurationId>Firefox</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/API_Toyota/02_Sprint_Get Drop Off Time/Sprint_Get DropOff Time_08</testSuiteEntity>
-      </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Toyota_History02_RepairOrderTracker</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bcb29ebf-bfd4-404d-a7e2-2128ecc06854</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>49db4e34-fbb7-433e-9c30-aa9d5649311f</id>
+      <masked>false</masked>
+      <name>var_Entry</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5bd7caba-cb70-429b-b5a7-2c53e5d4047a</id>
+      <masked>false</masked>
+      <name>var_staffName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>3b7220bb-ed0a-4b9a-b6c2-54e3d170e804</id>
+      <masked>false</masked>
+      <name>var_timeTracker</name>
+   </variable>
+</TestCaseEntity>

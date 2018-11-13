@@ -4,13 +4,12 @@
    <name>Sprint_Get Pickup Time_08</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-30T13:39:40</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>9bd035e0-9a51-4ead-88ee-957d1defca44</testSuiteGuid>
+   <testSuiteGuid>c0c6693b-f7a2-47c4-a2d1-ba91a4d22f45</testSuiteGuid>
    <testCaseLink>
       <guid>d9a0388b-193b-4768-a036-b9d2de3e928a</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -21,7 +20,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>1604-1713</value>
+            <value>1251-1350</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All_Dev</testDataId>
       </testDataLink>

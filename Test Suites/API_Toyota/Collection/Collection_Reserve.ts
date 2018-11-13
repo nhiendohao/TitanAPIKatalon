@@ -68,32 +68,5 @@
          <runEnabled>true</runEnabled>
          <testSuiteEntity>Test Suites/API_Toyota/05_Sprint_Reserve Timeslot/Sprint_Reserve Timeslot_07</testSuiteEntity>
       </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>default</profileName>
-            <runConfigurationId>Firefox</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/API_Toyota/05_Sprint_Reserve Timeslot/Sprint_Reserve Timeslot_08</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>default</profileName>
-            <runConfigurationId>Firefox</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/API_Toyota/05_Sprint_Reserve Timeslot/Sprint_Reserve Timeslot_09</testSuiteEntity>
-      </TestSuiteRunConfiguration>
-      <TestSuiteRunConfiguration>
-         <configuration>
-            <groupName>Web Desktop</groupName>
-            <profileName>default</profileName>
-            <runConfigurationId>Firefox</runConfigurationId>
-         </configuration>
-         <runEnabled>true</runEnabled>
-         <testSuiteEntity>Test Suites/API_Toyota/05_Sprint_Reserve Timeslot/Sprint_Reserve Timeslot_10</testSuiteEntity>
-      </TestSuiteRunConfiguration>
    </testSuiteRunConfigurations>
 </TestSuiteCollectionEntity>

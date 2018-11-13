@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>Holden_ProcessServiceSubsription_Detact</name>
+   <name>Holden_08B_ProcessServiceSubsription_Detact</name>
    <tag></tag>
    <elementGuidId>661e2d22-56f7-4cde-9378-a7e8ac659681</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
@@ -63,7 +63,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 				&lt;ns:Sender>
 					&lt;ns:CreatorNameCode>GM&lt;/ns:CreatorNameCode>
 					&lt;ns:SenderNameCode>OSS&lt;/ns:SenderNameCode>
-					&lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
+					&lt;ns:DealerNumberID>${obj_DealerId}&lt;/ns:DealerNumberID>
 					&lt;ns:DealerCountryCode>US&lt;/ns:DealerCountryCode>
 					&lt;ns:LanguageCode>en-US&lt;/ns:LanguageCode>
 				&lt;/ns:Sender>
@@ -74,7 +74,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 					&lt;ns:DestinationNameCode>QI&lt;/ns:DestinationNameCode>
 					&lt;ns:DestinationSoftwareCode>QI&lt;/ns:DestinationSoftwareCode>
 					&lt;ns:DestinationSoftware>QI&lt;/ns:DestinationSoftware>
-					&lt;ns:DealerNumberID>111148&lt;/ns:DealerNumberID>
+					&lt;ns:DealerNumberID>${obj_DealerId}&lt;/ns:DealerNumberID>
 					&lt;ns:DealerTargetCountry>US&lt;/ns:DealerTargetCountry>
 				&lt;/ns:Destination>
 			&lt;/ns:ApplicationArea>
@@ -107,6 +107,13 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
    <soapHeader></soapHeader>
    <soapRequestMethod>SOAP</soapRequestMethod>
    <soapServiceFunction>ProcessMessage</soapServiceFunction>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_Dealer_Code</defaultValue>
+      <description></description>
+      <id>167fe4fc-bb87-4827-891b-dbf8601e61ba</id>
+      <masked>false</masked>
+      <name>obj_DealerId</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject

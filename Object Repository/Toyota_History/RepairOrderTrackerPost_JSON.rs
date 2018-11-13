@@ -8,7 +8,7 @@
    <useRalativeImagePath>false</useRalativeImagePath>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n  \&quot;entry\&quot;: \&quot;${obj_Entry}\&quot;,\n  \&quot;timestamp\&quot;: \&quot;${obj_Date}T12:00:00.000Z\&quot;,\n  \&quot;staff\&quot;: {\n    \&quot;name\&quot;: \&quot;VinhLe\&quot;,\n    \&quot;role\&quot;: \&quot;${obj_staffRole}\&quot;\n  }\n}&quot;,
+  &quot;text&quot;: &quot;{\n  \&quot;entry\&quot;: \&quot;${obj_Entry}\&quot;,\n  \&quot;timestamp\&quot;: \&quot;${obj_Date}\&quot;,\n  \&quot;staff\&quot;: {\n    \&quot;name\&quot;: \&quot;${obj_staffName}\&quot;,\n    \&quot;role\&quot;: \&quot;Technician\&quot;\n  }\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -50,7 +50,7 @@
       <name>obj_Entry</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.Glb_ServiceDate</defaultValue>
+      <defaultValue>''</defaultValue>
       <description></description>
       <id>7e27caa3-b881-4f5e-a896-489cc5a38817</id>
       <masked>false</masked>
@@ -61,7 +61,7 @@
       <description></description>
       <id>f4c386db-848f-430e-9da9-2cdbd9228a5d</id>
       <masked>false</masked>
-      <name>obj_staffRole</name>
+      <name>obj_staffName</name>
    </variables>
    <variables>
       <defaultValue>GlobalVariable.Glb_Booking_ID</defaultValue>

@@ -4,7 +4,7 @@
    <name>Sprint_Get Pickup Time_05</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-30T13:39:37</lastRun>
+   <lastRun>2018-11-12T14:28:09</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -21,7 +21,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>1274-1383</value>
+            <value>951-1050</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All_Dev</testDataId>
       </testDataLink>
