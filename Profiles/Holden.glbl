@@ -192,36 +192,6 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
-      <name>Glb_Ser_AppointmentNote</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>Glb_Ser_RepairIndicator</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>Glb_Ser_Transportation</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>Glb_Ser_JobNumberString</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>Glb_Ser_JobTypeString</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>Glb_Ser_LaborId</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
       <name>Glb_Ser_LaborCode</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -252,32 +222,17 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
-      <name>Glb_ChangeNote</name>
+      <name>Glb_ChangeDate</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
-      <name>Glb_ChangeTransport</name>
+      <name>Glb_ChangeChangeCustomerVehicle</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
-      <name>Glb_ChangeJobNumber</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>Glb_ChangeJobType</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>Glb_ChangeLaborCode</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>Glb_ChangeLaborDescription</name>
+      <name>Glb_ChangeChangeOpCodeContent</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -293,5 +248,10 @@
       <description></description>
       <initValue>'failed'</initValue>
       <name>Glb_Status_SubscriptionDetact</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_VehicleType</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

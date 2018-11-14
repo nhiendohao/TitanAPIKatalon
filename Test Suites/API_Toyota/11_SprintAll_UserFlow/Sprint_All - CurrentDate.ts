@@ -4,7 +4,7 @@
    <name>Sprint_All - CurrentDate</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-30T08:02:11</lastRun>
+   <lastRun>2018-11-14T08:06:05</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>

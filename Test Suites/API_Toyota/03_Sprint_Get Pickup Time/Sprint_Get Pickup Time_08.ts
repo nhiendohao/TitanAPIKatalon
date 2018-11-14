@@ -4,6 +4,7 @@
    <name>Sprint_Get Pickup Time_08</name>
    <tag></tag>
    <isRerun>false</isRerun>
+   <lastRun>2018-11-14T13:39:15</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>

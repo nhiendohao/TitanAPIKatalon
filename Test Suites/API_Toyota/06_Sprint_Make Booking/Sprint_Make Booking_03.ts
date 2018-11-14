@@ -4,7 +4,7 @@
    <name>Sprint_Make Booking_03</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-10-23T10:24:36</lastRun>
+   <lastRun>2018-11-14T15:09:40</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>

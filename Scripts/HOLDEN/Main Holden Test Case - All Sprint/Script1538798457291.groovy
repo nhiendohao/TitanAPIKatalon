@@ -73,11 +73,10 @@ GlobalVariable.Glb_BookingStatus = 'not yet'
 //0. Setup Global Variable and other value
 WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_00_Setup_Method_And_Variables'), [
 	('Setup_Dealer_Code') : var_DealerCode ,
+	
+	('Setup_CustomerType') : var_CustomerType,
 	('Setup_FirstName') : var_FirstName,
 	('Setup_LastName') : var_LastName,
-	('Setup_AddJobLine') : var_AddJobLine,
-	('Setup_BookingId') : var_BookingId,
-	('Setup_CustomerType') : var_CustomerType,
 	('Setup_TradingEntityId') : var_TradingEntityID,
 	('Setup_LineOne') : var_LineOne,
 	('Setup_CityName') : var_CityName,
@@ -87,14 +86,27 @@ WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_00_Setup_Method
 	('Setup_ChannelCode') : var_ChannelCode,
 	('Setup_PhoneNumber') : var_PhoneNumber,
 	('Setup_Email') : var_Email,
+	
+	('Setup_VehicleType') : var_VehicleType,
 	('Setup_Model') : var_Model,
 	('Setup_ModelYear') : var_ModelYear,
 	('Setup_MakeString') : var_MakeString,
 	('Setup_ManufacturerName') : var_ManufacturerName,
 	('Setup_VehicleID') : var_VehicleID,
-	('Setup_StartSearchDate') : var_StartSearchDate,
+	
 	('Setup_AdvisorType') : var_AdvisorType,
-	('Setup_EndSearchDate') : var_EndSearchDate],
+	
+	('Setup_OperationCode') : var_OperationCode,
+	('Setup_OperationDescription') : var_OperationDescription,
+	
+	('Setup_StartSearchDate') : var_StartSearchDate,
+	('Setup_EndSearchDate') : var_EndSearchDate,
+	
+	//('Setup_AdvisorType') : var_ChangeDate,
+	('Setup_ChangeDate') : var_ChangeDate,
+	('Setup_ChangeCustomerVehicle') : var_ChangeCustomerVehicle,
+	('Setup_ChangeOpCodeContent') : var_ChangeOpCodeContent,
+	('Setup_BookingId') : var_BookingId],
 	FailureHandling.STOP_ON_FAILURE)
 
 //1. Get Integration
@@ -154,10 +166,10 @@ if(var_Status_ProcessServiceChange == 'true'){
 			('var_ChangeLaborCode') : GlobalVariable.Glb_ChangeLaborCode ,
 			('var_ChangeLaborDescription') : GlobalVariable.Glb_ChangeLaborDescription,
 			 ('var_ChangeDate') : var_ChangeDate,
-			 ('var_ChangeNote') : GlobalVariable.Glb_ChangeNote,
-			 ('var_ChangeTransport') : GlobalVariable.Glb_ChangeNote        ,
-			 ('var_ChangeJobNumber') : GlobalVariable.Glb_ChangeNote,
-			 ('var_ChangeJobType') : GlobalVariable.Glb_ChangeNote],
+			 ('var_ChangeNote') : GlobalVariable.Glb_ChangeDate,
+			 ('var_ChangeTransport') : GlobalVariable.Glb_ChangeDate        ,
+			 ('var_ChangeJobNumber') : GlobalVariable.Glb_ChangeDate,
+			 ('var_ChangeJobType') : GlobalVariable.Glb_ChangeDate],
 		 FailureHandling.STOP_ON_FAILURE)
 		}
 	}

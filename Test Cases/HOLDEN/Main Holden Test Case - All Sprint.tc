@@ -57,6 +57,20 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
+      <id>c6bc830d-70dd-4edd-9588-a8f20ebb2a7a</id>
+      <masked>false</masked>
+      <name>var_Status_ProcessServiceChange</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bd9ad466-5baa-497e-afc5-f4cf3f2ccf6d</id>
+      <masked>false</masked>
+      <name>var_Status_ProcessServiceDelete</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
       <id>40ebf426-72d6-41b6-996d-90e6c414387a</id>
       <masked>false</masked>
       <name>var_Status_Subscription</name>
@@ -67,6 +81,20 @@
       <id>766b5e96-e5dc-4cf0-b5e3-2e8eb90ae774</id>
       <masked>false</masked>
       <name>var_Status_Notification</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>a9acd4e0-5122-452a-a69f-603ccdcc37e4</id>
+      <masked>false</masked>
+      <name>var_DealerCode</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>c87d88f0-4d82-4a90-8bbd-363de452dc07</id>
+      <masked>false</masked>
+      <name>var_CustomerType</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
@@ -148,6 +176,13 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
+      <id>b39447bd-8b13-4004-812a-8e2769b8023f</id>
+      <masked>false</masked>
+      <name>var_VehicleType</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
       <id>9d9bf226-9a9f-4eb1-98e0-dfeb8002687b</id>
       <masked>false</masked>
       <name>var_Model</name>
@@ -183,30 +218,23 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>a9acd4e0-5122-452a-a69f-603ccdcc37e4</id>
+      <id>5e2f366a-997b-49c0-869d-6bfc80a98c0a</id>
       <masked>false</masked>
-      <name>var_DealerCode</name>
+      <name>var_OperationCode</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>3f75b3cc-b4aa-4998-944f-2451ea606913</id>
+      <id>9f6622aa-82c0-45cb-8757-1f10279bbaae</id>
       <masked>false</masked>
-      <name>var_AddJobLine</name>
+      <name>var_OperationDescription</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>f38f2fe0-c11c-4512-ad0e-c29c6005cd8e</id>
+      <id>910c265b-3116-4154-9d4e-1e2b6306823c</id>
       <masked>false</masked>
-      <name>var_BookingId</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>c87d88f0-4d82-4a90-8bbd-363de452dc07</id>
-      <masked>false</masked>
-      <name>var_CustomerType</name>
+      <name>var_AdvisorType</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
@@ -225,37 +253,37 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>910c265b-3116-4154-9d4e-1e2b6306823c</id>
-      <masked>false</masked>
-      <name>var_AdvisorType</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>c6bc830d-70dd-4edd-9588-a8f20ebb2a7a</id>
-      <masked>false</masked>
-      <name>var_Status_ProcessServiceChange</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>bd9ad466-5baa-497e-afc5-f4cf3f2ccf6d</id>
-      <masked>false</masked>
-      <name>var_Status_ProcessServiceDelete</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>1c2bf487-0514-498d-917d-6d5ba6aaa227</id>
-      <masked>false</masked>
-      <name>var_ChangeLaborContent</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
       <id>f89a2eae-75ce-4749-b472-0b810fbdfd3b</id>
       <masked>false</masked>
       <name>var_ChangeDate</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>0a4e1f08-fd5d-452c-b743-46e29b2551ce</id>
+      <masked>false</masked>
+      <name>var_ChangeCustomerVehicle</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>9a068168-9f17-475c-980b-dec7da830043</id>
+      <masked>false</masked>
+      <name>var_ChangeOpCodeContent</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>3f75b3cc-b4aa-4998-944f-2451ea606913</id>
+      <masked>false</masked>
+      <name>var_AddJobLine</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f38f2fe0-c11c-4512-ad0e-c29c6005cd8e</id>
+      <masked>false</masked>
+      <name>var_BookingId</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>

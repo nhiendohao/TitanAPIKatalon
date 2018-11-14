@@ -25,24 +25,6 @@
          </iterationEntity>
          <testDataId>Data Files/Holden/Holden_DATA_DRIVEN</testDataId>
       </testDataLink>
-      <testDataLink>
-         <combinationType>ONE</combinationType>
-         <id>c4f2da06-73c4-4308-95f3-311a6078fb24</id>
-         <iterationEntity>
-            <iterationType>ALL</iterationType>
-            <value></value>
-         </iterationEntity>
-         <testDataId>Data Files/Holden/Holden_Customer_Information</testDataId>
-      </testDataLink>
-      <testDataLink>
-         <combinationType>ONE</combinationType>
-         <id>b3e6e2a2-b1a7-434c-b68d-72ad7f27a300</id>
-         <iterationEntity>
-            <iterationType>ALL</iterationType>
-            <value></value>
-         </iterationEntity>
-         <testDataId>Data Files/Holden/Holden_Vehicle_Information</testDataId>
-      </testDataLink>
       <variableLink>
          <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
@@ -70,7 +52,7 @@
       <variableLink>
          <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
-         <value>var_Status_ProcessService</value>
+         <value>var_Status_ProcessServiceAdd</value>
          <variableId>64c0a302-1494-4b43-a24b-31f15416f12e</variableId>
       </variableLink>
       <variableLink>
@@ -88,7 +70,7 @@
       <variableLink>
          <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
-         <value>var_Subscription</value>
+         <value>var_Status_Subscription</value>
          <variableId>40ebf426-72d6-41b6-996d-90e6c414387a</variableId>
       </variableLink>
       <variableLink>
@@ -110,85 +92,85 @@
          <variableId>80be3701-9111-47d3-90b7-6349a32be15d</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>c4f2da06-73c4-4308-95f3-311a6078fb24</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_TradingEntityID</value>
          <variableId>da39931b-ca03-499e-b449-ecd6f9865f28</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>c4f2da06-73c4-4308-95f3-311a6078fb24</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_LineOne</value>
          <variableId>6fe9e98d-3a19-435a-a48f-adc4ffb483ce</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>c4f2da06-73c4-4308-95f3-311a6078fb24</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_CityName</value>
          <variableId>c99fcabb-6905-44bd-b72d-6a67be9eefb7</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>c4f2da06-73c4-4308-95f3-311a6078fb24</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_CountryID</value>
          <variableId>b0afb434-d425-496d-9327-9150ac636307</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>c4f2da06-73c4-4308-95f3-311a6078fb24</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_Postcode</value>
          <variableId>b8cd3b55-c542-4fc3-a6c6-7f2966bbb591</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>c4f2da06-73c4-4308-95f3-311a6078fb24</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_State</value>
          <variableId>946eb0c1-9338-46f9-9908-109de3d0a940</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>c4f2da06-73c4-4308-95f3-311a6078fb24</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_ChannelCode</value>
          <variableId>f0908853-c28a-450f-8ee0-d91f0a43df06</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>c4f2da06-73c4-4308-95f3-311a6078fb24</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_PhoneNumber</value>
          <variableId>17ae2094-95ff-4eec-8b48-8e0218545452</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>c4f2da06-73c4-4308-95f3-311a6078fb24</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_Email</value>
          <variableId>e2975f87-7450-4fd4-a216-3aea03a8b614</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>b3e6e2a2-b1a7-434c-b68d-72ad7f27a300</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_Model</value>
          <variableId>9d9bf226-9a9f-4eb1-98e0-dfeb8002687b</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>b3e6e2a2-b1a7-434c-b68d-72ad7f27a300</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_ModelYear</value>
          <variableId>573839fb-0555-4f36-8205-2bd40974dfbe</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>b3e6e2a2-b1a7-434c-b68d-72ad7f27a300</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_MakeString</value>
          <variableId>b798d29f-9cf1-4cc7-9472-bc5ea62ffd83</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>b3e6e2a2-b1a7-434c-b68d-72ad7f27a300</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_ManufacturerName</value>
          <variableId>805becf6-058e-433c-8b0c-933ce1b3a094</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>b3e6e2a2-b1a7-434c-b68d-72ad7f27a300</testDataLinkId>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>var_VehicleID</value>
          <variableId>1e86dda4-7dda-4376-85c2-a53ebc5bce07</variableId>
@@ -230,40 +212,64 @@
          <variableId>83df209a-5b1e-45ca-8705-d1c99b1dbcc8</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_AdvisorType</value>
          <variableId>910c265b-3116-4154-9d4e-1e2b6306823c</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_Status_ProcessServiceChange</value>
          <variableId>c6bc830d-70dd-4edd-9588-a8f20ebb2a7a</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_Status_ProcessServiceDelete</value>
          <variableId>bd9ad466-5baa-497e-afc5-f4cf3f2ccf6d</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>1c2bf487-0514-498d-917d-6d5ba6aaa227</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_ChangeDate</value>
          <variableId>f89a2eae-75ce-4749-b472-0b810fbdfd3b</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_LineNumber</value>
          <variableId>ddecdeb9-5959-4469-9cb8-1f3550a8baa8</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_VehicleType</value>
+         <variableId>b39447bd-8b13-4004-812a-8e2769b8023f</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_OperationCode</value>
+         <variableId>5e2f366a-997b-49c0-869d-6bfc80a98c0a</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_OperationDescription</value>
+         <variableId>9f6622aa-82c0-45cb-8757-1f10279bbaae</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_ChangeCustomerVehicle</value>
+         <variableId>0a4e1f08-fd5d-452c-b743-46e29b2551ce</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_ChangeOpCodeContent</value>
+         <variableId>9a068168-9f17-475c-980b-dec7da830043</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

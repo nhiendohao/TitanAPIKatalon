@@ -15,6 +15,13 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
+      <id>683294ae-fb93-4123-b5de-642eafba581d</id>
+      <masked>false</masked>
+      <name>Setup_CustomerType</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
       <id>2902f10a-449a-4549-9ea4-573edd588cbb</id>
       <masked>false</masked>
       <name>Setup_FirstName</name>
@@ -25,27 +32,6 @@
       <id>846f6dfa-130c-4bda-bcd6-4ac0bc58166c</id>
       <masked>false</masked>
       <name>Setup_LastName</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>8b4a90c0-bad7-46cb-b60b-84377508fe24</id>
-      <masked>false</masked>
-      <name>Setup_AddJobLine</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>a753ebcb-02de-4bf6-959a-92b1d16d0cf6</id>
-      <masked>false</masked>
-      <name>Setup_BookingId</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>683294ae-fb93-4123-b5de-642eafba581d</id>
-      <masked>false</masked>
-      <name>Setup_CustomerType</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
@@ -113,6 +99,13 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
+      <id>be84810c-78c9-467e-807a-a94a16b492f9</id>
+      <masked>false</masked>
+      <name>Setup_VehicleType</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
       <id>d2034eea-cebc-4422-9cf0-2bcbe9c3020d</id>
       <masked>false</masked>
       <name>Setup_Model</name>
@@ -148,6 +141,27 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
+      <id>8454d492-95fb-4ecd-a14e-0187eabea73a</id>
+      <masked>false</masked>
+      <name>Setup_OperationCode</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>50d3a25f-3803-4f3c-a58e-fc910a398ec7</id>
+      <masked>false</masked>
+      <name>Setup_OperationDescription</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>0612d2ed-25eb-48bc-b194-78f5a59c3a39</id>
+      <masked>false</masked>
+      <name>Setup_AdvisorType</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
       <id>f6f1c56d-03a3-4407-9767-1246375c0c2f</id>
       <masked>false</masked>
       <name>Setup_StartSearchDate</name>
@@ -162,8 +176,36 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>0612d2ed-25eb-48bc-b194-78f5a59c3a39</id>
+      <id>adc54732-b268-4a5b-ae8c-da69e497343a</id>
       <masked>false</masked>
-      <name>Setup_AdvisorType</name>
+      <name>Setup_ChangeDate</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>68cdcee6-1aee-45e4-b1c2-f64c7d7b5fe1</id>
+      <masked>false</masked>
+      <name>Setup_ChangeCustomerVehicle</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5dff1ef3-dbf0-4b29-abfb-2d6bd7475007</id>
+      <masked>false</masked>
+      <name>Setup_ChangeOpCodeContent</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>8b4a90c0-bad7-46cb-b60b-84377508fe24</id>
+      <masked>false</masked>
+      <name>Setup_AddJobLine</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>a753ebcb-02de-4bf6-959a-92b1d16d0cf6</id>
+      <masked>false</masked>
+      <name>Setup_BookingId</name>
    </variable>
 </TestCaseEntity>

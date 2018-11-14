@@ -4,7 +4,7 @@
    <name>Sprint_All - DevTransferDataSet</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-11-13T11:06:09</lastRun>
+   <lastRun>2018-11-14T08:02:11</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -20,8 +20,8 @@
          <combinationType>ONE</combinationType>
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
-            <iterationType>SPECIFIC</iterationType>
-            <value>2753</value>
+            <iterationType>RANGE</iterationType>
+            <value>2498-2502</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All_Dev</testDataId>
       </testDataLink>
