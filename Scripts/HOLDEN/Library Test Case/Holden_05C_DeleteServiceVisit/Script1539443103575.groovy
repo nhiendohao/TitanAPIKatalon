@@ -65,12 +65,6 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 	('obj_PartyId') : GlobalVariable.Glb_PartyID, 
 	('obj_DocumentID') : GlobalVariable.Glb_DocumentId, 
 	('obj_DateAppointment') : GlobalVariable.Glb_ServiceDate            , 
-	('obj_AppNote') : GlobalVariable.Glb_Ser_AppointmentNote, 
-	('obj_AppTransport') : GlobalVariable.Glb_Ser_Transportation            , 
-	('obj_JobNumberString') : GlobalVariable.Glb_Ser_JobNumberString, 
-	('obj_RepairIndicator') : GlobalVariable.Glb_Ser_RepairIndicator            , 
-	('obj_JobType') : GlobalVariable.Glb_Ser_JobTypeString, 
-	('obj_LaborIndex') : GlobalVariable.Glb_Ser_LaborId            , 
 	('obj_LaborCode') : GlobalVariable.Glb_Ser_LaborCode, 
 	('obj_LaborDescription') : GlobalVariable.Glb_Ser_LaborDescription])
 //Declare response

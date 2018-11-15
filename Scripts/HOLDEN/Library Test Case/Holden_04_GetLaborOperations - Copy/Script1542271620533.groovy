@@ -81,54 +81,39 @@ import static com.xlson.groovycsv.CsvParser.parseCsv //Reading CSV
 			
 		
 		//Get number of Advisors
-			int numberOpCode = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSizeSOAPNode'(res_GetLaborOperations, "LaborOperations")
-			//Get information of all personel
-			def listOpCode = new String[1000]
-			def listOpDescription = new String[1000]
+			int numberPersonel = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSizeSOAPNode'(res_GetLaborOperations, "LaborOperations")
 			
-			for (int i = 0;i<numberOpCode;i++){
-				listOpCode[i] = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "DocumentIdentification", "DocumentID", i, 0) as String
-				//println listDocId[i]
-				listOpDescription[i] = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "LaborOperationsDetail", "LaborOperationDescription", i, 0) as String
-				//println listGivenName[i]
-			}
+		//CSV
+		//Get data from CSV file
+		int countCSV = 0
+		CSVReader = new File("Data Files/Holden/OperationCodeCSV.csv")
+		def csv_content = CSVReader.getText('utf-8')
+		 //Convert CSV to text
+		def CSVData = parseCsv(csv_content, separator: ',', readFirstLine: false)
+		 //Get for each column and Assert with Response
+		for (line in CSVData) {
 			
-			
-		//Code to get data from SQL
-		//Declare information
-			String currentDate = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'("MM/dd/YYYY") //TerminationDate =currentDate
-			String sqlUser = GlobalVariable.Glb_sqlUser.toString()
-			String sqlPass = GlobalVariable.Glb_sqlPass.toString()
-			String sqlURL = GlobalVariable.Glb_sqlURL.toString()
-			String sqlQuery = "SELECT CB.OPERATION_CODE,OC.DESCRIPTION FROM CODEBOOK CB JOIN OPERATION_CODE OC ON CB.OPERATION_CODE = OC.CODE WHERE CB.CODEBOOK_MODEL_KEY <> 2 ORDER BY CB.CODEBOOK_KEY ASC"
-			int sizeSQl = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getSQLSize'(sqlUser, sqlPass, sqlURL, sqlQuery)
-			
-		//Assert value
-			// Create Driver for connection
-			  def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
-			// Create Object Properties
-			  def props = new Properties()
-			// Setup user and password through Object Properties
-			  props.setProperty("user", sqlUser)
-			  props.setProperty("password", sqlPass)
-			//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
-			  def conn = driver.connect(sqlURL, props)
-			  def sql = new Sql(conn)
-			  int countNumber = 0
-			//Executive query for database
-			//Read data row by row by expression eachRow
-			  sql.eachRow(sqlQuery) {row ->
-				assert listOpCode[countNumber] == row.OPERATION_CODE as String
-				if(!('UCD'== row.OPERATION_CODE as String))
-					assert listOpDescription[countNumber] == row.DESCRIPTION as String
-					else if('UCD'== row.OPERATION_CODE as String) assert listOpDescription[countNumber] == 'SUBLET USED CAR DETAI'
-				  countNumber += 1
-				  
-			  }
-			  sql.close()
-			  conn.close()
+			  //Get information of all personel
+			  def listDocId = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "DocumentIdentification", "DocumentID", countCSV, 0) as String
+			  def listLaborId = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "LaborOperationsDetail", "LaborOperationID", countCSV, 0) as String
+			  def listLaborOperationDes = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_GetLaborOperations, "LaborOperationsDetail", "LaborOperationDescription", countCSV, 0) as String
+				
+			  //Handle something
+			  String Operation_Code = line.Operation_Code.toString()
+			  if(Operation_Code == '50012' ||
+				  Operation_Code == '41024' ||
+				  Operation_Code == '91020') Operation_Code = '0' + Operation_Code
+			  //Assert value between sql and response
+			  assert listDocId == Operation_Code	
+			  assert listLaborId == Operation_Code 	
+			  assert listLaborOperationDes == line.Description as String
+			 
+			  //Increase count variable
+			  countCSV += 1
+			  println countCSV
+		  }
 		
 		//Assert number CSV and response
-		assert numberOpCode == sizeSQl
+		assert numberPersonel == countCSV
 	}
   

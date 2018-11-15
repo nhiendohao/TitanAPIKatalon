@@ -21,6 +21,13 @@ import java.sql.Driver
 if(!(Setup_Dealer_Code == "")) GlobalVariable.Glb_Dealer_Code = Setup_Dealer_Code
 println GlobalVariable.Glb_Dealer_Code
 
+//ServiceDate
+if(!(Setup_StartServiceDate == "")) GlobalVariable.Glb_ServiceDate = Setup_StartServiceDate
+println GlobalVariable.Glb_ServiceDate
+if(!(Setup_EndServiceDate == "")) GlobalVariable.Glb_ServiceEndDate = Setup_EndServiceDate
+println GlobalVariable.Glb_ServiceEndDate
+
+//Customer information
 if(!(Setup_CustomerType == "")) GlobalVariable.Glb_CustomerType = Setup_CustomerType
 println GlobalVariable.Glb_CustomerType
 if(!(Setup_FirstName == "")) GlobalVariable.Glb_FirstName = Setup_FirstName
@@ -46,6 +53,7 @@ println GlobalVariable.Glb_Cus_PhoneNumber
 if(!(Setup_Email == "")) GlobalVariable.Glb_Cus_Email = Setup_Email
 println GlobalVariable.Glb_Cus_Email
 
+//Vehicle information
 if(!(Setup_VehicleType == "")) GlobalVariable.Glb_VehicleType = Setup_VehicleType
 println GlobalVariable.Glb_VehicleType
 if(!(Setup_Model == "")) GlobalVariable.Glb_veh_Model = Setup_Model
@@ -59,16 +67,19 @@ println GlobalVariable.Glb_veh_ManufacturerName
 if(!(Setup_VehicleID == "")) GlobalVariable.Glb_veh_VehicleId = Setup_VehicleID
 println GlobalVariable.Glb_veh_VehicleId
 
+//Job line information
 if(!(Setup_OperationCode == "")) GlobalVariable.Glb_Ser_LaborCode = Setup_OperationCode
 println GlobalVariable.Glb_Ser_LaborCode
 if(!(Setup_OperationDescription == "")) GlobalVariable.Glb_Ser_LaborDescription = Setup_OperationDescription
 println GlobalVariable.Glb_Ser_LaborDescription
 
+//Process Search
 if(!(Setup_StartSearchDate == "")) GlobalVariable.Glb_StartSearchDate = Setup_StartSearchDate
 println GlobalVariable.Glb_StartSearchDate
 if(!(Setup_EndSearchDate == "")) GlobalVariable.Glb_EndSearchDate = Setup_EndSearchDate
 println GlobalVariable.Glb_EndSearchDate
 
+//Process Change
 if(!(Setup_ChangeDate == "")) GlobalVariable.Glb_ChangeDate = Setup_ChangeDate
 println GlobalVariable.Glb_ChangeDate
 if(!(Setup_ChangeCustomerVehicle == "")) GlobalVariable.Glb_ChangeChangeCustomerVehicle = Setup_ChangeCustomerVehicle
@@ -112,8 +123,23 @@ GlobalVariable.Glb_Current_Date = current_date
 //Set current Time. AUS is earlier than VN 4 hours
 GlobalVariable.Glb_Current_Hour = SetDate(today,0,0,4,"HH:mm")
 
+//Set up value Past/Current/Future for Service Start Date
+if(GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="cr")
+	GlobalVariable.Glb_ServiceDate = current_date
+else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="p")
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
+else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="f")
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,1,0,"YYYY-MM-dd")
+
+//Set up value Past/Current/Future for Service End Date
+if(GlobalVariable.Glb_ServiceEndDate.toString().toLowerCase() =="cr")
+	GlobalVariable.Glb_ServiceEndDate = current_date
+else if (GlobalVariable.Glb_ServiceEndDate.toString().toLowerCase() =="p")
+	GlobalVariable.Glb_ServiceEndDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
+else if (GlobalVariable.Glb_ServiceEndDate.toString().toLowerCase() =="f")
+	GlobalVariable.Glb_ServiceEndDate = SetDate(today,0,1,0,"YYYY-MM-dd")
 	
-//Set up value Past/Current/Future for Start Date
+//Set up value Past/Current/Future for Search Start Date
 if(GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_StartSearchDate = current_date
 else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="p")
@@ -121,18 +147,13 @@ else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="p")
 else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="f")
 	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,1,0,"YYYY-MM-dd")
 
-//Set up value Past/Current/Future for End Date
+//Set up value Past/Current/Future for Search End Date
 if(GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_EndSearchDate = current_date
 else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="p")
 	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
 else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
 	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,1,0,"YYYY-MM-dd")
-	
-//Set up ContactId
-	GlobalVariable.Glb_ContactId = "1901" + RandomNumber(999999)
-	
-	
 	
 //SQL
 	String sqlUser = GlobalVariable.Glb_sqlUser.toString()

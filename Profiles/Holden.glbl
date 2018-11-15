@@ -121,17 +121,17 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>''</initValue>
+      <initValue>'agrim'</initValue>
       <name>Glb_Adv_Id</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>''</initValue>
+      <initValue>'Andrew'</initValue>
       <name>Glb_Adv_FirstName</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>''</initValue>
+      <initValue>'Grima'</initValue>
       <name>Glb_Adv_LastName</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -253,5 +253,10 @@
       <description></description>
       <initValue>''</initValue>
       <name>Glb_VehicleType</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_ServiceEndDate</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

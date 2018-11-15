@@ -292,4 +292,18 @@
       <masked>false</masked>
       <name>var_LineNumber</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>05690d96-5219-46ab-8c82-e5b8670c6f33</id>
+      <masked>false</masked>
+      <name>var_StartServiceDate</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d2eb3fdd-4268-4b79-9299-afb25c212c3c</id>
+      <masked>false</masked>
+      <name>var_EndServiceDate</name>
+   </variable>
 </TestCaseEntity>

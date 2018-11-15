@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Sprint_Reserve Timeslot_07</name>
+   <name>Sprint_Get DropOff Time_07_FutureDropOff</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-11-15T13:30:54</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>b916e1e5-4335-443d-b036-a931387f7af1</testSuiteGuid>
+   <testSuiteGuid>6689f3f0-e482-47ef-9883-3f8e984f0a26</testSuiteGuid>
    <testCaseLink>
       <guid>d9a0388b-193b-4768-a036-b9d2de3e928a</guid>
       <isReuseDriver>false</isReuseDriver>
@@ -21,7 +20,7 @@
          <id>67955f79-938c-48f4-bbe7-124c499db36f</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>2098-2149</value>
+            <value>2945-2953</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota/Sprint_All_Dev</testDataId>
       </testDataLink>

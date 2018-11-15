@@ -70,9 +70,9 @@ println GlobalVariable.Glb_LastName
 //## VALID RESPONSE VERIFICATION
 //Validate Response Status Code
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_SearchCustomerInformation, 200, "")
-	if(!(GlobalVariable.Glb_CustomerType.toString().toLowerCase() == 'exist'))
+	if(GlobalVariable.Glb_CustomerType.toString().toLowerCase() == 'new')
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "CustomerParty", "DealerManagementSystemID", null, 0, 0)
-		else{
+		else if(GlobalVariable.Glb_CustomerType.toString().toLowerCase() == 'old'){
 		//Validate "Sender"
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Sender", "CreatorNameCode", "GM", 0, 0)
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Sender", "SenderNameCode", "OSS", 0, 0)

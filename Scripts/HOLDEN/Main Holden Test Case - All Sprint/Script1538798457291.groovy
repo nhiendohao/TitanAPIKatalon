@@ -74,6 +74,9 @@ GlobalVariable.Glb_BookingStatus = 'not yet'
 WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_00_Setup_Method_And_Variables'), [
 	('Setup_Dealer_Code') : var_DealerCode ,
 	
+	('Setup_StartServiceDate') : var_StartServiceDate,
+	('Setup_EndServiceDate') : var_EndServiceDate,
+	
 	('Setup_CustomerType') : var_CustomerType,
 	('Setup_FirstName') : var_FirstName,
 	('Setup_LastName') : var_LastName,
@@ -199,8 +202,7 @@ public void printLineFailed(){
 @TearDown
 public void HandleFailing(){
 	//Handle GetOperationCode for case all = TRUE
-	if(var_Status_OpCode == 'true'
-		&& var_Status_GetIntegration == 'true'
+	if(var_Status_GetIntegration == 'true'
 		&& var_Status_GetCustomer == 'true'
 		&& var_Status_GetPersonel == 'true'
 		&& var_Status_GetLaborCode == 'true'
@@ -210,7 +212,7 @@ public void HandleFailing(){
 		&& var_Status_SearchService == 'true'
 		&& var_Status_GetService == 'true'
 		&& var_Status_Subscription == 'true'){
-		if(!(GlobalVariable.Glb_Status_Integration == "passed"))	println "Test Case GetOperationCode: FAILED"
+		if(!(GlobalVariable.Glb_Status_Integration == "passed"))	println "Test Case GetIntegration: FAILED"
 			else{
 				println "Test Case GetIntegration: PASSED"
 				if(GlobalVariable.Glb_Status_GetCustomer == "passed") {

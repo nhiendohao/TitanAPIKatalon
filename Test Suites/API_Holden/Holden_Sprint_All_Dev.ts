@@ -4,7 +4,7 @@
    <name>Holden_Sprint_All_Dev</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-11-09T08:47:00</lastRun>
+   <lastRun>2018-11-15T16:41:15</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -270,6 +270,18 @@
          <type>DATA_COLUMN</type>
          <value>var_ChangeOpCodeContent</value>
          <variableId>9a068168-9f17-475c-980b-dec7da830043</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_StartServiceDate</value>
+         <variableId>05690d96-5219-46ab-8c82-e5b8670c6f33</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>13cac830-b89d-4bc6-a59d-742465417fcf</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>var_EndServiceDate</value>
+         <variableId>d2eb3fdd-4268-4b79-9299-afb25c212c3c</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

@@ -34,6 +34,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
  * V0. Create framework 09/10/18
  * V1. Verify response 13/10/18
  * Declare request  14/10/18
+ * V2. Handle for new customer, verify customer information from Get Customer Information and from DB
  */
 
 //CODE 
@@ -63,12 +64,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 	('obj_PartyId') : GlobalVariable.Glb_PartyID, 
 	('obj_DocumentID') : GlobalVariable.Glb_DocumentId, 
 	('obj_DateAppointment') : GlobalVariable.Glb_ServiceDate, 
-	('obj_AppNote') : GlobalVariable.Glb_Ser_AppointmentNote, 
-	('obj_AppTransport') : GlobalVariable.Glb_Ser_Transportation, 
-	('obj_JobNumberString') : GlobalVariable.Glb_Ser_JobNumberString, 
-	('obj_RepairIndicator') : GlobalVariable.Glb_Ser_RepairIndicator,
-	('obj_JobType') : GlobalVariable.Glb_Ser_JobTypeString,  
-	('obj_LaborIndex') : GlobalVariable.Glb_Ser_LaborId,
+	('obj_DateEndAppointment') : GlobalVariable.Glb_ServiceEndDate, 
 	('obj_LaborCode') : GlobalVariable.Glb_Ser_LaborCode, 
 	('obj_LaborDescription') : GlobalVariable.Glb_Ser_LaborDescription])
 //Declare response
@@ -147,7 +143,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 
 //Validate Service Appointment
 	/**
-	 * 11/09/2018: Remove this part in response
+	 * 11/11/2018: Remove this part in response
 	 * Only show Start and End dateTime
 	 */
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "Appointment", "AppointmentNotes", "Please wash car. Thank you.", 0, 0)
@@ -165,10 +161,12 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 	
 //Validate Advisor Party
 	/**
-	 * 11/09/2018: Remove this part in response
-	 */
+	 * 11/11/2018: Remove this part in response
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ServiceAdvisorParty", "PartyID", GlobalVariable.Glb_PartyID, 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ServiceAdvisorParty", "DealerManagementSystemID", GlobalVariable.Glb_Adv_Id, 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "SpecifiedPerson", "GivenName", GlobalVariable.Glb_Adv_FirstName, 1, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "SpecifiedPerson", "FamilyName", GlobalVariable.Glb_Adv_LastName, 1, 0)
+	 */
+	
+//Validate new Customer and new Vehicle information
 	

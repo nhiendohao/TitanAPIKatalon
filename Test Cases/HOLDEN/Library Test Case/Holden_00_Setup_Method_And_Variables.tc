@@ -208,4 +208,18 @@
       <masked>false</masked>
       <name>Setup_BookingId</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>b407e934-6f68-41c2-a1c0-4b9a1a3bef67</id>
+      <masked>false</masked>
+      <name>Setup_StartServiceDate</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>be794d76-1873-4d20-bcf3-d3740bd4d483</id>
+      <masked>false</masked>
+      <name>Setup_EndServiceDate</name>
+   </variable>
 </TestCaseEntity>

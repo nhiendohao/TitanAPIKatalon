@@ -138,16 +138,16 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 								&lt;ns:ServiceVisitAppointmentDetail>
 									&lt;ns:Appointment>
 										&lt;ns:AppointmentDateTime>${obj_DateAppointment}&lt;/ns:AppointmentDateTime>
-										&lt;ns:AppointmentNotes>${obj_AppNote}&lt;/ns:AppointmentNotes>
-										&lt;ns:AppointmentStatus>SCHEDULED&lt;/ns:AppointmentStatus>
-										&lt;ns:AlternateTransportation>${obj_AppTransport}&lt;/ns:AlternateTransportation>
-										&lt;ns:EndAppointmentDateTime>2016-05-19T13:10:00.000-04:00&lt;/ns:EndAppointmentDateTime>
+										&lt;ns:AppointmentNotes>Please wash car. Thank you.&lt;/ns:AppointmentNotes>
+										&lt;ns:AppointmentStatus>CANCELLED&lt;/ns:AppointmentStatus>
+										&lt;ns:AlternateTransportation>WAIT_AT_DEALER&lt;/ns:AlternateTransportation>
+										&lt;ns:EndAppointmentDateTime>${obj_DateEndAppointment}&lt;/ns:EndAppointmentDateTime>
 										&lt;ns:RequestedService>
-											&lt;ns:JobNumberString>${obj_JobNumberString}&lt;/ns:JobNumberString>
-											&lt;ns:RepeatRepairIndicator>${obj_RepairIndicator}&lt;/ns:RepeatRepairIndicator>
-											&lt;ns:JobTypeString>${obj_JobType}&lt;/ns:JobTypeString>
+											&lt;ns:JobNumberString>A&lt;/ns:JobNumberString>
+											&lt;ns:RepeatRepairIndicator>false&lt;/ns:RepeatRepairIndicator>
+											&lt;ns:JobTypeString>Customer Pay&lt;/ns:JobTypeString>
 											&lt;ns:ServiceLaborScheduling>
-												&lt;ns:LaborOperationID>${obj_LaborIndex}&lt;/ns:LaborOperationID>
+												&lt;ns:LaborOperationID>1&lt;/ns:LaborOperationID>
 												&lt;ns:LaborOperationIdTypeCode>${obj_LaborCode}&lt;/ns:LaborOperationIdTypeCode>
 												&lt;ns:LaborOperationDescription>${obj_LaborDescription}&lt;/ns:LaborOperationDescription>
 											&lt;/ns:ServiceLaborScheduling>
@@ -331,48 +331,6 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <name>obj_DateAppointment</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.Glb_Ser_AppointmentNote</defaultValue>
-      <description></description>
-      <id>971edf11-fd12-4610-b961-5e0b9b62ce8d</id>
-      <masked>false</masked>
-      <name>obj_AppNote</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.Glb_Ser_Transportation</defaultValue>
-      <description></description>
-      <id>5694cbf2-d9ef-4787-b5ae-b2407431b73c</id>
-      <masked>false</masked>
-      <name>obj_AppTransport</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.Glb_Ser_JobNumberString</defaultValue>
-      <description></description>
-      <id>2f573642-8584-45d2-b199-1641c816e64e</id>
-      <masked>false</masked>
-      <name>obj_JobNumberString</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.Glb_Ser_RepairIndicator</defaultValue>
-      <description></description>
-      <id>131934ba-172b-4c16-87d4-da272906333a</id>
-      <masked>false</masked>
-      <name>obj_RepairIndicator</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.Glb_Ser_JobTypeString</defaultValue>
-      <description></description>
-      <id>b15797c0-d658-4c4c-9aba-9f984dec82b8</id>
-      <masked>false</masked>
-      <name>obj_JobType</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.Glb_Ser_LaborId</defaultValue>
-      <description></description>
-      <id>15917844-eb6d-4507-a392-12ebcd68c6e5</id>
-      <masked>false</masked>
-      <name>obj_LaborIndex</name>
-   </variables>
-   <variables>
       <defaultValue>GlobalVariable.Glb_Ser_LaborCode</defaultValue>
       <description></description>
       <id>f5685a67-55c5-4e32-9534-8b53c5db9abf</id>
@@ -392,6 +350,13 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <id>a6872cf9-8678-4451-89b7-6961dd36d098</id>
       <masked>false</masked>
       <name>obj_BookingId</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_ServiceEndDate</defaultValue>
+      <description></description>
+      <id>7719d826-09c8-4707-a5ac-7aadc3924f5e</id>
+      <masked>false</masked>
+      <name>obj_DateEndAppointment</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
