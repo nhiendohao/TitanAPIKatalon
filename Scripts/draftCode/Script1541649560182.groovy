@@ -32,13 +32,11 @@ import java.util.Date as Date
 import groovy.sql.Sql as Sql
 import java.sql.Driver as Driver
 
-def a = new String[]
+/**
+ * @author ANH THY
+ * 1. add sql for customer information
+ */
+WS.comment(null)
 
-(a[0]) = 1
-
-println(a[0])
-
-println(a[1])
-
-WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_08A_ProcessServiceSubsription_Add'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_02_SearchCustomerInformation'), [:], FailureHandling.STOP_ON_FAILURE)
 

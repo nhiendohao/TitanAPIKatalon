@@ -16,6 +16,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import groovy.sql.Sql
 import java.sql.Driver
+/**
+ * @author ANH THY
+ * STRUCTRUE
+ * 1. SET VALUE FOR GLOBAL VARIABLE FROM OR BASE ON DATASET
+ * 2. SET DATE VALUE
+ * 3. GET VALUE FROM SQL: FINANCIAL YEAR, ADVISOR INFORMATION, DOCUMENT ID FROM THIRD PARTY
+ *
+ */
 
 //Set Value for GlobalVariable
 if(!(Setup_Dealer_Code == "")) GlobalVariable.Glb_Dealer_Code = Setup_Dealer_Code
@@ -97,6 +105,10 @@ if(!(Setup_AdvisorType.toString().toLowerCase() == 'exist')) {
 	GlobalVariable.Glb_Adv_LastName= 'invalid'
 } //Else condition is gather below
 
+if(GlobalVariable.Glb_CustomerType.toString().toLowerCase()=='new'){
+	GlobalVariable.Glb_FirstName = 'QATEAM_VINHLE'
+	GlobalVariable.Glb_LastName  = 'HOLDEN' + CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'('yyMMddHHmmss')
+}
 
 //METHOD
 //Create Date Past/Future with specific Date from current Date

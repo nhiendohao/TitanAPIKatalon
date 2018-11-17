@@ -29,6 +29,8 @@ import com.sun.jna.platform.win32.WinNT.ACCESS_ACEStructure
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import groovy.sql.Sql
+import java.sql.Driver
 
 /**
  * V0. Create framework 09/10/18
@@ -109,7 +111,39 @@ println GlobalVariable.Glb_LastName
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "ManufacturerName", GlobalVariable.Glb_veh_ManufacturerName, 0, 0)
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "VehicleID", GlobalVariable.Glb_veh_VehicleId, 0, 0)
 			
-			//Set Status Method
+		/**
+		 * Verify customer information in database
+		 */
+			//SQL
+			String sqlUser = GlobalVariable.Glb_sqlUser.toString()
+			String sqlPass = GlobalVariable.Glb_sqlPass.toString()
+			String sqlURL = GlobalVariable.Glb_sqlURL.toString()
+			// Create Driver for connection
+			def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
+			// Create Object Properties
+			def props = new Properties()
+			// Setup user and password through Object Properties
+			props.setProperty("user", sqlUser)
+			props.setProperty("password", sqlPass)
+			//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
+			def conn = driver.connect(sqlURL, props)
+			def sql = new Sql(conn)
+			
+			//Query and assert Customer's information
+			sql.eachRow("") {row ->
+			/**
+			 * assert body for Customer
+			 */
+			}
+			
+			//Query and assert Vehicle's information
+			sql.eachRow("") {row ->
+			/**
+			 * assert body for Vehicle
+			 */
+			}
+			
+		//Set Status Method
 			GlobalVariable.Glb_Status_GetCustomer = 'passed'
 		}
 	}
