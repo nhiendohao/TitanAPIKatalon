@@ -137,11 +137,6 @@ class Library_Method_VinhLe {
 
 	/**
 	 * GET SIZE OF NODE
-	 * Send request and get size of Node
-	 * @response response, must be an instance of ResponseObject
-	 * @parentnode parent node
-	 * @childrennode children node
-	 * @return a string value
 	 */
 	@Keyword
 	def getSizeSOAPNode(ResponseObject response, String parentnode) {
@@ -152,6 +147,26 @@ class Library_Method_VinhLe {
 		sizeNode = errNodes.getLength()
 		println "Number of Element: " + sizeNode
 		return sizeNode
+	}
+
+	/**
+	 * GET LOCATOR OF VALUE FROM NODE
+	 */
+	@Keyword
+	int getLocatorValueSOAPNodeforHoldenOSS(ResponseObject response, String rootNode, String parentnode, String childrennode, String valueExpected ) {
+		Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+				.parse(new InputSource(new StringReader(response.getResponseText())))
+		NodeList errNodes = doc.getElementsByTagName(rootNode)
+		int sizeNode = getSizeSOAPNode(response, rootNode)
+		int locatorNumber = 0
+		for(int i = 0;i<sizeNode;i++){
+			if(getValueSOAPNode(response, parentnode, childrennode, (1 + 2*i), 0).toString() == valueExpected){
+				locatorNumber = i
+				break
+			}
+		}
+		println locatorNumber
+		return locatorNumber
 	}
 
 	/**

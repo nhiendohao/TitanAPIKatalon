@@ -70,19 +70,6 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Destination", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Destination", "DealerTargetCountry", "US", 0, 0)
 
-//Validate "Sender" of Acknowledge Service Area
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Sender", "CreatorNameCode", "GM", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Sender", "SenderNameCode", "OSS", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Sender", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Sender", "DealerCountryCode", "US", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Sender", "LanguageCode", "en-US", 1, 0)
-	
-//Validate "Destination" of Acknowledge Service Area
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Destination", "DestinationNameCode", "QI", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Destination", "DestinationSoftwareCode", "QI", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Destination", "DestinationSoftware", "QI", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Destination", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionDetact, "Destination", "DealerTargetCountry", "US", 1, 0)
 
 //Validate "actionCode" = Accepted
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyAttributeSOAPNode'(res_SubscriptionDetact, "ResponseCriteria", "ResponseExpression", "actionCode", "Accepted", 0, 0)

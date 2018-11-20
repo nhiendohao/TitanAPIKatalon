@@ -52,7 +52,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 //All negative case
 	//Invalid dealer code
 	if(!(GlobalVariable.Glb_Dealer_Code == '111148')){
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_ProcessServiceVisit, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_SearchServiceVisit, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
 		println "Dealer Code invalid"
 		}
 	//End Date is before Start Date
@@ -64,7 +64,6 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 	//Validate Response Status Code
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_SearchServiceVisit, 200, "")
 		
-		if(GlobalVariable.Glb_BookingStatus.toString().toLowerCase() == 'current'){
 	//Validate "Sender" of Application Area
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Sender", "CreatorNameCode", "GM", 0, 0)
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Sender", "SenderNameCode", "OSS", 0, 0)
@@ -79,74 +78,43 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Destination", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 0, 0)
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Destination", "DealerTargetCountry", "US", 0, 0)
 	
-	//Validate "Sender" of Acknowledge Service Area
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Sender", "CreatorNameCode", "GM", 1, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Sender", "SenderNameCode", "OSS", 1, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Sender", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 1, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Sender", "DealerCountryCode", "US", 1, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Sender", "LanguageCode", "en-US", 1, 0)
+	//Get locator of expected Node
+		int nodeExpectedIndex = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getLocatorValueSOAPNodeforHoldenOSS'(res_SearchServiceVisit, 'ServiceVisit',"DocumentIdentification", "DocumentID", GlobalVariable.Glb_Booking_ID )
 		
-	//Validate "Destination" of Acknowledge Service Area
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Destination", "DestinationNameCode", "QI", 1, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Destination", "DestinationSoftwareCode", "QI", 1, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Destination", "DestinationSoftware", "QI", 1, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Destination", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 1, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Destination", "DealerTargetCountry", "US", 1, 0)
-	
-	//Validate "actionCode" = Accepted
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyAttributeSOAPNode'(res_SearchServiceVisit, "ResponseCriteria", "ResponseExpression", "actionCode", "Accepted", 0, 0)
-	
-	//Validate Document Id
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "DocumentIdentification", "DocumentID", GlobalVariable.Glb_DocumentId, 0, 0)
-	
 	//Validate Customer Information
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "AppointmentContactParty", "dealerManagementSystemIDField", GlobalVariable.Glb_Cus_TradingEntity, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "AppointmentContactParty", "dealerManagementSystemIDField", GlobalVariable.Glb_Cus_TradingEntity, 0, 1)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "SpecifiedPerson", "GivenName", GlobalVariable.Glb_FirstName, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "SpecifiedPerson", "FamilyName", GlobalVariable.Glb_LastName, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ResidenceAddress", "LineOne", GlobalVariable.Glb_Cus_LineOne, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ResidenceAddress", "CityName", GlobalVariable.Glb_Cus_CityName, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ResidenceAddress", "CountryID", GlobalVariable.Glb_Cus_CountryID, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ResidenceAddress", "Postcode", GlobalVariable.Glb_Cus_Postcode, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "TelephoneCommunication", "ChannelCode", GlobalVariable.Glb_Cus_ChannelCode, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "TelephoneCommunication", "CompleteNumber", GlobalVariable.Glb_Cus_PhoneNumber, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "URICommunication", "URIID", GlobalVariable.Glb_Cus_Email, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "URICommunication", "ChannelCode", "EMAIL", 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "SpecifiedPerson", "ContactMethodTypeCode", "Day Phone", 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Vehicle", "Model", GlobalVariable.Glb_veh_Model, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Vehicle", "ModelYear", GlobalVariable.Glb_veh_ModelYear, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Vehicle", "MakeString", GlobalVariable.Glb_veh_MakeString, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Vehicle", "ManufacturerName", GlobalVariable.Glb_veh_ManufacturerName, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "VehicleInfo", "InDistanceMeasure", "5000", 0, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "AppointmentContactParty", "dealerManagementSystemIDField", GlobalVariable.Glb_Cus_TradingEntity, nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "AppointmentContactParty", "DealerManagementSystemID", GlobalVariable.Glb_Cus_TradingEntity, nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "SpecifiedPerson", "GivenName", GlobalVariable.Glb_FirstName, nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ResidenceAddress", "LineOne", GlobalVariable.Glb_Cus_LineOne, nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ResidenceAddress", "CityName", GlobalVariable.Glb_Cus_CityName, nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ResidenceAddress", "CountryID", GlobalVariable.Glb_Cus_CountryID, nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ResidenceAddress", "Postcode", GlobalVariable.Glb_Cus_Postcode, nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ResidenceAddress", "StateOrProvinceCountrySub-DivisionID", GlobalVariable.Glb_Cus_State, nodeExpectedIndex, 0)
+		
+		if(GlobalVariable.Glb_VehicleType.toString().toLowerCase() == 'old') CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Vehicle", "Model", GlobalVariable.Glb_veh_Model, nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Vehicle", "ModelYear", GlobalVariable.Glb_veh_ModelYear, nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Vehicle", "MakeString", GlobalVariable.Glb_veh_MakeString, nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Vehicle", "ManufacturerName", GlobalVariable.Glb_veh_ManufacturerName, nodeExpectedIndex, 0)
+		
+		if(GlobalVariable.Glb_VehicleType.toString().toLowerCase() == 'old') CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Vehicle", "VehicleID", GlobalVariable.Glb_veh_VehicleId, nodeExpectedIndex, 0)
 		
 	//Validate unitCode = 'mile'
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyAttributeSOAPNode'(res_SearchServiceVisit, "VehicleInfo", "InDistanceMeasure", "unitCode", "mile", 0, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyAttributeSOAPNode'(res_SearchServiceVisit, "VehicleInfo", "InDistanceMeasure", "unitCode", "mile", nodeExpectedIndex, 0)
 		
 	//Validate Appointment Id
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "DocumentIdentification", "DocumentID", GlobalVariable.Glb_Booking_ID, 1, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "DocumentIdentification", "DocumentID", GlobalVariable.Glb_Booking_ID, nodeExpectedIndex*2+1, 0)
 	
 	//Validate Service Appointment
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Appointment", "AppointmentNotes", "Please wash car. Thank you.", 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Appointment", "AppointmentStatus", "SCHEDULED", 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Appointment", "AlternateTransportation", "WAIT_AT_DEALER", 0, 0)
+//		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Appointment", "AppointmentDateTime",GlobalVariable.Glb_ServiceDate , nodeExpectedIndex, 0)
+//		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Appointment", "EndAppointmentDateTime", GlobalVariable.Glb_ServiceEndDate, nodeExpectedIndex, 0)
+		if(GlobalVariable.Glb_BookingStatus.toString().toLowerCase() == "cancel") 
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "Appointment", "AppointmentStatus", "CANCELLED", nodeExpectedIndex, 0)
 		
 	//Validate Request Service
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "RequestedService", "JobNumberString", "A", 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "RequestedService", "RepeatRepairIndicator", "false", 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "RequestedService", "JobTypeString", "Customer Pay", 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ServiceLaborScheduling", "LaborOperationID", "1", 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ServiceLaborScheduling", "LaborOperationIdTypeCode", "", 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ServiceLaborScheduling", "LaborOperationDescription", "", 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "RequestedService", "CustomerSalesRequestDescription", "", 0, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "RequestedService", "JobNumberString", "A", nodeExpectedIndex, 0)
+		//CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "RequestedService", "RepeatRepairIndicator", "false", nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "RequestedService", "JobTypeString", "Customer Pay", nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ServiceLaborScheduling", "LaborOperationDescription", GlobalVariable.Glb_Ser_LaborCode+' - '+GlobalVariable.Glb_Ser_LaborDescription, nodeExpectedIndex, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "RequestedService", "CustomerSalesRequestDescription", GlobalVariable.Glb_Ser_LaborCode+' - '+GlobalVariable.Glb_Ser_LaborDescription, nodeExpectedIndex, 0)
 		
-	//Validate Advisor Party
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ServiceAdvisorParty", "PartyID", GlobalVariable.Glb_PartyID, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "ServiceAdvisorParty", "DealerManagementSystemID", GlobalVariable.Glb_Adv_Id, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "SpecifiedPerson", "GivenName", GlobalVariable.Glb_Adv_FirstName, 1, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchServiceVisit, "SpecifiedPerson", "FamilyName", GlobalVariable.Glb_Adv_LastName, 1, 0)
-		}
-		else {
-			String verifyNotAppointmentReturn = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_SearchServiceVisit, "AppointmentContactParty", "dealerManagementSystemIDField", 0, 0)
-			assert verifyNotAppointmentReturn == null
-		}
 	}

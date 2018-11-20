@@ -82,14 +82,14 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 				&lt;ns:ProcessServiceVisitDataArea>
 					&lt;ns:Process>
 						&lt;ns1:ActionCriteria>
-							&lt;ns1:ActionExpression actionCode=&quot;Add&quot;>Add&lt;/ns1:ActionExpression>
+							&lt;ns1:ActionExpression actionCode=&quot;Delete&quot;>Delete&lt;/ns1:ActionExpression>
 						&lt;/ns1:ActionCriteria>
 					&lt;/ns:Process>
 					&lt;ns:ServiceVisit>
 						&lt;ns:ServiceVisitHeader>
 							&lt;ns:DocumentIdentificationGroup>
 								&lt;ns:DocumentIdentification>
-									&lt;ns:DocumentID>69246578&lt;/ns:DocumentID>
+									&lt;ns:DocumentID>${obj_DocumentId}&lt;/ns:DocumentID>
 								&lt;/ns:DocumentIdentification>
 							&lt;/ns:DocumentIdentificationGroup>
 							&lt;ns:CustomerInfo>
@@ -315,13 +315,6 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <id>50b8fe75-5fee-4257-a2fb-d08f03c08ddb</id>
       <masked>false</masked>
       <name>obj_PartyId</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.Glb_DocumentId</defaultValue>
-      <description>Temporary</description>
-      <id>ef6d179a-aa74-4b8a-946c-20892ac568ce</id>
-      <masked>false</masked>
-      <name>obj_DocumentID</name>
    </variables>
    <variables>
       <defaultValue>GlobalVariable.Glb_ServiceDate</defaultValue>

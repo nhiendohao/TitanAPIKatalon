@@ -89,7 +89,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 						&lt;ns:ServiceVisitHeader>
 							&lt;ns:DocumentIdentificationGroup>
 								&lt;ns:DocumentIdentification>
-									&lt;ns:DocumentID>69246578&lt;/ns:DocumentID>
+									&lt;ns:DocumentID>${obj_DocumentID}&lt;/ns:DocumentID>
 								&lt;/ns:DocumentIdentification>
 							&lt;/ns:DocumentIdentificationGroup>
 							&lt;ns:CustomerInfo>
@@ -137,11 +137,11 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 								&lt;/ns:ServiceVisitAppointmentHeader>
 								&lt;ns:ServiceVisitAppointmentDetail>
 									&lt;ns:Appointment>
-										&lt;ns:AppointmentDateTime>${obj_DateAppointment}&lt;/ns:AppointmentDateTime>
+										&lt;ns:AppointmentDateTime>${obj_DateAppointment}.000-04:00&lt;/ns:AppointmentDateTime>
 										&lt;ns:AppointmentNotes>Please wash car. Thank you.&lt;/ns:AppointmentNotes>
 										&lt;ns:AppointmentStatus>SCHEDULED&lt;/ns:AppointmentStatus>
 										&lt;ns:AlternateTransportation>WAIT_AT_DEALER&lt;/ns:AlternateTransportation>
-										&lt;ns:EndAppointmentDateTime>${obj_DateEndAppointment}&lt;/ns:EndAppointmentDateTime>
+										&lt;ns:EndAppointmentDateTime>${obj_DateEndAppointment}.000-04:00&lt;/ns:EndAppointmentDateTime>
 										&lt;ns:RequestedService>
 											&lt;ns:JobNumberString>A&lt;/ns:JobNumberString>
 											&lt;ns:RepeatRepairIndicator>false&lt;/ns:RepeatRepairIndicator>
@@ -196,13 +196,6 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <id>4cfaa8f7-532b-4ae9-91d5-6b0cb3612ef2</id>
       <masked>false</masked>
       <name>Obj_FamilyName</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.Glb_DocumentId</defaultValue>
-      <description></description>
-      <id>e968a851-b595-4474-adac-fd4d0b39001a</id>
-      <masked>false</masked>
-      <name>obj_DocumentId</name>
    </variables>
    <variables>
       <defaultValue>GlobalVariable.Glb_Cus_LineOne</defaultValue>
@@ -317,7 +310,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <name>obj_PartyId</name>
    </variables>
    <variables>
-      <defaultValue>GlobalVariable.Glb_DocumentId</defaultValue>
+      <defaultValue>''</defaultValue>
       <description>Temporary</description>
       <id>ef6d179a-aa74-4b8a-946c-20892ac568ce</id>
       <masked>false</masked>

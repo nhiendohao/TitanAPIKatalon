@@ -105,11 +105,15 @@ println GlobalVariable.Glb_LastName
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "TelephoneCommunication", "CompleteNumber", GlobalVariable.Glb_Cus_PhoneNumber, 0, 0)
 			
 		//Validate "Vehicle"
-			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "Model", GlobalVariable.Glb_veh_Model, 0, 0)
+			String modelTemp = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_SearchCustomerInformation,"Vehicle", "Model", 0, 0)
+			if(!(modelTemp == "")) CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "Model", GlobalVariable.Glb_veh_Model, 0, 0)
+			
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "ModelYear", GlobalVariable.Glb_veh_ModelYear, 0, 0)
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "MakeString", GlobalVariable.Glb_veh_MakeString, 0, 0)
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "ManufacturerName", GlobalVariable.Glb_veh_ManufacturerName, 0, 0)
-			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "VehicleID", GlobalVariable.Glb_veh_VehicleId, 0, 0)
+			
+			String vehicleidTemp = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "VehicleID", 0, 0)
+			if(!(vehicleidTemp == "")) CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "VehicleID", GlobalVariable.Glb_veh_VehicleId, 0, 0)
 			
 		/**
 		 * Verify customer information in database
@@ -128,19 +132,28 @@ println GlobalVariable.Glb_LastName
 			//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
 			def conn = driver.connect(sqlURL, props)
 			def sql = new Sql(conn)
-			
+			String queryCustomer = "select TE.TRADING_ENTITY_KEY,STREET_LINE_1,SUBURB,POSTCODE,CP.PHONE_NO,CO.EMAIL from TRADING_ENTITY TE"+
+			" join CONTACT_ADDRESS CA on TE.CONTACT_KEY = CA.CONTACT_KEY join CONTACT_PHONE CP on TE.CONTACT_KEY = CP.CONTACT_KEY"+
+			" join CONTACT CO on TE.CONTACT_KEY = CO.CONTACT_KEY"+
+			" where TE.NAME = '"+GlobalVariable.Glb_FirstName+" "+GlobalVariable.Glb_LastName+ "'"
 			//Query and assert Customer's information
-			sql.eachRow("") {row ->
-			/**
-			 * assert body for Customer
-			 */
+			boolean stopCondition = false
+			sql.eachRow(queryCustomer) {row ->
+				if(!stopCondition){
+					assert GlobalVariable.Glb_Cus_TradingEntity.toString() == row.TRADING_ENTITY_KEY as String
+					assert GlobalVariable.Glb_Cus_LineOne.toString() == row.STREET_LINE_1 as String
+					assert GlobalVariable.Glb_Cus_CityName.toString() == row.SUBURB as String
+					assert GlobalVariable.Glb_Cus_Postcode.toString() == row.POSTCODE as String
+					assert GlobalVariable.Glb_Cus_PhoneNumber.toString() == row.PHONE_NO as String
+					assert GlobalVariable.Glb_Cus_Email.toString() == row.EMAIL as String
+					stopCondition = true
+				}
 			}
 			
 			//Query and assert Vehicle's information
-			sql.eachRow("") {row ->
-			/**
-			 * assert body for Vehicle
-			 */
+			sql.eachRow("select * from VEHICLE where REGO_NO = '"+GlobalVariable.Glb_veh_ManufacturerName+"'") {row ->
+				assert GlobalVariable.Glb_veh_MakeString.toString() == row.MAKE_CODE as String
+				assert GlobalVariable.Glb_Cus_TradingEntity.toString() == row.OWNER_TRADING_ENTITY_KEY as String
 			}
 			
 		//Set Status Method

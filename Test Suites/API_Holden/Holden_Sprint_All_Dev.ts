@@ -4,7 +4,7 @@
    <name>Holden_Sprint_All_Dev</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-11-15T16:41:15</lastRun>
+   <lastRun>2018-11-20T22:11:48</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -21,7 +21,7 @@
          <id>13cac830-b89d-4bc6-a59d-742465417fcf</id>
          <iterationEntity>
             <iterationType>SPECIFIC</iterationType>
-            <value>1</value>
+            <value>4</value>
          </iterationEntity>
          <testDataId>Data Files/Holden/Holden_DATA_DRIVEN</testDataId>
       </testDataLink>

@@ -71,19 +71,6 @@ import java.sql.Driver
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Destination", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Destination", "DealerTargetCountry", "US", 0, 0)
 
-//Validate "Sender" of Acknowledge Service Area
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Sender", "CreatorNameCode", "GM", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Sender", "SenderNameCode", "OSS", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Sender", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Sender", "DealerCountryCode", "US", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Sender", "LanguageCode", "en-US", 1, 0)
-	
-//Validate "Destination" of Acknowledge Service Area
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Destination", "DestinationNameCode", "QI", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Destination", "DestinationSoftwareCode", "QI", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Destination", "DestinationSoftware", "QI", 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Destination", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 1, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SubscriptionAdd, "Destination", "DealerTargetCountry", "US", 1, 0)
 
 //Validate "actionCode" = Accepted
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyAttributeSOAPNode'(res_SubscriptionAdd, "ResponseCriteria", "ResponseExpression", "actionCode", "Accepted", 0, 0)

@@ -139,12 +139,12 @@ if(var_Status_ProcessServiceAdd == 'true')
 	
 //6. Search Service Visit
 //Search there has any appointment in range of day
-if(var_Status_ProcessServiceAdd == 'true')
+if(var_Status_SearchService == 'true')
 	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_06_SearchServiceVisit'), [:], FailureHandling.STOP_ON_FAILURE)
 	
 //7. Get Service Visit
 //Get all information about the service with specific Booking Id
-if(var_Status_ProcessServiceAdd == 'true')
+if(var_Status_GetService == 'true')
 	WebUI.callTestCase(findTestCase('HOLDEN/Library Test Case/Holden_07_GetServiceVisit'), [:], FailureHandling.STOP_ON_FAILURE)
 	
 //5. Process service Add action

@@ -89,8 +89,8 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
                         &lt;ns:SearchServiceVisitDataCriteria>
                            &lt;!--Optional:-->
                            &lt;ns:SearchField>DateLastModified&lt;/ns:SearchField>
-                           &lt;ns:BeginDateTime>${obj_StartSearchDate}T00:00:00.000-00:00&lt;/ns:BeginDateTime>
-                           &lt;ns:EndDateTime>${obj_EndSearchDate}T00:00:00.000-23:59&lt;/ns:EndDateTime>
+                           &lt;ns:BeginDateTime>${obj_StartSearchDate}&lt;/ns:BeginDateTime>
+                           &lt;ns:EndDateTime>${obj_EndSearchDate}&lt;/ns:EndDateTime>
                         &lt;/ns:SearchServiceVisitDataCriteria>
                      &lt;/ns:SearchServiceVisitDataArea>
                   &lt;/ns:SearchServiceVisit>

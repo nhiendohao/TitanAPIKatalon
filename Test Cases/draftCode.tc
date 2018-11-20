@@ -3,7 +3,7 @@
    <description></description>
    <name>draftCode</name>
    <tag></tag>
-   <comment></comment>
+   <comment>null</comment>
    <testCaseGuid>13bb8201-e1cd-48ec-9c86-6d24fa1373e4</testCaseGuid>
    <variable>
       <defaultValue>'exist'</defaultValue>

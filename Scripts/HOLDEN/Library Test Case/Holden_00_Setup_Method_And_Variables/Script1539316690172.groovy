@@ -106,8 +106,12 @@ if(!(Setup_AdvisorType.toString().toLowerCase() == 'exist')) {
 } //Else condition is gather below
 
 if(GlobalVariable.Glb_CustomerType.toString().toLowerCase()=='new'){
-	GlobalVariable.Glb_FirstName = 'QATEAM_VINHLE'
+	GlobalVariable.Glb_FirstName = 'QATEAM_VINHLE'+ CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'('yyMMddHHmmss')
 	GlobalVariable.Glb_LastName  = 'HOLDEN' + CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'('yyMMddHHmmss')
+}
+
+if(GlobalVariable.Glb_VehicleType.toString().toLowerCase()=='new'){
+	GlobalVariable.Glb_veh_ManufacturerName = 'REGNUMBER'+ CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'('yyMMddHHmmss')
 }
 
 //METHOD
@@ -130,7 +134,7 @@ def RandomNumber = {int number ->
 //Create Current Date & Time
 def today = new Date()
 //Set current Date
-def current_date = today.format("YYYY-MM-dd")
+def current_date = today.format("YYYY-MM-dd'T'HH:mm:ss")
 GlobalVariable.Glb_Current_Date = current_date
 //Set current Time. AUS is earlier than VN 4 hours
 GlobalVariable.Glb_Current_Hour = SetDate(today,0,0,4,"HH:mm")
@@ -139,34 +143,40 @@ GlobalVariable.Glb_Current_Hour = SetDate(today,0,0,4,"HH:mm")
 if(GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_ServiceDate = current_date
 else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_ServiceDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,-1,0,"YYYY-MM-dd'T'HH:mm:ss")
 else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_ServiceDate = SetDate(today,0,1,0,"YYYY-MM-dd")
-
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,1,0,"YYYY-MM-dd'T'HH:mm:ss")
+println GlobalVariable.Glb_ServiceDate
+	
 //Set up value Past/Current/Future for Service End Date
 if(GlobalVariable.Glb_ServiceEndDate.toString().toLowerCase() =="cr")
 	GlobalVariable.Glb_ServiceEndDate = current_date
 else if (GlobalVariable.Glb_ServiceEndDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_ServiceEndDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
+	GlobalVariable.Glb_ServiceEndDate = SetDate(today,0,-1,0,"YYYY-MM-dd'T'HH:mm:ss")
 else if (GlobalVariable.Glb_ServiceEndDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_ServiceEndDate = SetDate(today,0,1,0,"YYYY-MM-dd")
+	GlobalVariable.Glb_ServiceEndDate = SetDate(today,0,1,0,"YYYY-MM-dd'T'HH:mm:ss")
+println GlobalVariable.Glb_ServiceEndDate
 	
 //Set up value Past/Current/Future for Search Start Date
 if(GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="cr")
-	GlobalVariable.Glb_StartSearchDate = current_date
+	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,0,0,"YYYY-MM-dd'T00:00:00'")
+else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="crh")
+	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,-1,0,"YYYY-MM-dd'T23:00:00'")
 else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
+	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,-1,0,"YYYY-MM-dd'T00:00:00'")
 else if (GlobalVariable.Glb_StartSearchDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,1,0,"YYYY-MM-dd")
-
+	GlobalVariable.Glb_StartSearchDate = SetDate(today,0,1,0,"YYYY-MM-dd'T00:00:00'")
+	println GlobalVariable.Glb_StartSearchDate
 //Set up value Past/Current/Future for Search End Date
 if(GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="cr")
-	GlobalVariable.Glb_EndSearchDate = current_date
+	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,0,0,"YYYY-MM-dd'T23:59:00'")
+else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="crh")
+	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,-1,0,"YYYY-MM-dd'T00:00:00'")
 else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,-1,0,"YYYY-MM-dd")
+	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,-1,0,"YYYY-MM-dd'T23:59:00'")
 else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,1,0,"YYYY-MM-dd")
-	
+	GlobalVariable.Glb_EndSearchDate = SetDate(today,0,1,0,"YYYY-MM-dd'T23:59:00'")
+	println GlobalVariable.Glb_EndSearchDate
 //SQL
 	String sqlUser = GlobalVariable.Glb_sqlUser.toString()
 	String sqlPass = GlobalVariable.Glb_sqlPass.toString()
@@ -211,7 +221,7 @@ else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
 }
 //Query get the DocumentID (ThirdPartyAppointmentConfirmationKey)
 	//Executive query for database
-	if(!(GlobalVariable.Glb_DocumentId.toString() == '')){
+	if(GlobalVariable.Glb_DocumentId.toString() == ''){
 		String valueKey = ""
 		sql.eachRow("select * from THIRD_PARTY_APPOINTMENT_KEY_MAPPING") {row ->
 			String valueKeyTemp = row.THIRD_PARTY_APPOINTMENT_CONFIRMATION_KEY as String
