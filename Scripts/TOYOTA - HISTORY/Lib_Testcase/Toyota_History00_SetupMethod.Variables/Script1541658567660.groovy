@@ -18,47 +18,47 @@ import groovy.sql.Sql
 import java.sql.Driver
 
 //Set Value for GlobalVariable
-if(!(Setup_BookingId == "")) GlobalVariable.Glb_Booking_ID = Setup_BookingId
+if(!(Setup_BookingId == "Null")) GlobalVariable.Glb_Booking_ID = Setup_BookingId
 println GlobalVariable.Glb_Booking_ID
-if(!(Setup_ROStatus == "")) GlobalVariable.Glb_His_ROStatus = Setup_ROStatus
+if(!(Setup_ROStatus == "Null")) GlobalVariable.Glb_His_ROStatus = Setup_ROStatus
 println GlobalVariable.Glb_His_ROStatus
-if(!(Setup_VIN == "")) GlobalVariable.Glb_VIN = Setup_VIN
+if(!(Setup_VIN == "Null")) GlobalVariable.Glb_VIN = Setup_VIN
 println GlobalVariable.Glb_VIN
-if(!(Setup_LastName == "")) GlobalVariable.Glb_LastName = Setup_LastName
+if(!(Setup_LastName == "Null")) GlobalVariable.Glb_LastName = Setup_LastName
 println GlobalVariable.Glb_LastName
-if(!(Setup_FirstName == "")) GlobalVariable.Glb_FirstName = Setup_FirstName
+if(!(Setup_FirstName == "Null")) GlobalVariable.Glb_FirstName = Setup_FirstName
 println GlobalVariable.Glb_FirstName
-if(!(Setup_REGNumber == "")) GlobalVariable.Glb_REGNumber = Setup_REGNumber
+if(!(Setup_REGNumber == "Null")) GlobalVariable.Glb_REGNumber = Setup_REGNumber
 println GlobalVariable.Glb_REGNumber
-if(!(Setup_REGState == "")) GlobalVariable.Glb_His_REGState = Setup_REGState
+if(!(Setup_REGState == "Null")) GlobalVariable.Glb_His_REGState = Setup_REGState
 println GlobalVariable.Glb_His_REGState
-if(!(Setup_Mileage == "")) GlobalVariable.Glb_His_mileage = Setup_Mileage
+if(!(Setup_Mileage == "Null")) GlobalVariable.Glb_His_mileage = Setup_Mileage
 println GlobalVariable.Glb_His_mileage
-if(!(Setup_tmcaDealerCode == "")) GlobalVariable.Glb_His_tmcaDealerCode = Setup_tmcaDealerCode
+if(!(Setup_tmcaDealerCode == "Null")) GlobalVariable.Glb_His_tmcaDealerCode = Setup_tmcaDealerCode
 println GlobalVariable.Glb_His_tmcaDealerCode
-if(!(Setup_tmcaBranchCode == "")) GlobalVariable.Glb_His_tmcaBranchCode = Setup_tmcaBranchCode
+if(!(Setup_tmcaBranchCode == "Null")) GlobalVariable.Glb_His_tmcaBranchCode = Setup_tmcaBranchCode
 println GlobalVariable.Glb_His_tmcaBranchCode
-if(!(Setup_DealerName == "")) GlobalVariable.Glb_His_DealerName = Setup_DealerName
+if(!(Setup_DealerName == "Null")) GlobalVariable.Glb_His_DealerName = Setup_DealerName
 println GlobalVariable.Glb_His_DealerName
-if(!(Setup_BranchName == "")) GlobalVariable.Glb_His_BranchName = Setup_BranchName
+if(!(Setup_BranchName == "Null")) GlobalVariable.Glb_His_BranchName = Setup_BranchName
 println GlobalVariable.Glb_His_BranchName
-if(!(Setup_DMS == "")) GlobalVariable.Glb_His_DMS = Setup_DMS
+if(!(Setup_DMS == "Null")) GlobalVariable.Glb_His_DMS = Setup_DMS
 println GlobalVariable.Glb_His_DMS
-if(!(Setup_ContactId == "")) GlobalVariable.Glb_ContactId = Setup_ContactId
+if(!(Setup_ContactId == "Null")) GlobalVariable.Glb_ContactId = Setup_ContactId
 println GlobalVariable.Glb_ContactId
-if(!(Setup_MobileNumber == "")) GlobalVariable.Glb_His_MobileNumber = Setup_MobileNumber
+if(!(Setup_MobileNumber == "Null")) GlobalVariable.Glb_His_MobileNumber = Setup_MobileNumber
 println GlobalVariable.Glb_His_MobileNumber
-if(!(Setup_jobNumber == "")) GlobalVariable.Glb_His_jobNumber = Setup_jobNumber
+if(!(Setup_jobNumber == "Null")) GlobalVariable.Glb_His_jobNumber = Setup_jobNumber
 println GlobalVariable.Glb_His_jobNumber
-if(!(Setup_jobCategory == "")) GlobalVariable.Glb_His_jobCategory = Setup_jobCategory
+if(!(Setup_jobCategory == "Null")) GlobalVariable.Glb_His_jobCategory = Setup_jobCategory
 println GlobalVariable.Glb_His_jobCategory
-if(!(Setup_jobServiceType == "")) GlobalVariable.Glb_His_jobServiceType = Setup_jobServiceType
+if(!(Setup_jobServiceType == "Null")) GlobalVariable.Glb_His_jobServiceType = Setup_jobServiceType
 println GlobalVariable.Glb_His_jobServiceType
-if(!(Setup_CodeType == "")) GlobalVariable.Glb_His_CodeType = Setup_CodeType
+if(!(Setup_CodeType == "Null")) GlobalVariable.Glb_His_CodeType = Setup_CodeType
 println GlobalVariable.Glb_His_CodeType
-if(!(Setup_jobCode == "")) GlobalVariable.Glb_His_jobCode = Setup_jobCode
+if(!(Setup_jobCode == "Null")) GlobalVariable.Glb_His_jobCode = Setup_jobCode
 println GlobalVariable.Glb_His_jobCode
-if(!(Setup_Description == "")) GlobalVariable.Glb_His_jobDescription = Setup_Description
+if(!(Setup_Description == "Null")) GlobalVariable.Glb_His_jobDescription = Setup_Description
 println GlobalVariable.Glb_His_jobDescription
 
 //METHOD

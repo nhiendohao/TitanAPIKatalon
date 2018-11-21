@@ -103,7 +103,11 @@ if(!(Setup_AdvisorType.toString().toLowerCase() == 'exist')) {
 	GlobalVariable.Glb_Adv_Id = 'invalid'
 	GlobalVariable.Glb_Adv_FirstName= 'invalid'
 	GlobalVariable.Glb_Adv_LastName= 'invalid'
-} //Else condition is gather below
+} else {
+		GlobalVariable.Glb_Adv_Id = 'agrim'
+		GlobalVariable.Glb_Adv_FirstName= 'Andrew'
+		GlobalVariable.Glb_Adv_LastName= 'Grima'
+		}
 
 if(GlobalVariable.Glb_CustomerType.toString().toLowerCase()=='new'){
 	GlobalVariable.Glb_FirstName = 'QATEAM_VINHLE'+ CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'('yyMMddHHmmss')

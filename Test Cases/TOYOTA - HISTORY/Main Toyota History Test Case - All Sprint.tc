@@ -227,6 +227,13 @@
       <description></description>
       <id>ee276986-df67-4075-8e3c-77ded442aac0</id>
       <masked>false</masked>
-      <name>variable</name>
+      <name>var_InvoiceNumber</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5455f3bb-e15d-429f-9ebb-aa63a50b4325</id>
+      <masked>false</masked>
+      <name>var_InvoiceType</name>
    </variable>
 </TestCaseEntity>

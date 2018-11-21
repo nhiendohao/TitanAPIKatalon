@@ -68,6 +68,7 @@ GlobalVariable.Glb_Status_SearchService = 'failed'
 GlobalVariable.Glb_Status_SubscriptionAdd = 'failed'
 GlobalVariable.Glb_Status_SubscriptionDetact = 'failed'
 GlobalVariable.Glb_BookingStatus = 'not yet'
+GlobalVariable.Glb_DocumentId = ''
 
 //STEP
 //0. Setup Global Variable and other value
