@@ -87,7 +87,9 @@ WebUI.callTestCase(findTestCase('TOYOTA - HISTORY/Lib_Testcase/Toyota_History00_
 	('Setup_CodeType') : var_CodeType,
 	('Setup_jobCode') : var_jobCode,
 	('Setup_Description') : var_jobDescription,
-	('Setup_VIN') : var_VIN],
+	('Setup_VIN') : var_VIN,
+	('Setup_invoiceType') : var_InvoiceType,
+	('Setup_invoiceNumber') : var_InvoiceNumber],
 FailureHandling.STOP_ON_FAILURE)
 
 //1. Repair Order Post

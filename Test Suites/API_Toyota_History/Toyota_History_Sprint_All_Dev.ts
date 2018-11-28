@@ -4,6 +4,7 @@
    <name>Toyota_History_Sprint_All_Dev</name>
    <tag></tag>
    <isRerun>false</isRerun>
+   <lastRun>2018-11-27T09:46:10</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
@@ -19,8 +20,8 @@
          <combinationType>ONE</combinationType>
          <id>d3ad4d81-4975-44ae-947f-75fcbe3a74c5</id>
          <iterationEntity>
-            <iterationType>ALL</iterationType>
-            <value></value>
+            <iterationType>SPECIFIC</iterationType>
+            <value>639</value>
          </iterationEntity>
          <testDataId>Data Files/Toyota_History/Sprint_All</testDataId>
       </testDataLink>
@@ -55,8 +56,8 @@
          <variableId>435fe291-e954-4003-b22e-4691a448b33c</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>d3ad4d81-4975-44ae-947f-75fcbe3a74c5</testDataLinkId>
-         <type>DATA_COLUMN</type>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
          <value></value>
          <variableId>807b144d-eb33-4921-99df-1642f059e36c</variableId>
       </variableLink>
@@ -81,7 +82,7 @@
       <variableLink>
          <testDataLinkId>d3ad4d81-4975-44ae-947f-75fcbe3a74c5</testDataLinkId>
          <type>DATA_COLUMN</type>
-         <value></value>
+         <value>var_ServiceDate</value>
          <variableId>973e26a8-5a91-4d72-896f-a7b13b7d22a2</variableId>
       </variableLink>
       <variableLink>

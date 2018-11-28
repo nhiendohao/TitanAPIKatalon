@@ -59,6 +59,7 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 	('obj_ModelYear') : GlobalVariable.Glb_veh_ModelYear, 
 	('obj_MakeString') : GlobalVariable.Glb_veh_MakeString, 
 	('obj_ManufacturerName') : GlobalVariable.Glb_veh_ManufacturerName, 
+	('obj_VIN') : GlobalVariable.Glb_veh_VehicleId,
 	('obj_AdvisorId') : GlobalVariable.Glb_Adv_Id            , 
 	('obj_AdvisorGivenName') : GlobalVariable.Glb_Adv_FirstName, 
 	('obj_AdvisorFamilyName') : GlobalVariable.Glb_Adv_LastName, 

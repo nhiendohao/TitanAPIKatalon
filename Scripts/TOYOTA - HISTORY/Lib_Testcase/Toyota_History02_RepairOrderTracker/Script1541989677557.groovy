@@ -86,6 +86,7 @@ println GlobalVariable.Glb_Booking_ID
 		else{
 	//## VALID RESPONSE VERIFICATION
 	//Validate Response Status Code
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_ROTracker, 200, "id")	
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_ROTracker, 200, "id")
+		GlobalVariable.Glb_His_Status_ROTracker = 'passed'
 		}
 	}

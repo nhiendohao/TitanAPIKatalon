@@ -122,6 +122,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 									&lt;ns:ModelYear>${obj_ModelYear}&lt;/ns:ModelYear>
 									&lt;ns:MakeString>${obj_MakeString}&lt;/ns:MakeString>
 									&lt;ns:ManufacturerName>${obj_ManufacturerName}&lt;/ns:ManufacturerName>
+                                  	&lt;ns:VehicleID>${obj_VIN}&lt;/ns:VehicleID>
 								&lt;/ns:Vehicle>
 								&lt;ns:InDistanceMeasure unitCode=&quot;mile&quot;>5000&lt;/ns:InDistanceMeasure>
 							&lt;/ns:VehicleInfo>
@@ -182,6 +183,13 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <id>3a465e54-fda5-4e78-9e05-ee0e97459087</id>
       <masked>false</masked>
       <name>obj_DealerCode</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description>Temporary</description>
+      <id>ef6d179a-aa74-4b8a-946c-20892ac568ce</id>
+      <masked>false</masked>
+      <name>obj_DocumentID</name>
    </variables>
    <variables>
       <defaultValue>GlobalVariable.Glb_FirstName</defaultValue>
@@ -282,6 +290,20 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <name>obj_ManufacturerName</name>
    </variables>
    <variables>
+      <defaultValue>GlobalVariable.Glb_VIN</defaultValue>
+      <description></description>
+      <id>fc3a640b-8a75-4461-8121-907e4d4ec7fd</id>
+      <masked>false</masked>
+      <name>obj_VIN</name>
+   </variables>
+   <variables>
+      <defaultValue>GlobalVariable.Glb_PartyID</defaultValue>
+      <description>Temporary</description>
+      <id>50b8fe75-5fee-4257-a2fb-d08f03c08ddb</id>
+      <masked>false</masked>
+      <name>obj_PartyId</name>
+   </variables>
+   <variables>
       <defaultValue>GlobalVariable.Glb_Adv_Id</defaultValue>
       <description></description>
       <id>37e3604e-6429-40d8-a7f0-bba6a2e710dc</id>
@@ -301,20 +323,6 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <id>e3ad26a4-666f-407e-8931-808813ad48c5</id>
       <masked>false</masked>
       <name>obj_AdvisorFamilyName</name>
-   </variables>
-   <variables>
-      <defaultValue>GlobalVariable.Glb_PartyID</defaultValue>
-      <description>Temporary</description>
-      <id>50b8fe75-5fee-4257-a2fb-d08f03c08ddb</id>
-      <masked>false</masked>
-      <name>obj_PartyId</name>
-   </variables>
-   <variables>
-      <defaultValue>''</defaultValue>
-      <description>Temporary</description>
-      <id>ef6d179a-aa74-4b8a-946c-20892ac568ce</id>
-      <masked>false</masked>
-      <name>obj_DocumentID</name>
    </variables>
    <variables>
       <defaultValue>GlobalVariable.Glb_ServiceDate</defaultValue>

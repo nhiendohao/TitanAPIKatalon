@@ -116,6 +116,7 @@ if(GlobalVariable.Glb_CustomerType.toString().toLowerCase()=='new'){
 
 if(GlobalVariable.Glb_VehicleType.toString().toLowerCase()=='new'){
 	GlobalVariable.Glb_veh_ManufacturerName = 'REGNUMBER'+ CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'('yyMMddHHmmss')
+	GlobalVariable.Glb_veh_VehicleId = 'VNVNV'+ CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getDateFormat'('yyMMddHHmmss')
 }
 
 //METHOD

@@ -122,6 +122,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 									&lt;ns:ModelYear>${obj_ModelYear}&lt;/ns:ModelYear>
 									&lt;ns:MakeString>${obj_MakeString}&lt;/ns:MakeString>
 									&lt;ns:ManufacturerName>${obj_ManufacturerName}&lt;/ns:ManufacturerName>
+                                  	&lt;ns:VehicleID>${obj_VIN}&lt;/ns:VehicleID>
 								&lt;/ns:Vehicle>
 								&lt;ns:InDistanceMeasure unitCode=&quot;mile&quot;>5000&lt;/ns:InDistanceMeasure>
 							&lt;/ns:VehicleInfo>
@@ -298,6 +299,13 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <id>cc46092b-3dc0-462f-be58-67d7b22d0f8a</id>
       <masked>false</masked>
       <name>obj_ManufacturerName</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>33e0fd77-9dcd-4379-a89d-5e4ad39fc626</id>
+      <masked>false</masked>
+      <name>obj_VIN</name>
    </variables>
    <variables>
       <defaultValue>GlobalVariable.Glb_Adv_Id</defaultValue>

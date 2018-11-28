@@ -18,48 +18,78 @@ import groovy.sql.Sql
 import java.sql.Driver
 
 //Set Value for GlobalVariable
+if(!(Setup_ServiceDate == "Null")) GlobalVariable.Glb_ServiceDate = Setup_ServiceDate
+	else GlobalVariable.Glb_ServiceDate = ''
+	println GlobalVariable.Glb_ServiceDate
 if(!(Setup_BookingId == "Null")) GlobalVariable.Glb_Booking_ID = Setup_BookingId
-println GlobalVariable.Glb_Booking_ID
+	else GlobalVariable.Glb_Booking_ID = ''
+	println GlobalVariable.Glb_Booking_ID
 if(!(Setup_ROStatus == "Null")) GlobalVariable.Glb_His_ROStatus = Setup_ROStatus
-println GlobalVariable.Glb_His_ROStatus
+	else GlobalVariable.Glb_His_ROStatus = ''
+	println GlobalVariable.Glb_His_ROStatus
 if(!(Setup_VIN == "Null")) GlobalVariable.Glb_VIN = Setup_VIN
-println GlobalVariable.Glb_VIN
+	else GlobalVariable.Glb_VIN = ''
+	println GlobalVariable.Glb_VIN
 if(!(Setup_LastName == "Null")) GlobalVariable.Glb_LastName = Setup_LastName
-println GlobalVariable.Glb_LastName
+	else GlobalVariable.Glb_LastName = ''
+	println GlobalVariable.Glb_LastName
 if(!(Setup_FirstName == "Null")) GlobalVariable.Glb_FirstName = Setup_FirstName
-println GlobalVariable.Glb_FirstName
+	else GlobalVariable.Glb_FirstName = ''
+	println GlobalVariable.Glb_FirstName
 if(!(Setup_REGNumber == "Null")) GlobalVariable.Glb_REGNumber = Setup_REGNumber
-println GlobalVariable.Glb_REGNumber
+	else GlobalVariable.Glb_REGNumber = ''
+	println GlobalVariable.Glb_REGNumber
 if(!(Setup_REGState == "Null")) GlobalVariable.Glb_His_REGState = Setup_REGState
-println GlobalVariable.Glb_His_REGState
+	else GlobalVariable.Glb_His_REGState = ''
+	println GlobalVariable.Glb_His_REGState
 if(!(Setup_Mileage == "Null")) GlobalVariable.Glb_His_mileage = Setup_Mileage
-println GlobalVariable.Glb_His_mileage
+	else GlobalVariable.Glb_His_mileage = ''
+	println GlobalVariable.Glb_His_mileage
 if(!(Setup_tmcaDealerCode == "Null")) GlobalVariable.Glb_His_tmcaDealerCode = Setup_tmcaDealerCode
-println GlobalVariable.Glb_His_tmcaDealerCode
+	else GlobalVariable.Glb_His_tmcaDealerCode = ''
+	println GlobalVariable.Glb_His_tmcaDealerCode
 if(!(Setup_tmcaBranchCode == "Null")) GlobalVariable.Glb_His_tmcaBranchCode = Setup_tmcaBranchCode
-println GlobalVariable.Glb_His_tmcaBranchCode
+	else GlobalVariable.Glb_His_tmcaBranchCode = ''
+	println GlobalVariable.Glb_His_tmcaBranchCode
 if(!(Setup_DealerName == "Null")) GlobalVariable.Glb_His_DealerName = Setup_DealerName
-println GlobalVariable.Glb_His_DealerName
+	else GlobalVariable.Glb_His_DealerName = ''
+	println GlobalVariable.Glb_His_DealerName
 if(!(Setup_BranchName == "Null")) GlobalVariable.Glb_His_BranchName = Setup_BranchName
-println GlobalVariable.Glb_His_BranchName
+	else GlobalVariable.Glb_His_BranchName = ''
+	println GlobalVariable.Glb_His_BranchName
 if(!(Setup_DMS == "Null")) GlobalVariable.Glb_His_DMS = Setup_DMS
-println GlobalVariable.Glb_His_DMS
+	else GlobalVariable.Glb_His_DMS = ''
+	println GlobalVariable.Glb_His_DMS
 if(!(Setup_ContactId == "Null")) GlobalVariable.Glb_ContactId = Setup_ContactId
-println GlobalVariable.Glb_ContactId
+	else GlobalVariable.Glb_ContactId = ''
+	println GlobalVariable.Glb_ContactId
 if(!(Setup_MobileNumber == "Null")) GlobalVariable.Glb_His_MobileNumber = Setup_MobileNumber
-println GlobalVariable.Glb_His_MobileNumber
+	else GlobalVariable.Glb_His_MobileNumber = ''
+	println GlobalVariable.Glb_His_MobileNumber
 if(!(Setup_jobNumber == "Null")) GlobalVariable.Glb_His_jobNumber = Setup_jobNumber
-println GlobalVariable.Glb_His_jobNumber
+	else GlobalVariable.Glb_His_jobNumber = ''
+	println GlobalVariable.Glb_His_jobNumber
 if(!(Setup_jobCategory == "Null")) GlobalVariable.Glb_His_jobCategory = Setup_jobCategory
-println GlobalVariable.Glb_His_jobCategory
+	else GlobalVariable.Glb_His_jobCategory = ''
+	println GlobalVariable.Glb_His_jobCategory
 if(!(Setup_jobServiceType == "Null")) GlobalVariable.Glb_His_jobServiceType = Setup_jobServiceType
-println GlobalVariable.Glb_His_jobServiceType
+	else GlobalVariable.Glb_His_jobServiceType = ''
+	println GlobalVariable.Glb_His_jobServiceType
 if(!(Setup_CodeType == "Null")) GlobalVariable.Glb_His_CodeType = Setup_CodeType
-println GlobalVariable.Glb_His_CodeType
+	else GlobalVariable.Glb_His_CodeType = ''
+	println GlobalVariable.Glb_His_CodeType
 if(!(Setup_jobCode == "Null")) GlobalVariable.Glb_His_jobCode = Setup_jobCode
-println GlobalVariable.Glb_His_jobCode
+	else GlobalVariable.Glb_His_jobCode = ''
+	println GlobalVariable.Glb_His_jobCode
 if(!(Setup_Description == "Null")) GlobalVariable.Glb_His_jobDescription = Setup_Description
-println GlobalVariable.Glb_His_jobDescription
+	else GlobalVariable.Glb_His_jobDescription = ''
+	println GlobalVariable.Glb_His_jobDescription
+if(!(Setup_invoiceType == "Null")) GlobalVariable.Glb_His_invoiceType = Setup_invoiceType
+	else GlobalVariable.Glb_His_invoiceType = ''
+	println GlobalVariable.Glb_His_invoiceType
+if(!(Setup_invoiceNumber == "Null")) GlobalVariable.Glb_His_invoiceNumber = Setup_invoiceNumber
+	else GlobalVariable.Glb_His_invoiceNumber = ''
+	println GlobalVariable.Glb_His_invoiceNumber
 
 //METHOD
 //Create Date Past/Future with specific Date from current Date

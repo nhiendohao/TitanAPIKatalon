@@ -122,6 +122,7 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 									&lt;ns:ModelYear>${obj_ModelYear}&lt;/ns:ModelYear>
 									&lt;ns:MakeString>${obj_MakeString}&lt;/ns:MakeString>
 									&lt;ns:ManufacturerName>${obj_ManufacturerName}&lt;/ns:ManufacturerName>
+                                  	&lt;ns:VehicleID>${obj_VIN}&lt;/ns:VehicleID>
 								&lt;/ns:Vehicle>
 								&lt;ns:InDistanceMeasure unitCode=&quot;mile&quot;>5000&lt;/ns:InDistanceMeasure>
 							&lt;/ns:VehicleInfo>
@@ -358,6 +359,13 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
       <id>56071a47-44c3-4b0d-8543-ac3ce043017c</id>
       <masked>false</masked>
       <name>obj_DateEndAppointment</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5e828506-9b16-42f9-98a0-bc3e508c7b4c</id>
+      <masked>false</masked>
+      <name>obj_VIN</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

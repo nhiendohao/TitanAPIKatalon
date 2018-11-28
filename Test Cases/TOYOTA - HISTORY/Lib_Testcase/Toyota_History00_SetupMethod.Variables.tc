@@ -159,4 +159,18 @@
       <masked>false</masked>
       <name>Setup_VIN</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>0ab21b4d-d033-4f2a-9169-d3fe034ea42e</id>
+      <masked>false</masked>
+      <name>Setup_invoiceType</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>7275de6c-578c-4ca9-8547-2f326a9bccff</id>
+      <masked>false</masked>
+      <name>Setup_invoiceNumber</name>
+   </variable>
 </TestCaseEntity>

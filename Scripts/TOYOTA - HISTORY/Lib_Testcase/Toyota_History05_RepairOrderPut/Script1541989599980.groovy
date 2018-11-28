@@ -210,5 +210,6 @@ println GlobalVariable.Glb_His_jobDescription
 	else{
 //## VALID RESPONSE VERIFICATION
 //Validate Response Status Code
-	WS.verifyElementPropertyValue(res_ROPut, "", GlobalVariable.Glb_Booking_ID)	
+	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_ROPut, 200, GlobalVariable.Glb_Booking_ID)	
+	GlobalVariable.Glb_His_Status_ROPut = 'passed'
 	}

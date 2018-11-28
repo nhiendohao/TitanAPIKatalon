@@ -225,4 +225,5 @@ println GlobalVariable.Glb_His_invoiceNumber
 //## VALID RESPONSE VERIFICATION
 //Validate Response Status Code
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_InvoicePost, 200, "id")
+	GlobalVariable.Glb_His_Status_InvoicePost = 'passed'
 	}

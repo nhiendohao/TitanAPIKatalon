@@ -4,13 +4,13 @@
    <name>Sprint_Get DropOff Time_05</name>
    <tag></tag>
    <isRerun>false</isRerun>
-   <lastRun>2018-11-21T13:20:33</lastRun>
+   <lastRun>2018-11-28T15:39:36</lastRun>
    <mailRecipient></mailRecipient>
    <numberOfRerun>0</numberOfRerun>
    <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
-   <testSuiteGuid>74b813f5-29b6-4a66-a5cf-e8615b01548a</testSuiteGuid>
+   <testSuiteGuid>a0019b08-a44e-492e-a2c5-b263e4276b0b</testSuiteGuid>
    <testCaseLink>
       <guid>d9a0388b-193b-4768-a036-b9d2de3e928a</guid>
       <isReuseDriver>false</isReuseDriver>
