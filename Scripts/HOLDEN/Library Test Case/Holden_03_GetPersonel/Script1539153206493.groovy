@@ -55,7 +55,7 @@ import java.sql.Driver
 	 * Use If/ If else Statement
 	 */
 	//Dealer Code invalid
-	if(!(GlobalVariable.Glb_Dealer_Code == '111148')){
+	if(!(GlobalVariable.Glb_Dealer_Code == '299560')){
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(GetPersonel, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
 		println "Dealer Code invalid"
 		}
@@ -76,7 +76,7 @@ import java.sql.Driver
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetPersonel, "Destination", "DestinationNameCode", "QI", 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetPersonel, "Destination", "DestinationSoftwareCode", "QI", 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetPersonel, "Destination", "DestinationSoftware", "QI", 0, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetPersonel, "Destination", "DealerNumberID", "111148", 0, 0)
+	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetPersonel, "Destination", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetPersonel, "Destination", "DealerTargetCountry", "US", 0, 0)
 	
 //Get information of all personel

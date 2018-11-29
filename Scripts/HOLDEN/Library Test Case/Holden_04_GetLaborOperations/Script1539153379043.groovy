@@ -56,7 +56,7 @@ import static com.xlson.groovycsv.CsvParser.parseCsv //Reading CSV
 	/**
 	 * Use If/ If else Statement
 	 */
-	if(!(GlobalVariable.Glb_Dealer_Code == '111148')){
+	if(!(GlobalVariable.Glb_Dealer_Code == '299560')){
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_GetLaborOperations, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
 		println "Dealer Code invalid"
 		}
@@ -76,7 +76,7 @@ import static com.xlson.groovycsv.CsvParser.parseCsv //Reading CSV
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DestinationNameCode", "QI", 0, 0)
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DestinationSoftwareCode", "QI", 0, 0)
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DestinationSoftware", "QI", 0, 0)
-			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DealerNumberID", "111148", 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 0, 0)
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_GetLaborOperations, "Destination", "DealerTargetCountry", "US", 0, 0)
 			
 		

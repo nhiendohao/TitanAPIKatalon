@@ -60,7 +60,7 @@ println GlobalVariable.Glb_LastName
 	 * Use If/ If else Statement
 	 */
 	//Dealer Code invalid
-	if(!(GlobalVariable.Glb_Dealer_Code == '111148')){
+	if(!(GlobalVariable.Glb_Dealer_Code == '299560')){
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_SearchCustomerInformation, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
 		println "Dealer Code invalid"
 		}
@@ -86,7 +86,7 @@ println GlobalVariable.Glb_LastName
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Destination", "DestinationNameCode", "QI", 0, 0)
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Destination", "DestinationSoftwareCode", "QI", 0, 0)
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Destination", "DestinationSoftware", "QI", 0, 0)
-			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Destination", "DealerNumberID", "111148", 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Destination", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 0, 0)
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Destination", "DealerTargetCountry", "US", 0, 0)
 			
 		//Validate Action Code
@@ -154,6 +154,8 @@ println GlobalVariable.Glb_LastName
 			sql.eachRow("select * from VEHICLE where REGO_NO = '"+GlobalVariable.Glb_veh_ManufacturerName+"'") {row ->
 				assert GlobalVariable.Glb_veh_MakeString.toString() == row.MAKE_CODE as String
 				assert GlobalVariable.Glb_Cus_TradingEntity.toString() == row.OWNER_TRADING_ENTITY_KEY as String
+				assert GlobalVariable.Glb_veh_Model.toString() == row.MODEL_KEY as String
+				assert GlobalVariable.Glb_veh_VehicleId.toString() == row.VIN as String
 			}
 			
 		//Set Status Method

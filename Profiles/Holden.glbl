@@ -259,4 +259,9 @@
       <initValue>''</initValue>
       <name>Glb_ServiceEndDate</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Glb_veh_modelKey</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

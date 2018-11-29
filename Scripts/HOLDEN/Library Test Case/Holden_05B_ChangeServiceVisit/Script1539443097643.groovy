@@ -81,7 +81,7 @@ if(GlobalVariable.Glb_AddJobLine.toString().toLowerCase() == 'true')
 //## RESPONSE ACCESS
 //All negative case
 	//Invalid dealer code
-	if(!(GlobalVariable.Glb_Dealer_Code == '111148')){
+	if(!(GlobalVariable.Glb_Dealer_Code == '299560')){
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_ProcessServiceVisit, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
 		println "Dealer Code invalid"
 		}

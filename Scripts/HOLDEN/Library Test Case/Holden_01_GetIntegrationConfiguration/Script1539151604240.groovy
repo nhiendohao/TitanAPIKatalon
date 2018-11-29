@@ -57,7 +57,7 @@ println GlobalVariable.Glb_Dealer_Code
 	 * Use If/ If else Statement
 	 */
 	//Dealer Code invalid
-	if(!(GlobalVariable.Glb_Dealer_Code == '111148')){
+	if(!(GlobalVariable.Glb_Dealer_Code == '299560')){
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_IntegrationConfig, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
 		println "Dealer Code invalid"
 		}
@@ -77,7 +77,7 @@ println GlobalVariable.Glb_Dealer_Code
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_IntegrationConfig, "Destination", "DestinationNameCode", "QI", 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_IntegrationConfig, "Destination", "DestinationSoftwareCode", "QI", 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_IntegrationConfig, "Destination", "DestinationSoftware", "QI", 0, 0)
-	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_IntegrationConfig, "Destination", "DealerNumberID", "111148", 0, 0)
+	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_IntegrationConfig, "Destination", "DealerNumberID", GlobalVariable.Glb_Dealer_Code, 0, 0)
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_IntegrationConfig, "Destination", "DealerTargetCountry", "US", 0, 0)
 	
 //Validate Action Code

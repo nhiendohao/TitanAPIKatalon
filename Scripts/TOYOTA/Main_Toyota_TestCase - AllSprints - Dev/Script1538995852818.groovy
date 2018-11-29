@@ -65,7 +65,7 @@ Thread.sleep(100)
 //2. Get Operation Code for customer
 if (var_Status_OpCode == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetServiceOperation_JSON - V2'), [:], FailureHandling.STOP_ON_FAILURE)
-	Thread.sleep(100)
+	Thread.sleep(500)
 }
 
 //3. Get Drop Off Timeslot for Customer
@@ -76,7 +76,7 @@ if (var_Status_GetOffTime == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetDropOffTimes_JSON - V3'), [
 		('Reserve_Timeslot') : ''], 
         FailureHandling.STOP_ON_FAILURE)
-	Thread.sleep(100)
+	Thread.sleep(500)
 }
 
 //4. Get PickUp Timeslot for Customer
@@ -85,7 +85,7 @@ if (var_Status_GetOffTime == 'true') {
 //One pick up time can be chosen by many customer
 if (var_Status_PickupTime == 'true') {
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_GetPickUpTimes_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-	Thread.sleep(500)
+	Thread.sleep(100)
 }
 
 //5. Make a reservation for Drop off timeslot of service.
@@ -106,7 +106,7 @@ if (var_Status_MakeBooking == 'true' && !(GlobalVariable.Glb_Reserve_Token == "n
     WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
 	//Recall again
 	WebUI.callTestCase(findTestCase('TOYOTA/Library_TestCase/Toyota_MakeServiceBooking_JSON - V1'), [:], FailureHandling.STOP_ON_FAILURE)
-	Thread.sleep(100)
+	Thread.sleep(500)
 }
 
 //8. Get Drop off time and Pickup time and Booking Id from REGNumber

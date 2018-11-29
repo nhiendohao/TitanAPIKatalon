@@ -76,7 +76,7 @@ println GlobalVariable.Glb_veh_ManufacturerName
 //## RESPONSE ACCESS
 //All negative case
 	//Invalid dealer code
-	if(!(GlobalVariable.Glb_Dealer_Code == '111148')){
+	if(!(GlobalVariable.Glb_Dealer_Code == '299560')){
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_ProcessServiceVisit, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
 		println "Dealer Code invalid"
 		}
@@ -140,7 +140,7 @@ println GlobalVariable.Glb_veh_ManufacturerName
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ResidenceAddress", "Postcode", GlobalVariable.Glb_Cus_Postcode, 0, 0)
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ResidenceAddress", "StateOrProvinceCountrySub-DivisionID", GlobalVariable.Glb_Cus_State, 0, 0)
 		
-		if(GlobalVariable.Glb_VehicleType.toString().toLowerCase() == 'old') CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "Vehicle", "Model", GlobalVariable.Glb_veh_Model, 0, 0)
+		if(GlobalVariable.Glb_VehicleType.toString().toLowerCase() == 'old') CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "Vehicle", "Model", GlobalVariable.Glb_veh_modelKey, 0, 0)
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "Vehicle", "ModelYear", GlobalVariable.Glb_veh_ModelYear, 0, 0)
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "Vehicle", "MakeString", GlobalVariable.Glb_veh_MakeString, 0, 0)
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "Vehicle", "ManufacturerName", GlobalVariable.Glb_veh_ManufacturerName, 0, 0)
@@ -168,12 +168,17 @@ println GlobalVariable.Glb_veh_ManufacturerName
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "RequestedService", "JobNumberString", "A", 0, 0)
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "RequestedService", "RepeatRepairIndicator", "false", 0, 0)
 		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "RequestedService", "JobTypeString", "Customer Pay", 0, 0)
-		/**
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ServiceLaborScheduling", "LaborOperationID", "1", 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ServiceLaborScheduling", "LaborOperationIdTypeCode", "", 0, 0)
-		 */
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ServiceLaborScheduling", "LaborOperationDescription", GlobalVariable.Glb_Ser_LaborCode+' - '+GlobalVariable.Glb_Ser_LaborDescription, 0, 0)
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "RequestedService", "CustomerSalesRequestDescription", GlobalVariable.Glb_Ser_LaborCode+' - '+GlobalVariable.Glb_Ser_LaborDescription, 0, 0)
+		
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ServiceLaborScheduling", "LaborOperationID", GlobalVariable.Glb_Ser_LaborCode, 0, 0)
+		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ServiceLaborScheduling", "LaborOperationIdTypeCode", GlobalVariable.Glb_Ser_LaborCode, 0, 0)
+		if(GlobalVariable.Glb_Ser_LaborCode.toString().toLowerCase()==''){
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ServiceLaborScheduling", "LaborOperationDescription", GlobalVariable.Glb_Ser_LaborCode+' - '+GlobalVariable.Glb_Ser_LaborDescription, 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "RequestedService", "CustomerSalesRequestDescription", GlobalVariable.Glb_Ser_LaborCode+' - '+GlobalVariable.Glb_Ser_LaborDescription, 0, 0)
+		}
+		else{
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "ServiceLaborScheduling", "LaborOperationDescription", GlobalVariable.Glb_Ser_LaborDescription, 0, 0)
+			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_ProcessServiceVisit, "RequestedService", "CustomerSalesRequestDescription", GlobalVariable.Glb_Ser_LaborDescription, 0, 0)
+		}
 		
 	//Validate Advisor Party
 		/**
