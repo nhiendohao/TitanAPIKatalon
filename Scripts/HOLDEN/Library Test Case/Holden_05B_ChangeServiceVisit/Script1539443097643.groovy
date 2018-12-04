@@ -34,15 +34,21 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
  * V0. Create framework 09/10/18
  * V1. Verify response 13/10/18
  * Declare request  14/10/18
+ * Add logic test
  */
 
 //CODE 
 //## DECLARE VIABLE
-String objectRepo = "Holden/Holden_05B_ChangeServiceVisit"
-if(GlobalVariable.Glb_AddJobLine.toString().toLowerCase() == 'true')
-	objectRepo = "Holden/Holden_05B_ChangeServiceVisit_AddOpCode"
+	String objectRepo = "Holden/Holden_05B_ChangeServiceVisit"
+	if(GlobalVariable.Glb_AddJobLine.toString().toLowerCase() == 'true')
+		objectRepo = "Holden/Holden_05B_ChangeServiceVisit_AddOpCode"
 	
-	if(!(var_ChangeDate ==  "")) GlobalVariable.Glb_ServiceDate = var_ChangeDate
+	String StartDateService, EndDateService, OperationCode, OperationDescription, LastName, FirstName, ManufacturerName, VehicleId
+	if(!(var_ChangeDate.toString().toLowerCase()) ==  "false") {
+		StartDateService = var_ChangeDate + 'T08:00:00'
+		EndDateService = var_ChangeDate + 'T08:10:00'
+	}
+	
 	if(!(var_ChangeLaborCode ==  "")) GlobalVariable.Glb_Ser_LaborCode = var_ChangeLaborCode
 	if(!(var_ChangeLaborDescription ==  "")) GlobalVariable.Glb_Ser_LaborDescription = var_ChangeLaborDescription
 
@@ -71,7 +77,6 @@ if(GlobalVariable.Glb_AddJobLine.toString().toLowerCase() == 'true')
 	('obj_AdvisorGivenName') : GlobalVariable.Glb_Adv_FirstName, 
 	('obj_AdvisorFamilyName') : GlobalVariable.Glb_Adv_LastName            , 
 	('obj_PartyId') : GlobalVariable.Glb_PartyID, 
-	('obj_DocumentID') : GlobalVariable.Glb_DocumentId, 
 	('obj_DateAppointment') : GlobalVariable.Glb_ServiceDate            ,           , 
 	('obj_LaborCode') : GlobalVariable.Glb_Ser_LaborCode, 
 	('obj_LaborDescription') : GlobalVariable.Glb_Ser_LaborDescription])

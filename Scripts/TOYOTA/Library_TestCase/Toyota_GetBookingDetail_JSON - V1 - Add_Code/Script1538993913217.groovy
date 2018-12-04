@@ -128,15 +128,15 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Appointment.ServiceBayType', 'null')
 	
 	//Verify Contact Information
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ToyotaContactID', '19011995')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.FirstName', 'QATEAM')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.LastName', 'VINHLE')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].ToyotaContactID', '19011995')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].FirstName', 'QATEAM')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].LastName', 'VINHLE')
 	//WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.PhoneNumber', '0983612137')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.Email', 'QAteam.automation@titandms.com')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.DealerMarketingAllowedFlag', 'false')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.ContactRelationship', 'OSB_CUSTOMER_OWNER')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.AlternativeContactName', 'ANH THY')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact.AlternativeContactNumber', '0919011995')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].Email', 'QAteam.automation@titandms.com')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].DealerMarketingAllowedFlag', 'false')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].ContactRelationship', 'OSB_CUSTOMER_OWNER')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].AlternativeContactName', 'ANH THY')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].AlternativeContactNumber', '0919011995')
 	
 	//Verify remained information
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Comment', 'null')

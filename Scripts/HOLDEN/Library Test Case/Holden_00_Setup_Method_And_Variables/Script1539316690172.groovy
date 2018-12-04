@@ -146,20 +146,20 @@ GlobalVariable.Glb_Current_Hour = SetDate(today,0,0,4,"HH:mm")
 
 //Set up value Past/Current/Future for Service Start Date
 if(GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="cr")
-	GlobalVariable.Glb_ServiceDate = current_date
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,0,5,"YYYY-MM-dd'T'HH:50:00")
 else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_ServiceDate = SetDate(today,0,-1,0,"YYYY-MM-dd'T'HH:mm:ss")
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,-1,5,"YYYY-MM-dd'T'HH:50:00")
 else if (GlobalVariable.Glb_ServiceDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_ServiceDate = SetDate(today,0,1,0,"YYYY-MM-dd'T'HH:mm:ss")
+	GlobalVariable.Glb_ServiceDate = SetDate(today,0,1,5,"YYYY-MM-dd'T'HH:50:00")
 println GlobalVariable.Glb_ServiceDate
 	
 //Set up value Past/Current/Future for Service End Date
 if(GlobalVariable.Glb_ServiceEndDate.toString().toLowerCase() =="cr")
-	GlobalVariable.Glb_ServiceEndDate = current_date
+	GlobalVariable.Glb_ServiceEndDate = SetDate(today,0,0,5,"YYYY-MM-dd'T'HH:55:00")
 else if (GlobalVariable.Glb_ServiceEndDate.toString().toLowerCase() =="p")
-	GlobalVariable.Glb_ServiceEndDate = SetDate(today,0,-1,0,"YYYY-MM-dd'T'HH:mm:ss")
+	GlobalVariable.Glb_ServiceEndDate = SetDate(today,0,-1,5,"YYYY-MM-dd'T'HH:55:00")
 else if (GlobalVariable.Glb_ServiceEndDate.toString().toLowerCase() =="f")
-	GlobalVariable.Glb_ServiceEndDate = SetDate(today,0,1,0,"YYYY-MM-dd'T'HH:mm:ss")
+	GlobalVariable.Glb_ServiceEndDate = SetDate(today,0,1,5,"YYYY-MM-dd'T'HH:55:00")
 println GlobalVariable.Glb_ServiceEndDate
 	
 //Set up value Past/Current/Future for Search Start Date
@@ -236,6 +236,25 @@ else if (GlobalVariable.Glb_EndSearchDate.toString().toLowerCase() =="f")
 		}
 		println GlobalVariable.Glb_DocumentId
   }
+	
+//Query Model Key from Make ID
+	String makeID
+	sql.eachRow("select * from MAKE where MAKE_ID = '"+GlobalVariable.Glb_veh_MakeString+"'") {row ->
+		makeID = row.MAKE_KEY as String
+		println makeID
+	}
+
+	String modelKeyQuery = "SELECT TOP 1 M.MODEL_KEY FROM MODEL M "+
+						"INNER JOIN MODEL_TYPE MT "+
+							"ON M.MODEL_TYPE_KEY = MT.MODEL_TYPE_KEY "+
+						"WHERE MT.MAKE_KEY = "+ makeID +" AND "+
+								"M.SERIES = '"+GlobalVariable.Glb_veh_Model+"' "+
+						"ORDER BY M.MODEL_KEY DESC"
+
+	sql.eachRow(modelKeyQuery) {row ->
+		GlobalVariable.Glb_veh_modelKey = row[0] as String
+		println GlobalVariable.Glb_veh_modelKey
+	}
 	
 	sql.close()
 	conn.close()

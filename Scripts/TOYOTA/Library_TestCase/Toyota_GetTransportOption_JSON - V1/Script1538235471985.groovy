@@ -81,9 +81,9 @@ else{
 	//Verify Response Status = 200 OK
 	VerifyResponse(res_GetTransportOption,200,"")
 	//Verify OptionType
-	WS.verifyElementPropertyValue(res_GetTransportOption, '[0].OptionType', 'OSB_TRANSPORT_OPTION_CAR')
+	WS.verifyElementPropertyValue(res_GetTransportOption, '[0].OptionType', 'OSB_TRANSPORT_OPTION_NONE')
 	//Verify OptionAvailabilityFlag
-	WS.verifyElementPropertyValue(res_GetTransportOption, '[0].OptionAvailabilityFlag', 'false')
+	WS.verifyElementPropertyValue(res_GetTransportOption, '[0].OptionAvailabilityFlag', 'true')
 	//Verify OptionURL
 	WS.verifyElementPropertyValue(res_GetTransportOption, '[0].OptionURL', 'null')
 	//Verify OptionURLLabel

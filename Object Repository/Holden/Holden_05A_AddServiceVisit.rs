@@ -138,11 +138,11 @@ sdpxgYSkV0O8aLijdskqX1IklBTR61eOhmzBh9V0SAMxV+mfZD8i4uy2LEk=&lt;/wsse:BinarySecu
 								&lt;/ns:ServiceVisitAppointmentHeader>
 								&lt;ns:ServiceVisitAppointmentDetail>
 									&lt;ns:Appointment>
-										&lt;ns:AppointmentDateTime>${obj_DateAppointment}.000-04:00&lt;/ns:AppointmentDateTime>
+										&lt;ns:AppointmentDateTime>${obj_DateAppointment}&lt;/ns:AppointmentDateTime>
 										&lt;ns:AppointmentNotes>Please wash car. Thank you.&lt;/ns:AppointmentNotes>
 										&lt;ns:AppointmentStatus>SCHEDULED&lt;/ns:AppointmentStatus>
 										&lt;ns:AlternateTransportation>WAIT_AT_DEALER&lt;/ns:AlternateTransportation>
-										&lt;ns:EndAppointmentDateTime>${obj_DateEndAppointment}.000-04:00&lt;/ns:EndAppointmentDateTime>
+										&lt;ns:EndAppointmentDateTime>${obj_DateEndAppointment}&lt;/ns:EndAppointmentDateTime>
 										&lt;ns:RequestedService>
 											&lt;ns:JobNumberString>A&lt;/ns:JobNumberString>
 											&lt;ns:RepeatRepairIndicator>false&lt;/ns:RepeatRepairIndicator>

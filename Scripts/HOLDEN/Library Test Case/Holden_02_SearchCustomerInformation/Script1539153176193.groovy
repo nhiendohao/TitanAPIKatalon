@@ -106,7 +106,7 @@ println GlobalVariable.Glb_LastName
 			
 		//Validate "Vehicle"
 			String modelTemp = CustomKeywords.'qaVinhLe.Library_Method_VinhLe.getValueSOAPNode'(res_SearchCustomerInformation,"Vehicle", "Model", 0, 0)
-			if(!(modelTemp == "")) CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "Model", GlobalVariable.Glb_veh_Model, 0, 0)
+			if(!(modelTemp == "")) CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "Model", GlobalVariable.Glb_veh_modelKey, 0, 0)
 			
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "ModelYear", GlobalVariable.Glb_veh_ModelYear, 0, 0)
 			CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyValueSOAPNode'(res_SearchCustomerInformation, "Vehicle", "MakeString", GlobalVariable.Glb_veh_MakeString, 0, 0)
@@ -152,9 +152,8 @@ println GlobalVariable.Glb_LastName
 			
 			//Query and assert Vehicle's information
 			sql.eachRow("select * from VEHICLE where REGO_NO = '"+GlobalVariable.Glb_veh_ManufacturerName+"'") {row ->
-				assert GlobalVariable.Glb_veh_MakeString.toString() == row.MAKE_CODE as String
+				assert GlobalVariable.Glb_veh_modelKey.toString() == row.MODEL_KEY as String
 				assert GlobalVariable.Glb_Cus_TradingEntity.toString() == row.OWNER_TRADING_ENTITY_KEY as String
-				assert GlobalVariable.Glb_veh_Model.toString() == row.MODEL_KEY as String
 				assert GlobalVariable.Glb_veh_VehicleId.toString() == row.VIN as String
 			}
 			

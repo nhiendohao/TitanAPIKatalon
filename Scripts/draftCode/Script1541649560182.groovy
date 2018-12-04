@@ -38,37 +38,7 @@ import java.sql.Driver as Driver
  */
 WS.comment(null)
 
-String sqlUser = GlobalVariable.Glb_sqlUser.toString()
-String sqlPass = GlobalVariable.Glb_sqlPass.toString()
-String sqlURL = GlobalVariable.Glb_sqlURL.toString()
-// Create Driver for connection
-def driver = Class.forName('com.microsoft.sqlserver.jdbc.SQLServerDriver').newInstance() as Driver
-// Create Object Properties
-def props = new Properties()
-// Setup user and password through Object Properties
-props.setProperty("user", sqlUser)
-props.setProperty("password", sqlPass)
-//Create connection for HCM-DEV-DB;databaseName=qa_owen_1_23
-def conn = driver.connect(sqlURL, props)
-def sql = new Sql(conn)
-
-//Query Model Key from Make ID
-String makeID
-sql.eachRow("select * from MAKE where MAKE_ID = 'FIAT'") {row ->
-	makeID = row.MAKE_KEY as String
-	println makeID
-}
-
-String modelKeyQuery = "SELECT TOP 1 M.MODEL_KEY FROM MODEL M "+
-					    "INNER JOIN MODEL_TYPE MT "+
-						    "ON M.MODEL_TYPE_KEY = MT.MODEL_TYPE_KEY "+
-					    "WHERE MT.MAKE_KEY = "+GlobalVariable.Glb_veh_MakeString+" AND "+
-						        "M.SERIES = '"+GlobalVariable.Glb_veh_Model+"' "+
-					    "ORDER BY M.MODEL_KEY DESC"
-
-sql.eachRow(modelKeyQuery) {row ->
-	GlobalVariable.Glb_veh_modelKey = row[0] as String
-	println GlobalVariable.Glb_veh_modelKey
-}
-sql.close()
-conn.close()
+def today = new Date()
+//Set current Date
+def current_date = today.format("YYYY-MM-dd'T'HH:50:00")
+println current_date
