@@ -36,7 +36,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>DELETE</restRequestMethod>
-   <restUrl>http://hcm-dev-web/api/dealers/${Dealer_Code}/locations/${Location_Code}/services/${BookingID}</restUrl>
+   <restUrl>http://hcm-dev-testing.titandms.net.au:55551/api/dealers/${Dealer_Code}/locations/${Location_Code}/services/${BookingID}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>

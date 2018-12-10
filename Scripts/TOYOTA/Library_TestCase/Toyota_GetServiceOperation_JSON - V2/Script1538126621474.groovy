@@ -30,6 +30,7 @@ import static com.xlson.groovycsv.CsvParser.parseCsv
 import static org.assertj.core.api.Assertions.*
 import java.text.DecimalFormat
 @Grab('com.xlson.groovycsv:groovycsv:1.3')
+import toyotaOSB.CommonToyota
 
 //V0. Verify Status code and get Json data
 //V1. Get data from CSV file
@@ -58,6 +59,7 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 //=====================================================================================================
 
 //CODE
+	CommonToyota comm = new CommonToyota()
 //Set Service Type
 	ServiceType = GlobalVariable.Glb_ServiceType
 //Declare File path CSV
@@ -85,8 +87,7 @@ ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 
 //Classify case
 //Invalid Dealer Code
-if(!(GlobalVariable.Glb_Dealer_Code == "765A")) 
-	VerifyResponse(res_GetServiceOperation,500,"Dealer Code "+GlobalVariable.Glb_Dealer_Code+" has not been setup")
+if(comm.validateInvalidDealerCode(res_GetServiceOperation)) {}
 //Invalid Service Type
 else if(!(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK" || GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_ADDITIONAL"))
 	VerifyResponse(res_GetServiceOperation,0,"Service Type Unknown")

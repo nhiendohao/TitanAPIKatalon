@@ -25,7 +25,7 @@
    </httpHeaderProperties>
    <migratedVersion>5.4.1</migratedVersion>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>http://hcm-dev-web/api/dealers/${Dealer_Code}/locations/${Location_Code}/transportOptions?serviceDate=${Service_Date}</restUrl>
+   <restUrl>http://hcm-dev-testing.titandms.net.au:55551/api/dealers/${Dealer_Code}/locations/${Location_Code}/transportOptions?serviceDate=${Service_Date}</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>

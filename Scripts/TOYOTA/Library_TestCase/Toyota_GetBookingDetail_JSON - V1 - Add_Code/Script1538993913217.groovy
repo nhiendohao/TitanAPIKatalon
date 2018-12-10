@@ -24,6 +24,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import toyotaOSB.CommonToyota
+
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import static org.assertj.core.api.Assertions.*
 
@@ -44,6 +46,7 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 //=========================================================================================
 
 //CODE
+CommonToyota comm = new CommonToyota()
 //Setup DMSOperationCode base on Service Type
 String DMSOperationCode
 if(GlobalVariable.Glb_ServiceType == "OSB_SERVICE_TYPE_LOGBOOK") DMSOperationCode = "OSB_SERVICE_TYPE_LOGBOOK"
@@ -65,10 +68,7 @@ ResponseObject res_GetBookingDetail = WS.sendRequest(GetBookingDetail)
 
 //Classify cases
 //Invalid Dealer Code
-if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
-	println "Invalid Dealer Code"
-	VerifyResponse(res_GetBookingDetail,0,"Authorization has been denied for this request")
-}
+if (comm.validateInvalidDealerCode(res_GetBookingDetail)){}
 //Not exist Location Code
 else if(!(GlobalVariable.Glb_Location_Code == "765"||
 	GlobalVariable.Glb_Location_Code == "37060"))
@@ -135,7 +135,7 @@ else{
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].Email', 'QAteam.automation@titandms.com')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].DealerMarketingAllowedFlag', 'false')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].ContactRelationship', 'OSB_CUSTOMER_OWNER')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].AlternativeContactName', 'ANH THY')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].AlternativeContactName', '')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'Contact[0].AlternativeContactNumber', '0919011995')
 	
 	//Verify remained information

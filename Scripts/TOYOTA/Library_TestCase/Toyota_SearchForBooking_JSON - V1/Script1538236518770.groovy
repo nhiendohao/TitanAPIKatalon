@@ -24,6 +24,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import toyotaOSB.CommonToyota
+
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import static org.assertj.core.api.Assertions.*
 
@@ -45,6 +47,7 @@ def VerifyResponse(ResponseObject response, int StatusCode, String ExpectedMessa
 //=========================================================================================
 
 //CODE
+	CommonToyota comm = new CommonToyota()
 println GlobalVariable.Glb_Dealer_Code
 println GlobalVariable.Glb_Location_Code
 println GlobalVariable.Glb_StartSearchDate
@@ -70,10 +73,7 @@ def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as D
 
 //Classify cases
 //Invalid Dealer Code
-if (!(GlobalVariable.Glb_Dealer_Code == "765A")){
-	println "Invalid Dealer Code"
-	VerifyResponse(res_SearchForBooking,0,"Authorization has been denied for this request")
-}
+if (comm.validateInvalidDealerCode(res_SearchForBooking)){}
 //Service Date Past
 else if (StartSearchDate.after(EndSearchDate)){
 	println "Service Date Past"

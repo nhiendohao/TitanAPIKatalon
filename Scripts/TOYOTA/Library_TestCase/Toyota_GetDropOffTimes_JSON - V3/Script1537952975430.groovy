@@ -26,6 +26,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import toyotaOSB.CommonToyota
+
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 
 //V0. Check timeslot for 1 day
@@ -61,6 +63,7 @@ def ConvertObjectToDate = {Object global ->
 	}
 
 //CODE
+	CommonToyota comm = new CommonToyota()
 //Parse String data to Date type Data
 Date current_hour = ConvertObjectToDate(GlobalVariable.Glb_Current_Hour)
 def Service_Date = Date.parse("yyyy-MM-dd", GlobalVariable.Glb_ServiceDate) as Date
@@ -96,8 +99,7 @@ ResponseObject res_GetServiceOperation = WS.sendRequest(GetServiceOperation)
 //Verify Response Status
 //Clasify case
 //StartDate  after EndDate
-if (!(GlobalVariable.Glb_Dealer_Code == "765A"))
-	VerifyResponse(res_GetServiceOperation,0,"Authorization has been denied for this request")
+if (comm.validateInvalidDealerCode(res_GetServiceOperation)){}
 //Start Date after End Date
 else if(Start_Date_Str.after(End_Date_Str))
 	 VerifyResponse(res_GetServiceOperation,0,"cannot be greater than end date")

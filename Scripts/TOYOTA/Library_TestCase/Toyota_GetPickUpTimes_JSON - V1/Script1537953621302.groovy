@@ -24,6 +24,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import toyotaOSB.CommonToyota
+
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import static org.assertj.core.api.Assertions.*
 import java.text.ParseException
@@ -67,6 +69,7 @@ def ConvertObjectToDate = {Object global ->
 //=========================================================================================
 
 //CODE
+CommonToyota comm = new CommonToyota()
 // Declare request
 println GlobalVariable.Glb_ServiceDate
 println GlobalVariable.Glb_DropOffTime
@@ -129,10 +132,7 @@ use(groovy.time.TimeCategory) {
 	}
 //Classify cases 
 //Invalid Dealer Code
-if (!(GlobalVariable.Glb_Dealer_Code == "765A")) {
-	println "Invalid Dealer Code"
-	VerifyResponse(res_GetPickupTime,0,"Authorization has been denied for this request")
-}
+if (comm.validateInvalidDealerCode(res_GetPickupTime)) {}
 //Duration = 0
 else if(Duration <= 0){
 	println "Duration = 0"

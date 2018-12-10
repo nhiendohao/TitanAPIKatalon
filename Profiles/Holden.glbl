@@ -116,7 +116,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_24'</initValue>
+      <initValue>'jdbc:sqlserver://HCM-DEV-DB;databaseName=qa_bmg_1_25'</initValue>
       <name>Glb_sqlURL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
