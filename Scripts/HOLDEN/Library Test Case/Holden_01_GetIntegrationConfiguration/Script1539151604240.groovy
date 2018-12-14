@@ -46,9 +46,10 @@ import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as Cucumber
 println GlobalVariable.Glb_Dealer_Code
 //Declare request
 	RequestObject IntegrationConfig = findTestObject('Holden/Holden_01_GetIntegrationConfiguration', [
-		('obj_DealerId') : GlobalVariable.Glb_Dealer_Code])
+		('299560') : GlobalVariable.Glb_Dealer_Code])
 //Declare response
 	ResponseObject res_IntegrationConfig = WS.sendRequest(IntegrationConfig)
+	println res_IntegrationConfig.getResponseText()
 	
 //## RESPONSE ACCESS
 //All negative case
@@ -57,13 +58,13 @@ println GlobalVariable.Glb_Dealer_Code
 	 * Use If/ If else Statement
 	 */
 	//Dealer Code invalid
-	if(!(GlobalVariable.Glb_Dealer_Code == '299560')){
-		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_IntegrationConfig, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
-		println "Dealer Code invalid"
-		}
+//	if(!(GlobalVariable.Glb_Dealer_Code == '299560')){
+//		CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_IntegrationConfig, 200, "Dealer "+ GlobalVariable.Glb_Dealer_Code +" Not Authorized")
+//		println "Dealer Code invalid"
+//		}
 //## VALID RESPONSE VERIFICATION
 //Validate Response Status Code
-	else{
+//	else{
 	CustomKeywords.'qaVinhLe.Library_Method_VinhLe.verifyResponseCode_Msg'(res_IntegrationConfig, 200, "")
 	
 //Validate "Sender"
@@ -101,5 +102,5 @@ println GlobalVariable.Glb_Dealer_Code
 	
 	//Set Status Method
 	GlobalVariable.Glb_Status_Integration = 'passed'
-	}
+//	}
 	

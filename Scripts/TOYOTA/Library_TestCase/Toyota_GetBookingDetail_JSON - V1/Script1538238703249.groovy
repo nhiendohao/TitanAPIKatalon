@@ -94,13 +94,13 @@ else{
 	
 	//Verify Repair Order Information
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.TotalPriceQuoted', GlobalVariable.Glb_TotalPrice + '.0000')
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.TotalDuration', GlobalVariable.Glb_Duration_Time + '.00')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.TotalDuration', GlobalVariable.Glb_Duration_Time + '.0000')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Name', DMSOperationCode + ' - Operation Code for Test')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Description', 'null')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].ServiceType', 'OSB_SERVICE_TYPE_ADDITIONAL')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].ServiceCode', 'null')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].DMSOperationalCode', DMSOperationCode)
-	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Duration', '1.00')
+	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].Duration', '1.0000')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].EMFlag', 'false')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].EMDuration', '0.0')
 	WS.verifyElementPropertyValue(res_GetBookingDetail, 'RepairOrder.Services[0].DealerPrice', '0.0')
